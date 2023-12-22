@@ -1,6 +1,0 @@
-@PMRU.API_HostAddress = http://localhost:5002
-
-GET {{PMRU.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
