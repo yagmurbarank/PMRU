@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\demir\\Desktop\\Tüpraş\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {}
+    "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\demir\\Desktop\\Tüpraş\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
+    "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\demir\\Desktop\\Tüpraş\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
+        "projectUniqueName": "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
         "projectName": "PMRU.Domain",
-        "projectPath": "C:\\Users\\demir\\Desktop\\Tüpraş\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
-        "packagesPath": "C:\\Users\\demir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\demir\\Desktop\\Tüpraş\\PMRU\\PMRU.Domain\\obj\\",
+        "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\demir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
