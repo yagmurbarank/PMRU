@@ -4420,7 +4420,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 8.0.0",
-      "PMRU.Application >= 1.0.0"
+      "PMRU.Application >= 1.0.0",
+      "PMRU.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4457,6 +4458,9 @@
           "projectReferences": {
             "G:\\dev\\PMRU\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
               "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
+            },
+            "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
+              "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj"
             }
           }
         }

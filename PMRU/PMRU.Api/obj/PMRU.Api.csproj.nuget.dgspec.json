@@ -351,6 +351,9 @@
             "projectReferences": {
               "G:\\dev\\PMRU\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
                 "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
+              },
+              "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
+                "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj"
               }
             }
           }

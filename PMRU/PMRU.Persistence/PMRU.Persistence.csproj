@@ -23,6 +23,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\PMRU.Application\PMRU.Application.csproj" />
+		<ProjectReference Include="..\PMRU.Domain\PMRU.Domain.csproj" />
 	</ItemGroup>
 
 
