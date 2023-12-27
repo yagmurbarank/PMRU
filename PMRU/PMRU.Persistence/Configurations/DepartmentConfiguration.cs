@@ -16,9 +16,6 @@ namespace PMRU.Persistence.Configurations
             builder.HasKey(d => d.Id);
             builder.Property(d => d.DepartmentDescription).HasMaxLength(255).IsRequired();
 
-            // Diğer konfigürasyonları ekleyebilirsiniz.
-
-            // Örnek veri eklemek için:
             builder.HasData(
                 new Department { Id = 1, DepartmentDescription = "Güvenlik" },
                 new Department { Id = 2, DepartmentDescription = "Üretim" },

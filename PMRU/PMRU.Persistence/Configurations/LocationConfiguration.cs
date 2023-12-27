@@ -24,7 +24,6 @@ namespace PMRU.Persistence.Configurations
                 new Location { Id = 41, LocationDescription = "İzmit", IsLocationCenter = false },
                 new Location { Id = 72, LocationDescription = "Batman", IsLocationCenter = false },
                 new Location { Id = 71, LocationDescription = "Kırıkkale", IsLocationCenter = false }
-
             );
         }
     }

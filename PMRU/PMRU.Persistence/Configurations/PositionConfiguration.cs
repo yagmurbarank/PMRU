@@ -31,7 +31,6 @@ namespace PMRU.Persistence.Configurations
                 new Position { Id = 12, PositionDescription = "Doktor" },
                 new Position { Id = 13, PositionDescription = "Hemşire" },
                 new Position { Id = 14, PositionDescription = "Satış Temsilcisi" }
-
             );
         }
     }

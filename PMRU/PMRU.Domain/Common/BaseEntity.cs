@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Domain.Common
 {
-    public class BaseEntity : IEntityBase
+    public class BaseEntity
     {
         public int Id { get; set; }
         public bool IsActive { get; set; }

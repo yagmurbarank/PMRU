@@ -44,36 +44,37 @@ namespace PMRU.Persistence.Configurations
                 .WithMany()
                 .HasForeignKey(d => d.DepartmentID);
 
-
-
             builder.HasData(
                 new Doctor
                 {
-                    Id = 1,
+                    Id = 3,
                     Name = "Aylin",
                     Surname = "Güneş",
                     Email = "aylin.gunes@email.com",
                     Phone = "5556123456",
                     IdentityNumber = "12345678901",
+                    RegistrationNumber = "102",
                     LocationID = 35,
-                    RoleID = 3,    
+                    RoleID = 3,
                     PositionID = 12,
                     DepartmentID = 7,
+                    Password = "Password"
                 },
                 new Doctor
                 {
-                    Id = 2,
+                    Id = 4,
                     Name = "Eren",
                     Surname = "Akçay",
                     Email = "eren.akcay@email.com",
                     Phone = "5556234567",
                     IdentityNumber = "12345678923",
+                    RegistrationNumber = "103",
                     LocationID = 41,
                     RoleID = 3,
                     PositionID = 12,
                     DepartmentID = 7,
+                    Password = "Password"
                 }
-                // Doktor eklenebilir.
             );
         }
     }

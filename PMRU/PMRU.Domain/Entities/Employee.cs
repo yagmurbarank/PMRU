@@ -27,6 +27,7 @@ namespace PMRU.Domain.Entities
         public string RegistrationNumber { get; set; }
 
         // An employee can only have one appointment.
+        public int AppointmentId { get; set; }
         public Appointment? Appointment { get; set; }
     }
 

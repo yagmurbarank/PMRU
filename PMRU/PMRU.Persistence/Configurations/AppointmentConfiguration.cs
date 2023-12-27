@@ -13,13 +13,18 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
-            /*builder.HasOne(a => a.Employee)
+            builder.HasKey(a => a.Id);
+
+            builder.HasOne(a => a.Employee)
                 .WithOne(e => e.Appointment)
-                .HasForeignKey<Employee>(a => a.Id);*/
+                .HasForeignKey<Appointment>(e => e.EmployeeID)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(a => a.Doctor)
                 .WithMany(d => d.Appointments)
-                .HasForeignKey(a => a.Id);
+                .HasForeignKey(a => a.DoctorID)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

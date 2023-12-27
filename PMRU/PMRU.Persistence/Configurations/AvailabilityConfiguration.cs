@@ -13,6 +13,8 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Availability> builder)
         {
+            builder.HasKey(a => a.Id);
+
             builder.HasOne(a => a.Doctor)
                 .WithMany(d => d.Availabilities)
                 .HasForeignKey(a => a.DoctorID);
