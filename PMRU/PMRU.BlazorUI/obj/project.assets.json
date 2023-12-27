@@ -3086,23 +3086,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\dogademirturk\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
       "projectName": "PMRU.BlazorUI",
-      "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+      "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3111,6 +3111,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

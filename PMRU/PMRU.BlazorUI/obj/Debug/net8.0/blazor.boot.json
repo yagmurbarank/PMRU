@@ -1,12 +1,12 @@
 {
   "mainAssemblyName": "PMRU.BlazorUI",
   "resources": {
-    "hash": "sha256-1WjRRxzceD1+3dgJJ9f/jeFMcuBMq4KzmSENBmzer80=",
+    "hash": "sha256-/sBh4BvtvkPq8jtzOcQJAVL3Q5NAT6iXvRToRhLRTrQ=",
     "jsModuleNative": {
-      "dotnet.native.8.0.0.vaqsp14d09.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
+      "dotnet.native.8.0.0.ib0q3337gx.js": "sha256-LjLDIz9+J7uuiwMlQ4HbNx2BnSpphOtO2MwkoI28vdI="
     },
     "jsModuleRuntime": {
-      "dotnet.runtime.8.0.0.lje3rrhb93.js": "sha256-WdSX3HQvnBYF0KJLZoOyHvTzMHetaob6PV0Kn2K+QXw="
+      "dotnet.runtime.8.0.0.spy8rk4wqb.js": "sha256-WdSX3HQvnBYF0KJLZoOyHvTzMHetaob6PV0Kn2K+QXw="
     },
     "wasmNative": {
       "dotnet.native.wasm": "sha256-Vr6ZXKoP77zgabrMIxQ1GbOkrxfx5XGqHO0odLhUIMY="
@@ -222,10 +222,10 @@
       "mscorlib.wasm": "sha256-cDuLeL3OCtVtiid/dyex1MVgbuzDSRwZxKzuP2Dp4mg=",
       "netstandard.wasm": "sha256-A0h86SDieTMoU/wU2JTszWCsUmMuguDcbap0b0BzsmI=",
       "System.Private.CoreLib.wasm": "sha256-/0DNIm/T0C07X7Tuz5uR8JvVCoAfEE2MnfPUSjyS9xc=",
-      "PMRU.BlazorUI.wasm": "sha256-3JbSr8+qJbXlWcVDubU2WuxJKDscAmCBaZlEbKM+G3c="
+      "PMRU.BlazorUI.wasm": "sha256-+bhoS2mwhpfO3AhNn4XBKcW6jErlmIXXSx+aYo9jHBA="
     },
     "pdb": {
-      "PMRU.BlazorUI.pdb": "sha256-tm8kgcQ7afJ9y+c7QkLa+4PeNoD1FX0GZiv057ExbEs="
+      "PMRU.BlazorUI.pdb": "sha256-DK4UTE3xbFjHm7zCxeCTgzQ0FojjO2p7t5jnFAT5ZEQ="
     }
   },
   "cacheBootResources": true,

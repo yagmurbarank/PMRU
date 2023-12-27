@@ -9,17 +9,6 @@ namespace PMRU.Domain.Entities
 {
     public class Role : BaseEntity
     {
-        public Role()
-        {
-        }
-
-        public Role(int roleID, string roleDescription)
-        {
-            RoleID = roleID;
-            RoleDescription = roleDescription;
-        }
-
-        public int RoleID { get; set; }
         public string RoleDescription { get; set; }
     }
 }

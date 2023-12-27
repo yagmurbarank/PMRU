@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMRU.BlazorUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b8a7269035bf5b96eb352e041f741f167140726")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+586638fb320351ab35768ddb9bc3323ec869b140")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMRU.BlazorUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMRU.BlazorUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

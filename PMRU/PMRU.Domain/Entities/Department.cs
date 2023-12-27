@@ -10,18 +10,6 @@ namespace PMRU.Domain.Entities
 
     public class Department : BaseEntity
     {
-        public Department()
-        {
-        }
-
-        public Department(int departmentID, string departmentDescription)
-        {
-            DepartmentID = departmentID;
-            DepartmentDescription = departmentDescription;
-        }
-
-
-        public int DepartmentID { get; set; }
         public string DepartmentDescription { get; set; }
     }
 }

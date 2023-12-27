@@ -9,24 +9,6 @@ namespace PMRU.Domain.Entities
 {
     public class Appointment : BaseEntity
     {
-
-        public Appointment() 
-        {
-        }
-
-        public Appointment(int appointmentID, int employeeID, int doctorID, DateTime appointmentDate, string appointmentHour, string description, DateTime? lastModifiedDate)
-        {
-            AppointmentID = appointmentID;
-            EmployeeID = employeeID;
-            DoctorID = doctorID;
-            AppointmentDate = appointmentDate;
-            AppointmentHour = appointmentHour;
-            Description = description;
-            LastModifiedDate = lastModifiedDate;
-        }
-
-
-        public int AppointmentID { get; set; }
         public int EmployeeID { get; set; }
         public Employee Employee { get; set; }
         public int DoctorID { get; set; }

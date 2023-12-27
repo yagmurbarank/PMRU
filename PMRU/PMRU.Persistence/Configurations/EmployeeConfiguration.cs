@@ -13,13 +13,12 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
-            builder.HasKey(e => e.EmployeeID);
+            builder.HasKey(e => e.Id);
             builder.Property(e => e.IdentityNumber).HasMaxLength(11).IsRequired();
             builder.Property(e => e.Name).HasMaxLength(255).IsRequired();
             builder.Property(e => e.Surname).HasMaxLength(255).IsRequired();
             builder.Property(e => e.Phone).HasMaxLength(15).IsRequired();
             builder.Property(e => e.Email).HasMaxLength(255).IsRequired();
-            builder.Property(e => e.Password).HasMaxLength(255).IsRequired();
             builder.Property(e => e.RegistrationNumber).HasMaxLength(20).IsRequired();
 
             builder.HasOne(e => e.Location)
@@ -42,15 +41,15 @@ namespace PMRU.Persistence.Configurations
                 .HasForeignKey(e => e.DepartmentID)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(e => e.ActiveAppointment)
-                .WithOne()
-                .HasForeignKey<Employee>(e => e.ActiveAppointment)
+            builder.HasOne(e => e.Appointment)
+                .WithOne(a => a.Employee)
+                .HasForeignKey<Employee>(e => e.Appointment)
                 .OnDelete(DeleteBehavior.Restrict);
 
-                        builder.HasData(
+            builder.HasData(
                 new Employee
                 {
-                    EmployeeID = 100,
+                    Id = 1,
                     IdentityNumber = "5555123456",
                     Name = "Ahmet",
                     Surname = "Yılmaz",
@@ -59,8 +58,7 @@ namespace PMRU.Persistence.Configurations
                     LocationID = 34,
                     RoleID = 4, 
                     PositionID = 4, 
-                    DepartmentID = 4, 
-                    Password = "hashed_password", // Gerçek bir şifre kullanılmalı
+                    DepartmentID = 4,
                     RegistrationNumber = "100",
                     IsActive = true,
                     IsDeleted = false,
@@ -69,7 +67,7 @@ namespace PMRU.Persistence.Configurations
                 },
                 new Employee
                 {
-                    EmployeeID = 101,
+                    Id = 2,
                     IdentityNumber = "5555234567",
                     Name = "Ayşe",
                     Surname = "Kaya",
@@ -79,7 +77,6 @@ namespace PMRU.Persistence.Configurations
                     RoleID = 4, 
                     PositionID = 3, 
                     DepartmentID = 4,
-                    Password = "hashed_password", // Gerçek bir şifre kullanılmalı.
                     RegistrationNumber = "101",
                     IsActive = true,
                     IsDeleted = false,

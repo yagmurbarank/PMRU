@@ -13,14 +13,14 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Role> builder)
         {
-            builder.HasKey(r => r.RoleID);
+            builder.HasKey(r => r.Id);
             builder.Property(r => r.RoleDescription).HasMaxLength(255).IsRequired();
 
             builder.HasData(
-                new Role { RoleID = 1, RoleDescription = "SystemAdmin" },
-                new Role { RoleID = 2, RoleDescription = "LocalAdmin" },
-                new Role { RoleID = 3, RoleDescription = "Doctor" },
-                new Role { RoleID = 4, RoleDescription = "Employee" }
+                new Role { Id = 1, RoleDescription = "SystemAdmin" },
+                new Role { Id = 2, RoleDescription = "LocalAdmin" },
+                new Role { Id = 3, RoleDescription = "Doctor" },
+                new Role { Id = 4, RoleDescription = "Employee" }
             );
         }
     }

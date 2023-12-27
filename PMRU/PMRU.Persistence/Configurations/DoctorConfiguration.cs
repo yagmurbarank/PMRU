@@ -20,11 +20,6 @@ namespace PMRU.Persistence.Configurations
             builder.Property(x => x.IdentityNumber).HasMaxLength(11).IsRequired(); 
             builder.Property(x => x.Password).HasMaxLength(50).IsRequired(); 
 
-
-            builder.HasOne(d => d.Employee)
-                .WithOne(e => e.Doctor)
-                .HasForeignKey<Doctor>(d => d.DoctorID);
-
             builder.HasMany(d => d.Appointments)
                 .WithOne(a => a.Doctor)
                 .HasForeignKey(a => a.DoctorID);
@@ -54,7 +49,7 @@ namespace PMRU.Persistence.Configurations
             builder.HasData(
                 new Doctor
                 {
-                    DoctorID = 1,
+                    Id = 1,
                     Name = "Aylin",
                     Surname = "Güneş",
                     Email = "aylin.gunes@email.com",
@@ -67,7 +62,7 @@ namespace PMRU.Persistence.Configurations
                 },
                 new Doctor
                 {
-                    DoctorID = 1,
+                    Id = 2,
                     Name = "Eren",
                     Surname = "Akçay",
                     Email = "eren.akcay@email.com",

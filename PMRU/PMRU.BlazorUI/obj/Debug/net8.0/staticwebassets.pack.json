@@ -1,59 +1,59 @@
 {
   "Files": [
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\compressed\\1e0ql6971y.gz",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\compressed\\0v6q7ms8kl.gz",
       "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PMRU.BlazorUI.styles.css",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\scopedcss\\bundle\\PMRU.BlazorUI.styles.css",
       "PackagePath": "staticwebassets\\PMRU.BlazorUI.styles.css"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\service-worker-assets.js",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\service-worker-assets.js",
       "PackagePath": "staticwebassets\\service-worker-assets.js"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\obj\\Debug\\net8.0\\service-worker\\service-worker.published.js",
       "PackagePath": "staticwebassets\\service-worker.js"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\app.css",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\favicon.png",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\icon-192.png",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\icon-192.png",
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\icon-512.png",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\icon-512.png",
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\index.html",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\manifest.webmanifest",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\manifest.webmanifest",
       "PackagePath": "staticwebassets\\manifest.webmanifest"
     },
     {
-      "Id": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\wwwroot\\sample-data\\weather.json",
+      "Id": "\\\\Mac\\Home\\Desktop\\Project\\PMRU\\PMRU.BlazorUI\\wwwroot\\sample-data\\weather.json",
       "PackagePath": "staticwebassets\\sample-data\\weather.json"
     },
     {

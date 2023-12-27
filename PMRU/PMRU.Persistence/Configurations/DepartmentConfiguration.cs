@@ -13,20 +13,20 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Department> builder)
         {
-            builder.HasKey(d => d.DepartmentID);
+            builder.HasKey(d => d.Id);
             builder.Property(d => d.DepartmentDescription).HasMaxLength(255).IsRequired();
 
             // Diğer konfigürasyonları ekleyebilirsiniz.
 
             // Örnek veri eklemek için:
             builder.HasData(
-                new Department { DepartmentID = 1, DepartmentDescription = "Güvenlik" },
-                new Department { DepartmentID = 2, DepartmentDescription = "Üretim" },
-                new Department { DepartmentID = 3, DepartmentDescription = "Finans" },
-                new Department { DepartmentID = 4, DepartmentDescription = "İnsan Kaynakları" },
-                new Department { DepartmentID = 5, DepartmentDescription = "Satış Pazarlama" },
-                new Department { DepartmentID = 6, DepartmentDescription = "IT" },
-                new Department { DepartmentID = 7, DepartmentDescription = "Sağlık" }
+                new Department { Id = 1, DepartmentDescription = "Güvenlik" },
+                new Department { Id = 2, DepartmentDescription = "Üretim" },
+                new Department { Id = 3, DepartmentDescription = "Finans" },
+                new Department { Id = 4, DepartmentDescription = "İnsan Kaynakları" },
+                new Department { Id = 5, DepartmentDescription = "Satış Pazarlama" },
+                new Department { Id = 6, DepartmentDescription = "IT" },
+                new Department { Id = 7, DepartmentDescription = "Sağlık" }
                 
             );
         }

@@ -8,20 +8,6 @@ namespace PMRU.Domain.Entities
 {
     public class Availability
     {
-        public Availability()
-        {
-        }
-
-        public Availability(int availabilityID, int doctorID, DayOfWeek day, TimeSpan startTime, TimeSpan endTime)
-        {
-            AvailabilityID = availabilityID;
-            DoctorID = doctorID;
-            Day = day;
-            StartTime = startTime;
-            EndTime = endTime;
-        }
-
-        public int AvailabilityID { get; set; }
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }
         public DayOfWeek Day { get; set; }
