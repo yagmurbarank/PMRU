@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMRU.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+71a4f366d35f3cdffeb965d7ef6eb1bcd50908c9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMRU.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMRU.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
