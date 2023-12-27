@@ -23,7 +23,6 @@ namespace PMRU.Persistence.Context
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Availability> Availabilities { get; set; }
         public DbSet<Location> Locations { get; set; }
-        public DbSet<Role> Roles { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Department> Departments { get; set; }
 

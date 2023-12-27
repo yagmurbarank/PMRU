@@ -26,11 +26,6 @@ namespace PMRU.Persistence.Configurations
                 .HasForeignKey(e => e.LocationID)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(e => e.Role)
-                .WithMany()
-                .HasForeignKey(e => e.RoleID)
-                .OnDelete(DeleteBehavior.Restrict);
-
             builder.HasOne(e => e.Position)
                 .WithMany()
                 .HasForeignKey(e => e.PositionID)
@@ -56,7 +51,6 @@ namespace PMRU.Persistence.Configurations
                     Phone = "(555) 512-3456",
                     Email = "ahmet.yilmaz@email.com",
                     LocationID = 34,
-                    RoleID = 4, 
                     PositionID = 4, 
                     DepartmentID = 4,
                     RegistrationNumber = "100",
@@ -74,7 +68,6 @@ namespace PMRU.Persistence.Configurations
                     Phone = "(555) 523-4567",
                     Email = "ayse.kaya@email.com",
                     LocationID = 41,
-                    RoleID = 4, 
                     PositionID = 3, 
                     DepartmentID = 4,
                     RegistrationNumber = "101",

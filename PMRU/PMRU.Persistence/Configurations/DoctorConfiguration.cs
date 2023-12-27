@@ -13,6 +13,7 @@ namespace PMRU.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<Doctor> builder)
         {
+            builder.HasKey(e => e.Id);
             builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Surname).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(256).IsRequired();
@@ -32,18 +33,6 @@ namespace PMRU.Persistence.Configurations
                 .WithMany()
                 .HasForeignKey(d => d.LocationID);
 
-            builder.HasOne(d => d.Role)
-                .WithMany()
-                .HasForeignKey(d => d.RoleID);
-
-            builder.HasOne(d => d.Position)
-                .WithMany()
-                .HasForeignKey(d => d.PositionID);
-
-            builder.HasOne(d => d.Department)
-                .WithMany()
-                .HasForeignKey(d => d.DepartmentID);
-
             builder.HasData(
                 new Doctor
                 {
@@ -55,9 +44,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12345678901",
                     RegistrationNumber = "102",
                     LocationID = 35,
-                    RoleID = 3,
-                    PositionID = 12,
-                    DepartmentID = 7,
                     Password = "Password"
                 },
                 new Doctor
@@ -70,9 +56,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12345678923",
                     RegistrationNumber = "103",
                     LocationID = 41,
-                    RoleID = 3,
-                    PositionID = 12,
-                    DepartmentID = 7,
                     Password = "Password"
                 }
             );

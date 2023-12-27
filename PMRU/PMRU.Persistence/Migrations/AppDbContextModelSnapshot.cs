@@ -144,7 +144,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9117),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3679),
                             DepartmentDescription = "Güvenlik",
                             IsActive = false,
                             IsDeleted = false
@@ -152,7 +152,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9132),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3693),
                             DepartmentDescription = "Üretim",
                             IsActive = false,
                             IsDeleted = false
@@ -160,7 +160,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9133),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3695),
                             DepartmentDescription = "Finans",
                             IsActive = false,
                             IsDeleted = false
@@ -168,7 +168,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9135),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3697),
                             DepartmentDescription = "İnsan Kaynakları",
                             IsActive = false,
                             IsDeleted = false
@@ -176,7 +176,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9137),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3699),
                             DepartmentDescription = "Satış Pazarlama",
                             IsActive = false,
                             IsDeleted = false
@@ -184,7 +184,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9138),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3700),
                             DepartmentDescription = "IT",
                             IsActive = false,
                             IsDeleted = false
@@ -192,10 +192,106 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9140),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3702),
                             DepartmentDescription = "Sağlık",
                             IsActive = false,
                             IsDeleted = false
+                        });
+                });
+
+            modelBuilder.Entity("PMRU.Domain.Entities.Doctor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("IdentityNumber")
+                        .IsRequired()
+                        .HasMaxLength(11)
+                        .HasColumnType("nvarchar(11)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("LocationID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<string>("RegistrationNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationID");
+
+                    b.ToTable("Doctors");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(5598),
+                            Email = "aylin.gunes@email.com",
+                            IdentityNumber = "12345678901",
+                            IsActive = false,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Aylin",
+                            Password = "Password",
+                            Phone = "5556123456",
+                            RegistrationNumber = "102",
+                            Surname = "Güneş"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(5605),
+                            Email = "eren.akcay@email.com",
+                            IdentityNumber = "12345678923",
+                            IsActive = false,
+                            IsDeleted = false,
+                            LocationID = 41,
+                            Name = "Eren",
+                            Password = "Password",
+                            Phone = "5556234567",
+                            RegistrationNumber = "103",
+                            Surname = "Akçay"
                         });
                 });
 
@@ -218,11 +314,6 @@ namespace PMRU.Persistence.Migrations
 
                     b.Property<int>("DepartmentID")
                         .HasColumnType("int");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -261,9 +352,6 @@ namespace PMRU.Persistence.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("RoleID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasMaxLength(255)
@@ -277,20 +365,14 @@ namespace PMRU.Persistence.Migrations
 
                     b.HasIndex("PositionID");
 
-                    b.HasIndex("RoleID");
-
                     b.ToTable("Employees");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Employee");
-
-                    b.UseTphMappingStrategy();
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(4349),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6018),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -301,14 +383,13 @@ namespace PMRU.Persistence.Migrations
                             Phone = "(555) 512-3456",
                             PositionID = 4,
                             RegistrationNumber = "100",
-                            RoleID = 4,
                             Surname = "Yılmaz"
                         },
                         new
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(4353),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6022),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -319,7 +400,6 @@ namespace PMRU.Persistence.Migrations
                             Phone = "(555) 523-4567",
                             PositionID = 3,
                             RegistrationNumber = "101",
-                            RoleID = 4,
                             Surname = "Kaya"
                         });
                 });
@@ -360,7 +440,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5078),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6915),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = true,
@@ -369,7 +449,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5080),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6918),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -378,7 +458,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5083),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6920),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -387,7 +467,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 72,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5084),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6922),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -396,7 +476,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 71,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5085),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6924),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -437,7 +517,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5621),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7564),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Şefi"
@@ -445,7 +525,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5623),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7567),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Görevlisi"
@@ -453,7 +533,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5625),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7568),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Elektrik Mühendisi"
@@ -461,7 +541,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5626),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7569),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Makine Mühendisi"
@@ -469,7 +549,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5628),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7570),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Muhasebe Uzmanı"
@@ -477,7 +557,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5629),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7572),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Personel Uzmanı"
@@ -485,7 +565,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5631),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7574),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "İnsan Kaynakları Uzmanı"
@@ -493,7 +573,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5633),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7576),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Yazılım Geliştirici"
@@ -501,7 +581,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5635),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7577),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Test Uzmanı"
@@ -509,7 +589,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5636),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7579),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Finans Uzmanı"
@@ -517,7 +597,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5638),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7581),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Pazarlama Uzmanı"
@@ -525,7 +605,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5639),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7582),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Doktor"
@@ -533,7 +613,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5641),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7584),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Hemşire"
@@ -541,126 +621,10 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5643),
+                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7585),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Satış Temsilcisi"
-                        });
-                });
-
-            modelBuilder.Entity("PMRU.Domain.Entities.Role", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RoleDescription")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6197),
-                            IsActive = false,
-                            IsDeleted = false,
-                            RoleDescription = "SystemAdmin"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6199),
-                            IsActive = false,
-                            IsDeleted = false,
-                            RoleDescription = "LocalAdmin"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6200),
-                            IsActive = false,
-                            IsDeleted = false,
-                            RoleDescription = "Doctor"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6201),
-                            IsActive = false,
-                            IsDeleted = false,
-                            RoleDescription = "Employee"
-                        });
-                });
-
-            modelBuilder.Entity("PMRU.Domain.Entities.Doctor", b =>
-                {
-                    b.HasBaseType("PMRU.Domain.Entities.Employee");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasDiscriminator().HasValue("Doctor");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 3,
-                            AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 763, DateTimeKind.Local).AddTicks(3634),
-                            DepartmentID = 7,
-                            Email = "aylin.gunes@email.com",
-                            IdentityNumber = "12345678901",
-                            IsActive = false,
-                            IsDeleted = false,
-                            LocationID = 35,
-                            Name = "Aylin",
-                            Phone = "5556123456",
-                            PositionID = 12,
-                            RegistrationNumber = "102",
-                            RoleID = 3,
-                            Surname = "Güneş",
-                            Password = "Password"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 763, DateTimeKind.Local).AddTicks(3640),
-                            DepartmentID = 7,
-                            Email = "eren.akcay@email.com",
-                            IdentityNumber = "12345678923",
-                            IsActive = false,
-                            IsDeleted = false,
-                            LocationID = 41,
-                            Name = "Eren",
-                            Phone = "5556234567",
-                            PositionID = 12,
-                            RegistrationNumber = "103",
-                            RoleID = 3,
-                            Surname = "Akçay",
-                            Password = "Password"
                         });
                 });
 
@@ -694,6 +658,17 @@ namespace PMRU.Persistence.Migrations
                     b.Navigation("Doctor");
                 });
 
+            modelBuilder.Entity("PMRU.Domain.Entities.Doctor", b =>
+                {
+                    b.HasOne("PMRU.Domain.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+                });
+
             modelBuilder.Entity("PMRU.Domain.Entities.Employee", b =>
                 {
                     b.HasOne("PMRU.Domain.Entities.Department", "Department")
@@ -714,24 +689,11 @@ namespace PMRU.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("PMRU.Domain.Entities.Role", "Role")
-                        .WithMany()
-                        .HasForeignKey("RoleID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.Navigation("Department");
 
                     b.Navigation("Location");
 
                     b.Navigation("Position");
-
-                    b.Navigation("Role");
-                });
-
-            modelBuilder.Entity("PMRU.Domain.Entities.Employee", b =>
-                {
-                    b.Navigation("Appointment");
                 });
 
             modelBuilder.Entity("PMRU.Domain.Entities.Doctor", b =>
@@ -739,6 +701,11 @@ namespace PMRU.Persistence.Migrations
                     b.Navigation("Appointments");
 
                     b.Navigation("Availabilities");
+                });
+
+            modelBuilder.Entity("PMRU.Domain.Entities.Employee", b =>
+                {
+                    b.Navigation("Appointment");
                 });
 #pragma warning restore 612, 618
         }

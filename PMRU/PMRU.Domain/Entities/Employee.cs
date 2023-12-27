@@ -18,8 +18,6 @@ namespace PMRU.Domain.Entities
         public string Email { get; set; }
         public int LocationID { get; set; }
         public Location Location { get; set; }
-        public int RoleID { get; set; }
-        public Role Role { get; set; }
         public int PositionID { get; set; }
         public Position Position { get; set; }
         public int DepartmentID { get; set; }
