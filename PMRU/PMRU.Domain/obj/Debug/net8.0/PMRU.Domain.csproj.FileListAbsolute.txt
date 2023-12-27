@@ -1,0 +1,12 @@
+G:\dev\PMRU\PMRU\PMRU.Domain\bin\Debug\net8.0\PMRU.Domain.deps.json
+G:\dev\PMRU\PMRU\PMRU.Domain\bin\Debug\net8.0\PMRU.Domain.dll
+G:\dev\PMRU\PMRU\PMRU.Domain\bin\Debug\net8.0\PMRU.Domain.pdb
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.GeneratedMSBuildEditorConfig.editorconfig
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.AssemblyInfoInputs.cache
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.AssemblyInfo.cs
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.csproj.CoreCompileInputs.cache
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.sourcelink.json
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.dll
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\refint\PMRU.Domain.dll
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\PMRU.Domain.pdb
+G:\dev\PMRU\PMRU\PMRU.Domain\obj\Debug\net8.0\ref\PMRU.Domain.dll
