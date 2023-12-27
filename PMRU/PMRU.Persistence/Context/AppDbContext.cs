@@ -25,6 +25,8 @@ namespace PMRU.Persistence.Context
         public DbSet<Location> Locations { get; set; }
         public DbSet<Position> Positions { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<LocalAdmin> LocalAdmins { get; set; }
+        public DbSet<SystemAdmin> SystemAdmins { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

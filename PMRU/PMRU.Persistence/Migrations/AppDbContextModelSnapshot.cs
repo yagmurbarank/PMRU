@@ -35,10 +35,12 @@ namespace PMRU.Persistence.Migrations
 
                     b.Property<string>("AppointmentHour")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -64,9 +66,10 @@ namespace PMRU.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorID");
-
                     b.HasIndex("EmployeeID")
+                        .IsUnique();
+
+                    b.HasIndex("DoctorID", "AppointmentDate", "AppointmentHour")
                         .IsUnique();
 
                     b.ToTable("Appointments");
@@ -81,7 +84,9 @@ namespace PMRU.Persistence.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("Day")
                         .HasColumnType("int");
@@ -101,12 +106,16 @@ namespace PMRU.Persistence.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<TimeSpan>("StartTime")
                         .HasColumnType("time");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DoctorID");
+                    b.HasIndex("DoctorID", "Day", "StartTime", "EndTime")
+                        .IsUnique();
 
                     b.ToTable("Availabilities");
                 });
@@ -118,9 +127,6 @@ namespace PMRU.Persistence.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -144,57 +150,50 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3679),
                             DepartmentDescription = "Güvenlik",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3693),
                             DepartmentDescription = "Üretim",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3695),
                             DepartmentDescription = "Finans",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3697),
                             DepartmentDescription = "İnsan Kaynakları",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3699),
                             DepartmentDescription = "Satış Pazarlama",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3700),
                             DepartmentDescription = "IT",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(3702),
                             DepartmentDescription = "Sağlık",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false
                         });
                 });
@@ -206,9 +205,6 @@ namespace PMRU.Persistence.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -266,10 +262,9 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(5598),
                             Email = "aylin.gunes@email.com",
                             IdentityNumber = "12345678901",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             LocationID = 35,
                             Name = "Aylin",
@@ -281,10 +276,9 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 362, DateTimeKind.Local).AddTicks(5605),
                             Email = "eren.akcay@email.com",
                             IdentityNumber = "12345678923",
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             LocationID = 41,
                             Name = "Eren",
@@ -372,7 +366,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6018),
+                            CreatedDate = new DateTime(2023, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5085),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -389,7 +383,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6022),
+                            CreatedDate = new DateTime(2023, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5089),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -404,7 +398,7 @@ namespace PMRU.Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("PMRU.Domain.Entities.Location", b =>
+            modelBuilder.Entity("PMRU.Domain.Entities.LocalAdmin", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -412,8 +406,65 @@ namespace PMRU.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LocalAdmins");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "cem.yildirim@email.com",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "Cem",
+                            Password = "password123",
+                            Phone = "5556456789",
+                            Surname = "Yıldırım"
+                        });
+                });
+
+            modelBuilder.Entity("PMRU.Domain.Entities.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -440,8 +491,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6915),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             IsLocationCenter = true,
                             LocationDescription = "Genel Müdürlük"
@@ -449,8 +499,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6918),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             IsLocationCenter = false,
                             LocationDescription = "İzmir"
@@ -458,8 +507,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6920),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             IsLocationCenter = false,
                             LocationDescription = "İzmit"
@@ -467,8 +515,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 72,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6922),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             IsLocationCenter = false,
                             LocationDescription = "Batman"
@@ -476,8 +523,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 71,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(6924),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             IsLocationCenter = false,
                             LocationDescription = "Kırıkkale"
@@ -491,9 +537,6 @@ namespace PMRU.Persistence.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
@@ -517,114 +560,160 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7564),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Şefi"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7567),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Görevlisi"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7568),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Elektrik Mühendisi"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7569),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Makine Mühendisi"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7570),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Muhasebe Uzmanı"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7572),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Personel Uzmanı"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7574),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "İnsan Kaynakları Uzmanı"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7576),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Yazılım Geliştirici"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7577),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Test Uzmanı"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7579),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Finans Uzmanı"
                         },
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7581),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Pazarlama Uzmanı"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7582),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Doktor"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7584),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Hemşire"
                         },
                         new
                         {
                             Id = 14,
-                            CreatedDate = new DateTime(2023, 12, 27, 20, 9, 44, 363, DateTimeKind.Local).AddTicks(7585),
-                            IsActive = false,
+                            IsActive = true,
                             IsDeleted = false,
                             PositionDescription = "Satış Temsilcisi"
+                        });
+                });
+
+            modelBuilder.Entity("PMRU.Domain.Entities.SystemAdmin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SystemAdmins");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "elif.ersoy@email.com",
+                            IsActive = true,
+                            IsDeleted = false,
+                            Name = "Elif",
+                            Password = "adminpassword",
+                            Phone = "5555890123",
+                            Surname = "Ersoy"
                         });
                 });
 

@@ -15,9 +15,32 @@ namespace PMRU.Persistence.Configurations
         {
             builder.HasKey(a => a.Id);
 
+            // Doctor ile ilişki
             builder.HasOne(a => a.Doctor)
                 .WithMany(d => d.Availabilities)
-                .HasForeignKey(a => a.DoctorID);
+                .HasForeignKey(a => a.DoctorID)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            
+            builder.Property(a => a.Day).IsRequired();
+            builder.Property(a => a.StartTime).IsRequired();
+            builder.Property(a => a.EndTime).IsRequired();
+            builder.Property(a => a.CreatedDate).IsRequired();
+            builder.Property(a => a.LastModifiedDate);
+
+            // BaseEntity sınıfından gelen alanlar
+            builder.Property(a => a.Id).IsRequired();
+            builder.Property(a => a.IsActive).IsRequired();
+            builder.Property(a => a.IsDeleted).IsRequired();
+            builder.Property(a => a.DeletedDate);
+
+            // Oluşturulan tarih alanlarını varsayılan değerlerle ayarlama
+            builder.Property(a => a.CreatedDate).HasDefaultValueSql("GETDATE()");
+            builder.Property(a => a.LastModifiedDate).HasDefaultValue(null);
+            builder.Property(a => a.DeletedDate).HasDefaultValue(null);
+
+            // Gün ve saat aralığı için benzersiz indeks oluşturma
+            builder.HasIndex(a => new { a.DoctorID, a.Day, a.StartTime, a.EndTime }).IsUnique();
         }
     }
 }

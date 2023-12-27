@@ -15,16 +15,43 @@ namespace PMRU.Persistence.Configurations
         {
             builder.HasKey(a => a.Id);
 
+
+            // Employee ile ilişki
             builder.HasOne(a => a.Employee)
                 .WithOne(e => e.Appointment)
-                .HasForeignKey<Employee>(e => e.AppointmentId)
+                .HasForeignKey<Appointment>(a => a.EmployeeID)
+                .HasPrincipalKey<Employee>(e => e.Id)  // Anahtar alan Employee sınıfındaki Id
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Doctor ile ilişki
             builder.HasOne(a => a.Doctor)
                 .WithMany(d => d.Appointments)
                 .HasForeignKey(a => a.DoctorID)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            // Diğer alanlar
+            builder.Property(a => a.AppointmentDate).IsRequired();
+            builder.Property(a => a.AppointmentHour).IsRequired();
+            builder.Property(a => a.Description).IsRequired();
+            builder.Property(a => a.CreatedDate).IsRequired();
+            builder.Property(a => a.LastModifiedDate);
+
+            // BaseEntity sınıfından gelen alanlar
+            builder.Property(a => a.Id).IsRequired();
+            builder.Property(a => a.IsActive).IsRequired();
+            builder.Property(a => a.IsDeleted).IsRequired();
+            builder.Property(a => a.DeletedDate);
+
+            // Oluşturulan tarih alanlarını varsayılan değerlerle ayarlama
+            builder.Property(a => a.CreatedDate).HasDefaultValueSql("GETDATE()");
+            builder.Property(a => a.LastModifiedDate).HasDefaultValue(null);
+            builder.Property(a => a.DeletedDate).HasDefaultValue(null);
+
+            // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
+            builder.HasIndex(a => a.EmployeeID).IsUnique();
+
+            // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
+            builder.HasIndex(a => new { a.DoctorID, a.AppointmentDate, a.AppointmentHour }).IsUnique();
         }
     }
 }

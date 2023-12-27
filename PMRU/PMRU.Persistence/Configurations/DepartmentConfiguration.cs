@@ -14,7 +14,16 @@ namespace PMRU.Persistence.Configurations
         public void Configure(EntityTypeBuilder<Department> builder)
         {
             builder.HasKey(d => d.Id);
+
+
             builder.Property(d => d.DepartmentDescription).HasMaxLength(255).IsRequired();
+
+            // BaseEntity sınıfından gelen alanlar
+            builder.Property(d => d.Id).IsRequired();
+            builder.Property(d => d.IsActive).IsRequired();
+            builder.Property(d => d.IsDeleted).IsRequired();
+            builder.Property(d => d.DeletedDate);
+
 
             builder.HasData(
                 new Department { Id = 1, DepartmentDescription = "Güvenlik" },

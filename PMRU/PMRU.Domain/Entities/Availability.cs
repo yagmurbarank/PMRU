@@ -14,5 +14,7 @@ namespace PMRU.Domain.Entities
         public DayOfWeek Day { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public DateTime? LastModifiedDate { get; set; }
     }
 }

@@ -13,39 +13,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = PMRU.BlazorUI
 build_property.RootNamespace = PMRU.BlazorUI
-build_property.ProjectDir = \\Mac\Home\Desktop\Project\PMRU\PMRU.BlazorUI\
+build_property.ProjectDir = G:\dev\PMRU\PMRU\PMRU.BlazorUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = false
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = \\Mac\Home\Desktop\Project\PMRU\PMRU.BlazorUI
+build_property.MSBuildProjectDirectory = G:\dev\PMRU\PMRU\PMRU.BlazorUI
 build_property._RazorSourceGeneratorDebug = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/App.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/Pages/Counter.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/Pages/Home.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/Pages/Weather.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2VhdGhlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/_Imports.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/Layout/MainLayout.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-bkh7x4ab7x
 
-[//Mac/Home/Desktop/Project/PMRU/PMRU.BlazorUI/Layout/NavMenu.razor]
+[G:/dev/PMRU/PMRU/PMRU.BlazorUI/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-ubgpoyqik9

@@ -16,6 +16,8 @@ namespace PMRU.Domain.Entities
         public DateTime AppointmentDate { get; set; }
         public string AppointmentHour { get; set; }
         public string Description { get; set; }
+
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? LastModifiedDate { get; set; }
     }
 }

@@ -26,6 +26,8 @@ namespace PMRU.Domain.Entities
 
         // An employee can only have one appointment.
         public int AppointmentId { get; set; }
+
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
         public Appointment? Appointment { get; set; }
     }
 
