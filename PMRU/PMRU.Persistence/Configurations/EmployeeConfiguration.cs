@@ -43,7 +43,7 @@ namespace PMRU.Persistence.Configurations
 
             builder.HasOne(e => e.Appointment)
                 .WithOne(a => a.Employee)
-                .HasForeignKey<Employee>(e => e.AppointmentId)
+                .HasForeignKey<Appointment>(e => e.EmployeeID)
                 .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasData(

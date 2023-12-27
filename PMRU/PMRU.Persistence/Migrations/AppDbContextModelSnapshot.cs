@@ -66,6 +66,9 @@ namespace PMRU.Persistence.Migrations
 
                     b.HasIndex("DoctorID");
 
+                    b.HasIndex("EmployeeID")
+                        .IsUnique();
+
                     b.ToTable("Appointments");
                 });
 
@@ -141,7 +144,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3902),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9117),
                             DepartmentDescription = "Güvenlik",
                             IsActive = false,
                             IsDeleted = false
@@ -149,7 +152,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3916),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9132),
                             DepartmentDescription = "Üretim",
                             IsActive = false,
                             IsDeleted = false
@@ -157,7 +160,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3918),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9133),
                             DepartmentDescription = "Finans",
                             IsActive = false,
                             IsDeleted = false
@@ -165,7 +168,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3920),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9135),
                             DepartmentDescription = "İnsan Kaynakları",
                             IsActive = false,
                             IsDeleted = false
@@ -173,7 +176,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3921),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9137),
                             DepartmentDescription = "Satış Pazarlama",
                             IsActive = false,
                             IsDeleted = false
@@ -181,7 +184,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3923),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9138),
                             DepartmentDescription = "IT",
                             IsActive = false,
                             IsDeleted = false
@@ -189,7 +192,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(3925),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 762, DateTimeKind.Local).AddTicks(9140),
                             DepartmentDescription = "Sağlık",
                             IsActive = false,
                             IsDeleted = false
@@ -268,9 +271,6 @@ namespace PMRU.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AppointmentId")
-                        .IsUnique();
-
                     b.HasIndex("DepartmentID");
 
                     b.HasIndex("LocationID");
@@ -290,7 +290,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(999),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(4349),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -308,7 +308,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1003),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(4353),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -360,7 +360,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 34,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1693),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5078),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = true,
@@ -369,7 +369,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 35,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1696),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5080),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -378,7 +378,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 41,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1698),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5083),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -387,7 +387,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 72,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1700),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5084),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -396,7 +396,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 71,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(1701),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5085),
                             IsActive = false,
                             IsDeleted = false,
                             IsLocationCenter = false,
@@ -437,7 +437,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2225),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5621),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Şefi"
@@ -445,7 +445,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2227),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5623),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Güvenlik Görevlisi"
@@ -453,7 +453,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2228),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5625),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Elektrik Mühendisi"
@@ -461,7 +461,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2230),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5626),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Makine Mühendisi"
@@ -469,7 +469,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2231),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5628),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Muhasebe Uzmanı"
@@ -477,7 +477,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2233),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5629),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Personel Uzmanı"
@@ -485,7 +485,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2234),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5631),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "İnsan Kaynakları Uzmanı"
@@ -493,7 +493,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2236),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5633),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Yazılım Geliştirici"
@@ -501,7 +501,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2238),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5635),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Test Uzmanı"
@@ -509,7 +509,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2240),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5636),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Finans Uzmanı"
@@ -517,7 +517,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2241),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5638),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Pazarlama Uzmanı"
@@ -525,7 +525,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2243),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5639),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Doktor"
@@ -533,7 +533,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2244),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5641),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Hemşire"
@@ -541,7 +541,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2246),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(5643),
                             IsActive = false,
                             IsDeleted = false,
                             PositionDescription = "Satış Temsilcisi"
@@ -581,7 +581,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2750),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6197),
                             IsActive = false,
                             IsDeleted = false,
                             RoleDescription = "SystemAdmin"
@@ -589,7 +589,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2752),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6199),
                             IsActive = false,
                             IsDeleted = false,
                             RoleDescription = "LocalAdmin"
@@ -597,7 +597,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2754),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6200),
                             IsActive = false,
                             IsDeleted = false,
                             RoleDescription = "Doctor"
@@ -605,7 +605,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 602, DateTimeKind.Local).AddTicks(2756),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 764, DateTimeKind.Local).AddTicks(6201),
                             IsActive = false,
                             IsDeleted = false,
                             RoleDescription = "Employee"
@@ -628,7 +628,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 3,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(8234),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 763, DateTimeKind.Local).AddTicks(3634),
                             DepartmentID = 7,
                             Email = "aylin.gunes@email.com",
                             IdentityNumber = "12345678901",
@@ -647,7 +647,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 4,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2023, 12, 27, 12, 21, 56, 600, DateTimeKind.Local).AddTicks(8242),
+                            CreatedDate = new DateTime(2023, 12, 27, 14, 14, 24, 763, DateTimeKind.Local).AddTicks(3640),
                             DepartmentID = 7,
                             Email = "eren.akcay@email.com",
                             IdentityNumber = "12345678923",
@@ -672,7 +672,15 @@ namespace PMRU.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("PMRU.Domain.Entities.Employee", "Employee")
+                        .WithOne("Appointment")
+                        .HasForeignKey("PMRU.Domain.Entities.Appointment", "EmployeeID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Doctor");
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("PMRU.Domain.Entities.Availability", b =>
@@ -688,12 +696,6 @@ namespace PMRU.Persistence.Migrations
 
             modelBuilder.Entity("PMRU.Domain.Entities.Employee", b =>
                 {
-                    b.HasOne("PMRU.Domain.Entities.Appointment", "Appointment")
-                        .WithOne("Employee")
-                        .HasForeignKey("PMRU.Domain.Entities.Employee", "AppointmentId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("PMRU.Domain.Entities.Department", "Department")
                         .WithMany()
                         .HasForeignKey("DepartmentID")
@@ -718,8 +720,6 @@ namespace PMRU.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Appointment");
-
                     b.Navigation("Department");
 
                     b.Navigation("Location");
@@ -729,10 +729,9 @@ namespace PMRU.Persistence.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("PMRU.Domain.Entities.Appointment", b =>
+            modelBuilder.Entity("PMRU.Domain.Entities.Employee", b =>
                 {
-                    b.Navigation("Employee")
-                        .IsRequired();
+                    b.Navigation("Appointment");
                 });
 
             modelBuilder.Entity("PMRU.Domain.Entities.Doctor", b =>
