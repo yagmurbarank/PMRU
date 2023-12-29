@@ -7,7 +7,7 @@ using PMRU.Domain.Common;
 
 namespace PMRU.Domain.Entities
 {
-    public class Appointment : BaseEntity
+    public class Appointment : EntityBase
     {
         public int EmployeeID { get; set; }
         public Employee Employee { get; set; }

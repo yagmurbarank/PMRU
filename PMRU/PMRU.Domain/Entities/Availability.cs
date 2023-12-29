@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Domain.Entities
 {
-    public class Availability: BaseEntity
+    public class Availability: EntityBase
     {
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }

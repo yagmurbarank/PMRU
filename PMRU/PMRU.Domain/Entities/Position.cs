@@ -7,7 +7,7 @@ using PMRU.Domain.Common;
 
 namespace PMRU.Domain.Entities
 {
-    public class Position : BaseEntity
+    public class Position : EntityBase
     {
         public string PositionDescription { get; set; }
     }

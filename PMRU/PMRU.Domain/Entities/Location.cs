@@ -7,7 +7,7 @@ using PMRU.Domain.Common;
 
 namespace PMRU.Domain.Entities
 {
-    public class Location : BaseEntity
+    public class Location : EntityBase
     {
         public string LocationDescription { get; set; }
         public bool IsLocationCenter { get; set; }

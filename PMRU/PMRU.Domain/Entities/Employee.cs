@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Domain.Entities
 {
-    public class Employee : BaseEntity
+    public class Employee : EntityBase
     {
         public string IdentityNumber { get; set; }
         public string Name { get; set; }
