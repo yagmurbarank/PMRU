@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PMRU.Application.Interfaces.Repositories;
 using PMRU.Persistence.Context;
+using PMRU.Persistence.Repositories;
 
 namespace PMRU.Persistence
 {
@@ -11,6 +13,9 @@ namespace PMRU.Persistence
         {
             services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
+            services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
         }
     }
 }
