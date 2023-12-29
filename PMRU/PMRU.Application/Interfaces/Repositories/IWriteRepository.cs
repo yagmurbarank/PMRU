@@ -9,9 +9,11 @@ namespace PMRU.Application.Interfaces.Repositories
 {
     public interface IWriteRepository<T> where T : class, IEntityBase, new()
     {
-        //Daha fazla fonksiyon eklenecek.
+
         Task CreateAsync(T entity);
+        Task AddRangeAsync(IList<T> entities);
         Task<T> UpdateAsync(T entity);
         Task DeleteAsync(T entity);
+        Task DeleteRangeAscync(T entity);
     }
 }

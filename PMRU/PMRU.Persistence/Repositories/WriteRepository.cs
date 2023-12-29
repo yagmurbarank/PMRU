@@ -20,11 +20,18 @@ namespace PMRU.Persistence.Repositories
 
         private DbSet<T> Table { get => dbContext.Set<T>(); }
 
-
-
         public async Task CreateAsync(T entity)
         {
             await Table.AddAsync(entity);
+        }
+        public async Task AddRangeAsync(IList<T> entities)
+        {
+            await Table.AddRangeAsync(entities);
+        }
+
+        public async Task DeleteAsync(T entity)
+        {
+            await Task.Run(() => Table.RemoveRange(entity));
         }
 
         public async Task<T> UpdateAsync(T entity)
@@ -33,11 +40,9 @@ namespace PMRU.Persistence.Repositories
             return entity;
         }
 
-        public async Task DeleteAsync(T entity)
+        public async Task DeleteRangeAscync(T entity)
         {
-            await Task.Run(() => Table.Remove(entity));
+            await Task.Run(() => Table.RemoveRange(entity));
         }
-
-
     }
 }
