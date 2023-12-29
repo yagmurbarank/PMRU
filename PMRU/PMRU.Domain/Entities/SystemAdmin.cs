@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Domain.Entities
 {
-    public class SystemAdmin : BaseEntity
+    public class SystemAdmin : EntityBase
     {
         public string Name { get; set; }
         public string Surname { get; set; }

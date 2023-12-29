@@ -1039,6 +1039,7 @@
           "FluentValidation": "11.9.0",
           "FluentValidation.DependencyInjectionExtensions": "11.9.0",
           "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "Microsoft.EntityFrameworkCore": "8.0.0",
           "PMRU.Domain": "1.0.0"
         },
         "runtime": {

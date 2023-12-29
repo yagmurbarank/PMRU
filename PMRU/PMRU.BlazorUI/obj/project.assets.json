@@ -3086,31 +3086,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ybkar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+      "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
       "projectName": "PMRU.BlazorUI",
-      "projectPath": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "G:\\dev\\PMRU\\PMRU\\PMRU.BlazorUI\\obj\\",
+      "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+      "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

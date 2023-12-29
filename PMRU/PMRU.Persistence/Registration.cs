@@ -2,8 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PMRU.Application.Interfaces.Repositories;
+using PMRU.Application.UnitOfWorks;
 using PMRU.Persistence.Context;
 using PMRU.Persistence.Repositories;
+using PMRU.Persistence.UnitOfWorks;
 
 namespace PMRU.Persistence
 {
@@ -16,6 +18,8 @@ namespace PMRU.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }
