@@ -1,34 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj",
         "projectName": "PMRU.Application",
-        "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj",
-        "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj",
+        "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
-                "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj"
+              "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
+                "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj"
               }
             }
           }
@@ -88,23 +94,29 @@
         }
       }
     },
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
         "projectName": "PMRU.Domain",
-        "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
-        "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Domain\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\PMRU.Domain.csproj",
+        "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -142,31 +154,37 @@
         }
       }
     },
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj",
         "projectName": "PMRU.Infrastructure",
-        "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
-                "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
+              "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
+                "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
               }
             }
           }
