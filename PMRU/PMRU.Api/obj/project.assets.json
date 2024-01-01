@@ -4994,39 +4994,46 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ybkar\\.nuget\\packages\\": {}
+    "C:\\Users\\dogademirturk\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Api\\PMRU.Api.csproj",
+      "projectUniqueName": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Api\\PMRU.Api.csproj",
       "projectName": "PMRU.Api",
-      "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Api\\PMRU.Api.csproj",
-      "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Api\\obj\\",
+      "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Api\\PMRU.Api.csproj",
+      "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+      "outputPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Api\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
-              "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
+            "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Application\\PMRU.Application.csproj"
             },
-            "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj"
+            "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Infrastructure\\PMRU.Infrastructure.csproj"
             },
-            "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Persistence\\PMRU.Persistence.csproj": {
-              "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.Persistence\\PMRU.Persistence.csproj"
+            "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Persistence\\PMRU.Persistence.csproj": {
+              "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.Persistence\\PMRU.Persistence.csproj"
             }
           }
         }

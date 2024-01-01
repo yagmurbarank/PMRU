@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj": {}
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj": {
+    "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+        "projectUniqueName": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
         "projectName": "PMRU.BlazorUI",
-        "projectPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
-        "packagesPath": "C:\\Users\\ybkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ybkar\\Documents\\project\\PMRU\\PMRU.BlazorUI\\obj\\",
+        "projectPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.BlazorUI\\PMRU.BlazorUI.csproj",
+        "packagesPath": "C:\\Users\\dogademirturk\\.nuget\\packages\\",
+        "outputPath": "\\\\Mac\\Home\\Desktop\\p\\PMRU\\PMRU.BlazorUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ybkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\dogademirturk\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
