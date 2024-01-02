@@ -25,11 +25,5 @@
 	<ItemGroup>
 		<ProjectReference Include="..\PMRU.Domain\PMRU.Domain.csproj" />
 	</ItemGroup>
-
-
-	<ItemGroup>
-	  <Folder Include="Features\Command\" />
-	  <Folder Include="Features\Queries\" />
-	</ItemGroup>
 	
 </Project>
