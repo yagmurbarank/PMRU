@@ -6,6 +6,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Repositories\**" />
+    <EmbeddedResource Remove="Repositories\**" />
+    <None Remove="Repositories\**" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<PackageReference Include="AutoMapper" Version="12.0.1" />
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
@@ -18,11 +24,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\PMRU.Domain\PMRU.Domain.csproj" />
-	</ItemGroup>
-
-
-	<ItemGroup>
-	  <Folder Include="Repositories\" />
 	</ItemGroup>
 	
 </Project>

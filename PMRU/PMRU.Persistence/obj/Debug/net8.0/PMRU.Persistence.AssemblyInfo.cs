@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMRU.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+647e6250303169346a6bbb40a101118ec9909e71")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMRU.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMRU.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
