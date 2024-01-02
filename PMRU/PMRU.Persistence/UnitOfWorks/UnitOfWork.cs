@@ -1,5 +1,5 @@
 ﻿using PMRU.Application.Interfaces.Repositories;
-using PMRU.Application.UnitOfWorks;
+using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Persistence.Context;
 using PMRU.Persistence.Repositories;
 using System;
@@ -13,22 +13,17 @@ namespace PMRU.Persistence.UnitOfWorks
     public class UnitOfWork : IUnitOfWork
     {
         private readonly AppDbContext dbContext;
+
         public UnitOfWork(AppDbContext dbContext)
         {
-            this.DbContext = dbContext;
+            this.dbContext = dbContext;
         }
-
-        public AppDbContext DbContext { get; }
-
         public async ValueTask DisposeAsync() => await dbContext.DisposeAsync();
 
+
         public int Save() => dbContext.SaveChanges();
-
-
         public async Task<int> SaveAsync() => await dbContext.SaveChangesAsync();
-
         IReadRepository<T> IUnitOfWork.GetReadRepository<T>() => new ReadRepository<T>(dbContext);
-
         IWriteRepository<T> IUnitOfWork.GetWriteRepository<T>() => new WriteRepository<T>(dbContext);
     }
 }

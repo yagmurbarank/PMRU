@@ -901,15 +901,15 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-mRx\/+vFt97FRCVMSkdFxIAWi3aDpARf8Hi8aEcweB98=",
+      "hash": "sha256-2tJjpYMUA\/hWm0e2mTK1\/uW8qKcRi\/Du2Sbh5178itY=",
       "url": "_framework\/PMRU.BlazorUI.wasm"
     },
     {
-      "hash": "sha256-yCvRUMLni6oA8204tUYE4Y2wJLtpN6jmVpvoTmc\/4lY=",
+      "hash": "sha256-4EFUFDJ\/GZeP+3A5tf2iK9RQJ+Lhzj6w5bC5B9fh0jU=",
       "url": "_framework\/PMRU.BlazorUI.pdb"
     },
     {
-      "hash": "sha256-sYqmHdMfBB\/XkVagJRNEd8ZcFABj4DjtrvPUjagA8\/0=",
+      "hash": "sha256-\/6k10T+3o8oW\/z9P8XAqWXGInCKNn1DpyPM\/vvlrlBo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -917,5 +917,5 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     }
   ],
-  "version": "JL\/lW1\/j"
+  "version": "plcLGLM2"
 };

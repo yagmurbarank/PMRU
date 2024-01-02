@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PMRU.Application.Interfaces.Repositories;
-using PMRU.Application.UnitOfWorks;
+using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Persistence.Context;
 using PMRU.Persistence.Repositories;
 using PMRU.Persistence.UnitOfWorks;
