@@ -29,6 +29,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Features\Availabilities\Command\" />
+	  <Folder Include="Features\Employees\Commands\" />
 	</ItemGroup>
 	
 </Project>
