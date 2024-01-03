@@ -25,5 +25,10 @@
 	<ItemGroup>
 		<ProjectReference Include="..\PMRU.Domain\PMRU.Domain.csproj" />
 	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Folder Include="Features\Availabilities\Command\" />
+	</ItemGroup>
 	
 </Project>
