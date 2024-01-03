@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using AutoMapper.Internal;
 
 namespace PMRU.Mapper.AutoMapper
@@ -7,7 +8,7 @@ namespace PMRU.Mapper.AutoMapper
     {
 
         public static List<TypePair> typePairs = new();
-        private IMapper MapperContainer;
+        private IMapper MapperContainer ;
         public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
         {
             Config<TDestination, TSource>(5, ignore);
@@ -49,7 +50,7 @@ namespace PMRU.Mapper.AutoMapper
             {
                 foreach (var item in typePairs)
                 {
-                    if (ignore is null)
+                    if (ignore is not null)
                         cfg.CreateMap(item.SourceType, item.DestinationType).MaxDepth(depth).ForMember(ignore, x => x.Ignore()).ReverseMap();
 
                     else
