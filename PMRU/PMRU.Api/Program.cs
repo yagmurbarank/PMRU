@@ -1,5 +1,6 @@
 using PMRU.Persistence;
 using PMRU.Application;
+using PMRU.Mapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Configuration
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddCustomMapper();
+
 
 var app = builder.Build();
 

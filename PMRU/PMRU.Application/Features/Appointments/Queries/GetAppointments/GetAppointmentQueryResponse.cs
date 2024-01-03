@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMRU.Application.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,7 @@ namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
         public DateTime AppointmentDate { get; set; }
         public string AppointmentHour { get; set; }
         public string Description { get; set; }
+        public AppointmentDto Appointment { get; set; }
 
     }
 }

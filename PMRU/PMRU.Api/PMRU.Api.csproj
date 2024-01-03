@@ -19,6 +19,7 @@
 	<ItemGroup>
 		<ProjectReference Include="..\PMRU.Application\PMRU.Application.csproj" />
 		<ProjectReference Include="..\PMRU.Infrastructure\PMRU.Infrastructure.csproj" />
+		<ProjectReference Include="..\PMRU.Mapper\PMRU.Mapper.csproj" />
 		<ProjectReference Include="..\PMRU.Persistence\PMRU.Persistence.csproj" />
 	</ItemGroup>
 
