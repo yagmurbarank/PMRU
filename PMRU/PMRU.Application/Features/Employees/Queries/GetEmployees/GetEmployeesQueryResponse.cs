@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PMRU.Application.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,6 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployees
         public int PositionID { get; set; }
         public int DepartmentID { get; set; }
         public string RegistrationNumber { get; set; }
+        public DepartmentDto Department { get; set; }
     }
 }
