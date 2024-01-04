@@ -378,3 +378,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /PMRU/PMRU.Api/appsettings.Development.json
+/PMRU/PMRU.Api/appsettings.Developer.json
+/PMRU/PMRU.Api/.editorconfig
