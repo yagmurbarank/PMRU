@@ -6,7 +6,7 @@ using PMRU.Application.Features.Doctors.Queries.GetDoctors;
 
 namespace PMRU.Api.Controllers
 {
-    [Route("api/[controller][action]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class DoctorController : ControllerBase
     {
@@ -25,5 +25,6 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
+        
     }
 }

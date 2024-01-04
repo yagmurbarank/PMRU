@@ -1,19 +1,17 @@
-﻿using PMRU.Application.DTOs;
-using PMRU.Domain.Entities;
+﻿using PMRU.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
+namespace PMRU.Application.DTOs
 {
-    public class GetDoctorQueryResponse
+    public class DoctorDto
     {
         public string Name { get; set; }
         public string Surname { get; set; }
         public Location Location { get; set; }
         public ICollection<Availability> Availabilities { get; set; }
-        public DoctorDto Doctor { get; set; }
     }
 }
