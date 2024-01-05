@@ -52,6 +52,29 @@ namespace PMRU.Persistence.Configurations
 
             // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
             builder.HasIndex(a => new { a.DoctorID, a.AppointmentDate, a.AppointmentHour }).IsUnique();
+
+            builder.HasData(
+                new Appointment
+                {
+                    Id = 1,
+                    EmployeeID = 1,
+                    DoctorID = 1,
+                    AppointmentDate = DateTime.Now.Date,
+                    AppointmentHour = "09:00",
+                    Description = "Regular Checkup"
+                },
+                new Appointment
+                {
+                    Id = 2,
+                    EmployeeID = 2,
+                    DoctorID = 2,
+                    AppointmentDate = DateTime.Now.Date,
+                    AppointmentHour = "09:30",
+                    Description = "Regular Checkup"
+                }
+                );
+
+            
         }
     }
 }

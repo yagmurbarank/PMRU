@@ -41,6 +41,25 @@ namespace PMRU.Persistence.Configurations
 
             // Gün ve saat aralığı için benzersiz indeks oluşturma
             builder.HasIndex(a => new { a.DoctorID, a.Day, a.StartTime, a.EndTime }).IsUnique();
+
+            builder.HasData(
+                new Availability
+                {
+                    Id = 1,
+                    DoctorID =1,
+                    Day = DayOfWeek.Monday,
+                    StartTime = TimeSpan.FromHours(8),
+                    EndTime = TimeSpan.FromHours(12)
+                },
+                new Availability
+                {
+                    Id = 2,
+                    DoctorID = 2,
+                    Day = DayOfWeek.Tuesday,
+                    StartTime = TimeSpan.FromHours(12),
+                    EndTime = TimeSpan.FromHours(8)
+                }
+                );
         }
     }
 }

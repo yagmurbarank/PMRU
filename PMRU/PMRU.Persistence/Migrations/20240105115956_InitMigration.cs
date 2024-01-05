@@ -298,8 +298,8 @@ namespace PMRU.Persistence.Migrations
                 columns: new[] { "Id", "DeletedDate", "Email", "IdentityNumber", "IsActive", "IsDeleted", "LocationID", "Name", "Password", "Phone", "RegistrationNumber", "Surname" },
                 values: new object[,]
                 {
-                    { 3, null, "aylin.gunes@email.com", "12345678901", true, false, 35, "Aylin", "Password", "5556123456", "102", "Güneş" },
-                    { 4, null, "eren.akcay@email.com", "12345678923", true, false, 41, "Eren", "Password", "5556234567", "103", "Akçay" }
+                    { 1, null, "aylin.gunes@email.com", "12345678901", true, false, 35, "Aylin", "Password", "5556123456", "102", "Güneş" },
+                    { 2, null, "eren.akcay@email.com", "12345678923", true, false, 41, "Eren", "Password", "5556234567", "103", "Akçay" }
                 });
 
             migrationBuilder.InsertData(
@@ -307,8 +307,26 @@ namespace PMRU.Persistence.Migrations
                 columns: new[] { "Id", "AppointmentId", "CreatedDate", "DeletedDate", "DepartmentID", "Email", "IdentityNumber", "IsActive", "IsDeleted", "LocationID", "Name", "Phone", "PositionID", "RegistrationNumber", "Surname" },
                 values: new object[,]
                 {
-                    { 1, 0, new DateTime(2023, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5085), null, 4, "ahmet.yilmaz@email.com", "5555123456", true, false, 34, "Ahmet", "(555) 512-3456", 4, "100", "Yılmaz" },
-                    { 2, 0, new DateTime(2023, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5089), null, 4, "ayse.kaya@email.com", "5555234567", true, false, 41, "Ayşe", "(555) 523-4567", 3, "101", "Kaya" }
+                    { 1, 0, new DateTime(2024, 1, 5, 14, 59, 55, 968, DateTimeKind.Local).AddTicks(8487), null, 4, "ahmet.yilmaz@email.com", "5555123456", true, false, 34, "Ahmet", "(555) 512-3456", 4, "100", "Yılmaz" },
+                    { 2, 0, new DateTime(2024, 1, 5, 14, 59, 55, 968, DateTimeKind.Local).AddTicks(8491), null, 4, "ayse.kaya@email.com", "5555234567", true, false, 41, "Ayşe", "(555) 523-4567", 3, "101", "Kaya" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Appointments",
+                columns: new[] { "Id", "AppointmentDate", "AppointmentHour", "CreatedDate", "DeletedDate", "Description", "DoctorID", "EmployeeID", "IsActive", "IsDeleted", "LastModifiedDate" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Local), "09:00", new DateTime(2024, 1, 5, 14, 59, 55, 967, DateTimeKind.Local).AddTicks(515), null, "Regular Checkup", 1, 1, true, false, null },
+                    { 2, new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Local), "09:30", new DateTime(2024, 1, 5, 14, 59, 55, 967, DateTimeKind.Local).AddTicks(530), null, "Regular Checkup", 2, 2, true, false, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Availabilities",
+                columns: new[] { "Id", "CreatedDate", "Day", "DeletedDate", "DoctorID", "EndTime", "IsActive", "IsDeleted", "LastModifiedDate", "StartTime" },
+                values: new object[,]
+                {
+                    { 1, new DateTime(2024, 1, 5, 14, 59, 55, 967, DateTimeKind.Local).AddTicks(6383), 1, null, 1, new TimeSpan(0, 12, 0, 0, 0), true, false, null, new TimeSpan(0, 8, 0, 0, 0) },
+                    { 2, new DateTime(2024, 1, 5, 14, 59, 55, 967, DateTimeKind.Local).AddTicks(6394), 2, null, 2, new TimeSpan(0, 8, 0, 0, 0), true, false, null, new TimeSpan(0, 12, 0, 0, 0) }
                 });
 
             migrationBuilder.CreateIndex(

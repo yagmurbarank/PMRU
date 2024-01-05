@@ -36,7 +36,7 @@ namespace PMRU.Persistence.Configurations
             builder.HasData(
                 new Doctor
                 {
-                    Id = 3,
+                    Id = 1,
                     Name = "Aylin",
                     Surname = "Güneş",
                     Email = "aylin.gunes@email.com",
@@ -48,7 +48,7 @@ namespace PMRU.Persistence.Configurations
                 },
                 new Doctor
                 {
-                    Id = 4,
+                    Id = 2,
                     Name = "Eren",
                     Surname = "Akçay",
                     Email = "eren.akcay@email.com",
