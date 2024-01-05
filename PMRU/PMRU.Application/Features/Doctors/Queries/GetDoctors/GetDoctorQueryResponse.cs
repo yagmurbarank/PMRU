@@ -12,8 +12,9 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
     {
         public string Name { get; set; }
         public string Surname { get; set; }
-        public Location Location { get; set; }
         public ICollection<Availability> Availabilities { get; set; }
-        public DoctorDto Doctor { get; set; }
+        public LocationDto Location { get; set; }
+        //public AvailabilitiesDto Availability{ get; set; }
+
     }
 }

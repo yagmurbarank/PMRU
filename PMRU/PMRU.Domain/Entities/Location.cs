@@ -9,8 +9,10 @@ namespace PMRU.Domain.Entities
 {
     public class Location : EntityBase
     {
+
         public string LocationDescription { get; set; }
         public bool IsLocationCenter { get; set; }
+       
     }
 
 }
