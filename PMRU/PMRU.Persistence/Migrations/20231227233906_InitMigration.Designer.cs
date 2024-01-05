@@ -122,20 +122,6 @@ namespace PMRU.Persistence.Migrations
                         .IsUnique();
 
                     b.ToTable("Availabilities");
-                    b.HasData(
-                       new
-                       {
-                           Id = 1,
-                           CreatedDate = new DateTime(2024, 7, 20, 9, 0, 0),
-                           Day = "Cuma",
-                           DeletedDate = "",
-                           DoctorID = 3,
-                           EndTime = new DateTime(2024, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5085),
-                           IsActive = true,
-                           IsDeleted = false,
-                           LastModifiedDate = new DateTime(2024, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5085),
-                           StartTime = new DateTime(2024, 12, 28, 2, 39, 6, 136, DateTimeKind.Local).AddTicks(5085),
-                       });
                        
                 });
 
@@ -280,7 +266,7 @@ namespace PMRU.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            Id = 3,
                             Email = "aylin.gunes@email.com",
                             IdentityNumber = "12345678901",
                             IsActive = true,
@@ -294,7 +280,7 @@ namespace PMRU.Persistence.Migrations
                         },
                         new
                         {
-                            Id = 2,
+                            Id = 4,
                             Email = "eren.akcay@email.com",
                             IdentityNumber = "12345678923",
                             IsActive = true,
