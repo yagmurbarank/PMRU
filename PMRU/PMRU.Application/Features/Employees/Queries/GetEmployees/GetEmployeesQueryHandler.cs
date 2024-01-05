@@ -25,31 +25,27 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployees
 
         public async Task<IList<GetEmployeesQueryResponse>> Handle(GetEmployeesQueryRequest request, CancellationToken cancellationToken)
         {
-            var employees = await unitOfWork.GetReadRepository<Employee>().GetAllAsync(include: x => x.Include(b => b.Department));
-            var department = mapper.Map<DepartmentDto , Department>(new Department());
-           
-            //List<GetEmployeesQueryResponse> response = new();
+            var employees = await unitOfWork.GetReadRepository<Employee>().GetAllAsync(
+                include: x => x
+                    .Include(b => b.Department)
+                    .Include(b => b.Location)
+                    .Include(b => b.Position)
+            );
 
-            //foreach (var employee in employees) 
-            
-            //    response.Add(new GetEmployeesQueryResponse
-            //    {
-            //        IdentityNumber = employee.IdentityNumber,
-            //        Name = employee.Name,
-            //        Surname = employee.Surname,
-            //        Phone = employee.Phone,
-            //        Email = employee.Email,
-            //        PositionID = employee.PositionID,
-            //        LocationID = employee.LocationID,
-            //        DepartmentID = employee.DepartmentID,
-            //        RegistrationNumber = employee.RegistrationNumber,
-            //    });
+            var responseList = new List<GetEmployeesQueryResponse>();
 
-            var map = mapper.Map<GetEmployeesQueryResponse , Employee >(employees);
+            foreach (var employee in employees)
+            {
+                var departmentDto = mapper.Map<DepartmentDto, Department>(employee.Department);
+                var locationDto = mapper.Map<LocationDto, Location>(employee.Location);
+                var positionDto = mapper.Map<PositionDto, Position>(employee.Position);
 
-            return map;
-            //return response;
+                var map = mapper.Map<GetEmployeesQueryResponse, Employee>(employee);
 
+                responseList.Add(map);
+            }
+
+            return responseList;
         }
     }
 }
