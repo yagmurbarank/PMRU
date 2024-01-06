@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
 using PMRU.Application.Features.Availabilities.Command.CreateAvailability;
+using PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities;
+using PMRU.Application.Features.Availabilities.Command.DeleteAvailability;
+using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
 
 namespace PMRU.Api.Controllers
@@ -28,6 +31,30 @@ namespace PMRU.Api.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateAvailability(CreateAvailabilityCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateAvailability(UpdateAvailabilityCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAvailability(DeleteAvailabilityCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteAvailabilities(DeleteAvailabilitiesCommandRequest request)
         {
             var response = await mediator.Send(request);
 
