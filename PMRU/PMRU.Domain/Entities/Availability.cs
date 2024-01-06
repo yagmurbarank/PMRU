@@ -9,6 +9,19 @@ namespace PMRU.Domain.Entities
 {
     public class Availability: EntityBase
     {
+        public Availability() 
+        {
+        
+        }
+
+        public Availability(int doctorID, DayOfWeek day, TimeSpan startTime, TimeSpan endTime)
+        {
+            DoctorID = doctorID;
+            Day = day;
+            StartTime = startTime;
+            EndTime = endTime;
+        }
+
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }
         public DayOfWeek Day { get; set; }

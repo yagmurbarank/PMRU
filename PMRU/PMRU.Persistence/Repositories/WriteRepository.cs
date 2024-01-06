@@ -40,7 +40,7 @@ namespace PMRU.Persistence.Repositories
             return entity;
         }
 
-        public async Task DeleteRangeAscync(T entity)
+        public async Task DeleteRangeAsync(List<T> entity)
         {
             await Task.Run(() => Table.RemoveRange(entity));
         }

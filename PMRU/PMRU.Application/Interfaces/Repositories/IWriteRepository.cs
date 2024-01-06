@@ -14,6 +14,6 @@ namespace PMRU.Application.Interfaces.Repositories
         Task AddRangeAsync(IList<T> entities);
         Task<T> UpdateAsync(T entity);
         Task DeleteAsync(T entity);
-        Task DeleteRangeAscync(T entity);
+        Task DeleteRangeAsync(List<T> entity);
     }
 }
