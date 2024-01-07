@@ -8,6 +8,8 @@ using PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities;
 using PMRU.Application.Features.Availabilities.Command.DeleteAvailability;
 using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById;
 
 namespace PMRU.Api.Controllers
 {
@@ -17,7 +19,7 @@ namespace PMRU.Api.Controllers
     {
         private readonly IMediator mediator;
 
-        public AvailabilityController(IMediator mediator) 
+        public AvailabilityController(IMediator mediator)
         {
             this.mediator = mediator;
         }
@@ -26,6 +28,24 @@ namespace PMRU.Api.Controllers
         public async Task<IActionResult> GetAvailabilities()
         {
             var response = await mediator.Send(new GetAvailabilitiesQueryRequest());
+
+            return Ok(response);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAvailabilityById(int id)
+        {
+            var request = new GetAvailabilityByIdQueryRequest(id);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpGet("{doctorId}")]
+        public async Task<IActionResult> GetAvailabilitiesByDoctorId(int doctorId)
+        {
+            var request = new GetAvailabilitiesByDoctorIdQueryRequest(doctorId);
+            var response = await mediator.Send(request);
 
             return Ok(response);
         }
