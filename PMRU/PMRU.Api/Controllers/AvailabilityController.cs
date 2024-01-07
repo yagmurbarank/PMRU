@@ -10,6 +10,7 @@ using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByStartTime;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById;
 
 namespace PMRU.Api.Controllers
@@ -55,6 +56,15 @@ namespace PMRU.Api.Controllers
         public async Task<IActionResult> GetAvailabilitiesByDay(DayOfWeek day)
         {
             var request = new GetAvailabilitiesByDayQueryRequest(day);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpGet("{startTime}")]
+        public async Task<IActionResult> GetAvailabilitiesByStartTime(TimeSpan startTime)
+        {
+            var request = new GetAvailabilitiesByStartTimeQueryRequest(startTime);
             var response = await mediator.Send(request);
 
             return Ok(response);
