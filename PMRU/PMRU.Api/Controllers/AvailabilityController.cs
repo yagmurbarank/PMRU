@@ -8,6 +8,7 @@ using PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities;
 using PMRU.Application.Features.Availabilities.Command.DeleteAvailability;
 using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById;
 
@@ -45,6 +46,15 @@ namespace PMRU.Api.Controllers
         public async Task<IActionResult> GetAvailabilitiesByDoctorId(int doctorId)
         {
             var request = new GetAvailabilitiesByDoctorIdQueryRequest(doctorId);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpGet("{day}")]
+        public async Task<IActionResult> GetAvailabilitiesByDay(DayOfWeek day)
+        {
+            var request = new GetAvailabilitiesByDayQueryRequest(day);
             var response = await mediator.Send(request);
 
             return Ok(response);
