@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailability
 {
-    public class DeleteAvailabilityCommandRequest: IRequest
+    public class DeleteAvailabilityCommandRequest: IRequest<Unit>
     {
         public int Id { get; set; }
     }

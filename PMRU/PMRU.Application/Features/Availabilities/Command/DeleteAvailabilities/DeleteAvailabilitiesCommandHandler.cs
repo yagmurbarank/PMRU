@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities
 {
-    public class DeleteAvailabilitiesCommandHandler : IRequestHandler<DeleteAvailabilitiesCommandRequest>
+    public class DeleteAvailabilitiesCommandHandler : IRequestHandler<DeleteAvailabilitiesCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 

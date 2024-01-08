@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
 {
-    public class UpdateAvailabilityCommandRequest: IRequest
+    public class UpdateAvailabilityCommandRequest: IRequest<Unit>
     {
         public int Id { get; set; }
         public int DoctorID { get; set; }

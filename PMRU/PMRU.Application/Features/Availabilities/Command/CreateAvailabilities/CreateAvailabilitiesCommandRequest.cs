@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.CreateAvailabilities
 {
-    public class CreateAvailabilitiesCommandRequest: IRequest
+    public class CreateAvailabilitiesCommandRequest: IRequest<Unit>
     {
         public IList<CreateAvailabilityCommandRequest> AvailabilityRequests { get; set; }
     }
