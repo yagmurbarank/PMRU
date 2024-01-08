@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.CreateAvailability
 {
-    public class CreateAvailabilityCommandHandler : IRequestHandler<CreateAvailabilityCommandRequest>
+    public class CreateAvailabilityCommandHandler : IRequestHandler<CreateAvailabilityCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
