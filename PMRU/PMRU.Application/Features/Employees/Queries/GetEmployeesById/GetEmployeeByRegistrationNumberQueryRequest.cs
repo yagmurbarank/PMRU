@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 {
-    public class GetEmployeesByIdQueryRequest : IRequest<GetEmployeesByIdQueryResponse>
+    public class GetEmployeeByRegistrationNumberQueryRequest : IRequest<GetEmployeeByRegistrationNumberQueryResponse>
     {
-        public GetEmployeesByIdQueryRequest(string registrationNumber) 
+        public GetEmployeeByRegistrationNumberQueryRequest(string registrationNumber) 
         {
             RegistrationNumber = registrationNumber;
         }
