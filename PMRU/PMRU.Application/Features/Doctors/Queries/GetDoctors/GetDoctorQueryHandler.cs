@@ -31,13 +31,10 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
         {
 
 
-            var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(include: x => x.Include(b => b.Location));
+            var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(include: x => x.Include(b => b.Location).Include(b => b.Availabilities));
             var location = mapper.Map<LocationDto, Location>(new Location());
+            var availabilities = mapper.Map<AvailabilityDto, Availability>(new Availability());
             var map = mapper.Map<GetDoctorQueryResponse, Doctor>(doctors);
-
-
-
-           
 
             return map;
         }
