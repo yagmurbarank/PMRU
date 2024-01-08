@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using PMRU.Domain.Entities;
 using PMRU.Persistence.Configurations;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Persistence.Context
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User,Role,Guid>
     {
         public AppDbContext(){}
 
