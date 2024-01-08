@@ -13,6 +13,7 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
         {
             RegistrationNumber = registrationNumber;
         }
+
         public string RegistrationNumber { get; set; }
     }
 }
