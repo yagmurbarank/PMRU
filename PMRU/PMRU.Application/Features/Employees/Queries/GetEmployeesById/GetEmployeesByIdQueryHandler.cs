@@ -20,7 +20,7 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 
         public async Task<GetEmployeesByIdQueryResponse> Handle(GetEmployeesByIdQueryRequest request, CancellationToken cancellationToken)
         {
-            var employee = await unitOfWork.GetReadRepository<Employee>().GetByIdAsync(request.EmployeeId);
+            var employee = await unitOfWork.GetReadRepository<Employee>().GetAsync(x => x.RegistrationNumber == request.RegistrationNumber && !x.IsDeleted);
 
             if (employee == null)
             {

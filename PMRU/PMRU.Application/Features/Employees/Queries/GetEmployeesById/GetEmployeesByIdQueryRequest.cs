@@ -9,6 +9,10 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 {
     public class GetEmployeesByIdQueryRequest : IRequest<GetEmployeesByIdQueryResponse>
     {
-        public int EmployeeId { get; set; }
+        public GetEmployeesByIdQueryRequest(string registrationNumber) 
+        {
+            RegistrationNumber = registrationNumber;
+        }
+        public string RegistrationNumber { get; set; }
     }
 }

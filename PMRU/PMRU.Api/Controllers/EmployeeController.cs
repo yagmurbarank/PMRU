@@ -2,8 +2,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId;
 using PMRU.Application.Features.Employees.Queries.GetEmployees;
 using PMRU.Application.Features.Employees.Queries.GetEmployeesById;
+using PMRU.Domain.Entities;
 
 namespace PMRU.Api.Controllers
 {
@@ -25,10 +27,11 @@ namespace PMRU.Api.Controllers
             return Ok(response);
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetEmployees()
+        [HttpGet("{registrationNumber}")]
+        public async Task<IActionResult> GetEmployees(string registrationNumber)
         {
-            var response = await mediator.Send(new GetEmployeesQueryRequest());
+            var request = new GetEmployeesByIdQueryRequest(registrationNumber);
+            var response = await mediator.Send(request);
             return Ok(response);
         }
     }
