@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
+using PMRU.Application.Features.Appointments.Queries.GetAppointmentByAppointmentId;
+using PMRU.Application.Features.Appointments.Queries.GetAppointmentByDate;
 using PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId;
 
 namespace PMRU.Api.Controllers
@@ -29,6 +31,22 @@ namespace PMRU.Api.Controllers
         public async Task<IActionResult> GetAppointmentsByDoctorId(int doctorId)
         {
             var request = new GetAppointmentsByDoctorIdQueryRequest(doctorId);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+        [HttpGet("{appointmentId}")]
+        public async Task<IActionResult> GetAppointmentByAppointmentId(int appointmentId)
+        {
+            var request = new GetAppointmentByAppointmentIdQueryRequest(appointmentId);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+        [HttpGet("{date}")]
+        public async Task<IActionResult> GetAppointmentByDate(DateOnly date)
+        {
+            var request = new GetAppointmentByDateQueryRequest(date);
             var response = await mediator.Send(request);
 
             return Ok(response);

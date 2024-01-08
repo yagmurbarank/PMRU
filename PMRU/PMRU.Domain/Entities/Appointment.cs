@@ -14,7 +14,7 @@ namespace PMRU.Domain.Entities
         {
             
         }
-        public Appointment(int doctorID, DateTime appointmentDate, string appointmentHour, string description)
+        public Appointment(int doctorID, DateOnly appointmentDate, TimeOnly appointmentHour, string description)
         {
             DoctorID = doctorID;
             AppointmentDate = appointmentDate;
@@ -22,11 +22,12 @@ namespace PMRU.Domain.Entities
             Description = description;
         }
         public int EmployeeID { get; set; }
+        public int AppointmentID { get; set; }
         public Employee Employee { get; set; }
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }
-        public DateTime AppointmentDate { get; set; }
-        public string AppointmentHour { get; set; }
+        public DateOnly AppointmentDate { get; set; }
+        public TimeOnly AppointmentHour { get; set; }
         public string Description { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.Now;
