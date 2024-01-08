@@ -11,10 +11,10 @@ namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
     {
         public int EmployeeID { get; set; }
         public int DoctorID { get; set; }
-        public DateTime AppointmentDate { get; set; }
-        public string AppointmentHour { get; set; }
+        public int AppointmentID { get; set; }
+        public DateOnly AppointmentDate { get; set; }
+        public TimeOnly AppointmentHour { get; set; }
         public string Description { get; set; }
-        public AppointmentDto Appointment { get; set; }
 
     }
 }

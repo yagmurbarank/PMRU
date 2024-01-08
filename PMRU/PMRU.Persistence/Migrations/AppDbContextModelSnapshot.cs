@@ -30,12 +30,14 @@ namespace PMRU.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("AppointmentDate")
-                        .HasColumnType("datetime2");
+                    b.Property<DateOnly>("AppointmentDate")
+                        .HasColumnType("date");
 
-                    b.Property<string>("AppointmentHour")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<TimeOnly>("AppointmentHour")
+                        .HasColumnType("time");
+
+                    b.Property<int>("AppointmentID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
@@ -78,9 +80,10 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            AppointmentDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Local),
-                            AppointmentHour = "09:00",
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(1905),
+                            AppointmentDate = new DateOnly(2023, 11, 12),
+                            AppointmentHour = new TimeOnly(12, 30, 0),
+                            AppointmentID = 12,
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 966, DateTimeKind.Local).AddTicks(5179),
                             Description = "Regular Checkup",
                             DoctorID = 1,
                             EmployeeID = 1,
@@ -90,9 +93,10 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            AppointmentDate = new DateTime(2024, 1, 8, 0, 0, 0, 0, DateTimeKind.Local),
-                            AppointmentHour = "09:30",
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(1931),
+                            AppointmentDate = new DateOnly(2023, 12, 13),
+                            AppointmentHour = new TimeOnly(13, 45, 0),
+                            AppointmentID = 13,
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 966, DateTimeKind.Local).AddTicks(5197),
                             Description = "Regular Checkup",
                             DoctorID = 2,
                             EmployeeID = 2,
@@ -148,7 +152,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(3966),
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 966, DateTimeKind.Local).AddTicks(9878),
                             Day = 1,
                             DoctorID = 1,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -159,7 +163,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(3980),
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 966, DateTimeKind.Local).AddTicks(9892),
                             Day = 2,
                             DoctorID = 2,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -415,7 +419,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(8543),
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 968, DateTimeKind.Local).AddTicks(1643),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -432,7 +436,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 8, 15, 27, 59, 719, DateTimeKind.Local).AddTicks(8547),
+                            CreatedDate = new DateTime(2024, 1, 8, 21, 54, 58, 968, DateTimeKind.Local).AddTicks(1646),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -771,7 +775,7 @@ namespace PMRU.Persistence.Migrations
                     b.HasOne("PMRU.Domain.Entities.Doctor", "Doctor")
                         .WithMany("Appointments")
                         .HasForeignKey("DoctorID")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("PMRU.Domain.Entities.Employee", "Employee")
