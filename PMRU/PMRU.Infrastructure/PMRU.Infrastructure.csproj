@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\PMRU.Application\PMRU.Application.csproj" />
+	  <ProjectReference Include="..\PMRU.Application\PMRU.Application.csproj" />
 	</ItemGroup>
 	
 </Project>

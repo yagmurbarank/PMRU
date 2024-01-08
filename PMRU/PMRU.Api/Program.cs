@@ -1,5 +1,6 @@
 using PMRU.Persistence;
 using PMRU.Application;
+using PMRU.Infrastructure;
 using PMRU.Mapper;
 using PMRU.Application.Exceptions;
 
@@ -20,6 +21,7 @@ builder.Configuration
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
