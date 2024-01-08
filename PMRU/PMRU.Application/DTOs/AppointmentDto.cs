@@ -9,5 +9,7 @@ namespace PMRU.Application.DTOs
     public class AppointmentDto
     {
         public DateTime AppointmentDate { get; set; }
+        public string AppointmentHour { get; set; }
+        public string Description { get; set; }
     }
 }

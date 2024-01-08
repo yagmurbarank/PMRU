@@ -30,6 +30,7 @@
 
 
 	<ItemGroup>
+	  <Folder Include="Features\Appointments\Queries\GetAppointmentByAppointmentId\" />
 	  <Folder Include="Features\Employees\Commands\" />
 	</ItemGroup>
 	
