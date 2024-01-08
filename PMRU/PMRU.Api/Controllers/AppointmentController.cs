@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
+using PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId;
 
 namespace PMRU.Api.Controllers
 {
@@ -21,6 +22,14 @@ namespace PMRU.Api.Controllers
         {
             var response = await mediator.Send(new GetAppointmentQueryRequest());
 
+
+            return Ok(response);
+        }
+        [HttpGet("{doctorId}")]
+        public async Task<IActionResult> GetAppointmentsByDoctorId(int doctorId)
+        {
+            var request = new GetAppointmentsByDoctorIdQueryRequest(doctorId);
+            var response = await mediator.Send(request);
 
             return Ok(response);
         }
