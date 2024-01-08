@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
+using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
+using PMRU.Application.Features.Doctors.Command.CreateDoctor;
+using PMRU.Application.Features.Doctors.Command.DeleteDoctor;
+using PMRU.Application.Features.Doctors.Command.UpdateDoctor;
 using PMRU.Application.Features.Doctors.Queries.GetDoctors;
 
 namespace PMRU.Api.Controllers
@@ -25,6 +29,27 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
-        
+        [HttpPost]
+        public async Task<IActionResult> CreateDoctor(CreateDoctorCommandRequest request)
+        {
+            await mediator.Send(request);
+            return Ok();
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateDoctor(UpdateDoctorCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
     }
 }
