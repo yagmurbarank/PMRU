@@ -23,15 +23,18 @@ namespace PMRU.Persistence.Configurations
 
             builder.HasMany(d => d.Appointments)
                 .WithOne(a => a.Doctor)
-                .HasForeignKey(a => a.DoctorID);
+                .HasForeignKey(a => a.DoctorID)
+                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(d => d.Availabilities)
                 .WithOne(a => a.Doctor)
-                .HasForeignKey(a => a.DoctorID);
+                .HasForeignKey(a => a.DoctorID)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(d => d.Location)
                 .WithMany()
-                .HasForeignKey(d => d.LocationID);
+                .HasForeignKey(d => d.LocationID)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasData(
                 new Doctor

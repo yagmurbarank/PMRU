@@ -9,6 +9,26 @@ namespace PMRU.Domain.Entities
 {
     public class Doctor : EntityBase
     {
+        private readonly string location;
+
+        public Doctor()
+        {
+
+        }
+
+        public Doctor(string identityNumber, string registrationNumber, string name, string surname, string phone, string email, string password, int locationID)
+        {
+            IdentityNumber = identityNumber;
+            RegistrationNumber = registrationNumber;
+            Name = name;
+            Surname = surname;
+            Phone = phone;
+            Email = email;
+            Password = password;
+            LocationID = locationID;
+        }
+
+
         public string IdentityNumber { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
