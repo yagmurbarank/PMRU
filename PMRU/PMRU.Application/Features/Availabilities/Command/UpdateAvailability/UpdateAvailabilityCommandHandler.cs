@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using PMRU.Application.Features.Availabilities.Rules;
 using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
@@ -14,15 +15,21 @@ namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
+        private readonly AvailabilityRules availabilityRules;
 
-        public UpdateAvailabilityCommandHandler(IUnitOfWork unitOfWork, IMapper mapper) 
+        public UpdateAvailabilityCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, AvailabilityRules availabilityRules) 
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
+            this.availabilityRules = availabilityRules;
         }
 
         public async Task<Unit> Handle(UpdateAvailabilityCommandRequest request, CancellationToken cancellationToken)
         {
+            IList<Availability> availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(x => !x.IsDeleted);
+
+            await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, request.DoctorID, request.Day, request.StartTime, request.EndTime);
+
             var availability = await unitOfWork.GetReadRepository<Availability>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
 
             var map = mapper.Map<Availability, UpdateAvailabilityCommandRequest>(request);
