@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
 {
-    public class UpdateAvailabilityCommandHandler : IRequestHandler<UpdateAvailabilityCommandRequest>
+    public class UpdateAvailabilityCommandHandler : IRequestHandler<UpdateAvailabilityCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;

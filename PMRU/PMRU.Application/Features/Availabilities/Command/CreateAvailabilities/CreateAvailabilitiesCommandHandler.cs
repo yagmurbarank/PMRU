@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.CreateAvailabilities
 {
-    public class CreateAvailabilitiesCommandHandler : IRequestHandler<CreateAvailabilitiesCommandRequest>
+    public class CreateAvailabilitiesCommandHandler : IRequestHandler<CreateAvailabilitiesCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 
