@@ -26,7 +26,7 @@ namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
 
         public async Task<Unit> Handle(UpdateAvailabilityCommandRequest request, CancellationToken cancellationToken)
         {
-            IList<Availability> availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(x => !x.IsDeleted);
+            IList<Availability> availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(x => !x.IsDeleted && x.Id != request.Id);
 
             await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, request.DoctorID, request.Day, request.StartTime, request.EndTime);
 
