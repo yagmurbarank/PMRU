@@ -31,14 +31,14 @@ builder.Services.AddCustomMapper();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PMRU", Version = "v1", Description = "Periyodik Muayene Randevu Uygulamasý swagger client." });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PMRU", Version = "v1", Description = "Periyodik Muayene Randevu UygulamasÄ± swagger client." });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In= ParameterLocation.Header,
-        Description = "'Bearer' yazýp boþluk býraktýktan sonra Token Girebilirsiniz \r\n\r\n Örneðin: n Örneðin: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6I"
+        Description = "'Bearer' yazÄ±p boÅŸluk bÄ±raktÄ±ktan sonra Token Girebilirsiniz \r\n\r\n Ã–rneÄŸin: n Ã–rneÄŸin: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6I"
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement()
     {
