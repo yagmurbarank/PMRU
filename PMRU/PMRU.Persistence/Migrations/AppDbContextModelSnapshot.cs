@@ -186,7 +186,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2023, 11, 12),
                             AppointmentHour = new TimeOnly(12, 30, 0),
                             AppointmentID = 12,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 83, DateTimeKind.Local).AddTicks(2194),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 109, DateTimeKind.Local).AddTicks(7848),
                             Description = "Regular Checkup",
                             DoctorID = 1,
                             EmployeeID = 1,
@@ -199,7 +199,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2023, 12, 13),
                             AppointmentHour = new TimeOnly(13, 45, 0),
                             AppointmentID = 13,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 83, DateTimeKind.Local).AddTicks(2220),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 109, DateTimeKind.Local).AddTicks(7876),
                             Description = "Regular Checkup",
                             DoctorID = 2,
                             EmployeeID = 2,
@@ -255,7 +255,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 83, DateTimeKind.Local).AddTicks(6843),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 110, DateTimeKind.Local).AddTicks(2082),
                             Day = 1,
                             DoctorID = 1,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -266,7 +266,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 83, DateTimeKind.Local).AddTicks(6858),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 110, DateTimeKind.Local).AddTicks(2096),
                             Day = 2,
                             DoctorID = 2,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -522,7 +522,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 84, DateTimeKind.Local).AddTicks(9305),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3473),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -539,7 +539,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 0, 36, 20, 84, DateTimeKind.Local).AddTicks(9309),
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3476),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -551,6 +551,142 @@ namespace PMRU.Persistence.Migrations
                             PositionID = 3,
                             RegistrationNumber = "101",
                             Surname = "Kaya"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3478),
+                            DepartmentID = 3,
+                            Email = "mehmet.celik@email.com",
+                            IdentityNumber = "5278149630",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Mehmet",
+                            Phone = "(555) 534-5678",
+                            PositionID = 5,
+                            RegistrationNumber = "102",
+                            Surname = "Çelik"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3481),
+                            DepartmentID = 4,
+                            Email = "fatma.arslan@email.com",
+                            IdentityNumber = "5555456789",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 71,
+                            Name = "Fatma",
+                            Phone = "(555) 545-6789",
+                            PositionID = 6,
+                            RegistrationNumber = "103",
+                            Surname = "Arslan"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3483),
+                            DepartmentID = 2,
+                            Email = "ali.demir@email.com",
+                            IdentityNumber = "5555567890",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 72,
+                            Name = "Ali",
+                            Phone = "(555) 556-7890",
+                            PositionID = 2,
+                            RegistrationNumber = "104",
+                            Surname = "Demir"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3485),
+                            DepartmentID = 5,
+                            Email = "zeynep.yildiz@email.com",
+                            IdentityNumber = "5555678901",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Zeynep",
+                            Phone = "(555) 567-8901",
+                            PositionID = 14,
+                            RegistrationNumber = "105",
+                            Surname = "Yıldız"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3489),
+                            DepartmentID = 2,
+                            Email = "can.aksoy@email.com",
+                            IdentityNumber = "5555789012",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 41,
+                            Name = "Can",
+                            Phone = "(555) 578-9012",
+                            PositionID = 4,
+                            RegistrationNumber = "106",
+                            Surname = "Aksoy"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3491),
+                            DepartmentID = 6,
+                            Email = "elif.ersoy@email.com",
+                            IdentityNumber = "5555890123",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Elif",
+                            Phone = "(555) 589-0123",
+                            PositionID = 8,
+                            RegistrationNumber = "107",
+                            Surname = "Ersoy"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3494),
+                            DepartmentID = 4,
+                            Email = "burak.taskin@email.com",
+                            IdentityNumber = "5555901234",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 72,
+                            Name = "Burak",
+                            Phone = "(555) 590-1234",
+                            PositionID = 7,
+                            RegistrationNumber = "108",
+                            Surname = "Taşkın"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3496),
+                            DepartmentID = 1,
+                            Email = "deniz.akin@email.com",
+                            IdentityNumber = "5556012345",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 71,
+                            Name = "Deniz",
+                            Phone = "(555) 601-2345",
+                            PositionID = 2,
+                            RegistrationNumber = "109",
+                            Surname = "Akın"
                         });
                 });
 
