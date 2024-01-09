@@ -10,5 +10,15 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 {
     public class GetDoctorQueryRequest : IRequest<IList<GetDoctorQueryResponse>>
     {
+        public GetDoctorQueryRequest()
+        {
+        }
+
+        public GetDoctorQueryRequest(int location)
+        {
+            Location = location;
+        }
+
+        public int Location { get; }
     }
 }

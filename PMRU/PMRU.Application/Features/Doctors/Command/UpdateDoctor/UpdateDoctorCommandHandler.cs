@@ -29,12 +29,16 @@ namespace PMRU.Application.Features.Doctors.Command.UpdateDoctor
         {
             var doctor = await unitOfWork.GetReadRepository<Doctor>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
             var map = mapper.Map<Doctor, UpdateDoctorCommandRequest>(request);
-            map.Name = request.Name;
-            map.Surname = request.Surname;
-            map.IdentityNumber = request.IdentityNumber;
-            map.RegistrationNumber = request.RegistrationNumber;
-            map.LocationID = request.LocationID;
+            //map.Name = request.Name;
+            //map.Surname = request.Surname;
+            //map.IdentityNumber = request.IdentityNumber;
+            //map.RegistrationNumber = request.RegistrationNumber;
+            //map.LocationID = request.LocationID;
 
+            await unitOfWork.GetWriteRepository<Doctor>().HardDeleteAsync(map);
+           
+
+            await unitOfWork.GetWriteRepository<Doctor>().AddAsync(map);
             await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(map);
             await unitOfWork.SaveAsync();
 
