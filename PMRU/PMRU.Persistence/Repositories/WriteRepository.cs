@@ -34,15 +34,25 @@ namespace PMRU.Persistence.Repositories
             await Task.Run(() => Table.RemoveRange(entity));
         }
 
+        public async Task<T> AddAsync(T entity)
+        {
+            await Task.Run(() => Table.Add(entity));
+            return entity;
+        }
         public async Task<T> UpdateAsync(T entity)
         {
             await Task.Run(() => Table.Update(entity));
             return entity;
         }
-
         public async Task DeleteRangeAsync(List<T> entity)
         {
             await Task.Run(() => Table.RemoveRange(entity));
+        }
+        public async Task<bool> HardDeleteAsync(T entity)
+        {
+            await Task.Run(() => Table.Remove(entity));
+            await Task.Run(() => Table.AddAsync(entity));
+            return true; // return true if delete was successfull
         }
     }
 }

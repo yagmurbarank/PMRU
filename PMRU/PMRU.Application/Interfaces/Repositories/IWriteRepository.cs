@@ -12,8 +12,12 @@ namespace PMRU.Application.Interfaces.Repositories
 
         Task CreateAsync(T entity);
         Task AddRangeAsync(IList<T> entities);
+        Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task DeleteAsync(T entity);
         Task DeleteRangeAsync(List<T> entity);
+        Task<bool> HardDeleteAsync(T entity);
+       
+       
     }
 }
