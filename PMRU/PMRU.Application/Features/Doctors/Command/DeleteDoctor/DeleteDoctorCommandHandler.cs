@@ -9,13 +9,11 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
 {
-    public class DeleteDoctorCommandHandler : IRequest<DeleteDoctorCommandRequest>
+    public class DeleteDoctorCommandHandler : IRequestHandler<DeleteDoctorCommandRequest>
     {
         private readonly IUnitOfWork unitOfWork;
 
-        public DeleteDoctorCommandHandler()
-        {
-        }
+
 
         public DeleteDoctorCommandHandler(IUnitOfWork unitOfWork)
         {
