@@ -9,6 +9,10 @@ using PMRU.Application.Features.Doctors.Command.DeleteDoctor;
 using PMRU.Application.Features.Doctors.Command.UpdateDoctor;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Application.Features.Doctors.Queries.GetDoctors;
+using PMRU.Application.Features.Doctors.Queries.GetDoctorsById;
+using AutoMapper.Features;
+using PMRU.Application.Features.Doctors.Queries.GetDoctorByLocation;
+using PMRU.Domain.Entities;
 
 
 namespace PMRU.Api.Controllers
@@ -32,10 +36,18 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
-        [HttpGet("{location}")]
-        public async Task<IActionResult> GetDoctorByLocation(int location)
+        //[HttpGet("{location}")]
+        //public async Task<IActionResult> GetDoctorsByLocation(int location)
+        //{
+        //    var request = new GetDoctorsByLocationQueryRequest(location);
+        //    var response = await mediator.Send(request);
+
+        //    return Ok(response);
+        //}
+        [HttpGet("{Id}")]
+        public async Task<IActionResult> GetDoctorsById(int Id)
         {
-            var request = new GetDoctorQueryRequest(location);
+            var request = new GetDoctorsByIdQueryRequest(Id);
             var response = await mediator.Send(request);
 
             return Ok(response);

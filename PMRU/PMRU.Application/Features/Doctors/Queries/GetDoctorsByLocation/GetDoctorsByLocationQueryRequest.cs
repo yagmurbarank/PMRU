@@ -12,23 +12,17 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctorByLocation
 {
-    //public class GetDoctorByLocationQueryRequest : IRequest<GetDoctorByLocationQueryResponse>
-    //{
-    //    private int location;
+    public class GetDoctorByLocationQueryRequest : IRequest<IList<GetDoctorByLocationQueryResponse>>
+    {
 
-    //    public GetDoctorByLocationQueryRequest(string location)
-    //    {
-    //        Location = location;
-    //    }
+        public GetDoctorByLocationQueryRequest(string location)
+        {
+            Location = location;
+       }
 
-    //    public GetDoctorByLocationQueryRequest(int location)
-    //    {
-    //        this.location = location;
-    //    }
+        public string Location { get; }
 
-    //    public LocationDto Location { get; set; }
-    //    public int Id { get; internal set; }
-    //}
+    }
 
 
 }
