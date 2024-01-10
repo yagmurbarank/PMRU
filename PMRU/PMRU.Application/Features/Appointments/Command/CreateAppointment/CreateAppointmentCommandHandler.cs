@@ -19,7 +19,7 @@ namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
         }
         public async Task<Unit> Handle(CreateAppointmentCommandRequest request, CancellationToken cancellationToken)
         {
-            Appointment appointment = new(request.DoctorID,request.AppointmentDate,request.AppointmentHour,request.Description);
+            Appointment appointment = new(request.DoctorID, request.EmployeeID, request.AppointmentDate, request.AppointmentHour, request.Description);
 
             await unitOfWork.GetWriteRepository<Appointment>().CreateAsync(appointment);
             await unitOfWork.SaveAsync();
