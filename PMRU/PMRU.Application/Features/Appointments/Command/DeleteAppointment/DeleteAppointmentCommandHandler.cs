@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.DeleteAppointment
 {
-    public class DeleteAppointmentCommandHandler : IRequestHandler<DeleteAppointmentCommandRequest>
+    public class DeleteAppointmentCommandHandler : IRequestHandler<DeleteAppointmentCommandRequest,Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 

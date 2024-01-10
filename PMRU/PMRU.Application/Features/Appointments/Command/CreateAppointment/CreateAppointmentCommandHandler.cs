@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
 {
-    public class CreateAppointmentCommandHandler : IRequestHandler<CreateAppointmentCommandRequest>
+    public class CreateAppointmentCommandHandler : IRequestHandler<CreateAppointmentCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
 

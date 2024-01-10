@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.DeleteAppointment
 {
-    public class DeleteAppointmentCommandRequest : IRequest
+    public class DeleteAppointmentCommandRequest : IRequest<Unit>
     {
         public int Id { get; set; }
     }
