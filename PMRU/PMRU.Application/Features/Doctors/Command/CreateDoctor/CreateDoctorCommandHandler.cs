@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
 {
-    public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommandRequest>
+    public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         public CreateDoctorCommandHandler(IUnitOfWork unitOfWork)
