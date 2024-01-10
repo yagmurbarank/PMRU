@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.UpdateAppointment
 {
-    public class UpdateAppointmentCommandHandler : IRequestHandler<UpdateAppointmentCommandRequest>
+    public class UpdateAppointmentCommandHandler : IRequestHandler<UpdateAppointmentCommandRequest, Unit>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;

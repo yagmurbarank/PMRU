@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.UpdateAppointment
 {
-    public class UpdateAppointmentCommandRequest : IRequest
+    public class UpdateAppointmentCommandRequest : IRequest<Unit>
     {
         
             public int Id { get; set; }
