@@ -9,7 +9,6 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentByDate
 {
     public class GetAppointmentByDateQueryResponse
     {
-        public int AppointmentID { get; set; }
         public EmployeeDto Employee { get; set; }
         public DoctorDto Doctor { get; set; }
         public DateOnly AppointmentDate { get; set; }

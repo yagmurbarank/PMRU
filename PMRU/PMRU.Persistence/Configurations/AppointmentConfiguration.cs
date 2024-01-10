@@ -59,7 +59,6 @@ namespace PMRU.Persistence.Configurations
                     Id = 1,
                     EmployeeID = 1,
                     DoctorID = 1,
-                    AppointmentID = 12,
                     AppointmentDate = new DateOnly(2023,11,12),
                     AppointmentHour = new TimeOnly(12,30),
                     Description = "Regular Checkup"
@@ -69,7 +68,6 @@ namespace PMRU.Persistence.Configurations
                     Id = 2,
                     EmployeeID = 2,
                     DoctorID = 2,
-                    AppointmentID = 13,
                     AppointmentDate = new DateOnly(2023, 12, 13),
                     AppointmentHour = new TimeOnly(13, 45),
                     Description = "Regular Checkup"

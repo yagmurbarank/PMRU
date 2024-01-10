@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Exceptions
 {
-    public class DoctorCannotHaveAvailabilityAtTheSameTimeException : BaseExceptions
+    public class DoctorCannotHaveAvailabilityAtTheSameTimeException : BaseException
     {
         public DoctorCannotHaveAvailabilityAtTheSameTimeException() : base("Doktorun aynı saat aralığında uygunluğu zaten var!") { }
     }

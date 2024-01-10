@@ -14,15 +14,15 @@ namespace PMRU.Domain.Entities
         {
             
         }
-        public Appointment(int doctorID, DateOnly appointmentDate, TimeOnly appointmentHour, string description)
+        public Appointment(int doctorID, int employeeId, DateOnly appointmentDate, TimeOnly appointmentHour, string description)
         {
             DoctorID = doctorID;
+            EmployeeID = employeeId;
             AppointmentDate = appointmentDate;
             AppointmentHour = appointmentHour;
             Description = description;
         }
         public int EmployeeID { get; set; }
-        public int AppointmentID { get; set; }
         public Employee Employee { get; set; }
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }

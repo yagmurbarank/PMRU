@@ -1,4 +1,3 @@
-
 using PMRU.Persistence;
 using PMRU.Application;
 using PMRU.Infrastructure;
@@ -15,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
 var env = builder.Environment;
 
 builder.Configuration
@@ -29,14 +31,14 @@ builder.Services.AddCustomMapper();
 
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PMRU", Version = "v1", Description = "Periyodik Muayene Randevu Uygulamasý swagger client." });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PMRU", Version = "v1", Description = "Periyodik Muayene Randevu Uygulaması swagger client." });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme{
         Name = "Authorization",
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In= ParameterLocation.Header,
-        Description = "'Bearer' yazýp boþluk býraktýktan sonra Token Girebilirsiniz \r\n\r\n Örneðin: n Örneðin: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6I"
+        Description = "'Bearer' yazıp boşluk bıraktıktan sonra Token Girebilirsiniz \r\n\r\n Örneğin: n Örneğin: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6I"
     });
     c.AddSecurityRequirement(new OpenApiSecurityRequirement()
     {
@@ -71,4 +73,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

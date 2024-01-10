@@ -13,7 +13,6 @@ namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
     {
         private readonly IUnitOfWork unitOfWork;
 
-
         public DeleteDoctorCommandHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
