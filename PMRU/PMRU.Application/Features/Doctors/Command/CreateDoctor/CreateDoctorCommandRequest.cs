@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
 {
-    public class CreateDoctorCommandRequest : IRequest
+    public class CreateDoctorCommandRequest : IRequest<Unit>
     {
         public string IdentityNumber { get; set; }
         public string Name { get; set; }
