@@ -23,7 +23,6 @@ namespace PMRU.Domain.Entities
             Description = description;
         }
         public int EmployeeID { get; set; }
-        public int AppointmentID { get; set; }
         public Employee Employee { get; set; }
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }

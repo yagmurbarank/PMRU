@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
-using PMRU.Application.Features.Appointments.Queries.GetAppointmentByAppointmentId;
+using PMRU.Application.Features.Appointments.Queries.GetAppointmentById;
 using PMRU.Application.Features.Appointments.Queries.GetAppointmentByDate;
 using PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId;
 using PMRU.Application.Features.Appointments.Command.CreateAppointment;
@@ -37,10 +37,10 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
-        [HttpGet("{appointmentId}")]
-        public async Task<IActionResult> GetAppointmentByAppointmentId(int appointmentId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAppointmentByAId(int id)
         {
-            var request = new GetAppointmentByAppointmentIdQueryRequest(appointmentId);
+            var request = new GetAppointmentByIdQueryRequest(id);
             var response = await mediator.Send(request);
 
             return Ok(response);

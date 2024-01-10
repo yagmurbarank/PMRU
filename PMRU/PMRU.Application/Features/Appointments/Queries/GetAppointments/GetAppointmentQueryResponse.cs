@@ -9,7 +9,6 @@ namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
 {
     public class GetAppointmentQueryResponse
     {
-        public int AppointmentID { get; set; }
         public int EmployeeID { get; set; }
         public EmployeeDto Employee { get; set; } = new EmployeeDto();
         public int DoctorID { get; set; }

@@ -139,9 +139,6 @@ namespace PMRU.Persistence.Migrations
                     b.Property<TimeOnly>("AppointmentHour")
                         .HasColumnType("time");
 
-                    b.Property<int>("AppointmentID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
@@ -185,8 +182,7 @@ namespace PMRU.Persistence.Migrations
                             Id = 1,
                             AppointmentDate = new DateOnly(2023, 11, 12),
                             AppointmentHour = new TimeOnly(12, 30, 0),
-                            AppointmentID = 12,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 109, DateTimeKind.Local).AddTicks(7848),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 1, DateTimeKind.Local).AddTicks(8307),
                             Description = "Regular Checkup",
                             DoctorID = 1,
                             EmployeeID = 1,
@@ -198,8 +194,7 @@ namespace PMRU.Persistence.Migrations
                             Id = 2,
                             AppointmentDate = new DateOnly(2023, 12, 13),
                             AppointmentHour = new TimeOnly(13, 45, 0),
-                            AppointmentID = 13,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 109, DateTimeKind.Local).AddTicks(7876),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 1, DateTimeKind.Local).AddTicks(8323),
                             Description = "Regular Checkup",
                             DoctorID = 2,
                             EmployeeID = 2,
@@ -255,7 +250,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 110, DateTimeKind.Local).AddTicks(2082),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 2, DateTimeKind.Local).AddTicks(2744),
                             Day = 1,
                             DoctorID = 1,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -266,7 +261,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 110, DateTimeKind.Local).AddTicks(2096),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 2, DateTimeKind.Local).AddTicks(2756),
                             Day = 2,
                             DoctorID = 2,
                             EndTime = new TimeSpan(0, 8, 20, 0, 0),
@@ -522,7 +517,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3473),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4354),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -539,7 +534,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3476),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4358),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -556,7 +551,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 3,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3478),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4361),
                             DepartmentID = 3,
                             Email = "mehmet.celik@email.com",
                             IdentityNumber = "5278149630",
@@ -573,7 +568,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 4,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3481),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4364),
                             DepartmentID = 4,
                             Email = "fatma.arslan@email.com",
                             IdentityNumber = "5555456789",
@@ -590,7 +585,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 5,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3483),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4366),
                             DepartmentID = 2,
                             Email = "ali.demir@email.com",
                             IdentityNumber = "5555567890",
@@ -607,7 +602,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 6,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3485),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4369),
                             DepartmentID = 5,
                             Email = "zeynep.yildiz@email.com",
                             IdentityNumber = "5555678901",
@@ -624,7 +619,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 7,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3489),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4372),
                             DepartmentID = 2,
                             Email = "can.aksoy@email.com",
                             IdentityNumber = "5555789012",
@@ -641,7 +636,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 8,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3491),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4375),
                             DepartmentID = 6,
                             Email = "elif.ersoy@email.com",
                             IdentityNumber = "5555890123",
@@ -658,7 +653,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 9,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3494),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4378),
                             DepartmentID = 4,
                             Email = "burak.taskin@email.com",
                             IdentityNumber = "5555901234",
@@ -675,7 +670,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 10,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 9, 15, 22, 13, 111, DateTimeKind.Local).AddTicks(3496),
+                            CreatedDate = new DateTime(2024, 1, 10, 9, 46, 3, 3, DateTimeKind.Local).AddTicks(4381),
                             DepartmentID = 1,
                             Email = "deniz.akin@email.com",
                             IdentityNumber = "5556012345",
