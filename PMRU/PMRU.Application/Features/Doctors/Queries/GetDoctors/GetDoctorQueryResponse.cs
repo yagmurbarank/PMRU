@@ -10,6 +10,7 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 {
     public class GetDoctorQueryResponse
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
         public LocationDto Location { get; set; }

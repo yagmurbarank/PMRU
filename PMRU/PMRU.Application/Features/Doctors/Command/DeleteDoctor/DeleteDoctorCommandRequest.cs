@@ -14,3 +14,8 @@ namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
         public int Id { get; set; }
     }
 }
+
+
+
+
+
