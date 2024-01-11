@@ -1,4 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -9,13 +12,11 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.DeleteAppointment
 {
-    public class DeleteAppointmentCommandHandler : IRequestHandler<DeleteAppointmentCommandRequest,Unit>
+    public class DeleteAppointmentCommandHandler : BaseHandler, IRequestHandler<DeleteAppointmentCommandRequest,Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
 
-        public DeleteAppointmentCommandHandler(IUnitOfWork unitOfWork)
+        public DeleteAppointmentCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
         }
         public async Task<Unit> Handle(DeleteAppointmentCommandRequest request, CancellationToken cancellationToken)
         {

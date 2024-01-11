@@ -1,4 +1,6 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
 using PMRU.Application.Features.Appointments.Rules;
 using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
@@ -11,16 +13,12 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.UpdateAppointment
 {
-    public class UpdateAppointmentCommandHandler : IRequestHandler<UpdateAppointmentCommandRequest, Unit>
+    public class UpdateAppointmentCommandHandler :BaseHandler, IRequestHandler<UpdateAppointmentCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
-        private readonly IMapper mapper;
         private readonly AppointmentRules appointmentRules;
 
-        public UpdateAppointmentCommandHandler(IUnitOfWork unitOfWork, IMapper mapper, AppointmentRules appointmentRules)
+        public UpdateAppointmentCommandHandler(AppointmentRules appointmentRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
             this.appointmentRules = appointmentRules;
         }
         public async Task<Unit> Handle(UpdateAppointmentCommandRequest request, CancellationToken cancellationToken)

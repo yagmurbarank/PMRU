@@ -1,6 +1,8 @@
-﻿using AutoMapper;
-using MediatR;
+﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
 using PMRU.Application.Features.Availabilities.Rules;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -11,14 +13,12 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.CreateAvailability
 {
-    public class CreateAvailabilityCommandHandler : IRequestHandler<CreateAvailabilityCommandRequest, Unit>
+    public class CreateAvailabilityCommandHandler :BaseHandler, IRequestHandler<CreateAvailabilityCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
         private readonly AvailabilityRules availabilityRules;
 
-        public CreateAvailabilityCommandHandler(IUnitOfWork unitOfWork, AvailabilityRules availabilityRules) 
+        public CreateAvailabilityCommandHandler(AvailabilityRules availabilityRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor) 
         {
-            this.unitOfWork = unitOfWork;
             this.availabilityRules = availabilityRules;
         }
 

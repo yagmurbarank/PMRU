@@ -1,4 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -9,13 +12,11 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
 {
-    public class DeleteDoctorCommandHandler : IRequestHandler<DeleteDoctorCommandRequest>
+    public class DeleteDoctorCommandHandler :BaseHandler, IRequestHandler<DeleteDoctorCommandRequest>
     {
-        private readonly IUnitOfWork unitOfWork;
 
-        public DeleteDoctorCommandHandler(IUnitOfWork unitOfWork)
+        public DeleteDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
         }
         public async Task<Unit> Handle(DeleteDoctorCommandRequest request, CancellationToken cancellationToken)
         {
