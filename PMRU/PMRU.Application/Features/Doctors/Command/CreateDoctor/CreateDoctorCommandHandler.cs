@@ -27,10 +27,11 @@ namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
         public async Task<Unit> Handle(CreateDoctorCommandRequest request, CancellationToken cancellationToken)
         {
             IList<Doctor> doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync();
-            await doctorRules.DoctorIdentityNumberMustNotBeSame(doctors, request.IdentityNumber);
+            await doctorRules.DoctorIdentityNumberMustNotBeSame(doctors, request.IdentityNumber, request.RegistrationNumber);
 
-            IList<Doctor> locations = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync();
-            await doctorRules.OneDoctorMustNotBeAtDifferentLocation(locations, request.LocationID);
+
+            //IList<Doctor> doctorLocation = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync();
+            //await doctorRules.OneDoctorMustNotBeAtDifferentLocation(doctors, request.LocationID, request.RegistrationNumber);
 
             Doctor doctor = new(request.IdentityNumber, request.RegistrationNumber, request.Name, request.Surname, request.Phone, request.Email, request.Password, request.LocationID);
 

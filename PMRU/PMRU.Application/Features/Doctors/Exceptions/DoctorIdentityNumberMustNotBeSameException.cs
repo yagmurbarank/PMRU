@@ -9,7 +9,7 @@ namespace PMRU.Application.Features.Doctors.Exceptions
 {
     public class DoctorIdentityNumberMustNotBeSameException : BaseException
     {
-        public DoctorIdentityNumberMustNotBeSameException() : base("Bu doctor zaten kayıtlı!")
+        public DoctorIdentityNumberMustNotBeSameException() : base("Bu doktor zaten kayıtlı!")
         {
            
             
