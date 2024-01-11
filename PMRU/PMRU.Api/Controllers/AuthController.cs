@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Auth.Command.Login;
+using PMRU.Application.Features.Auth.Command.RefreshToken;
 using PMRU.Application.Features.Auth.Command.Register;
 
 namespace PMRU.Api.Controllers
@@ -30,6 +31,13 @@ namespace PMRU.Api.Controllers
         {
             var response = await mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK,response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK, response);
         }
     }
 }
