@@ -8,22 +8,19 @@ using System.Threading.Tasks;
 using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Features.Availabilities.Command.UpdateAvailability;
 using PMRU.Domain.Entities;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
 
 
 namespace PMRU.Application.Features.Doctors.Command.UpdateDoctor
 {
 
-    public class UpdateDoctorCommandHandler : IRequestHandler<UpdateDoctorCommandRequest>
+    public class UpdateDoctorCommandHandler :BaseHandler, IRequestHandler<UpdateDoctorCommandRequest>
     {
-        private readonly IMapper mapper;
-        private readonly IUnitOfWork unitOfWork;
-        public UpdateDoctorCommandHandler(IUnitOfWork unitOfWork, IMapper mapper)
+
+        public UpdateDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
-            this.mapper = mapper;
-
         }
-
 
         public async Task<Unit> Handle(UpdateDoctorCommandRequest request, CancellationToken cancellationToken)
         {

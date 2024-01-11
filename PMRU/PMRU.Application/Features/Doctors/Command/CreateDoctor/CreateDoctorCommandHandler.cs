@@ -1,5 +1,8 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
 using PMRU.Application.Features.Doctors.Rules;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -10,14 +13,12 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
 {
-    public class CreateDoctorCommandHandler : IRequestHandler<CreateDoctorCommandRequest, Unit>
+    public class CreateDoctorCommandHandler : BaseHandler, IRequestHandler<CreateDoctorCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
         private readonly DoctorRules doctorRules;
 
-        public CreateDoctorCommandHandler(IUnitOfWork unitOfWork, DoctorRules doctorRules)
+        public CreateDoctorCommandHandler(DoctorRules doctorRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
             this.doctorRules = doctorRules;
 
         }

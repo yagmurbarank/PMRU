@@ -1,4 +1,7 @@
-﻿using MediatR;
+﻿using PMRU.Application.Interfaces.AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
 using PMRU.Application.Features.Appointments.Rules;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
@@ -10,14 +13,12 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
 {
-    public class CreateAppointmentCommandHandler : IRequestHandler<CreateAppointmentCommandRequest, Unit>
+    public class CreateAppointmentCommandHandler : BaseHandler, IRequestHandler<CreateAppointmentCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
         private readonly AppointmentRules appointmentRules;
 
-        public CreateAppointmentCommandHandler(IUnitOfWork unitOfWork, AppointmentRules appointmentRules)
+        public CreateAppointmentCommandHandler(AppointmentRules appointmentRules,IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
         {
-            this.unitOfWork = unitOfWork;
             this.appointmentRules = appointmentRules;
         }
         public async Task<Unit> Handle(CreateAppointmentCommandRequest request, CancellationToken cancellationToken)

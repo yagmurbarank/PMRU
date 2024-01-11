@@ -1,4 +1,7 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Http;
+using PMRU.Application.Bases;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -9,13 +12,11 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailability
 {
-    public class DeleteAvailabilityCommandHandler : IRequestHandler<DeleteAvailabilityCommandRequest, Unit>
+    public class DeleteAvailabilityCommandHandler :BaseHandler, IRequestHandler<DeleteAvailabilityCommandRequest, Unit>
     {
-        private readonly IUnitOfWork unitOfWork;
 
-        public DeleteAvailabilityCommandHandler(IUnitOfWork unitOfWork) 
+        public DeleteAvailabilityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor) 
         {
-            this.unitOfWork = unitOfWork;
         }
 
         public async Task<Unit> Handle(DeleteAvailabilityCommandRequest request, CancellationToken cancellationToken)
