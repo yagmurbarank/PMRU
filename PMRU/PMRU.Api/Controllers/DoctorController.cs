@@ -11,7 +11,7 @@ using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Application.Features.Doctors.Queries.GetDoctors;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsById;
 using AutoMapper.Features;
-using PMRU.Application.Features.Doctors.Queries.GetDoctorByLocation;
+using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Domain.Entities;
 
 
@@ -36,14 +36,14 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
-        //[HttpGet("{location}")]
-        //public async Task<IActionResult> GetDoctorsByLocation(int location)
-        //{
-        //    var request = new GetDoctorsByLocationQueryRequest(location);
-        //    var response = await mediator.Send(request);
+        [HttpGet("{location}")]
+        public async Task<IActionResult> GetDoctorsByLocation(int location)
+        {
+            var request = new GetDoctorsByLocationQueryRequest(location);
+           var response = await mediator.Send(request);
 
-        //    return Ok(response);
-        //}
+           return Ok(response);
+        }
         [HttpGet("{Id}")]
         public async Task<IActionResult> GetDoctorsById(int Id)
         {

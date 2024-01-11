@@ -1,28 +1,24 @@
-﻿
-
-using MediatR;
+﻿using MediatR;
 using PMRU.Application.DTOs;
-using PMRU.Application.Features.Employees.Queries.GetEmployeesById;
-using PMRU.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Doctors.Queries.GetDoctorByLocation
+namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
 {
-    public class GetDoctorByLocationQueryRequest : IRequest<IList<GetDoctorByLocationQueryResponse>>
+    public class GetDoctorsByLocationQueryRequest : IRequest<IList<GetDoctorsByLocationQueryResponse>>
     {
+        private int location;
 
-        public GetDoctorByLocationQueryRequest(string location)
+        public GetDoctorsByLocationQueryRequest(int location)
         {
-            Location = location;
-       }
+            this.location = location;
+        }
 
-        public string Location { get; }
-
+        public DoctorDto Doctor { get; set; }
+        public int LocationID { get; internal set; }
     }
-
 
 }
