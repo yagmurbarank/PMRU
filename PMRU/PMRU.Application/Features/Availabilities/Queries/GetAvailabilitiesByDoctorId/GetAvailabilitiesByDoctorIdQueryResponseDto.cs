@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay
+namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId
 {
-    public class GetAvailabilitiesByDayQueryResponse
+    public class GetAvailabilitiesByDoctorIdQueryResponseDto
     {
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }

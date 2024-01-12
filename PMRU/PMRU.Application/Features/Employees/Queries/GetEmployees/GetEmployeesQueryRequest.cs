@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployees
 {
-    public class GetEmployeesQueryRequest : IRequest<IList<GetEmployeesQueryResponse>>
+    public class GetEmployeesQueryRequest : IRequest<IList<GetEmployeesQueryResponseDto>>
     {
     }
 }

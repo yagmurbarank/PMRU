@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Auth.Command.Login
 {
-    public class LoginCommandHandler : BaseHandler, IRequestHandler<LoginCommandRequest, LoginCommandResponse>
+    public class LoginCommandHandler : BaseHandler, IRequestHandler<LoginCommandRequest, LoginCommandResponseDto>
     {
         private readonly UserManager<User> userManager;
         private readonly IConfiguration configuration;
@@ -32,7 +32,7 @@ namespace PMRU.Application.Features.Auth.Command.Login
             this.authRules = authRules;
         }
 
-        public async Task<LoginCommandResponse> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
+        public async Task<LoginCommandResponseDto> Handle(LoginCommandRequest request, CancellationToken cancellationToken)
         {
             User user = await userManager.FindByEmailAsync(request.Email);
             bool checkPassword = await userManager.CheckPasswordAsync(user, request.Password);

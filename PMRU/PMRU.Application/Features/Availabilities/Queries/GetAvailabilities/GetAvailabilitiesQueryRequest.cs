@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilities
 {
-    public class GetAvailabilitiesQueryRequest: IRequest<IList<GetAvailabilitiesQueryResponse>>
+    public class GetAvailabilitiesQueryRequest: IRequest<IList<GetAvailabilitiesQueryResponseDto>>
     {
     }
 }

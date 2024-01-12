@@ -1,11 +1,11 @@
-﻿using AutoMapper;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using PMRU.Application.DTOs;
 using PMRU.Application.Features.Doctors.Exceptions;
 using PMRU.Application.Features.Doctors.Queries.GetDoctors;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
+using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
 {
-    public class GetDoctorsByLocationQueryHandler /*: IRequestHandler<GetDoctorsByLocationQueryRequest, IList<GetDoctorsByLocationQueryResponse>>*/
+    public class GetDoctorsByLocationQueryHandler : IRequestHandler<GetDoctorsByLocationQueryRequest, IList<GetDoctorsByLocationQueryResponseDto>>
 
     {
         private readonly IUnitOfWork unitOfWork;
@@ -28,24 +28,15 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task<IList<GetDoctorsByLocationQueryResponse>> Handle(GetDoctorsByLocationQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetDoctorsByLocationQueryResponseDto>> Handle(GetDoctorsByLocationQueryRequest request, CancellationToken cancellationToken)
         {
-            var doctors = await unitOfWork.GetReadRepository<Doctor>()
-                .GetAllAsync(predicate: x => x.LocationID == request.LocationID && !x.IsDeleted);
-
-            var map = mapper.Map<IEnumerable<Doctor>, IList<GetDoctorsByLocationQueryResponse>>(doctors);
+            var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(predicate: x => x.LocationID == request.LocationID && !x.IsDeleted, include: x => x.Include(b => b.Location).Include(b => b.Availabilities));
+            var location = mapper.Map<LocationDto, Location>(new Location());
+            var availabilities = mapper.Map<AvailabilityDto, Availability>(new Availability());
+            var map = mapper.Map<GetDoctorsByLocationQueryResponseDto, Doctor>(doctors);
 
             return map;
         }
-        // public async Task<IList<GetDoctorsByLocationQueryResponse>> Handle(GetDoctorsByLocationQueryRequest request, CancellationToken cancellationToken)
-        // {
-
-        //var doctor = await unitOfWork.GetReadRepository<Location>().GetAllAsync(predicate: x => x.LocationID == request.LocationID && !x.IsDeleted);
-        //var location = mapper.Map<DoctorDto, Doctor>(new Doctor());
-        //var map = mapper.Map<GetDoctorsByLocationQueryResponse, Location>(doctor);
-        //return doctor;
-
-        // }
 
     }
 }

@@ -27,7 +27,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAvailabilities()
+        public async Task<ActionResult<IList<GetAvailabilitiesQueryResponseDto>>> GetAvailabilities()
         {
             var response = await mediator.Send(new GetAvailabilitiesQueryRequest());
 
@@ -35,7 +35,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetAvailabilityById(int id)
+        public async Task<ActionResult<GetAvailabilityByIdQueryResponseDto>> GetAvailabilityById(int id)
         {
             var request = new GetAvailabilityByIdQueryRequest(id);
             var response = await mediator.Send(request);
@@ -44,7 +44,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{doctorId}")]
-        public async Task<IActionResult> GetAvailabilitiesByDoctorId(int doctorId)
+        public async Task<ActionResult<IList<GetAvailabilitiesByDoctorIdQueryResponseDto>>> GetAvailabilitiesByDoctorId(int doctorId)
         {
             var request = new GetAvailabilitiesByDoctorIdQueryRequest(doctorId);
             var response = await mediator.Send(request);
@@ -53,7 +53,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{day}")]
-        public async Task<IActionResult> GetAvailabilitiesByDay(DayOfWeek day)
+        public async Task<ActionResult<IList<GetAvailabilitiesByDayQueryResponseDto>>> GetAvailabilitiesByDay(DayOfWeek day)
         {
             var request = new GetAvailabilitiesByDayQueryRequest(day);
             var response = await mediator.Send(request);
@@ -62,7 +62,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{startTime}")]
-        public async Task<IActionResult> GetAvailabilitiesByStartTime(TimeSpan startTime)
+        public async Task<ActionResult<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>> GetAvailabilitiesByStartTime(TimeSpan startTime)
         {
             var request = new GetAvailabilitiesByStartTimeQueryRequest(startTime);
             var response = await mediator.Send(request);
@@ -71,43 +71,43 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAvailability(CreateAvailabilityCommandRequest request)
+        public async Task<ActionResult> CreateAvailability(CreateAvailabilityCommandRequest request)
         {
             var response = await mediator.Send(request);
 
-            return Ok(response);
+            return Ok();
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAvailabilities(CreateAvailabilitiesCommandRequest request)
+        public async Task<ActionResult> CreateAvailabilities(CreateAvailabilitiesCommandRequest request)
         {
             var response = await mediator.Send(request);
 
-            return Ok(response);
+            return Ok();
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateAvailability(UpdateAvailabilityCommandRequest request)
+        public async Task<ActionResult> UpdateAvailability(UpdateAvailabilityCommandRequest request)
         {
             var response = await mediator.Send(request);
 
-            return Ok(response);
+            return Ok();
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteAvailability(DeleteAvailabilityCommandRequest request)
+        public async Task<ActionResult> DeleteAvailability(DeleteAvailabilityCommandRequest request)
         {
             var response = await mediator.Send(request);
 
-            return Ok(response);
+            return Ok();
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteAvailabilities(DeleteAvailabilitiesCommandRequest request)
+        public async Task<ActionResult> DeleteAvailabilities(DeleteAvailabilitiesCommandRequest request)
         {
             var response = await mediator.Send(request);
 
-            return Ok(response);
+            return Ok();
         }
     }
 }

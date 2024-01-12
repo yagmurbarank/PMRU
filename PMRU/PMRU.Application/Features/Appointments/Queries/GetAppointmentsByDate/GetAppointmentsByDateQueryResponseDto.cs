@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentById
+namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDate
 {
-    public class GetAppointmentByIdQueryResponse
+    public class GetAppointmentsByDateQueryResponseDto
     {
-        public DoctorDto Doctor {  get; set; }
         public EmployeeDto Employee { get; set; }
+        public DoctorDto Doctor { get; set; }
         public DateOnly AppointmentDate { get; set; }
         public TimeOnly AppointmentHour { get; set; }
-        public string Description { get; set; }
-
     }
 }

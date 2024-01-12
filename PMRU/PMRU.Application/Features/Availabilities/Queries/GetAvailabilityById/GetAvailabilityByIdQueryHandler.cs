@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 {
-    public class GetAvailabilityByIdQueryHandler : IRequestHandler<GetAvailabilityByIdQueryRequest, GetAvailabilityByIdQueryResponse>
+    public class GetAvailabilityByIdQueryHandler : IRequestHandler<GetAvailabilityByIdQueryRequest, GetAvailabilityByIdQueryResponseDto>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -24,11 +24,11 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
             this.mapper = mapper;
         }
 
-        public async Task<GetAvailabilityByIdQueryResponse> Handle(GetAvailabilityByIdQueryRequest request, CancellationToken cancellationToken)
+        public async Task<GetAvailabilityByIdQueryResponseDto> Handle(GetAvailabilityByIdQueryRequest request, CancellationToken cancellationToken)
         {
             var availability = await unitOfWork.GetReadRepository<Availability>().GetAsync(predicate: x => x.Id == request.Id && !x.IsDeleted, include: x => x.Include(b => b.Doctor));
             var doctor = mapper.Map<DoctorDto, Doctor>(new Doctor());
-            var map = mapper.Map<GetAvailabilityByIdQueryResponse, Availability>(availability);
+            var map = mapper.Map<GetAvailabilityByIdQueryResponseDto, Availability>(availability);
 
             return map;
         }

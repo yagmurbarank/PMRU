@@ -1,13 +1,14 @@
 ﻿using PMRU.Application.DTOs;
+using PMRU.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId
+namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilities
 {
-    public class GetAvailabilitiesByDoctorIdQueryResponse
+    public class GetAvailabilitiesQueryResponseDto
     {
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentById
 {
-    public class GetAppointmentByIdQueryRequest : IRequest<IList<GetAppointmentByIdQueryResponse>>
+    public class GetAppointmentByIdQueryRequest : IRequest<GetAppointmentByIdQueryResponseDto>
     {
         public GetAppointmentByIdQueryRequest(int id)
         {

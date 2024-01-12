@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 {
-    public class GetAvailabilityByIdQueryRequest: IRequest<GetAvailabilityByIdQueryResponse>
+    public class GetAvailabilityByIdQueryRequest: IRequest<GetAvailabilityByIdQueryResponseDto>
     {
         public GetAvailabilityByIdQueryRequest(int id) 
         {

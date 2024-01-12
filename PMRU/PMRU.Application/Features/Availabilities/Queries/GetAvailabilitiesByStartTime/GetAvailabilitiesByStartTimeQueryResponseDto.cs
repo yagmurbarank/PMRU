@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByStartTime
 {
-    public class GetAvailabilitiesByStartTimeQueryResponse
+    public class GetAvailabilitiesByStartTimeQueryResponseDto
     {
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }

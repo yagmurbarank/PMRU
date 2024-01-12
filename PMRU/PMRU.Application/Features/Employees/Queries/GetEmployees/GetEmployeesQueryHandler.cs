@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployees
 {
-    public class GetEmployeesQueryHandler : IRequestHandler<GetEmployeesQueryRequest, IList<GetEmployeesQueryResponse>>
+    public class GetEmployeesQueryHandler : IRequestHandler<GetEmployeesQueryRequest, IList<GetEmployeesQueryResponseDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -23,7 +23,7 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployees
             this.mapper = mapper;
         }
 
-        public async Task<IList<GetEmployeesQueryResponse>> Handle(GetEmployeesQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetEmployeesQueryResponseDto>> Handle(GetEmployeesQueryRequest request, CancellationToken cancellationToken)
         {
             var employees = await unitOfWork.GetReadRepository<Employee>().GetAllAsync(
                 include: x => x
@@ -32,20 +32,12 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployees
                     .Include(b => b.Position)
             );
 
-            var responseList = new List<GetEmployeesQueryResponse>();
+            var departmentDto = mapper.Map<DepartmentDto, Department>(new Department());
+            var locationDto = mapper.Map<LocationDto, Location>(new Location());
+            var positionDto = mapper.Map<PositionDto, Position>(new Position());
+            var map = mapper.Map<GetEmployeesQueryResponseDto, Employee>(employees);
 
-            foreach (var employee in employees)
-            {
-                var departmentDto = mapper.Map<DepartmentDto, Department>(employee.Department);
-                var locationDto = mapper.Map<LocationDto, Location>(employee.Location);
-                var positionDto = mapper.Map<PositionDto, Position>(employee.Position);
-
-                var map = mapper.Map<GetEmployeesQueryResponse, Employee>(employee);
-
-                responseList.Add(map);
-            }
-
-            return responseList;
+            return map;
         }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Auth.Command.RefreshToken
 {
-    public class RefreshTokenCommandRequest : IRequest<RefreshTokenCommandResponse>
+    public class RefreshTokenCommandRequest : IRequest<RefreshTokenCommandResponseDto>
     {
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }

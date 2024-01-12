@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Auth.Command.Login
 {
-    public class LoginCommandRequest : IRequest<LoginCommandResponse>
+    public class LoginCommandRequest : IRequest<LoginCommandResponseDto>
     {
         [DefaultValue("kadirocak@email.com")]
         public string Email { get; set; }

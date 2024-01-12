@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDoctorId
 {
-    public class GetAvailabilitiesByDoctorIdQueryRequest: IRequest<IList<GetAvailabilitiesByDoctorIdQueryResponse>>
+    public class GetAvailabilitiesByDoctorIdQueryRequest: IRequest<IList<GetAvailabilitiesByDoctorIdQueryResponseDto>>
     {
         public GetAvailabilitiesByDoctorIdQueryRequest(int doctorId)
         {

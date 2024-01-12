@@ -1,17 +1,15 @@
 ﻿using PMRU.Application.DTOs;
-using PMRU.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId
+namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentById
 {
-    public class GetAppointmentsByDoctorIdQueryResponse
+    public class GetAppointmentByIdQueryResponseDto
     {
-        
-        public int DoctorID { get; set; }
+        public DoctorDto Doctor {  get; set; }
         public EmployeeDto Employee { get; set; }
         public DateOnly AppointmentDate { get; set; }
         public TimeOnly AppointmentHour { get; set; }

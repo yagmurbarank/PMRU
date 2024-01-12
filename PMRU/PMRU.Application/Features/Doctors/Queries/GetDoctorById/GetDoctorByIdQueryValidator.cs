@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsById
+namespace PMRU.Application.Features.Doctors.Queries.GetDoctorById
 {
-    public class GetDoctorsByIdQueryValidator : AbstractValidator<GetDoctorsByIdQueryRequest>
+    public class GetDoctorByIdQueryValidator : AbstractValidator<GetDoctorByIdQueryRequest>
     {
-        public GetDoctorsByIdQueryValidator()
+        public GetDoctorByIdQueryValidator()
         {
             RuleFor(x => x.Id)
                 .GreaterThan(0)
