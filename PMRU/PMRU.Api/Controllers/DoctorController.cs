@@ -9,7 +9,7 @@ using PMRU.Application.Features.Doctors.Command.DeleteDoctor;
 using PMRU.Application.Features.Doctors.Command.UpdateDoctor;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Application.Features.Doctors.Queries.GetDoctors;
-using PMRU.Application.Features.Doctors.Queries.GetDoctorsById;
+using PMRU.Application.Features.Doctors.Queries.GetDoctorById;
 using AutoMapper.Features;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Domain.Entities;
@@ -29,37 +29,41 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetDoctor()
+        public async Task<ActionResult<IList<GetDoctorsQueryResponseDto>>> GetDoctors()
         {
-            var response = await mediator.Send(new GetDoctorQueryRequest());
+            var response = await mediator.Send(new GetDoctorsQueryRequest());
 
 
             return Ok(response);
         }
-        [HttpGet("{location}")]
-        public async Task<IActionResult> GetDoctorsByLocation(int location)
+
+        [HttpGet("{locationId}")]
+        public async Task<ActionResult<IList<GetDoctorsByLocationQueryResponseDto>>> GetDoctorsByLocation(int locationId)
         {
-            var request = new GetDoctorsByLocationQueryRequest(location);
+            var request = new GetDoctorsByLocationQueryRequest(locationId);
            var response = await mediator.Send(request);
 
            return Ok(response);
         }
+
         [HttpGet("{Id}")]
-        public async Task<IActionResult> GetDoctorsById(int Id)
+        public async Task<ActionResult<GetDoctorByIdQueryResponseDto>> GetDoctorById(int Id)
         {
-            var request = new GetDoctorsByIdQueryRequest(Id);
+            var request = new GetDoctorByIdQueryRequest(Id);
             var response = await mediator.Send(request);
 
             return Ok(response);
         }
+
         [HttpPost]
-        public async Task<IActionResult> CreateDoctor(CreateDoctorCommandRequest request)
+        public async Task<ActionResult> CreateDoctor(CreateDoctorCommandRequest request)
         {
             await mediator.Send(request);
             return Ok();
         }
+
         [HttpPost]
-        public async Task<IActionResult> UpdateDoctor(UpdateDoctorCommandRequest request)
+        public async Task<ActionResult> UpdateDoctor(UpdateDoctorCommandRequest request)
         {
             var response = await mediator.Send(request);
 
@@ -67,7 +71,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
+        public async Task<ActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
         {
             var response = await mediator.Send(request);
 

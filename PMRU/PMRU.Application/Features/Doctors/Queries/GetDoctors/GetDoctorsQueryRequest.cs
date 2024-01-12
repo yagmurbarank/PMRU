@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 {
-    public class GetDoctorQueryRequest : IRequest<IList<GetDoctorQueryResponse>>
+    public class GetDoctorsQueryRequest : IRequest<IList<GetDoctorsQueryResponseDto>>
     {
-        public GetDoctorQueryRequest()
+        public GetDoctorsQueryRequest()
         {
         }
 
-        public GetDoctorQueryRequest(int location)
+        public GetDoctorsQueryRequest(int location)
         {
             Location = location;
         }

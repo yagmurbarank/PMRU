@@ -12,7 +12,7 @@ using PMRU.Application.Interfaces.AutoMapper;
 
 namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId
 {
-    public class GetAppointmentsByDoctorIdQueryHandler : IRequestHandler<GetAppointmentsByDoctorIdQueryRequest, IList<GetAppointmentsByDoctorIdQueryResponse>>
+    public class GetAppointmentsByDoctorIdQueryHandler : IRequestHandler<GetAppointmentsByDoctorIdQueryRequest, IList<GetAppointmentsByDoctorIdQueryResponseDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
@@ -22,13 +22,13 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctor
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task<IList<GetAppointmentsByDoctorIdQueryResponse>> Handle(GetAppointmentsByDoctorIdQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetAppointmentsByDoctorIdQueryResponseDto>> Handle(GetAppointmentsByDoctorIdQueryRequest request, CancellationToken cancellationToken)
         {
             var appointments = await unitOfWork.GetReadRepository<Appointment>()
                .GetAllAsync(predicate: x => x.DoctorID == request.DoctorId && !x.IsDeleted, include: x => x.Include(b => b.Employee));
             var employee = mapper.Map<EmployeeDto,Employee>(new Employee());
 
-            var map = mapper.Map<GetAppointmentsByDoctorIdQueryResponse, Appointment>(appointments);
+            var map = mapper.Map<GetAppointmentsByDoctorIdQueryResponseDto, Appointment>(appointments);
             return map;
         }
     }

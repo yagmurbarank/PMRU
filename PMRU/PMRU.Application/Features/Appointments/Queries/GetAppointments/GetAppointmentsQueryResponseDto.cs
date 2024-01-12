@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
 {
-    public class GetAppointmentQueryResponse
+    public class GetAppointmentsQueryResponseDto
     {
         public int EmployeeID { get; set; }
         public EmployeeDto Employee { get; set; } = new EmployeeDto();

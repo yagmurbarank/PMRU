@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 {
-    public class GetAvailabilityByIdQueryResponse
+    public class GetAvailabilityByIdQueryResponseDto
     {
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }

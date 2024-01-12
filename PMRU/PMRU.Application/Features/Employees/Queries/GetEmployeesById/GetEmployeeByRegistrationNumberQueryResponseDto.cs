@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 {
-    public class GetEmployeeByRegistrationNumberQueryResponse
+    public class GetEmployeeByRegistrationNumberQueryResponseDto
     {
     public string IdentityNumber { get; set; }
     public string Name { get; set; }

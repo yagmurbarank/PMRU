@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByStartTime
 {
-    public class GetAvailabilitiesByStartTimeQueryRequest: IRequest<IList<GetAvailabilitiesByStartTimeQueryResponse>>
+    public class GetAvailabilitiesByStartTimeQueryRequest: IRequest<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>
     {
         public GetAvailabilitiesByStartTimeQueryRequest(TimeSpan startTime)
         {

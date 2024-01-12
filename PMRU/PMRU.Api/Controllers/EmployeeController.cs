@@ -23,15 +23,14 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
-        [Authorize]
-        public async Task<IActionResult> GetEmployees()
+        public async Task<ActionResult<IList<GetEmployeesQueryResponseDto>>> GetEmployees()
         {
             var response = await mediator.Send(new GetEmployeesQueryRequest());
             return Ok(response);
         }
 
         [HttpGet("{registrationNumber}")]
-        public async Task<IActionResult> GetEmployeeByRegistrationNumber(string registrationNumber)
+        public async Task<ActionResult<GetEmployeeByRegistrationNumberQueryResponseDto>> GetEmployeeByRegistrationNumber(string registrationNumber)
         {
             var request = new GetEmployeeByRegistrationNumberQueryRequest(registrationNumber);
             var response = await mediator.Send(request);

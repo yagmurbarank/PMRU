@@ -12,17 +12,17 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
 {
-    public class GetAppointmentQueryHandler : IRequestHandler<GetAppointmentQueryRequest, IList<GetAppointmentQueryResponse>>
+    public class GetAppointmentsQueryHandler : IRequestHandler<GetAppointmentsQueryRequest, IList<GetAppointmentsQueryResponseDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
-        public GetAppointmentQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAppointmentsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task<IList<GetAppointmentQueryResponse>> Handle(GetAppointmentQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetAppointmentsQueryResponseDto>> Handle(GetAppointmentsQueryRequest request, CancellationToken cancellationToken)
         {
             var appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync(predicate: x => !x.IsDeleted, include: x => x.Include(b => b.Employee).Include(b => b.Doctor));
             var employee = mapper.Map<EmployeeDto, Employee>(new Employee());
@@ -43,7 +43,7 @@ namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
                 });
             }
             */
-            var map = mapper.Map<GetAppointmentQueryResponse, Appointment>(appointments);
+            var map = mapper.Map<GetAppointmentsQueryResponseDto, Appointment>(appointments);
 
 
             return map;

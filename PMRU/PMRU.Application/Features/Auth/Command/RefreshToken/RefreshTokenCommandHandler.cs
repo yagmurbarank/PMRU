@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Auth.Command.RefreshToken
 {
-    public class RefreshTokenCommandHandler :BaseHandler, IRequestHandler<RefreshTokenCommandRequest, RefreshTokenCommandResponse>
+    public class RefreshTokenCommandHandler :BaseHandler, IRequestHandler<RefreshTokenCommandRequest, RefreshTokenCommandResponseDto>
     {
         private readonly AuthRules authRules;
         private readonly UserManager<User> userManager;
@@ -30,7 +30,7 @@ namespace PMRU.Application.Features.Auth.Command.RefreshToken
             this.tokenService = tokenService;
         }
 
-        public async Task<RefreshTokenCommandResponse> Handle(RefreshTokenCommandRequest request, CancellationToken cancellationToken)
+        public async Task<RefreshTokenCommandResponseDto> Handle(RefreshTokenCommandRequest request, CancellationToken cancellationToken)
         {
             ClaimsPrincipal? principal = tokenService.GetPrincipalFromExpiredToken(request.AccessToken);
             string email = principal.FindFirstValue(ClaimTypes.Email);

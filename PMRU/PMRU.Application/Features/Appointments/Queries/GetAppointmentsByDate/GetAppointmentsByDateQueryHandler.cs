@@ -10,26 +10,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentByDate
+namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDate
 {
-    public class GetAppointmentByDateQueryHandler : IRequestHandler<GetAppointmentByDateQueryRequest, IList<GetAppointmentByDateQueryResponse>>
+    public class GetAppointmentsByDateQueryHandler : IRequestHandler<GetAppointmentsByDateQueryRequest, IList<GetAppointmentsByDateQueryResponseDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
-        public GetAppointmentByDateQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetAppointmentsByDateQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task<IList<GetAppointmentByDateQueryResponse>> Handle(GetAppointmentByDateQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetAppointmentsByDateQueryResponseDto>> Handle(GetAppointmentsByDateQueryRequest request, CancellationToken cancellationToken)
         {
             var appointments = await unitOfWork.GetReadRepository<Appointment>()
                  .GetAllAsync(predicate: x => x.AppointmentDate == request.Date && !x.IsDeleted, include: x => x.Include(b => b.Employee).Include(b => b.Doctor));
             var employee = mapper.Map<EmployeeDto, Employee>(new Employee());
             var doctor = mapper.Map<DoctorDto, Doctor>(new Doctor());
 
-            var map = mapper.Map<GetAppointmentByDateQueryResponse, Appointment>(appointments);
+            var map = mapper.Map<GetAppointmentsByDateQueryResponseDto, Appointment>(appointments);
             return map;
         }
     }

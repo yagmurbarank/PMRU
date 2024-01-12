@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Auth.Command.RefreshToken
 {
-    public class RefreshTokenCommandResponse
+    public class RefreshTokenCommandResponseDto
     {
         public string AccessToken { get; set; }
         public string RefreshToken { get; set; }

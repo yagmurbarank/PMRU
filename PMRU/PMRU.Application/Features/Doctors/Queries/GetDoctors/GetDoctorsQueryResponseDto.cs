@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 {
-    public class GetDoctorQueryResponse
+    public class GetDoctorsQueryResponseDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

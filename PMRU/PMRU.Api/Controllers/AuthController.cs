@@ -21,7 +21,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterCommandRequest request)
+        public async Task<ActionResult> Register(RegisterCommandRequest request)
         {
             await mediator.Send(request);
             return StatusCode(StatusCodes.Status201Created);
@@ -29,28 +29,28 @@ namespace PMRU.Api.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginCommandRequest request)
-        {
-            var response = await mediator.Send(request);
-            return StatusCode(StatusCodes.Status200OK,response);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> RefreshToken(RefreshTokenCommandRequest request)
+        public async Task<ActionResult<LoginCommandResponseDto>> Login(LoginCommandRequest request)
         {
             var response = await mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK, response);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Revoke(RevokeCommandRequest request)
+        public async Task<ActionResult<RefreshTokenCommandResponseDto>> RefreshToken(RefreshTokenCommandRequest request)
+        {
+            var response = await mediator.Send(request);
+            return StatusCode(StatusCodes.Status200OK, response);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Revoke(RevokeCommandRequest request)
         {
             await mediator.Send(request);
             return StatusCode(StatusCodes.Status200OK);
         }
 
         [HttpPost]
-        public async Task<IActionResult> RevokeAll()
+        public async Task<ActionResult> RevokeAll()
         {
             await mediator.Send(new RevokeAllCommandRequest());
             return StatusCode(StatusCodes.Status200OK);

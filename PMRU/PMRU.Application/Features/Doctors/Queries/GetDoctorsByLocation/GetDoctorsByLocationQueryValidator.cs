@@ -15,10 +15,6 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
                 .GreaterThan(0)
                 .NotEmpty()
                 .WithName("Lokasyon");
-
-            RuleFor(x => x.Doctor)
-                .NotEmpty()
-                .WithName("Doktor");
         }
     }
 }

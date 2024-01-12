@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay
 {
-    public class GetAvailabilitiesByDayQueryRequest: IRequest<IList<GetAvailabilitiesByDayQueryResponse>>
+    public class GetAvailabilitiesByDayQueryRequest: IRequest<IList<GetAvailabilitiesByDayQueryResponseDto>>
     {
         public GetAvailabilitiesByDayQueryRequest(DayOfWeek day)
         {

@@ -8,17 +8,13 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
 {
-    public class GetDoctorsByLocationQueryRequest : IRequest<IList<GetDoctorsByLocationQueryResponse>>
+    public class GetDoctorsByLocationQueryRequest : IRequest<IList<GetDoctorsByLocationQueryResponseDto>>
     {
-        private int location;
-
-        public GetDoctorsByLocationQueryRequest(int location)
-        {
-            this.location = location;
-        }
-
-        public DoctorDto Doctor { get; set; }
         public int LocationID { get; internal set; }
+        public GetDoctorsByLocationQueryRequest(int locationId)
+        {
+            this.LocationID = locationId;
+        }
     }
 
 }

@@ -17,24 +17,24 @@ using IMapper = PMRU.Application.Interfaces.AutoMapper.IMapper;
 
 namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 {
-    public class GetDoctorQueryHandler : IRequestHandler<GetDoctorQueryRequest, IList<GetDoctorQueryResponse>>
+    public class GetDoctorsQueryHandler : IRequestHandler<GetDoctorsQueryRequest, IList<GetDoctorsQueryResponseDto>>
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
 
-        public GetDoctorQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
+        public GetDoctorsQueryHandler(IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
         }
-        public async Task<IList<GetDoctorQueryResponse>> Handle(GetDoctorQueryRequest request, CancellationToken cancellationToken)
+        public async Task<IList<GetDoctorsQueryResponseDto>> Handle(GetDoctorsQueryRequest request, CancellationToken cancellationToken)
         {
 
 
             var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(include: x => x.Include(b => b.Location).Include(b => b.Availabilities));
             var location = mapper.Map<LocationDto, Location>(new Location());
             var availabilities = mapper.Map<AvailabilityDto, Availability>(new Availability());
-            var map = mapper.Map<GetDoctorQueryResponse, Doctor>(doctors);
+            var map = mapper.Map<GetDoctorsQueryResponseDto, Doctor>(doctors);
 
             return map;
         }
