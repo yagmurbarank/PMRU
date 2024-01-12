@@ -12,7 +12,6 @@ namespace PMRU.Domain.Entities
 
         public string LocationDescription { get; set; }
         public bool IsLocationCenter { get; set; }
-        public int LocationID { get; set; }
     }
 
 }
