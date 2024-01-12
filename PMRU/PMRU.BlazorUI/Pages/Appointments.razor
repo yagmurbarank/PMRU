@@ -4,36 +4,90 @@
     <div class="row">
         <div class="col-md-6">
             <p>Lütfen Sicil Numaranızı Giriniz</p>
-            <form>
+            
+            <EditForm Model="@registrationNumber" OnValidSubmit="FindEmployee">
                 <div class="form-group">
-                    <label>Sicil No</label>
-                    <input type="text" id="SicilNo" />
+                    <label for="startDate">Sicil No</label>
+                    <InputText class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
                 </div>
-                <div class="form-group">
-                    <input type="submit" value="Bul" class="btn btn-primary" />
-                </div>
-            </form>
+
+                <button class="btn btn-success" type="submit">Bul</button>
+            </EditForm>
+        
         </div>
+
         <div class="col-md-6">
-            <br />
-            <div>
-                <label>Ad</label>
-                <label>"Ad"</label>
-            </div>
-            <div>
-                <label>Soyad</label>
-                <label>"Soyad"</label>
-            </div>
-            <div>
-                <label>Email</label>
-                <label>"Email"</label>
-            </div>
-            <div>
-                <label>Lokasyon</label>
-                <label>"Lokasyon"</label>
-            </div>
+
+            <table id="tblData" class="table">
+                <tbody>
+                    <tr>
+                        <td>
+                            Sicil No
+                        </td>
+                        <td>
+                            @Employee.RegistrationNumber
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Ad
+                        </td>
+                        <td>
+                            @Employee.Name
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Soyad
+                        </td>
+                        <td>
+                            @Employee.Surname
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            @Employee.Email
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Lokasyon
+                        </td>
+                        <td>
+                            @if (Employee.Location != null)
+                            {
+                                @Employee.Location.LocationDescription
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Departman
+                        </td>
+                        <td>
+                            @if (Employee.Department != null)
+                            {
+                                @Employee.Department.DepartmentDescription
+                            }
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Pozisyon
+                        </td>
+                        <td>
+                            @if (Employee.Position != null)
+                            {
+                                @Employee.Position.PositionDescription
+                            }
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        
         </div>
-    </div>
-    <div class="row">
     </div>
 </div>

@@ -12,12 +12,24 @@ using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
 using PMRU.BlazorUI;
-using PMRU.BlazorUI.Layout;
+using PMRU.BlazorUI.Shared;
+using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Contracts;
 
 namespace PMRU.BlazorUI.Pages
 {
     public partial class Appointments
     {
+        [Inject]
+        public IEmployeeService EmployeeService { get; set; }
 
+        public EmployeeVM Employee { get; private set; } = new EmployeeVM();
+
+        public string registrationNumber { get; set; } = "";
+
+        protected async Task FindEmployee()
+        {
+            Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
+        }
     }
 }
