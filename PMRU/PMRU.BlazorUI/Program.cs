@@ -15,5 +15,6 @@ builder.Services.AddHttpClient<IClient, Client>(client => client.BaseAddress = n
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
-await builder.Build().RunAsync();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
+await builder.Build().RunAsync();
