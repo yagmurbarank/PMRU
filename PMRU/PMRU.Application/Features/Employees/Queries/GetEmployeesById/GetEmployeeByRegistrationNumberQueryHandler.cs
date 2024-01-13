@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
 using PMRU.Application.DTOs;
+using PMRU.Application.Features.Employees.Exceptions;
 using PMRU.Application.Interfaces.AutoMapper;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
@@ -30,7 +31,10 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
                           include: query => query.Include(e => e.Department)
                                                  .Include(e => e.Location)
                                                  .Include(e => e.Position)); ;
-
+            if (employee == null)
+            {
+                throw new EmployeeNotFoundException();
+            }
             var department = mapper.Map<DepartmentDto, Department>(employee.Department);
             var location = mapper.Map<LocationDto, Location>(employee.Location);
             var position = mapper.Map<PositionDto, Position>(employee.Position);
