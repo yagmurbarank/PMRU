@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMRU.Api", "PMRU.Api\PMRU.A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMRU.BlazorUI", "PMRU.BlazorUI\PMRU.BlazorUI.csproj", "{265215F2-660B-442C-A576-83994359CD08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMRU.Mapper", "PMRU.Mapper\PMRU.Mapper.csproj", "{27286E8B-5086-4EA1-BAA8-30B206E1D214}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMRU.Mapper", "PMRU.Mapper\PMRU.Mapper.csproj", "{27286E8B-5086-4EA1-BAA8-30B206E1D214}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

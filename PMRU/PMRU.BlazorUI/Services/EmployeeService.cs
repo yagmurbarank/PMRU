@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Services.Base;
@@ -9,7 +10,7 @@ namespace PMRU.BlazorUI.Services
     {
         private readonly IMapper _mapper;
 
-        public EmployeeService(IClient client, IMapper mapper) : base(client)
+        public EmployeeService(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
         {
             this._mapper = mapper;
         }
