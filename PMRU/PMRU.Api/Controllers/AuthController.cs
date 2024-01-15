@@ -6,6 +6,8 @@ using PMRU.Application.Features.Auth.Command.RefreshToken;
 using PMRU.Application.Features.Auth.Command.Register;
 using PMRU.Application.Features.Auth.Command.Revoke;
 using PMRU.Application.Features.Auth.Command.RevokeAll;
+using PMRU.Application.Features.Auth.Queries.GetRoles;
+using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
 
 namespace PMRU.Api.Controllers
 {
@@ -18,6 +20,13 @@ namespace PMRU.Api.Controllers
         public AuthController(IMediator mediator)
         {
             this.mediator = mediator;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<List<GetRolesQueryResponseDto>>> GetRoles()
+        {
+            var response = await mediator.Send(new GetRolesQueryRequest());
+            return Ok(response);
         }
 
         [HttpPost]
