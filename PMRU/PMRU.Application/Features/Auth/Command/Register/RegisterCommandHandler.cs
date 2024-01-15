@@ -35,7 +35,8 @@ namespace PMRU.Application.Features.Auth.Command.Register
             user.SecurityStamp = Guid.NewGuid().ToString();
 
             IdentityResult result = await userManager.CreateAsync(user, request.Password);
-            if(result.Succeeded)
+            
+            /*if(result.Succeeded)
             {
                 if (!await roleManager.RoleExistsAsync("user"))
                     await roleManager.CreateAsync(new Role
@@ -47,7 +48,7 @@ namespace PMRU.Application.Features.Auth.Command.Register
                     });
 
                 await userManager.AddToRoleAsync(user, "user");
-            }
+            }*/
 
             return Unit.Value;
         }
