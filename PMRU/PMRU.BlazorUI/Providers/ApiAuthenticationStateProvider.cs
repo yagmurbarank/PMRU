@@ -63,6 +63,13 @@ namespace PMRU.BlazorUI.Providers
             var tokenContent = jwtSecurityTokenHandler.ReadJwtToken(savedToken);
             var claims = tokenContent.Claims.ToList();
             claims.Add(new Claim(ClaimTypes.Name, tokenContent.Subject));
+            
+            var registrationNumberClaim = tokenContent.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+            if (registrationNumberClaim != null)
+            {
+                claims.Add(new Claim("RegistrationNumber", registrationNumberClaim.Value));
+            }
+            
             return claims;
         }
     }
