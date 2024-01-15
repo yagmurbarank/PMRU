@@ -32,7 +32,8 @@ namespace PMRU.Infrastructure.Tokens
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Sub, user.FullName),
-                new Claim(JwtRegisteredClaimNames.Email,user.Email)
+                new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                new Claim("RegistrationNumber", user.RegistrationNumber)
             };
 
             foreach (var role in roles)
