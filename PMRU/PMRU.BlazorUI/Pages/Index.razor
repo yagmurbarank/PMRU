@@ -1,0 +1,17 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1 class="text-center">Periyodik Muayene Randevu Uygulamasına Hoş Geldiniz</h1>
+<br />
+<br />
+
+<AuthorizeView>
+    <Authorized>
+        <button class="btn btn-danger" @onclick="Logout">Logout</button>
+    </Authorized>
+    <NotAuthorized>
+        <button class="btn btn-success" @onclick="GoToLogin">Login</button>
+    </NotAuthorized>
+</AuthorizeView>
+

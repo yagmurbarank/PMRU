@@ -31,6 +31,7 @@ namespace PMRU.Infrastructure.Tokens
             {
                 new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Sub, user.FullName),
                 new Claim(JwtRegisteredClaimNames.Email,user.Email)
             };
 
@@ -44,7 +45,7 @@ namespace PMRU.Infrastructure.Tokens
             var token = new JwtSecurityToken(
                 issuer: tokenSettings.Issuer,
                 audience: tokenSettings.Audience,
-                expires: DateTime.Now.AddMinutes(tokenSettings.TokenValidityInMinutes),
+                expires: DateTime.UtcNow.AddMinutes(tokenSettings.TokenValidityInMinutes),
                 claims: claims,
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
                 );

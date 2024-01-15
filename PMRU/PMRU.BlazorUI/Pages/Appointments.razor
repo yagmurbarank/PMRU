@@ -6,9 +6,13 @@
             <p>Lütfen Sicil Numaranızı Giriniz</p>
             
             <EditForm Model="@registrationNumber" OnValidSubmit="FindEmployee">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+
                 <div class="form-group">
                     <label for="startDate">Sicil No</label>
                     <InputText class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
+                    <ValidationMessage For="@(() => registrationNumber)" />
                 </div>
 
                 <button class="btn btn-success" type="submit">Bul</button>
