@@ -36,19 +36,11 @@ namespace PMRU.Application.Features.Auth.Command.Register
 
             IdentityResult result = await userManager.CreateAsync(user, request.Password);
             
-            /*if(result.Succeeded)
+            if(result.Succeeded)
             {
-                if (!await roleManager.RoleExistsAsync("user"))
-                    await roleManager.CreateAsync(new Role
-                    {
-                        Id=Guid.NewGuid(),
-                        Name = "user",
-                        NormalizedName = "USER",
-                        ConcurrencyStamp = Guid.NewGuid().ToString()
-                    });
-
-                await userManager.AddToRoleAsync(user, "user");
-            }*/
+                if (await roleManager.RoleExistsAsync(request.Role))
+                    await userManager.AddToRoleAsync(user, request.Role);
+            }
 
             return Unit.Value;
         }
