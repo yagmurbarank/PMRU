@@ -5,16 +5,12 @@ namespace PMRU.BlazorUI.Services.Base
     public class BaseHttpService
     {
         protected IClient _client;
-        private ILocalStorageService localStorage;
+        protected ILocalStorageService _localStorage;
 
-        public BaseHttpService(IClient client)
+        public BaseHttpService(IClient client, ILocalStorageService localStorage)
         {
-            _client = client;
-        }
-
-        public BaseHttpService(IClient client, ILocalStorageService localStorage) : this(client)
-        {
-            this.localStorage = localStorage;
+            this._client = client;
+            this._localStorage = localStorage;
         }
 
         protected Response<Guid> ConvertApiExceptions(ApiException exception)
