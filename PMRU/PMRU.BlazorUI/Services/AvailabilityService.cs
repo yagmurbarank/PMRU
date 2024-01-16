@@ -22,12 +22,6 @@ namespace PMRU.BlazorUI.Services
             var mappedAvailabilities = _mapper.Map<List<AvailabilityVM>>(availabilities);
             return mappedAvailabilities;
         }
-        //public async Task<AvailabilityVM> GetAvailabilityByDoctorId(int doctorId)
-        //{
-        //    var availability = await _client.GetAvailabilityByDoctorIdAsync(doctorId);
-        //    var map = _mapper.Map<AvailabilityVM>(availability);
-        //    return map;
-        //}
 
         public async Task<List<AvailabilityVM>> GetAvailabilities()
         {
@@ -36,21 +30,29 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
-        Task<List<Availability>> IAvailabilityService.GetAvailabilities()
+        public Task<Response<Guid>> CreateAvailability(AvailabilityVM vm)
         {
             throw new NotImplementedException();
         }
 
-        public Task<AvailabilityVM> GetAvailabilitiesByDotorId(string doctorId)
+        public Task<Response<Guid>> CreateAvailabilities(List<AvailabilityVM> vm)
         {
             throw new NotImplementedException();
         }
 
-        public AvailabilityService(IClient client, ILocalStorageService localStorage) : base(client, localStorage)
+        public Task<Response<Guid>> DeleteAvailability(int id)
         {
-
+            throw new NotImplementedException();
         }
 
-       
+        public Task<Response<Guid>> DeleteAvailabilities(List<int> ids)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Response<Guid>> UpdateAvailability(AvailabilityVM vm)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

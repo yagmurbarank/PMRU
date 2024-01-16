@@ -5,11 +5,10 @@ namespace PMRU.BlazorUI.Models
     public class AvailabilityVM
     {
         public int DoctorID { get; set; }
-        public Doctor Doctor { get; set; }
-        public DayOfWeek Day { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
-        public DateTime CreatedDate { get; set; } = DateTime.Now;
-        public DateTime? LastModifiedDate { get; set; }
+        public DoctorVM Doctor { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
+
     }
 }
