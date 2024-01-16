@@ -17,7 +17,7 @@ namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
                 .NotEmpty()
                 .WithName("Doktor");
 
-            RuleFor(x => x.Day)
+            RuleFor(x => x.Date)
                 .NotEmpty()
                 .WithName("Gün");
 

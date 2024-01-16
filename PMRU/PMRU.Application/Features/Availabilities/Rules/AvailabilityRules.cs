@@ -11,11 +11,11 @@ namespace PMRU.Application.Features.Availabilities.Rules
 {
     public class AvailabilityRules : BaseRules
     {
-        public Task DoctorCannotHaveAvailabilityAtTheSameTime(IList<Availability> availabilities, int doctorId, DayOfWeek day, TimeSpan startTime, TimeSpan endTime)
+        public Task DoctorCannotHaveAvailabilityAtTheSameTime(IList<Availability> availabilities, int doctorId, DateOnly date, TimeOnly startTime, TimeOnly endTime)
         {
             foreach (var availability in availabilities)
             {
-                if (availability.DoctorID == doctorId && availability.Day == day)
+                if (availability.DoctorID == doctorId && availability.Date == date)
                 {
                     if ((availability.StartTime <= startTime && availability.EndTime > startTime) || (availability.StartTime < endTime && availability.EndTime >= endTime) || (availability.StartTime >= startTime && availability.EndTime <= endTime))
                         throw new DoctorCannotHaveAvailabilityAtTheSameTimeException();

@@ -11,8 +11,8 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDo
     {
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }
-        public DayOfWeek Day { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
     }
 }

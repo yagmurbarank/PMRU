@@ -12,7 +12,7 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDa
     {
         public GetAvailabilitiesByDayQueryValidator()
         {
-            RuleFor(x => x.Day)
+            RuleFor(x => x.Date)
                 .NotEmpty()
                 .WithName("Gün");
         }

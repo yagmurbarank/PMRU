@@ -22,7 +22,7 @@ namespace PMRU.Persistence.Configurations
                 .OnDelete(DeleteBehavior.Cascade);
 
             
-            builder.Property(a => a.Day).IsRequired();
+            builder.Property(a => a.Date).IsRequired();
             builder.Property(a => a.StartTime).IsRequired();
             builder.Property(a => a.EndTime).IsRequired();
             builder.Property(a => a.CreatedDate).IsRequired();
@@ -47,17 +47,17 @@ namespace PMRU.Persistence.Configurations
                 {
                     Id = 1,
                     DoctorID = 1,
-                    Day = DayOfWeek.Monday,
-                    StartTime = TimeSpan.FromHours(8),
-                    EndTime = TimeSpan.FromHours(8) + TimeSpan.FromMinutes(20)
-        },
+                    Date = new DateOnly(2024, 1, 17),
+                    StartTime = new TimeOnly(8, 0),
+                    EndTime = new TimeOnly(8, 20)
+                },
                 new Availability
                 {
                     Id = 2,
                     DoctorID = 2,
-                    Day = DayOfWeek.Tuesday,
-                    StartTime = TimeSpan.FromHours(8),
-                    EndTime = TimeSpan.FromHours(8) + TimeSpan.FromMinutes(20)
+                    Date = new DateOnly(2024, 1, 17),
+                    StartTime = new TimeOnly(8, 0),
+                    EndTime = new TimeOnly(8, 20)
                 }
                 );
         }

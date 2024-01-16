@@ -9,24 +9,24 @@ namespace PMRU.Domain.Entities
 {
     public class Availability: EntityBase
     {
-        public Availability() 
+        public Availability()
         {
-        
+            
         }
 
-        public Availability(int doctorID, DayOfWeek day, TimeSpan startTime, TimeSpan endTime)
+        public Availability(int doctorID, DateOnly date, TimeOnly startTime, TimeOnly endTime)
         {
             DoctorID = doctorID;
-            Day = day;
+            Date = date;
             StartTime = startTime;
             EndTime = endTime;
         }
 
         public int DoctorID { get; set; }
         public Doctor Doctor { get; set; }
-        public DayOfWeek Day { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
         public DateTime CreatedDate { get; set; } = DateTime.Now;
         public DateTime? LastModifiedDate { get; set; }
     }

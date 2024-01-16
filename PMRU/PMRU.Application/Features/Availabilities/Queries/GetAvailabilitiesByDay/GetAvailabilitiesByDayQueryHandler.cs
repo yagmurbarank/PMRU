@@ -26,7 +26,7 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDa
 
         public async Task<IList<GetAvailabilitiesByDayQueryResponseDto>> Handle(GetAvailabilitiesByDayQueryRequest request, CancellationToken cancellationToken)
         {
-            var availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(predicate: x => x.Day == request.Day && !x.IsDeleted, include: x => x.Include(b => b.Doctor));
+            var availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(predicate: x => x.Date == request.Date && !x.IsDeleted, include: x => x.Include(b => b.Doctor));
             var doctor = mapper.Map<DoctorDto, Doctor>(new Doctor());
             var map = mapper.Map<GetAvailabilitiesByDayQueryResponseDto, Availability>(availabilities);
 

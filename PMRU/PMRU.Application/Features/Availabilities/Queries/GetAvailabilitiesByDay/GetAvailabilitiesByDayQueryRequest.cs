@@ -9,11 +9,11 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDa
 {
     public class GetAvailabilitiesByDayQueryRequest: IRequest<IList<GetAvailabilitiesByDayQueryResponseDto>>
     {
-        public GetAvailabilitiesByDayQueryRequest(DayOfWeek day)
+        public GetAvailabilitiesByDayQueryRequest(DateOnly date)
         {
-            Day = day;
+            Date = date;
         }
 
-        public DayOfWeek Day { get; set; }
+        public DateOnly Date { get; set; }
     }
 }
