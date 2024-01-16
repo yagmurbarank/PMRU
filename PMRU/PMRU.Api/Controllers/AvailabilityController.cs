@@ -52,17 +52,17 @@ namespace PMRU.Api.Controllers
             return Ok(response);
         }
 
-        [HttpGet("{day}")]
-        public async Task<ActionResult<IList<GetAvailabilitiesByDayQueryResponseDto>>> GetAvailabilitiesByDay(DayOfWeek day)
+        [HttpGet("{date}")]
+        public async Task<ActionResult<IList<GetAvailabilitiesByDayQueryResponseDto>>> GetAvailabilitiesByDay(DateOnly date)
         {
-            var request = new GetAvailabilitiesByDayQueryRequest(day);
+            var request = new GetAvailabilitiesByDayQueryRequest(date);
             var response = await mediator.Send(request);
 
             return Ok(response);
         }
 
         [HttpGet("{startTime}")]
-        public async Task<ActionResult<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>> GetAvailabilitiesByStartTime(TimeSpan startTime)
+        public async Task<ActionResult<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>> GetAvailabilitiesByStartTime(TimeOnly startTime)
         {
             var request = new GetAvailabilitiesByStartTimeQueryRequest(startTime);
             var response = await mediator.Send(request);

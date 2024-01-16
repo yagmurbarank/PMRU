@@ -26,9 +26,9 @@ namespace PMRU.Application.Features.Availabilities.Command.CreateAvailability
         {
             IList<Availability> availabilities = await unitOfWork.GetReadRepository<Availability>().GetAllAsync(x => !x.IsDeleted);
 
-            await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, request.DoctorID, request.Day, request.StartTime, request.EndTime);
+            await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, request.DoctorID, request.Date, request.StartTime, request.EndTime);
 
-            Availability availability = new(request.DoctorID, request.Day, request.StartTime, request.EndTime);
+            Availability availability = new(request.DoctorID, request.Date, request.StartTime, request.EndTime);
 
             await unitOfWork.GetWriteRepository<Availability>().CreateAsync(availability);
 

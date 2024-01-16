@@ -9,11 +9,11 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesBySt
 {
     public class GetAvailabilitiesByStartTimeQueryRequest: IRequest<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>
     {
-        public GetAvailabilitiesByStartTimeQueryRequest(TimeSpan startTime)
+        public GetAvailabilitiesByStartTimeQueryRequest(TimeOnly startTime)
         {
             StartTime = startTime;
         }
 
-        public TimeSpan StartTime { get; set; }
+        public TimeOnly StartTime { get; set; }
     }
 }

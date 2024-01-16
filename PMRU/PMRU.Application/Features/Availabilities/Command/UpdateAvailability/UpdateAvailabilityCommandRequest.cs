@@ -11,8 +11,8 @@ namespace PMRU.Application.Features.Availabilities.Command.UpdateAvailability
     {
         public int Id { get; set; }
         public int DoctorID { get; set; }
-        public DayOfWeek Day { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
     }
 }

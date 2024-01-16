@@ -28,9 +28,9 @@ namespace PMRU.Application.Features.Availabilities.Command.CreateAvailabilities
 
             foreach (var availabilityRequest in request.AvailabilityRequests)
             {
-                await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, availabilityRequest.DoctorID, availabilityRequest.Day, availabilityRequest.StartTime, availabilityRequest.EndTime);
+                await availabilityRules.DoctorCannotHaveAvailabilityAtTheSameTime(availabilities, availabilityRequest.DoctorID, availabilityRequest.Date, availabilityRequest.StartTime, availabilityRequest.EndTime);
 
-                Availability availability = new(availabilityRequest.DoctorID, availabilityRequest.Day, availabilityRequest.StartTime, availabilityRequest.EndTime);
+                Availability availability = new(availabilityRequest.DoctorID, availabilityRequest.Date, availabilityRequest.StartTime, availabilityRequest.EndTime);
                 
                 await unitOfWork.GetWriteRepository<Availability>().CreateAsync(availability);
             }
