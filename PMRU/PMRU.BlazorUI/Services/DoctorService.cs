@@ -3,11 +3,12 @@ using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Services.Base;
+using PMRU.Domain.Entities;
 using static PMRU.BlazorUI.Services.DoctorService;
 
 namespace PMRU.BlazorUI.Services
 {
-    public class DoctorService : BaseHttpService, IDoctorService
+    public class DoctorService : BaseHttpService , IDoctorService
     {
         private readonly IMapper _mapper;
         public DoctorService(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
@@ -36,9 +37,11 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
-        internal interface IDoctorService
+        public async Task<IList<DoctorVM>> GetDoctorsByLocation(int locationid)
         {
+            var doctorsByLocation = await _client.GetDoctorsByLocationAsync(locationid);
+            var mappedDoctors = _mapper.Map<IList<DoctorVM>>(doctorsByLocation);
+            return mappedDoctors;
         }
-
     }
 }

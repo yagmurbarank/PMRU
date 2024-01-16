@@ -2,10 +2,12 @@
 
 namespace PMRU.BlazorUI.Contracts
 {
-    public interface IDoctorServise
+    public interface IDoctorService
     {
         Task<List<DoctorVM>> GetDoctors();
-        Task<DoctorVM> GetDoctorsById(int id);
+        Task<DoctorVM> GetDoctorById(int id);
+
+        Task<IList<DoctorVM>> GetDoctorsByLocation(int locationid);
     }
 }
 
