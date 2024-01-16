@@ -88,6 +88,15 @@ namespace PMRU.BlazorUI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetRolesQueryResponseDto>> GetRolesAsync();
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetRolesQueryResponseDto>> GetRolesAsync(System.Threading.CancellationToken cancellationToken);
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task RegisterAsync(RegisterCommandRequest body);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
@@ -160,21 +169,21 @@ namespace PMRU.BlazorUI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(DayOfWeek day);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(System.DateTimeOffset date);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(DayOfWeek day, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(System.DateTimeOffset date, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(TimeSpan startTime);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(System.TimeSpan startTime);
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(TimeSpan startTime, System.Threading.CancellationToken cancellationToken);
+        System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(System.TimeSpan startTime, System.Threading.CancellationToken cancellationToken);
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
@@ -875,6 +884,84 @@ namespace PMRU.BlazorUI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetRolesQueryResponseDto>> GetRolesAsync()
+        {
+            return GetRolesAsync(System.Threading.CancellationToken.None);
+        }
+
+        /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetRolesQueryResponseDto>> GetRolesAsync(System.Threading.CancellationToken cancellationToken)
+        {
+            var client_ = _httpClient;
+            var disposeClient_ = false;
+            try
+            {
+                using (var request_ = new System.Net.Http.HttpRequestMessage())
+                {
+                    request_.Method = new System.Net.Http.HttpMethod("GET");
+                    request_.Headers.Accept.Add(System.Net.Http.Headers.MediaTypeWithQualityHeaderValue.Parse("text/plain"));
+
+                    var urlBuilder_ = new System.Text.StringBuilder();
+                
+                    // Operation Path: "api/Auth/GetRoles"
+                    urlBuilder_.Append("api/Auth/GetRoles");
+
+                    PrepareRequest(client_, request_, urlBuilder_);
+
+                    var url_ = urlBuilder_.ToString();
+                    request_.RequestUri = new System.Uri(url_, System.UriKind.RelativeOrAbsolute);
+
+                    PrepareRequest(client_, request_, url_);
+
+                    var response_ = await client_.SendAsync(request_, System.Net.Http.HttpCompletionOption.ResponseHeadersRead, cancellationToken).ConfigureAwait(false);
+                    var disposeResponse_ = true;
+                    try
+                    {
+                        var headers_ = new System.Collections.Generic.Dictionary<string, System.Collections.Generic.IEnumerable<string>>();
+                        foreach (var item_ in response_.Headers)
+                            headers_[item_.Key] = item_.Value;
+                        if (response_.Content != null && response_.Content.Headers != null)
+                        {
+                            foreach (var item_ in response_.Content.Headers)
+                                headers_[item_.Key] = item_.Value;
+                        }
+
+                        ProcessResponse(client_, response_);
+
+                        var status_ = (int)response_.StatusCode;
+                        if (status_ == 200)
+                        {
+                            var objectResponse_ = await ReadObjectResponseAsync<System.Collections.Generic.ICollection<GetRolesQueryResponseDto>>(response_, headers_, cancellationToken).ConfigureAwait(false);
+                            if (objectResponse_.Object == null)
+                            {
+                                throw new ApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
+                            }
+                            return objectResponse_.Object;
+                        }
+                        else
+                        {
+                            var responseData_ = response_.Content == null ? null : await response_.Content.ReadAsStringAsync().ConfigureAwait(false);
+                            throw new ApiException("The HTTP status code of the response was not expected (" + status_ + ").", status_, responseData_, headers_, null);
+                        }
+                    }
+                    finally
+                    {
+                        if (disposeResponse_)
+                            response_.Dispose();
+                    }
+                }
+            }
+            finally
+            {
+                if (disposeClient_)
+                    client_.Dispose();
+            }
+        }
+
+        /// <returns>Success</returns>
+        /// <exception cref="ApiException">A server side error occurred.</exception>
         public virtual System.Threading.Tasks.Task RegisterAsync(RegisterCommandRequest body)
         {
             return RegisterAsync(body, System.Threading.CancellationToken.None);
@@ -1506,18 +1593,18 @@ namespace PMRU.BlazorUI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(DayOfWeek day)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(System.DateTimeOffset date)
         {
-            return GetAvailabilitiesByDayAsync(day, System.Threading.CancellationToken.None);
+            return GetAvailabilitiesByDayAsync(date, System.Threading.CancellationToken.None);
         }
 
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(DayOfWeek day, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByDayQueryResponseDto>> GetAvailabilitiesByDayAsync(System.DateTimeOffset date, System.Threading.CancellationToken cancellationToken)
         {
-            if (day == null)
-                throw new System.ArgumentNullException("day");
+            if (date == null)
+                throw new System.ArgumentNullException("date");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
@@ -1530,9 +1617,9 @@ namespace PMRU.BlazorUI.Services.Base
 
                     var urlBuilder_ = new System.Text.StringBuilder();
                 
-                    // Operation Path: "api/Availability/GetAvailabilitiesByDay/{day}"
+                    // Operation Path: "api/Availability/GetAvailabilitiesByDay/{date}"
                     urlBuilder_.Append("api/Availability/GetAvailabilitiesByDay/");
-                    urlBuilder_.Append(System.Uri.EscapeDataString(ConvertToString(day, System.Globalization.CultureInfo.InvariantCulture)));
+                    urlBuilder_.Append(System.Uri.EscapeDataString(date.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture)));
 
                     PrepareRequest(client_, request_, urlBuilder_);
 
@@ -1588,7 +1675,7 @@ namespace PMRU.BlazorUI.Services.Base
 
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(TimeSpan startTime)
+        public virtual System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(System.TimeSpan startTime)
         {
             return GetAvailabilitiesByStartTimeAsync(startTime, System.Threading.CancellationToken.None);
         }
@@ -1596,7 +1683,7 @@ namespace PMRU.BlazorUI.Services.Base
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
         /// <returns>Success</returns>
         /// <exception cref="ApiException">A server side error occurred.</exception>
-        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(TimeSpan startTime, System.Threading.CancellationToken cancellationToken)
+        public virtual async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<GetAvailabilitiesByStartTimeQueryResponseDto>> GetAvailabilitiesByStartTimeAsync(System.TimeSpan startTime, System.Threading.CancellationToken cancellationToken)
         {
             if (startTime == null)
                 throw new System.ArgumentNullException("startTime");
@@ -2464,7 +2551,7 @@ namespace PMRU.BlazorUI.Services.Base
                     var content_ = new System.Net.Http.ByteArrayContent(json_);
                     content_.Headers.ContentType = System.Net.Http.Headers.MediaTypeHeaderValue.Parse("application/json");
                     request_.Content = content_;
-                    request_.Method = new System.Net.Http.HttpMethod("POST");
+                    request_.Method = new System.Net.Http.HttpMethod("DELETE");
 
                     var urlBuilder_ = new System.Text.StringBuilder();
                 
@@ -2792,13 +2879,14 @@ namespace PMRU.BlazorUI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Day { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -2840,14 +2928,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -2878,26 +2967,6 @@ namespace PMRU.BlazorUI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("password")]
         public string Password { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public enum DayOfWeek
-    {
-
-        _0 = 0,
-
-        _1 = 1,
-
-        _2 = 2,
-
-        _3 = 3,
-
-        _4 = 4,
-
-        _5 = 5,
-
-        _6 = 6,
 
     }
 
@@ -3077,14 +3146,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctor")]
         public DoctorDto Doctor { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -3098,14 +3168,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctor")]
         public DoctorDto Doctor { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -3119,14 +3190,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctor")]
         public DoctorDto Doctor { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -3140,14 +3212,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctor")]
         public DoctorDto Doctor { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -3161,14 +3234,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctor")]
         public DoctorDto Doctor { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 
@@ -3305,6 +3379,15 @@ namespace PMRU.BlazorUI.Services.Base
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
+    public partial class GetRolesQueryResponseDto
+    {
+
+        [System.Text.Json.Serialization.JsonPropertyName("name")]
+        public string Name { get; set; }
+
+    }
+
+    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class LocationDto
     {
 
@@ -3318,7 +3401,7 @@ namespace PMRU.BlazorUI.Services.Base
     {
 
         [System.Text.Json.Serialization.JsonPropertyName("email")]
-        public string Email { get; set; } = "kadirocak@email.com";
+        public string Email { get; set; } = "systemadmin@localhost.com";
 
         [System.Text.Json.Serialization.JsonPropertyName("password")]
         public string Password { get; set; } = "123456";
@@ -3380,6 +3463,9 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("fullName")]
         public string FullName { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("registrationNumber")]
+        public string RegistrationNumber { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         public string Email { get; set; }
 
@@ -3389,6 +3475,9 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("confirmPassword")]
         public string ConfirmPassword { get; set; }
 
+        [System.Text.Json.Serialization.JsonPropertyName("role")]
+        public string Role { get; set; }
+
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
@@ -3397,57 +3486,6 @@ namespace PMRU.BlazorUI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         public string Email { get; set; }
-
-    }
-
-    [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
-    public partial class TimeSpan
-    {
-
-        [System.Text.Json.Serialization.JsonPropertyName("ticks")]
-        public long Ticks { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("days")]
-        public int Days { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("hours")]
-        public int Hours { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("milliseconds")]
-        public int Milliseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("microseconds")]
-        public int Microseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("nanoseconds")]
-        public int Nanoseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("minutes")]
-        public int Minutes { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("seconds")]
-        public int Seconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalDays")]
-        public double TotalDays { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalHours")]
-        public double TotalHours { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalMilliseconds")]
-        public double TotalMilliseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalMicroseconds")]
-        public double TotalMicroseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalNanoseconds")]
-        public double TotalNanoseconds { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalMinutes")]
-        public double TotalMinutes { get; set; }
-
-        [System.Text.Json.Serialization.JsonPropertyName("totalSeconds")]
-        public double TotalSeconds { get; set; }
 
     }
 
@@ -3486,14 +3524,15 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
-        public DayOfWeek Day { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-        public TimeSpan StartTime { get; set; }
+        public System.TimeSpan StartTime { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-        public TimeSpan EndTime { get; set; }
+        public System.TimeSpan EndTime { get; set; }
 
     }
 

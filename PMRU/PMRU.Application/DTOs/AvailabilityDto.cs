@@ -8,8 +8,8 @@ namespace PMRU.Application.DTOs
 {
     public class AvailabilityDto
     {
-        public DayOfWeek Day { get; set; }
-        public TimeSpan StartTime { get; set; }
-        public TimeSpan EndTime { get; set; }
+        public DateOnly Day { get; set; }
+        public TimeOnly StartTime { get; set; }
+        public TimeOnly EndTime { get; set; }
     }
 }
