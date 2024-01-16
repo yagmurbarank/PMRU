@@ -3,14 +3,14 @@ using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Services.Base;
-using static PMRU.BlazorUI.Services.DoctorServise;
+using static PMRU.BlazorUI.Services.DoctorService;
 
 namespace PMRU.BlazorUI.Services
 {
-    public class DoctorServise : BaseHttpService, IDoctorService
+    public class DoctorService : BaseHttpService, IDoctorService
     {
         private readonly IMapper _mapper;
-        public DoctorServise(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
+        public DoctorService(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
         {
             this._mapper = mapper;
 
