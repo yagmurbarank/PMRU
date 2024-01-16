@@ -2878,9 +2878,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class AvailabilityDto
     {
 
-        [System.Text.Json.Serialization.JsonPropertyName("day")]
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
-        public System.DateTimeOffset Day { get; set; }
+        public System.DateTimeOffset Date { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
         public System.TimeSpan StartTime { get; set; }
