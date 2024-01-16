@@ -42,8 +42,6 @@ namespace PMRU.BlazorUI.Services
             return mappedAppointments;
         }
 
-
-
         public Task<Response<Guid>> UpdateAppointment(AppointmentVM appointmentVM)
         {
             throw new NotImplementedException();

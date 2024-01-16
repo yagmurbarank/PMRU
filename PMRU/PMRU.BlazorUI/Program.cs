@@ -23,8 +23,10 @@ builder.Services.AddScoped<AuthenticationStateProvider, ApiAuthenticationStatePr
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
