@@ -8,7 +8,7 @@ using PMRU.BlazorUI.Providers;
 using PMRU.BlazorUI.Services;
 using PMRU.BlazorUI.Services.Base;
 using System.Reflection;
-using static PMRU.BlazorUI.Services.DoctorServise;
+using static PMRU.BlazorUI.Services.DoctorService;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -22,7 +22,7 @@ builder.Services.AddAuthorizationCore();
 builder.Services.AddScoped<AuthenticationStateProvider, ApiAuthenticationStateProvider>();
 
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
-builder.Services.AddScoped<IDoctorService, DoctorServise>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
