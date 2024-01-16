@@ -9,6 +9,7 @@ namespace PMRU.Application.DTOs
 {
     public class LocationDto
     {
+        public int Id { get; set; }
         public string LocationDescription { get; set; }
  
     }

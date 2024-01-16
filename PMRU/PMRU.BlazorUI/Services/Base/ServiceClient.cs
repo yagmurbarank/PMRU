@@ -3391,6 +3391,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class LocationDto
     {
 
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("locationDescription")]
         public string LocationDescription { get; set; }
 
