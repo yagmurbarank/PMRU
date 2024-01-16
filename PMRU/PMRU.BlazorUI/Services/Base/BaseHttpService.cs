@@ -1,17 +1,20 @@
 ﻿using Blazored.LocalStorage;
-using System.Net.Http.Headers;
 
 namespace PMRU.BlazorUI.Services.Base
 {
     public class BaseHttpService
     {
         protected IClient _client;
-        protected readonly ILocalStorageService _localStorage;
+        private ILocalStorageService localStorage;
 
-        public BaseHttpService(IClient client, ILocalStorageService localStorage)
+        public BaseHttpService(IClient client)
         {
             _client = client;
-            this._localStorage = localStorage;
+        }
+
+        public BaseHttpService(IClient client, ILocalStorageService localStorage) : this(client)
+        {
+            this.localStorage = localStorage;
         }
 
         protected Response<Guid> ConvertApiExceptions(ApiException exception)
@@ -28,13 +31,6 @@ namespace PMRU.BlazorUI.Services.Base
             {
                 return new Response<Guid>() { Message = "Something went wrong, please try again later.", Success = false };
             }
-        }
-
-        protected async Task AddBearerToken()
-        {
-            if (await _localStorage.ContainKeyAsync("token"))
-                _client.HttpClient.DefaultRequestHeaders.Authorization =
-                    new AuthenticationHeaderValue("Bearer", await _localStorage.GetItemAsync<string>("token"));
         }
     }
 }

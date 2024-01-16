@@ -70,7 +70,7 @@ namespace PMRU.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPost]
+        [HttpDelete]
         public async Task<ActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
         {
             var response = await mediator.Send(request);

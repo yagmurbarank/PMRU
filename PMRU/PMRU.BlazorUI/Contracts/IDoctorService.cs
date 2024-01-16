@@ -1,7 +1,9 @@
 ﻿namespace PMRU.BlazorUI.Contracts
 {
-    public interface IDoctorService
+    public interface IDoctorServise
     {
-
+        Task<bool> AuthenticateAsync(string email, string password);
+        Task<bool> RegisterAsync(string fullName, string email, string password, string confirmPassword);
+        Task Logout();
     }
 }
