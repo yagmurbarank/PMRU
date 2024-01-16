@@ -14,15 +14,18 @@ namespace PMRU.BlazorUI.Services
         public DoctorService(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
         {
             this._mapper = mapper;
-
-
         }
-        public async Task<List<AppointmentVM>> GetAppointmentsByDoctorId(int doctorId)
+
+        public Task<Response<Guid>> CreateDoctor(DoctorVM doctorVM)
         {
-            var appointments = await _client.GetAppointmentsByDoctorIdAsync(doctorId);
-            var mappedAppointments = _mapper.Map<List<AppointmentVM>>(appointments);
-            return mappedAppointments;
+            throw new NotImplementedException();
         }
+
+        public Task<Response<Guid>> DeleteDoctor(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<DoctorVM> GetDoctorById(int id)
         {
             var doctor = await _client.GetDoctorByIdAsync(id);
@@ -42,6 +45,11 @@ namespace PMRU.BlazorUI.Services
             var doctorsByLocation = await _client.GetDoctorsByLocationAsync(locationid);
             var mappedDoctors = _mapper.Map<IList<DoctorVM>>(doctorsByLocation);
             return mappedDoctors;
+        }
+
+        public Task<Response<Guid>> UpdateDoctor(DoctorVM doctorVM)
+        {
+            throw new NotImplementedException();
         }
     }
 }

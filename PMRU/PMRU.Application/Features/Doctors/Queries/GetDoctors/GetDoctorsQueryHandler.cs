@@ -30,7 +30,6 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
         public async Task<IList<GetDoctorsQueryResponseDto>> Handle(GetDoctorsQueryRequest request, CancellationToken cancellationToken)
         {
 
-
             var doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync(include: x => x.Include(b => b.Location).Include(b => b.Availabilities));
             var location = mapper.Map<LocationDto, Location>(new Location());
             var availabilities = mapper.Map<AvailabilityDto, Availability>(new Availability());
