@@ -32,7 +32,7 @@ namespace PMRU.BlazorUI.Pages
         protected async Task FindEmployee()
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
-            var doctors = await DoctorService.GetDoctorsByLocation(35);
+            var doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
         }
     }
 }
