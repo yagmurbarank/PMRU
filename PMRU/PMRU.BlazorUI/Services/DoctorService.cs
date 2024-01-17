@@ -4,21 +4,44 @@ using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
-using static PMRU.BlazorUI.Services.DoctorService;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace PMRU.BlazorUI.Services
 {
     public class DoctorService : BaseHttpService , IDoctorService
     {
         private readonly IMapper _mapper;
-        public DoctorService(IClient client, IMapper mapper, ILocalStorageService localStorage) : base(client, localStorage)
+        
+
+        public DoctorService(IClient client, IMapper mapper, Blazored.LocalStorage.ILocalStorageService localStorage) : base(client, localStorage)
         {
             this._mapper = mapper;
+            
         }
 
-        public Task<Response<Guid>> CreateDoctor(DoctorVM doctorVM)
+        public async Task<Response<int>> CreateDoctor(CreateDoctorVM doctorVM)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<int>();
+                var createDoctor = _mapper.Map<CreateDoctorCommandRequest>(doctorVM);
+                AddBearerToken();
+                var apiResponse = _client.CreateDoctorAsync(createDoctor);
+                if (response.Success)
+                {
+                    response.Data = apiResponse.Id;
+                    response.Success = true;
+                }
+                
+                return response;
+            }
+            catch (ApiException exception)
+            {
+                return ConvertApiExceptions<int>(exception);
+            }
         }
 
         public Task<Response<Guid>> DeleteDoctor(int id)

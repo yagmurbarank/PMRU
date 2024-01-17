@@ -13,6 +13,7 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<DepartmentDto, DepartmentVM>().ReverseMap();
             CreateMap<LocationDto, LocationVM>().ReverseMap();
             CreateMap<PositionDto, PositionVM>().ReverseMap();
+            CreateMap<CreateDoctorCommandRequest, CreateDoctorVM>().ReverseMap();
         }
     }
 }
