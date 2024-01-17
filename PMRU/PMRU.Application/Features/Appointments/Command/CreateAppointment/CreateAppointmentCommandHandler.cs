@@ -23,16 +23,11 @@ namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
         }
         public async Task<Unit> Handle(CreateAppointmentCommandRequest request, CancellationToken cancellationToken)
         {
-            Appointment appointment = new(request.DoctorID, request.EmployeeID, request.AppointmentDate, request.AppointmentHour, request.Description);
+            Appointment appointment = new(request.DoctorID, request.EmployeeID, request.AppointmentDate, request.AppointmentStartHour, request.AppointmentEndHour, request.Description);
 
             IList<Appointment> appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync();
-            /*
-            if (appointments.Any(x => x.AppointmentHour == request.AppointmentHour))
-                throw new Exception("doktorun bu saatte randevusu bulunmakta");
-            */
 
-            await appointmentRules.DoctorCannotHaveAppointmentAtTheSameHour(appointments, request.DoctorID, request.AppointmentHour, request.AppointmentDate);
-            
+            await appointmentRules.DoctorCannotHaveAppointmentAtTheSameHour(appointments, request.DoctorID, request.AppointmentStartHour, request.AppointmentDate);
 
             await unitOfWork.GetWriteRepository<Appointment>().CreateAsync(appointment);
             await unitOfWork.SaveAsync();

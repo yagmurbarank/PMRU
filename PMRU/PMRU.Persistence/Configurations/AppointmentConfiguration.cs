@@ -31,7 +31,8 @@ namespace PMRU.Persistence.Configurations
 
             // Diğer alanlar
             builder.Property(a => a.AppointmentDate).IsRequired();
-            builder.Property(a => a.AppointmentHour).IsRequired();
+            builder.Property(a => a.AppointmentStartHour).IsRequired();
+            builder.Property(a => a.AppointmentEndHour).IsRequired();
             builder.Property(a => a.Description).IsRequired();
             builder.Property(a => a.CreatedDate).IsRequired();
             builder.Property(a => a.LastModifiedDate);
@@ -50,9 +51,6 @@ namespace PMRU.Persistence.Configurations
             // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
             builder.HasIndex(a => a.EmployeeID).IsUnique();
 
-            // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
-            builder.HasIndex(a => new { a.DoctorID, a.AppointmentDate, a.AppointmentHour }).IsUnique();
-
             builder.HasData(
                 new Appointment
                 {
@@ -60,7 +58,8 @@ namespace PMRU.Persistence.Configurations
                     EmployeeID = 1,
                     DoctorID = 1,
                     AppointmentDate = new DateOnly(2023,11,12),
-                    AppointmentHour = new TimeOnly(12,30),
+                    AppointmentStartHour = new TimeOnly(12,30),
+                    AppointmentEndHour = new TimeOnly(12, 50),
                     Description = "Regular Checkup"
                 },
                 new Appointment
@@ -69,7 +68,8 @@ namespace PMRU.Persistence.Configurations
                     EmployeeID = 2,
                     DoctorID = 2,
                     AppointmentDate = new DateOnly(2023, 12, 13),
-                    AppointmentHour = new TimeOnly(13, 45),
+                    AppointmentStartHour = new TimeOnly(13, 45),
+                    AppointmentEndHour = new TimeOnly(14, 00),
                     Description = "Regular Checkup"
                 }
                 );

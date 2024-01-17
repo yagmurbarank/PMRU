@@ -34,11 +34,13 @@ namespace PMRU.BlazorUI.MappingProfiles
                 .ReverseMap();
             CreateMap<CreateAppointmentVM, CreateAppointmentCommandRequest>()
                 .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.AppointmentDate.Year, src.AppointmentDate.Month, src.AppointmentDate.Day), TimeSpan.Zero)))
-                .ForMember(dest => dest.AppointmentHour, opt => opt.MapFrom(src => src.AppointmentHour.ToTimeSpan()))
+                .ForMember(dest => dest.AppointmentStartHour, opt => opt.MapFrom(src => src.AppointmentStartHour.ToTimeSpan()))
+                .ForMember(dest => dest.AppointmentEndHour, opt => opt.MapFrom(src => src.AppointmentEndHour.ToTimeSpan()))
                 .ReverseMap();
             CreateMap<UpdateAppointmentVM, UpdateAppointmentCommandRequest>()
                 .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.AppointmentDate.Year, src.AppointmentDate.Month, src.AppointmentDate.Day), TimeSpan.Zero)))
-                .ForMember(dest => dest.AppointmentHour, opt => opt.MapFrom(src => src.AppointmentHour.ToTimeSpan()))
+                .ForMember(dest => dest.AppointmentStartHour, opt => opt.MapFrom(src => src.AppointmentStartHour.ToTimeSpan()))
+                .ForMember(dest => dest.AppointmentEndHour, opt => opt.MapFrom(src => src.AppointmentEndHour.ToTimeSpan()))
                 .ReverseMap();
             CreateMap<DeleteAppointmentVM, DeleteAppointmentCommandRequest>().ReverseMap();
 
