@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services.Base;
 
 namespace PMRU.BlazorUI.MappingProfiles
@@ -14,18 +16,30 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<DepartmentDto, DepartmentVM>().ReverseMap();
             CreateMap<LocationDto, LocationVM>().ReverseMap();
             CreateMap<PositionDto, PositionVM>().ReverseMap();
-
-            CreateMap<GetAppointmentsQueryResponseDto, AppointmentVM>().ReverseMap();
-            CreateMap<GetAppointmentsByDateQueryResponseDto, AppointmentVM>().ReverseMap();
-            CreateMap<GetAppointmentsByDoctorIdQueryResponseDto, AppointmentVM>().ReverseMap();
-            CreateMap<CreateAppointmentCommandRequest, AppointmentVM>().ReverseMap();
-            CreateMap<UpdateAppointmentCommandRequest, AppointmentVM>().ReverseMap();
-
             CreateMap<DoctorDto, DoctorVM>().ReverseMap();
+            CreateMap<EmployeeDto, EmployeeVM>().ReverseMap();
             CreateMap<AvailabilityDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
 
+            CreateMap<GetAppointmentsQueryResponseDto, AppointmentVM>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => src.AppointmentDate.Date))
+                .ReverseMap();
+            CreateMap<GetAppointmentsByDateQueryResponseDto, AppointmentVM>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => src.AppointmentDate.Date))
+                .ReverseMap();
+            CreateMap<GetAppointmentsByDoctorIdQueryResponseDto, AppointmentVM>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => src.AppointmentDate.Date))
+                .ReverseMap();
+            CreateMap<CreateAppointmentVM, CreateAppointmentCommandRequest>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.AppointmentDate.Year, src.AppointmentDate.Month, src.AppointmentDate.Day), TimeSpan.Zero)))
+                .ForMember(dest => dest.AppointmentHour, opt => opt.MapFrom(src => src.AppointmentHour.ToTimeSpan()))
+                .ReverseMap();
+            CreateMap<UpdateAppointmentVM, UpdateAppointmentCommandRequest>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.AppointmentDate.Year, src.AppointmentDate.Month, src.AppointmentDate.Day), TimeSpan.Zero)))
+                .ForMember(dest => dest.AppointmentHour, opt => opt.MapFrom(src => src.AppointmentHour.ToTimeSpan()))
+                .ReverseMap();
+            CreateMap<DeleteAppointmentVM, DeleteAppointmentCommandRequest>().ReverseMap();
 
             CreateMap<GetDoctorByIdQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<GetDoctorsQueryResponseDto, DoctorVM>().ReverseMap();
@@ -41,6 +55,7 @@ namespace PMRU.BlazorUI.MappingProfiles
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
 
+            CreateMap<DateOnly, DateTime>().ConvertUsing(source => new DateTime(source.Year, source.Month, source.Day));
             CreateMap<DateTime, DateOnly>().ConvertUsing(dt => new DateOnly(dt.Year, dt.Month, dt.Day));
             CreateMap<DateTime?, DateOnly>().ConvertUsing(dt => dt.HasValue ? new DateOnly(dt.Value.Year, dt.Value.Month, dt.Value.Day) : default(DateOnly));
             CreateMap<TimeSpan, TimeOnly>().ConvertUsing(ts => new TimeOnly(ts.Hours, ts.Minutes, ts.Seconds));

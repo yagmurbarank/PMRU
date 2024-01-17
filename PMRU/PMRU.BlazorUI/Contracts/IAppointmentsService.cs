@@ -1,5 +1,4 @@
-﻿using PMRU.BlazorUI.Models;
-using PMRU.BlazorUI.Models;
+﻿using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Services.Base;
 
 namespace PMRU.BlazorUI.Contracts
@@ -10,9 +9,9 @@ namespace PMRU.BlazorUI.Contracts
         Task<List<AppointmentVM>> GetAppoitmentsByDoctorId(int doctorId);
         Task<List<AppointmentVM>> GetAppoitmentsByDate(DateOnly date);
 
-        Task<Response<Guid>> CreateAppointment(AppointmentVM appointmentVM);
-        Task<Response<Guid>> DeleteAppointment(int id);
-        Task<Response<Guid>> UpdateAppointment(AppointmentVM appointmentVM);
+        Task<Response<Guid>> CreateAppointment(CreateAppointmentVM appointmentVM);
+        Task<Response<Guid>> DeleteAppointment(DeleteAppointmentVM appointmentVM);
+        Task<Response<Guid>> UpdateAppointment(UpdateAppointmentVM appointmentVM);
 
     }
 }

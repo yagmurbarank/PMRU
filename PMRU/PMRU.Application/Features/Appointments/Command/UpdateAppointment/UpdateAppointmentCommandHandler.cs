@@ -23,7 +23,7 @@ namespace PMRU.Application.Features.Appointments.Command.UpdateAppointment
         }
         public async Task<Unit> Handle(UpdateAppointmentCommandRequest request, CancellationToken cancellationToken)
         {
-            IList<Appointment> appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync();
+            IList<Appointment> appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync(x => !x.IsDeleted && x.Id != request.Id);
             await appointmentRules.DoctorCannotHaveAppointmentAtTheSameHour(appointments, request.DoctorID, request.AppointmentHour, request.AppointmentDate);
             var appointment = await unitOfWork.GetReadRepository<Appointment>().GetAsync(x=>x.Id==request.Id && !x.IsDeleted);
             var map = mapper.Map<Appointment,UpdateAppointmentCommandRequest>(request);

@@ -16,6 +16,7 @@ using PMRU.BlazorUI.Shared;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Contracts;
 using PMRU.Domain.Entities;
+using PMRU.BlazorUI.Models.Appointment;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -27,6 +28,8 @@ namespace PMRU.BlazorUI.Pages
         public IDoctorService DoctorService { get; set; }
         [Inject]
         public IAvailabilityService AvailabilityService { get; set; }
+        [Inject]
+        public IAppointmentService AppointmentService { get; set; }
 
         public EmployeeVM Employee { get; private set; } = new EmployeeVM();
 
@@ -36,14 +39,16 @@ namespace PMRU.BlazorUI.Pages
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
 
-            var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "1234567891", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            var updatedoctors = await DoctorService.UpdateDoctor(new UpdateDoctorVM {Id=3, IdentityNumber = "0000000", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            var deletedoctor = await DoctorService.DeleteDoctor(new DeleteDoctorVM { Id=3});
+            //var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "1234567891", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
+            //var updatedoctors = await DoctorService.UpdateDoctor(new UpdateDoctorVM {Id=6, IdentityNumber = "0000000", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
+            //var deletedoctor = await DoctorService.DeleteDoctor(new DeleteDoctorVM { Id=5});
 
             //var employees = await EmployeeService.GetEmployees();
             //var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "123456789", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            var availabilities = await AvailabilityService.GetAvailabilitiesByDoctorId(1);
+            //var availabilities = await AvailabilityService.GetAvailabilitiesByDoctorId(1);
 
+            //var deleteAppointment = await AppointmentService.DeleteAppointment(new DeleteAppointmentVM { Id = 5 });
+            //var appointmemts = await AppointmentService.UpdateAppointment(new UpdateAppointmentVM { Id = 5, EmployeeID = 4, DoctorID = 2, AppointmentDate = new DateOnly(2024, 01, 17), AppointmentHour = new TimeOnly(15, 30), Description = "Routine checkup" });
         }
     }
 }

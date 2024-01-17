@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
-using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Pages;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
@@ -16,19 +16,22 @@ namespace PMRU.BlazorUI.Services
         {
             this._mapper = mapper;
         }
-        public async Task<List<AppointmentVM>> GetAppoitmentsByDoctorId(int doctorId)
+
+        public async Task<List<AppointmentVM>> GetAppoitmentsByDoctorId(int doctorId) // calisiyor
         {
             var appointments = await _client.GetAppointmentsByDoctorIdAsync(doctorId);
             var mappedAppointments = _mapper.Map<List<AppointmentVM>>(appointments);
             return mappedAppointments;
         }
-        public async Task<List<AppointmentVM>> GetAppointments()
+
+        public async Task<List<AppointmentVM>> GetAppointments() // calisiyor
         {
             var appointment = await _client.GetAppointmentsAsync();
             var map = _mapper.Map<List<AppointmentVM>>(appointment);
             return map;
         }
-        public async Task<List<AppointmentVM>> GetAppoitmentsByDate(DateOnly date)
+
+        public async Task<List<AppointmentVM>> GetAppoitmentsByDate(DateOnly date) // calisiyor
         {
             var map = _mapper.Map<DateTime>(date);
             var appointments = await _client.GetAppointmentsByDateAsync(map);
@@ -36,7 +39,7 @@ namespace PMRU.BlazorUI.Services
             return mappedAppointments;
         }
 
-        public async Task<Response<Guid>> CreateAppointment(AppointmentVM appointmentVM)
+        public async Task<Response<Guid>> CreateAppointment(CreateAppointmentVM appointmentVM) // calisiyor
         {
             try
             {
@@ -52,13 +55,12 @@ namespace PMRU.BlazorUI.Services
             }
         }
 
-
-        public async Task<Response<Guid>> DeleteAppointment(int id)
+        public async Task<Response<Guid>> DeleteAppointment(DeleteAppointmentVM appointmentVM) // calisiyor
         {
             try
             {
                 var response = new Response<Guid>();
-                DeleteAppointmentCommandRequest deleteAppointmentRequest = _mapper.Map<DeleteAppointmentCommandRequest>(id);
+                DeleteAppointmentCommandRequest deleteAppointmentRequest = _mapper.Map<DeleteAppointmentCommandRequest>(appointmentVM);
 
                 await _client.DeleteAppointmentAsync(deleteAppointmentRequest);
                 return response;
@@ -70,10 +72,7 @@ namespace PMRU.BlazorUI.Services
 
         }
 
-
-
-
-        public async Task<Response<Guid>> UpdateAppointment(AppointmentVM appointmentVM)
+        public async Task<Response<Guid>> UpdateAppointment(UpdateAppointmentVM appointmentVM) // calisiyor
         {
             try
             {

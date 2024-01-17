@@ -1,4 +1,4 @@
-﻿namespace PMRU.BlazorUI.Models
+﻿namespace PMRU.BlazorUI.Models.Doctor
 {
     public class DeleteDoctorVM
     {
