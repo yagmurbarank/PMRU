@@ -10,16 +10,34 @@ namespace PMRU.BlazorUI.MappingProfiles
         {
             CreateMap<GetEmployeesQueryResponseDto, EmployeeVM>().ReverseMap();
             CreateMap<GetEmployeeByRegistrationNumberQueryResponseDto, EmployeeVM>().ReverseMap();
+            
             CreateMap<DepartmentDto, DepartmentVM>().ReverseMap();
             CreateMap<LocationDto, LocationVM>().ReverseMap();
             CreateMap<PositionDto, PositionVM>().ReverseMap();
+
+            CreateMap<GetAppointmentsQueryResponseDto, AppointmentVM>().ReverseMap();
+            CreateMap<GetAppointmentsByDateQueryResponseDto, AppointmentVM>().ReverseMap();
+            CreateMap<GetAppointmentsByDoctorIdQueryResponseDto, AppointmentVM>().ReverseMap();
+            CreateMap<CreateAppointmentCommandRequest, AppointmentVM>().ReverseMap();
+            CreateMap<UpdateAppointmentCommandRequest, AppointmentVM>().ReverseMap();
+
+            CreateMap<DoctorDto, DoctorVM>().ReverseMap();
+            CreateMap<AvailabilityDto, AvailabilityVM>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
+                .ReverseMap();
+
+
             CreateMap<GetDoctorByIdQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<GetDoctorsQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<CreateDoctorCommandRequest, CreateDoctorVM>().ReverseMap();
             CreateMap<UpdateDoctorCommandRequest, UpdateDoctorVM>().ReverseMap();
             CreateMap<DeleteDoctorCommandRequest, DeleteDoctorVM>().ReverseMap();
             CreateMap<GetDoctorsByLocationQueryResponseDto, DoctorVM>().ReverseMap();
-            CreateMap<AvailabilityDto, AvailabilityVM>()
+
+            CreateMap<GetAvailabilitiesByDoctorIdQueryResponseDto, AvailabilityVM>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
+                .ReverseMap();
+            CreateMap<GetAvailabilitiesQueryResponseDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
 
