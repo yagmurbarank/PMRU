@@ -63,10 +63,10 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
-        public async Task<IList<DoctorVM>> GetDoctorsByLocation(int locationid)
+        public async Task<List<DoctorVM>> GetDoctorsByLocation(int locationid)
         {
             var doctorsByLocation = await _client.GetDoctorsByLocationAsync(locationid);
-            var mappedDoctors = _mapper.Map<IList<DoctorVM>>(doctorsByLocation);
+            var mappedDoctors = _mapper.Map<List<DoctorVM>>(doctorsByLocation);
             return mappedDoctors;
         }
 

@@ -22,6 +22,8 @@ namespace PMRU.BlazorUI.Pages
     {
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
+        [Inject]
+        public IDoctorService DoctorService { get; set; }
 
         public EmployeeVM Employee { get; private set; } = new EmployeeVM();
 
@@ -30,6 +32,7 @@ namespace PMRU.BlazorUI.Pages
         protected async Task FindEmployee()
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
+            var doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
         }
     }
 }
