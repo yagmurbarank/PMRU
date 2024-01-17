@@ -2,6 +2,7 @@
 using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Pages;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
@@ -85,6 +86,20 @@ namespace PMRU.BlazorUI.Services
             catch (ApiException ex)
             {
                 return ConvertApiExceptions<Guid>(ex);
+            }
+        }
+
+        public async Task<AppointmentVM> GetAppointmentByEmployeeId(int employeeId)
+        {
+            try
+            {
+                var appointments = await _client.GetAppointmentByEmployeeIdAsync(employeeId);
+                var mappedAppointments = _mapper.Map<AppointmentVM>(appointments);
+                return mappedAppointments;
+            }
+            catch (ApiException ex)
+            {
+                return null;
             }
         }
     }

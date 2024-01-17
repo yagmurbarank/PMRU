@@ -7,6 +7,7 @@ namespace PMRU.BlazorUI.Contracts
     {
         Task<List<AppointmentVM>> GetAppointments();
         Task<List<AppointmentVM>> GetAppoitmentsByDoctorId(int doctorId);
+        Task<AppointmentVM> GetAppointmentByEmployeeId(int employeeId);
         Task<List<AppointmentVM>> GetAppoitmentsByDate(DateOnly date);
 
         Task<Response<Guid>> CreateAppointment(CreateAppointmentVM appointmentVM);

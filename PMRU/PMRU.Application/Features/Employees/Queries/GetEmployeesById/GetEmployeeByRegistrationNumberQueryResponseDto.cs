@@ -10,14 +10,15 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 {
     public class GetEmployeeByRegistrationNumberQueryResponseDto
     {
-    public string IdentityNumber { get; set; }
-    public string Name { get; set; }
-    public string Surname { get; set; }
-    public string Phone { get; set; }
-    public string Email { get; set; }
-    public string RegistrationNumber { get; set; }
-    public DepartmentDto Department { get; set; }
-    public LocationDto Location { get; set; }
-    public PositionDto Position { get; set; }
+        public int Id { get; set; }
+        public string IdentityNumber { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string RegistrationNumber { get; set; }
+        public DepartmentDto Department { get; set; }
+        public LocationDto Location { get; set; }
+        public PositionDto Position { get; set; }
     }
 }
