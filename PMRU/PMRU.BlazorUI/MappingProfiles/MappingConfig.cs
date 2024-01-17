@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services.Base;
 
@@ -54,6 +55,17 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<GetAvailabilitiesQueryResponseDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
+            CreateMap<CreateAvailabilityVM, CreateAvailabilityCommandRequest>()
+               .ForMember(dest => dest.Date, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.Date.Year, src.Date.Month, src.Date.Day), TimeSpan.Zero)))
+               .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
+               .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
+               .ReverseMap();
+            CreateMap<UpdateAvailabilityVM, UpdateAvailabilityCommandRequest>()
+               .ForMember(dest => dest.Date, opt => opt.MapFrom(src => new DateTimeOffset(new DateTime(src.Date.Year, src.Date.Month, src.Date.Day), TimeSpan.Zero)))
+               .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
+               .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
+               .ReverseMap();
+            CreateMap<DeleteAvailabilityVM, DeleteAvailabilityCommandRequest>().ReverseMap();
 
             CreateMap<DateOnly, DateTime>().ConvertUsing(source => new DateTime(source.Year, source.Month, source.Day));
             CreateMap<DateTime, DateOnly>().ConvertUsing(dt => new DateOnly(dt.Year, dt.Month, dt.Day));

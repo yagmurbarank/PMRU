@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
-using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
 
@@ -30,29 +31,83 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
-        public Task<Response<Guid>> CreateAvailability(AvailabilityVM vm)
+        public async Task<Response<Guid>> CreateAvailability(CreateAvailabilityVM vm) // calisiyor
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<Guid>();
+                CreateAvailabilityCommandRequest createAvailabilityRequest = _mapper.Map<CreateAvailabilityCommandRequest>(vm);
+
+                await _client.CreateAvailabilityAsync(createAvailabilityRequest);
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
-        public Task<Response<Guid>> CreateAvailabilities(List<AvailabilityVM> vm)
+        public async Task<Response<Guid>> CreateAvailabilities(List<CreateAvailabilityVM> vm) // calisiyor
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<Guid>();
+                List<CreateAvailabilityCommandRequest> createAvailabilities = _mapper.Map<List<CreateAvailabilityCommandRequest>>(vm);
+
+                await _client.CreateAvailabilitiesAsync(new CreateAvailabilitiesCommandRequest { AvailabilityRequests = createAvailabilities });
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
-        public Task<Response<Guid>> DeleteAvailability(int id)
+        public async Task<Response<Guid>> DeleteAvailability(DeleteAvailabilityVM vm) // calisiyor
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<Guid>();
+                DeleteAvailabilityCommandRequest deleteAvailabilityRequest = _mapper.Map<DeleteAvailabilityCommandRequest>(vm);
+
+                await _client.DeleteAvailabilityAsync(deleteAvailabilityRequest);
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
-        public Task<Response<Guid>> DeleteAvailabilities(List<int> ids)
+        public async Task<Response<Guid>> DeleteAvailabilities(List<int> ids) // calisiyor
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<Guid>();
+
+                await _client.DeleteAvailabilitiesAsync(new DeleteAvailabilitiesCommandRequest { Ids = ids });
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
-        public Task<Response<Guid>> UpdateAvailability(AvailabilityVM vm)
+        public async Task<Response<Guid>> UpdateAvailability(UpdateAvailabilityVM vm) // calisiyor
         {
-            throw new NotImplementedException();
+            try
+            {
+                var response = new Response<Guid>();
+                UpdateAvailabilityCommandRequest updateAvailabilityRequest = _mapper.Map<UpdateAvailabilityCommandRequest>(vm);
+
+                await _client.UpdateAvailabilityAsync(updateAvailabilityRequest);
+                return response;
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
     }
 }
