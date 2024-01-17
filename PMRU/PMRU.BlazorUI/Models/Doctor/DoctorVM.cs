@@ -1,6 +1,6 @@
 ﻿using PMRU.Domain.Entities;
 
-namespace PMRU.BlazorUI.Models
+namespace PMRU.BlazorUI.Models.Doctor
 {
     public class DoctorVM
     {

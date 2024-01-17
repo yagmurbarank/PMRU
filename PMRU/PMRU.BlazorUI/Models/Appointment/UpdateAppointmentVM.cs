@@ -1,16 +1,12 @@
-﻿using PMRU.Domain.Entities;
-
-namespace PMRU.BlazorUI.Models
+﻿namespace PMRU.BlazorUI.Models.Appointment
 {
-    public class AppointmentVM
+    public class UpdateAppointmentVM
     {
+        public int Id { get; set; }
         public int EmployeeID { get; set; }
-        public EmployeeVM Employee { get; set; }
         public int DoctorID { get; set; }
-        public DoctorVM Doctor { get; set; }
         public DateOnly AppointmentDate { get; set; }
         public TimeOnly AppointmentHour { get; set; }
         public string Description { get; set; }
-
     }
 }

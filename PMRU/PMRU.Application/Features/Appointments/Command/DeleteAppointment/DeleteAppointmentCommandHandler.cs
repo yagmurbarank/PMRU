@@ -22,6 +22,7 @@ namespace PMRU.Application.Features.Appointments.Command.DeleteAppointment
         {
             var appointment = await unitOfWork.GetReadRepository<Appointment>().GetAsync(x=>x.Id == request.Id && !x.IsDeleted);
             appointment.IsDeleted = true;
+            appointment.DeletedDate = DateTime.Now;
 
             await unitOfWork.GetWriteRepository<Appointment>().UpdateAsync(appointment);
             await unitOfWork.SaveAsync();

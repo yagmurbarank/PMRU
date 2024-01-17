@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Blazored.LocalStorage;
 using PMRU.BlazorUI.Contracts;
-using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
 using System;
@@ -38,7 +38,7 @@ namespace PMRU.BlazorUI.Services
             }
         }
 
-        public async Task<Response<Guid>> DeleteDoctor(DeleteDoctorVM doctorVM)
+        public async Task<Response<Guid>> DeleteDoctor(DeleteDoctorVM doctorVM) // calisiyor
         {
             try
             {
@@ -76,7 +76,7 @@ namespace PMRU.BlazorUI.Services
 
         
 
-        public async Task<Response<Guid>> UpdateDoctor(UpdateDoctorVM doctorVM)
+        public async Task<Response<Guid>> UpdateDoctor(UpdateDoctorVM doctorVM) // calisiyor
         {
             try
             {

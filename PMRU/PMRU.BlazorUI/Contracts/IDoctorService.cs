@@ -1,4 +1,4 @@
-﻿using PMRU.BlazorUI.Models;
+﻿using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services.Base;
 
 namespace PMRU.BlazorUI.Contracts

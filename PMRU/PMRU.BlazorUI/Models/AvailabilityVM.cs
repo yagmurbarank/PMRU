@@ -1,4 +1,5 @@
-﻿using PMRU.Domain.Entities;
+﻿using PMRU.BlazorUI.Models.Doctor;
+using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Models
 {
