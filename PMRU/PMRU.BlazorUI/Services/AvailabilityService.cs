@@ -16,14 +16,14 @@ namespace PMRU.BlazorUI.Services
 
 
         }
-        public async Task<List<AvailabilityVM>> GetAvailabilitiesByDoctorId(int doctorId)
+        public async Task<List<AvailabilityVM>> GetAvailabilitiesByDoctorId(int doctorId) // calisiyor
         {
             var availabilities = await _client.GetAvailabilitiesByDoctorIdAsync(doctorId);
             var mappedAvailabilities = _mapper.Map<List<AvailabilityVM>>(availabilities);
             return mappedAvailabilities;
         }
 
-        public async Task<List<AvailabilityVM>> GetAvailabilities()
+        public async Task<List<AvailabilityVM>> GetAvailabilities() // calisiyor
         {
             var availability = await _client.GetAvailabilitiesAsync();
             var map = _mapper.Map<List<AvailabilityVM>>(availability);
