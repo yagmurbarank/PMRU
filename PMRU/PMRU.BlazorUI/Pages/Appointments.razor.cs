@@ -33,7 +33,9 @@ namespace PMRU.BlazorUI.Pages
         protected async Task FindEmployee()
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
-            var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "123456789", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
+            var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "1234567891", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
+            var updatedoctors = await DoctorService.UpdateDoctor(new UpdateDoctorVM {Id=3, IdentityNumber = "0000000", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
+            var deletedoctor = await DoctorService.DeleteDoctor(new DeleteDoctorVM { Id=3});
         }
     }
 }

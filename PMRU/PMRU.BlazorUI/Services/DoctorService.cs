@@ -38,9 +38,19 @@ namespace PMRU.BlazorUI.Services
             }
         }
 
-        public Task<Response<Guid>> DeleteDoctor(int id)
+        public async Task<Response<Guid>> DeleteDoctor(DeleteDoctorVM doctorVM)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DeleteDoctorCommandRequest deleteDoctorRequst = _mapper.Map<DeleteDoctorCommandRequest>(doctorVM);
+                
+                await _client.DeleteDoctorAsync(deleteDoctorRequst);
+                return new Response<Guid>() { Success = true };
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
 
         public async Task<DoctorVM> GetDoctorById(int id) // calisiyor
@@ -64,9 +74,20 @@ namespace PMRU.BlazorUI.Services
             return mappedDoctors;
         }
 
-        public Task<Response<Guid>> UpdateDoctor(DoctorVM doctorVM)
+        
+
+        public async Task<Response<Guid>> UpdateDoctor(UpdateDoctorVM doctorVM)
         {
-            throw new NotImplementedException();
+            try
+            {
+                UpdateDoctorCommandRequest request = _mapper.Map<UpdateDoctorCommandRequest>(doctorVM);
+                await _client.UpdateDoctorAsync(request);
+                return new Response<Guid> { Success = true };
+            }
+            catch (ApiException ex)
+            {
+                return ConvertApiExceptions<Guid>(ex);
+            }
         }
     }
 }
