@@ -1,0 +1,32 @@
+﻿@page "/doctorappointments"
+
+<h3>Doctor Appointments</h3>
+<label for="doctorId">Doktor ID:</label>
+<input type="number" id="doctorId" @bind="doctorId" />
+<button @onclick="GetAppointmentsByDoctorId">Get Appointments</button>
+
+@if (appointments != null && appointments.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Date</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+    <tbody>
+
+        @foreach (var appointment in appointments)
+        {
+            <tr>
+                    <td>@appointment.Doctor.Name</td>
+                    <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                    <td>@appointment.AppointmentStartHour.ToString()</td>
+                    <td>@appointment.AppointmentEndHour.ToString()</td>
+            </tr>
+        }
+    </tbody>
+    </table>
+}

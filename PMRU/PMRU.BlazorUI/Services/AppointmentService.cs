@@ -18,7 +18,7 @@ namespace PMRU.BlazorUI.Services
             this._mapper = mapper;
         }
 
-        public async Task<List<AppointmentVM>> GetAppoitmentsByDoctorId(int doctorId) // calisiyor
+        public async Task<List<AppointmentVM>> GetAppointmentsByDoctorId(int doctorId) // calisiyor
         {
             var appointments = await _client.GetAppointmentsByDoctorIdAsync(doctorId);
             var mappedAppointments = _mapper.Map<List<AppointmentVM>>(appointments);
@@ -32,7 +32,7 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
-        public async Task<List<AppointmentVM>> GetAppoitmentsByDate(DateOnly date) // calisiyor
+        public async Task<List<AppointmentVM>> GetAppointmentsByDate(DateOnly date) // calisiyor
         {
             var map = _mapper.Map<DateTime>(date);
             var appointments = await _client.GetAppointmentsByDateAsync(map);
