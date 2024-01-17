@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace PMRU.Persistence.Configurations
 {
@@ -20,7 +21,6 @@ namespace PMRU.Persistence.Configurations
                 .WithMany(d => d.Availabilities)
                 .HasForeignKey(a => a.DoctorID)
                 .OnDelete(DeleteBehavior.Cascade);
-
             
             builder.Property(a => a.Date).IsRequired();
             builder.Property(a => a.StartTime).IsRequired();
@@ -39,25 +39,54 @@ namespace PMRU.Persistence.Configurations
             builder.Property(a => a.LastModifiedDate).HasDefaultValue(null);
             builder.Property(a => a.DeletedDate).HasDefaultValue(null);
 
-            // Gün ve saat aralığı için benzersiz indeks oluşturma
-            // builder.HasIndex(a => new { a.DoctorID, a.Day, a.StartTime, a.EndTime }).IsUnique();
-
             builder.HasData(
                 new Availability
                 {
                     Id = 1,
                     DoctorID = 1,
-                    Date = new DateOnly(2024, 1, 17),
+                    Date = new DateOnly(2024, 1, 2),
                     StartTime = new TimeOnly(8, 0),
                     EndTime = new TimeOnly(8, 20)
                 },
                 new Availability
                 {
                     Id = 2,
+                    DoctorID = 1,
+                    Date = new DateOnly(2024, 1, 2),
+                    StartTime = new TimeOnly(8, 20),
+                    EndTime = new TimeOnly(8, 40)
+                },
+                new Availability
+                {
+                    Id = 3,
+                    DoctorID = 1,
+                    Date = new DateOnly(2024, 1, 2),
+                    StartTime = new TimeOnly(8, 40),
+                    EndTime = new TimeOnly(9, 0)
+                },
+                new Availability
+                {
+                    Id = 4,
                     DoctorID = 2,
-                    Date = new DateOnly(2024, 1, 17),
+                    Date = new DateOnly(2024, 1, 2),
                     StartTime = new TimeOnly(8, 0),
                     EndTime = new TimeOnly(8, 20)
+                },
+                new Availability
+                {
+                    Id = 5,
+                    DoctorID = 2,
+                    Date = new DateOnly(2024, 1, 2),
+                    StartTime = new TimeOnly(8, 20),
+                    EndTime = new TimeOnly(8, 40)
+                },
+                new Availability
+                {
+                    Id = 6,
+                    DoctorID = 2,
+                    Date = new DateOnly(2024, 1, 2),
+                    StartTime = new TimeOnly(8, 40),
+                    EndTime = new TimeOnly(9, 0)
                 }
                 );
         }

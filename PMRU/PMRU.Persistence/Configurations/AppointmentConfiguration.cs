@@ -48,18 +48,15 @@ namespace PMRU.Persistence.Configurations
             builder.Property(a => a.LastModifiedDate).HasDefaultValue(null);
             builder.Property(a => a.DeletedDate).HasDefaultValue(null);
 
-            // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
-            //builder.HasIndex(a => a.EmployeeID).IsUnique();
-
             builder.HasData(
                 new Appointment
                 {
                     Id = 1,
                     EmployeeID = 1,
                     DoctorID = 1,
-                    AppointmentDate = new DateOnly(2023,11,12),
-                    AppointmentStartHour = new TimeOnly(12,30),
-                    AppointmentEndHour = new TimeOnly(12, 50),
+                    AppointmentDate = new DateOnly(2024,1,1),
+                    AppointmentStartHour = new TimeOnly(8,0),
+                    AppointmentEndHour = new TimeOnly(8, 20),
                     Description = "Regular Checkup"
                 },
                 new Appointment
@@ -67,9 +64,9 @@ namespace PMRU.Persistence.Configurations
                     Id = 2,
                     EmployeeID = 2,
                     DoctorID = 2,
-                    AppointmentDate = new DateOnly(2023, 12, 13),
-                    AppointmentStartHour = new TimeOnly(13, 45),
-                    AppointmentEndHour = new TimeOnly(14, 00),
+                    AppointmentDate = new DateOnly(2024, 1, 1),
+                    AppointmentStartHour = new TimeOnly(8, 0),
+                    AppointmentEndHour = new TimeOnly(8, 20),
                     Description = "Regular Checkup"
                 }
                 );
