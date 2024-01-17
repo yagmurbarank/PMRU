@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Components;
 using PMRU.BlazorUI.Contracts;
-using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Services;
 
 namespace PMRU.BlazorUI.Pages

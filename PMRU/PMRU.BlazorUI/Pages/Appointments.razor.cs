@@ -17,6 +17,7 @@ using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Contracts;
 using PMRU.Domain.Entities;
 using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Availability;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -49,6 +50,10 @@ namespace PMRU.BlazorUI.Pages
 
             //var deleteAppointment = await AppointmentService.DeleteAppointment(new DeleteAppointmentVM { Id = 5 });
             //var appointmemts = await AppointmentService.UpdateAppointment(new UpdateAppointmentVM { Id = 5, EmployeeID = 4, DoctorID = 2, AppointmentDate = new DateOnly(2024, 01, 17), AppointmentHour = new TimeOnly(15, 30), Description = "Routine checkup" });
+            //var availability = await AvailabilityService.CreateAvailability(new CreateAvailabilityVM { DoctorID = 1, Date = new DateOnly(2024, 01, 17), StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(12, 0) });
+            //var availability = await AvailabilityService.UpdateAvailability(new UpdateAvailabilityVM { Id = 3, DoctorID = 2, Date = new DateOnly(2024, 01, 17), StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(12, 0) });
+            //var deleteAvailability = await AvailabilityService.DeleteAvailability(new DeleteAvailabilityVM { Id = 3 });
+            //var deleteAvailability = await AvailabilityService.DeleteAvailabilities(new List<int> { 4, 5 });
         }
     }
 }
