@@ -2,8 +2,13 @@
 
 <h3>Availabilities</h3>
 
+<label for="doctorId">Doktor ID:</label>
+<input type="number" id="doctorId" @bind="doctorId" />
+<button @onclick="GetAvailabilitiesByDoctorId">Get Availabilities</button>
+
 @if (availabilities != null && availabilities.Any())
 {
+
     <table class="table">
         <thead>
             <tr>
