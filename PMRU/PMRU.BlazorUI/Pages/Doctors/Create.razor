@@ -1,0 +1,11 @@
+﻿@page "/doctors/create"
+<h3>Doktor Ekle</h3>
+
+@if (string.IsNullOrEmpty(Message) == false)
+{
+    <div class="alert alert-danger">
+        @Message
+    </div>
+}
+
+<FormComponent ButtonText="Create" Doctor="doctor" OnValidSubmit="@Createdoctor" />
