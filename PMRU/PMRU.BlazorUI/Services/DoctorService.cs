@@ -22,25 +22,19 @@ namespace PMRU.BlazorUI.Services
             
         }
 
-        public async Task<Response<int>> CreateDoctor(CreateDoctorVM doctorVM)
+        public async Task<Response<Guid>> CreateDoctor(CreateDoctorVM doctorVM) // calisiyor
         {
             try
             {
-                var response = new Response<int>();
-                var createDoctor = _mapper.Map<CreateDoctorCommandRequest>(doctorVM);
-                AddBearerToken();
-                var apiResponse = _client.CreateDoctorAsync(createDoctor);
-                if (response.Success)
-                {
-                    response.Data = apiResponse.Id;
-                    response.Success = true;
-                }
-                
+                var response = new Response<Guid>();
+                CreateDoctorCommandRequest createDoctorRequest = _mapper.Map<CreateDoctorCommandRequest>(doctorVM);
+
+                await _client.CreateDoctorAsync(createDoctorRequest);
                 return response;
             }
-            catch (ApiException exception)
+            catch (ApiException ex)
             {
-                return ConvertApiExceptions<int>(exception);
+                return ConvertApiExceptions<Guid>(ex);
             }
         }
 
@@ -49,21 +43,21 @@ namespace PMRU.BlazorUI.Services
             throw new NotImplementedException();
         }
 
-        public async Task<DoctorVM> GetDoctorById(int id)
+        public async Task<DoctorVM> GetDoctorById(int id) // calisiyor
         {
             var doctor = await _client.GetDoctorByIdAsync(id);
             var map = _mapper.Map<DoctorVM>(doctor);
             return map;
         }
 
-        public async Task<List<DoctorVM>> GetDoctors()
+        public async Task<List<DoctorVM>> GetDoctors() // calisiyor
         {
             var doctors = await _client.GetDoctorsAsync();
             var map = _mapper.Map<List<DoctorVM>>(doctors);
             return map;
         }
 
-        public async Task<List<DoctorVM>> GetDoctorsByLocation(int locationid)
+        public async Task<List<DoctorVM>> GetDoctorsByLocation(int locationid) // calisiyor
         {
             var doctorsByLocation = await _client.GetDoctorsByLocationAsync(locationid);
             var mappedDoctors = _mapper.Map<List<DoctorVM>>(doctorsByLocation);

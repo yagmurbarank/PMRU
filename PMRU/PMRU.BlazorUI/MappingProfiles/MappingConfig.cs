@@ -14,6 +14,8 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<LocationDto, LocationVM>().ReverseMap();
             CreateMap<PositionDto, PositionVM>().ReverseMap();
 
+            CreateMap<GetDoctorByIdQueryResponseDto, DoctorVM>().ReverseMap();
+            CreateMap<GetDoctorsQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<CreateDoctorCommandRequest, CreateDoctorVM>().ReverseMap();
             CreateMap<GetDoctorsByLocationQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<AvailabilityDto, AvailabilityVM>()

@@ -15,6 +15,7 @@ using PMRU.BlazorUI;
 using PMRU.BlazorUI.Shared;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Contracts;
+using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -32,7 +33,7 @@ namespace PMRU.BlazorUI.Pages
         protected async Task FindEmployee()
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
-            var doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
+            var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "123456789", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
         }
     }
 }
