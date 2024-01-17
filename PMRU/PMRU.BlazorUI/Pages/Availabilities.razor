@@ -1,0 +1,31 @@
+﻿@page "/availabilities"
+
+<h3>Availabilities</h3>
+
+@if (availabilities != null && availabilities.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Doktor ID</th>
+                <th>Tarih</th>
+                <th>Başlangıç Saati</th>
+                <th>Bitiş Saati</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var availability in availabilities)
+            {
+                <tr>
+                    <td>@availability.DoctorID</td>
+                    <td>@availability.Date.ToShortDateString()</td>
+                    <td>@availability.StartTime.ToString()</td>
+                    <td>@availability.EndTime.ToString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+
