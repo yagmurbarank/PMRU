@@ -25,26 +25,10 @@ namespace PMRU.Application.Features.Appointments.Queires.GetAppointments
         public async Task<IList<GetAppointmentsQueryResponseDto>> Handle(GetAppointmentsQueryRequest request, CancellationToken cancellationToken)
         {
             var appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync(predicate: x => !x.IsDeleted, include: x => x.Include(b => b.Employee).Include(b => b.Doctor));
+            
             var employee = mapper.Map<EmployeeDto, Employee>(new Employee());
             var doctor = mapper.Map<DoctorDto, Doctor>(new Doctor());
-            /*
-            List<GetAppointmentQueryResponse> response = new();
-            */
-            /*
-            foreach (var appointment in appointments)
-            {
-                response.Add(new GetAppointmentQueryResponse
-                {
-                    DoctorID = appointment.DoctorID,
-                    EmployeeID = appointment.EmployeeID,
-                    AppointmentDate = appointment.AppointmentDate,
-                    AppointmentHour = appointment.AppointmentHour,
-                    Description = appointment.Description,
-                });
-            }
-            */
             var map = mapper.Map<GetAppointmentsQueryResponseDto, Appointment>(appointments);
-
 
             return map;
         }

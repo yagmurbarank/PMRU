@@ -13,7 +13,7 @@ namespace PMRU.Application.Features.Appointments.Rules
     {
         public Task DoctorCannotHaveAppointmentAtTheSameHour(IList<Appointment> appointments,int requestDoctorId, TimeOnly requestHour, DateOnly requestDate)
         {
-            if (appointments.Any(x=>x.DoctorID == requestDoctorId) && appointments.Any(x=>x.AppointmentDate == requestDate) && appointments.Any(x=>x.AppointmentHour==requestHour)) throw new DoctorCannotHaveAppointmentAtTheSameHourException();
+            if (appointments.Any(x=>x.DoctorID == requestDoctorId) && appointments.Any(x=>x.AppointmentDate == requestDate) && appointments.Any(x=>x.AppointmentStartHour==requestHour)) throw new DoctorCannotHaveAppointmentAtTheSameHourException();
             
             return Task.CompletedTask;
 

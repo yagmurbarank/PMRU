@@ -25,9 +25,9 @@ namespace PMRU.Application.Features.Appointments.Command.UpdateAppointment
                 .NotEmpty()
                 .WithName("Randevu Tarihi");
 
-            RuleFor(x => x.AppointmentHour)
+            RuleFor(x => x.AppointmentStartHour)
                 .NotEmpty()
-                .WithName("Randevu Saati");
+                .WithName("Randevu Başlangıç Saati");
 
             RuleFor(x => x.Description)
                 .NotEmpty()

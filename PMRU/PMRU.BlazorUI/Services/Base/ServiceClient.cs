@@ -2904,8 +2904,11 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
@@ -3059,8 +3062,11 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
@@ -3070,6 +3076,9 @@ namespace PMRU.BlazorUI.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetAppointmentsByDateQueryResponseDto
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("employee")]
         public EmployeeDto Employee { get; set; }
@@ -3081,14 +3090,20 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
     }
 
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetAppointmentsByDoctorIdQueryResponseDto
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
@@ -3100,8 +3115,11 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
@@ -3111,6 +3129,9 @@ namespace PMRU.BlazorUI.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetAppointmentsQueryResponseDto
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("employeeID")]
         public int EmployeeID { get; set; }
@@ -3128,8 +3149,11 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
@@ -3139,6 +3163,9 @@ namespace PMRU.BlazorUI.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetAvailabilitiesByDayQueryResponseDto
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
@@ -3162,6 +3189,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class GetAvailabilitiesByDoctorIdQueryResponseDto
     {
 
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string Id { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
 
@@ -3184,6 +3214,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class GetAvailabilitiesByStartTimeQueryResponseDto
     {
 
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string Id { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
 
@@ -3205,6 +3238,9 @@ namespace PMRU.BlazorUI.Services.Base
     [System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.0.1.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
     public partial class GetAvailabilitiesQueryResponseDto
     {
+
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
@@ -3509,8 +3545,11 @@ namespace PMRU.BlazorUI.Services.Base
         [System.Text.Json.Serialization.JsonConverter(typeof(DateFormatConverter))]
         public System.DateTimeOffset AppointmentDate { get; set; }
 
-        [System.Text.Json.Serialization.JsonPropertyName("appointmentHour")]
-        public System.TimeSpan AppointmentHour { get; set; }
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentStartHour")]
+        public System.TimeSpan AppointmentStartHour { get; set; }
+
+        [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
+        public System.TimeSpan AppointmentEndHour { get; set; }
 
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
