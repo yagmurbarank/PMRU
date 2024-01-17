@@ -13,6 +13,8 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<DepartmentDto, DepartmentVM>().ReverseMap();
             CreateMap<LocationDto, LocationVM>().ReverseMap();
             CreateMap<PositionDto, PositionVM>().ReverseMap();
+
+            CreateMap<CreateDoctorCommandRequest, CreateDoctorVM>().ReverseMap();
             CreateMap<GetDoctorsByLocationQueryResponseDto, DoctorVM>().ReverseMap();
             CreateMap<AvailabilityDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
@@ -22,6 +24,7 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<DateTime?, DateOnly>().ConvertUsing(dt => dt.HasValue ? new DateOnly(dt.Value.Year, dt.Value.Month, dt.Value.Day) : default(DateOnly));
             CreateMap<TimeSpan, TimeOnly>().ConvertUsing(ts => new TimeOnly(ts.Hours, ts.Minutes, ts.Seconds));
             CreateMap<TimeSpan?, TimeOnly>().ConvertUsing(ts => ts.HasValue ? new TimeOnly(ts.Value.Hours, ts.Value.Minutes, ts.Value.Seconds) : default(TimeOnly));
+
         }
     }
 }

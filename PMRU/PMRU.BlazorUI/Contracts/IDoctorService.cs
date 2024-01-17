@@ -9,7 +9,7 @@ namespace PMRU.BlazorUI.Contracts
         Task<DoctorVM> GetDoctorById(int id);
         Task<List<DoctorVM>> GetDoctorsByLocation(int locationid);
 
-        Task <Response<Guid>> CreateDoctor (DoctorVM doctorVM);
+        Task <Response<int>> CreateDoctor (CreateDoctorVM doctorVM);
         Task<Response<Guid>> UpdateDoctor (DoctorVM doctorVM);
         Task<Response<Guid>> DeleteDoctor (int id);
     }
