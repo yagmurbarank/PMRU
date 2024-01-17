@@ -13,11 +13,17 @@ namespace PMRU.BlazorUI.Pages
         public IDoctorService doctorService { get; set; }
 
         private List<AvailabilityVM> availabilities;
+        private int doctorId;
 
 
         protected override  async Task OnInitializedAsync()
         {
             availabilities = await availabilityService.GetAvailabilities();
+        }
+
+        private async Task GetAvailabilitiesByDoctorId()
+        {
+            availabilities = await availabilityService.GetAvailabilitiesByDoctorId(doctorId);
         }
 
 
