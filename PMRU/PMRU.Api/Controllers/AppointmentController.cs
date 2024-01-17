@@ -8,6 +8,7 @@ using PMRU.Application.Features.Appointments.Command.CreateAppointment;
 using PMRU.Application.Features.Appointments.Command.UpdateAppointment;
 using PMRU.Application.Features.Appointments.Command.DeleteAppointment;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay;
+using PMRU.Application.Features.Appointments.Queries.GetAppointmentByEmployeeId;
 
 namespace PMRU.Api.Controllers
 {
@@ -34,6 +35,15 @@ namespace PMRU.Api.Controllers
         public async Task<ActionResult<IList<GetAppointmentsByDoctorIdQueryResponseDto>>> GetAppointmentsByDoctorId(int doctorId)
         {
             var request = new GetAppointmentsByDoctorIdQueryRequest(doctorId);
+            var response = await mediator.Send(request);
+
+            return Ok(response);
+        }
+
+        [HttpGet("{employeeId}")]
+        public async Task<ActionResult<GetAppointmentByEmployeeIdQueryResponseDto>> GetAppointmentByEmployeeId(int employeeId)
+        {
+            var request = new GetAppointmentByEmployeeIdQueryRequest(employeeId);
             var response = await mediator.Send(request);
 
             return Ok(response);

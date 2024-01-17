@@ -16,7 +16,7 @@ namespace PMRU.BlazorUI.Services
             this._mapper = mapper;
 
 
-        }
+        } 
         public async Task<List<AvailabilityVM>> GetAvailabilitiesByDoctorId(int doctorId) // calisiyor
         {
             var availabilities = await _client.GetAvailabilitiesByDoctorIdAsync(doctorId);
@@ -26,8 +26,8 @@ namespace PMRU.BlazorUI.Services
 
         public async Task<List<AvailabilityVM>> GetAvailabilities() // calisiyor
         {
-            var availability = await _client.GetAvailabilitiesAsync();
-            var map = _mapper.Map<List<AvailabilityVM>>(availability);
+            var availabilities = await _client.GetAvailabilitiesAsync();
+            var map = _mapper.Map<List<AvailabilityVM>>(availabilities);
             return map;
         }
 

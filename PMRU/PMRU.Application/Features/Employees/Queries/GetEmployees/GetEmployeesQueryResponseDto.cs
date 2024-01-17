@@ -9,6 +9,7 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployees
 {
     public class GetEmployeesQueryResponseDto
     {
+        public int Id { get; set; }
         public string IdentityNumber { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

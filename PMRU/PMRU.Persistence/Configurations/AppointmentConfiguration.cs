@@ -49,7 +49,7 @@ namespace PMRU.Persistence.Configurations
             builder.Property(a => a.DeletedDate).HasDefaultValue(null);
 
             // Çalışanın aynı anda sadece bir randevuya sahip olma kuralı
-            builder.HasIndex(a => a.EmployeeID).IsUnique();
+            //builder.HasIndex(a => a.EmployeeID).IsUnique();
 
             builder.HasData(
                 new Appointment

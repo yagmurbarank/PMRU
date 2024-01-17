@@ -5,6 +5,7 @@ namespace PMRU.BlazorUI.Models.Availability
 {
     public class AvailabilityVM
     {
+        public int Id { get; set; }
         public int DoctorID { get; set; }
         public DoctorVM Doctor { get; set; }
         public DateOnly Date { get; set; }

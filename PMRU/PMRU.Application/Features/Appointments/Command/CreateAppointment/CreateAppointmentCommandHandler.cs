@@ -25,9 +25,10 @@ namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
         {
             Appointment appointment = new(request.DoctorID, request.EmployeeID, request.AppointmentDate, request.AppointmentStartHour, request.AppointmentEndHour, request.Description);
 
-            IList<Appointment> appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync();
+            IList<Appointment> appointments = await unitOfWork.GetReadRepository<Appointment>().GetAllAsync(x => !x.IsDeleted);
 
             await appointmentRules.DoctorCannotHaveAppointmentAtTheSameHour(appointments, request.DoctorID, request.AppointmentStartHour, request.AppointmentDate);
+            await appointmentRules.EmployeeCannotHaveMoreThanOneAppointment(appointments, request.EmployeeID);
 
             await unitOfWork.GetWriteRepository<Appointment>().CreateAsync(appointment);
             await unitOfWork.SaveAsync();

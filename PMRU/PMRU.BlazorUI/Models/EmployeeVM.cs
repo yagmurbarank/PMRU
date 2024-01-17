@@ -6,6 +6,7 @@ namespace PMRU.BlazorUI.Models
 {
     public class EmployeeVM
     {
+        public int Id { get; set; }
         [Display(Name = "T.C. Kimlik No")]
         public string IdentityNumber { get; set; }
         

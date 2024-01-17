@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -18,6 +18,7 @@ using PMRU.BlazorUI.Contracts;
 using PMRU.Domain.Entities;
 using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Models.Availability;
+using PMRU.BlazorUI.Models.Doctor;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -33,27 +34,58 @@ namespace PMRU.BlazorUI.Pages
         public IAppointmentService AppointmentService { get; set; }
 
         public EmployeeVM Employee { get; private set; } = new EmployeeVM();
+        public List<DoctorVM> doctors { get; set; }
+        public List<AvailabilityVM> availabilities { get; set; }
 
         public string registrationNumber { get; set; } = "";
+        public string messageTitle { get; set; }
+        public string messageBody { get; set; }
 
         protected async Task FindEmployee()
         {
+            Reset();
+
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
+            var result = await AppointmentService.GetAppointmentByEmployeeId(Employee.Id);
+            
+            if (result == null)
+            {
+                doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
+            }
+            else
+            {
+                messageTitle = "Randevunuz var!";
+                messageBody = $"Dr. {result.Doctor.Name} {result.Doctor.Surname} ile {result.AppointmentDate} {result.AppointmentStartHour} ve {result.AppointmentEndHour} saatleri arasında randevunuz bulunuyor.";
+            }
+        }
 
-            //var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "1234567891", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            //var updatedoctors = await DoctorService.UpdateDoctor(new UpdateDoctorVM {Id=6, IdentityNumber = "0000000", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            //var deletedoctor = await DoctorService.DeleteDoctor(new DeleteDoctorVM { Id=5});
+        protected async Task GetDoctorAvailabilities(int doctorId)
+        {
+            availabilities = await AvailabilityService.GetAvailabilitiesByDoctorId(doctorId);
+        }
 
-            //var employees = await EmployeeService.GetEmployees();
-            //var doctors = await DoctorService.CreateDoctor(new CreateDoctorVM { IdentityNumber = "123456789", Name = "John", Surname = "Doe", Phone = "1234567890", Email = "john@example.com", LocationID = 34, RegistrationNumber = "DR123", Password = "securepassword" });
-            //var availabilities = await AvailabilityService.GetAvailabilitiesByDoctorId(1);
+        protected async Task CreateAppointment(AvailabilityVM availability)
+        {
+            var appointment = new CreateAppointmentVM { EmployeeID = Employee.Id, DoctorID = availability.DoctorID, AppointmentDate = availability.Date, AppointmentStartHour = availability.StartTime, AppointmentEndHour = availability.EndTime, Description = "Periyodik Muayene" };
+            var response = await AppointmentService.CreateAppointment(appointment);
+            if (response.Success)
+            {
+                await AvailabilityService.DeleteAvailability(new DeleteAvailabilityVM { Id = availability.Id });
+                doctors = null;
+                availabilities = null;
+                messageTitle = "Randevunuz oluşturuldu!";
+                messageBody = $"Dr. {availability.Doctor.Name} {availability.Doctor.Surname} ile {availability.Date} {availability.StartTime} ve {availability.EndTime} saatleri arasında randevunuz oluşturuldu.";
 
-            //var deleteAppointment = await AppointmentService.DeleteAppointment(new DeleteAppointmentVM { Id = 5 });
-            //var appointmemts = await AppointmentService.UpdateAppointment(new UpdateAppointmentVM { Id = 5, EmployeeID = 4, DoctorID = 2, AppointmentDate = new DateOnly(2024, 01, 17), AppointmentHour = new TimeOnly(15, 30), Description = "Routine checkup" });
-            //var availability = await AvailabilityService.CreateAvailability(new CreateAvailabilityVM { DoctorID = 1, Date = new DateOnly(2024, 01, 17), StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(12, 0) });
-            //var availability = await AvailabilityService.UpdateAvailability(new UpdateAvailabilityVM { Id = 3, DoctorID = 2, Date = new DateOnly(2024, 01, 17), StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(12, 0) });
-            //var deleteAvailability = await AvailabilityService.DeleteAvailability(new DeleteAvailabilityVM { Id = 3 });
-            //var deleteAvailability = await AvailabilityService.DeleteAvailabilities(new List<int> { 4, 5 });
+            }
+        }
+
+        private void Reset()
+        {
+            Employee = new EmployeeVM();
+            messageTitle = null;
+            messageBody = null;
+            doctors = null;
+            availabilities = null;
         }
     }
 }

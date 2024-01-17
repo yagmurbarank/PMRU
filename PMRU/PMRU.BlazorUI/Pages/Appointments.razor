@@ -22,7 +22,7 @@
 
         <div class="col-md-6">
 
-            <table id="tblData" class="table">
+            <table id="employeeData" class="table">
                 <tbody>
                     <tr>
                         <td>
@@ -93,5 +93,82 @@
             </table>
         
         </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="row">
+        @if (messageTitle != null && messageBody != null)
+        {
+            <div class="card text-white bg-warning" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@messageTitle</h5>
+                    <p class="card-text">@messageBody</p>
+                </div>
+            </div>
+        }
+
+        @if (doctors != null)
+        {
+            foreach (var doctor in doctors)
+            {
+                <button @onclick="() => GetDoctorAvailabilities(doctor.Id)">
+                    @($"Dr. {doctor.Name} {doctor.Surname}")
+                </button>
+            }
+        }
+    </div>
+
+    <br />
+    <br />
+
+    <div class="row">
+        @if (availabilities != null)
+        {
+            <table id="availabilityData" class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Doktor
+                        </th>
+                        <th>
+                            Tarih
+                        </th>
+                        <th>
+                            Başlangıç Saati
+                        </th>
+                        <th>
+                            Bitiş Saati
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var availability in availabilities)
+                    {
+                        <tr>
+                            <td>
+                                @availability.Doctor.Name @availability.Doctor.Surname
+                            </td>
+                            <td>
+                                @availability.Date.ToString("dd-MM-yyyy")
+                            </td>
+                            <td>
+                                @availability.StartTime
+                            </td>
+                            <td>
+                                @availability.EndTime
+                            </td>
+                            <td>
+                                <button class="btn btn-outline-primary" @onclick="() => CreateAppointment(availability)">
+                                    <i class="fa fa-file"></i>Randevu Al
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
     </div>
 </div>
