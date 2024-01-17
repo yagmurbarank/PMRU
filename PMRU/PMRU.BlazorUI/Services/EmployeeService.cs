@@ -15,14 +15,14 @@ namespace PMRU.BlazorUI.Services
             this._mapper = mapper;
         }
 
-        public async Task<EmployeeVM> GetEmployeeByRegistrationNumber(string registrationNumber)
+        public async Task<EmployeeVM> GetEmployeeByRegistrationNumber(string registrationNumber) // calisiyor
         {
             var employee = await _client.GetEmployeeByRegistrationNumberAsync(registrationNumber);
             var map = _mapper.Map<EmployeeVM>(employee);
             return map;
         }
 
-        public async Task<List<EmployeeVM>> GetEmployees()
+        public async Task<List<EmployeeVM>> GetEmployees() // calisiyor
         {
             var employees = await _client.GetEmployeesAsync();
             var map = _mapper.Map<List<EmployeeVM>>(employees);
