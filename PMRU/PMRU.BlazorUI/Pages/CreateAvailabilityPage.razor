@@ -1,0 +1,30 @@
+﻿@page "/create-availability"
+
+<h3>CreateAvailabilityPage</h3>
+
+<div class="card mt-4">
+    <div class="card-body">
+        <h5 class="card-title">Create New Availability</h5>
+        <form>
+            <div class="mb-3">
+                <label for="newDate" class="form-label">Date:</label>
+                <input type="date" class="form-control" id="newDate" @bind="newAvailability.Date" />
+            </div>
+            <div class="mb-3">
+                <label for="newStartTime" class="form-label">Start Time:</label>
+                <input type="time" class="form-control" id="newStartTime" @bind="newAvailability.StartTime" />
+            </div>
+            <div class="mb-3">
+                <label for="newEndTime" class="form-label">End Time:</label>
+                <input type="time" class="form-control" id="newEndTime" @bind="newAvailability.EndTime" />
+            </div>
+            <div class="mb-3">
+                <label for="newDoctorId" class="form-label">Doctor ID:</label>
+                <input type="number" class="form-control" id="newDoctorId" @bind="newAvailability.DoctorID" />
+            </div>
+            <button type="button" class="btn btn-primary" @onclick="() => CreateAvailability(newAvailability)">Create Availability</button>
+        </form>
+    </div>
+</div>
+
+
