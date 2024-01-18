@@ -45,7 +45,7 @@ namespace PMRU.Persistence.Configurations
                     Email = "aylin.gunes@email.com",
                     Phone = "5556123456",
                     IdentityNumber = "12345678901",
-                    RegistrationNumber = "102",
+                    RegistrationNumber = "110",
                     LocationID = 35,
                     Password = "Password"
                 },
@@ -57,8 +57,32 @@ namespace PMRU.Persistence.Configurations
                     Email = "eren.akcay@email.com",
                     Phone = "5556234567",
                     IdentityNumber = "12345678923",
-                    RegistrationNumber = "103",
+                    RegistrationNumber = "111",
                     LocationID = 41,
+                    Password = "Password"
+                },
+                new Doctor
+                {
+                    Id = 3,
+                    Name = "Gülay",
+                    Surname = "Kaya",
+                    Email = "gulay.kaya@email.com",
+                    Phone = "5556345678",
+                    IdentityNumber = "12343458923",
+                    RegistrationNumber = "112",
+                    LocationID = 72,
+                    Password = "Password"
+                },
+                new Doctor
+                {
+                    Id = 4,
+                    Name = "Gülsüm",
+                    Surname = "Aydın",
+                    Email = "gulsum.aydin@email.com",
+                    Phone = "5556678901",
+                    IdentityNumber = "12343458205",
+                    RegistrationNumber = "116",
+                    LocationID = 34,
                     Password = "Password"
                 }
             );

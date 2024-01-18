@@ -212,6 +212,193 @@ namespace PMRU.Persistence.Configurations
                     IsDeleted = false,
                     CreatedDate = DateTime.Now,
                     DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 11,
+                    IdentityNumber = "5642597451",
+                    Name = "Aylin",
+                    Surname = "Güneş",
+                    Phone = "(555) 612-3456",
+                    Email = "aylin.gunes@email.com",
+                    LocationID = 35,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "110",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 12,
+                    IdentityNumber = "5642517451",
+                    Name = "Eren",
+                    Surname = "Akçay",
+                    Phone = "(555) 623-4567",
+                    Email = "eren.akcay@email.com",
+                    LocationID = 41,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "111",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 13,
+                    IdentityNumber = "3462517451",
+                    Name = "Gülay",
+                    Surname = "Kaya",
+                    Phone = "(555) 634-5678",
+                    Email = "gulay.kaya@email.com",
+                    LocationID = 72,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "112",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 14,
+                    IdentityNumber = "3434517451",
+                    Name = "Cem",
+                    Surname = "Yıldırım",
+                    Phone = "(555) 645-6789",
+                    Email = "cem.yildirim@email.com",
+                    LocationID = 35,
+                    PositionID = 13,
+                    DepartmentID = 7,
+                    RegistrationNumber = "113",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 15,
+                    IdentityNumber = "3434546751",
+                    Name = "Dilara",
+                    Surname = "Çetin",
+                    Phone = "(555) 656-7890",
+                    Email = "dilara.cetin@email.com",
+                    LocationID = 72,
+                    PositionID = 13,
+                    DepartmentID = 7,
+                    RegistrationNumber = "114",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 16,
+                    IdentityNumber = "3432209751",
+                    Name = "Mert",
+                    Surname = "Sağlam",
+                    Phone = "(535) 896-4526",
+                    Email = "mert.saglam@email.com",
+                    LocationID = 41,
+                    PositionID = 13,
+                    DepartmentID = 7,
+                    RegistrationNumber = "115",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 17,
+                    IdentityNumber = "3432906751",
+                    Name = "Gülsüm",
+                    Surname = "Aydın",
+                    Phone = "(555) 667-8901",
+                    Email = "gulsum.aydin@email.com",
+                    LocationID = 34,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "116",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 18,
+                    IdentityNumber = "3850906751",
+                    Name = "Emre",
+                    Surname = "Yaman",
+                    Phone = "(555) 678-9012",
+                    Email = "emre.yaman@email.com",
+                    LocationID = 34,
+                    PositionID = 13,
+                    DepartmentID = 7,
+                    RegistrationNumber = "117",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 19,
+                    IdentityNumber = "3850915851",
+                    Name = "Selin",
+                    Surname = "Erdoğan",
+                    Phone = "(555) 689-0123",
+                    Email = "selin.erdogan@email.com",
+                    LocationID = 41,
+                    PositionID = 11,
+                    DepartmentID = 5,
+                    RegistrationNumber = "118",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 20,
+                    IdentityNumber = "3850926751",
+                    Name = "Onur",
+                    Surname = "Akbaş",
+                    Phone = "(555) 690-1234",
+                    Email = "onur.akbas@email.com",
+                    LocationID = 35,
+                    PositionID = 10,
+                    DepartmentID = 3,
+                    RegistrationNumber = "119",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 21,
+                    IdentityNumber = "3880226751",
+                    Name = "Melis",
+                    Surname = "Yılmaz",
+                    Phone = "(555) 701-2345",
+                    Email = "melis.yilmaz@email.com",
+                    LocationID = 34,
+                    PositionID = 9,
+                    DepartmentID = 6,
+                    RegistrationNumber = "120",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
                 }
 
             );
