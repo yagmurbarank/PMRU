@@ -53,6 +53,10 @@ namespace PMRU.BlazorUI.Pages
                         var location = employee.Location;
                         doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
                     }
+                    else
+                    {
+                        doctorsInCurrentUserLocation=new List<DoctorVM>();
+                    }
                 }
             }
         }
