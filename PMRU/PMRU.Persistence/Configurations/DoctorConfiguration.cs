@@ -45,7 +45,7 @@ namespace PMRU.Persistence.Configurations
                     Email = "aylin.gunes@email.com",
                     Phone = "5556123456",
                     IdentityNumber = "12345678901",
-                    RegistrationNumber = "102",
+                    RegistrationNumber = "110",
                     LocationID = 35,
                     Password = "Password"
                 },
@@ -57,7 +57,7 @@ namespace PMRU.Persistence.Configurations
                     Email = "eren.akcay@email.com",
                     Phone = "5556234567",
                     IdentityNumber = "12345678923",
-                    RegistrationNumber = "103",
+                    RegistrationNumber = "111",
                     LocationID = 41,
                     Password = "Password"
                 }
