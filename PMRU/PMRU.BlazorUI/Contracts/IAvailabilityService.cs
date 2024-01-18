@@ -8,6 +8,7 @@ namespace PMRU.BlazorUI.Contracts
     {
         Task<List<AvailabilityVM>> GetAvailabilities();
         Task<List<AvailabilityVM>> GetAvailabilitiesByDoctorId(int doctorId);
+        Task<AvailabilityVM> GetAvailabilityById(int id);
 
         Task<Response<Guid>> CreateAvailability(CreateAvailabilityVM vm);
         Task<Response<Guid>> CreateAvailabilities(List<CreateAvailabilityVM> vm);

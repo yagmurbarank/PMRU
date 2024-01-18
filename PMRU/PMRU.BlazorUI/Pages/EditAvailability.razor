@@ -1,0 +1,40 @@
+﻿@page "/edit-availability/{availabilityId:int}"
+@inject NavigationManager NavigationManager
+
+<h3>EditAvailability</h3>
+
+<p>Availability ID: @availabilityId</p>
+
+@if (availability != null)
+{
+    <div>
+        <label>Date:</label>
+        <input type="date" @bind="availability.Date" />
+    </div>
+    <div>
+        <label>Start Time:</label>
+        <input type="time" @bind="availability.StartTime" />
+    </div>
+    <div>
+        <label>End Time:</label>
+        <input type="time" @bind="availability.EndTime" />
+    </div>
+    <div>
+        <label>Doctor:</label>
+        <select class="form-control" @bind="availability.DoctorID">
+            @foreach (var doctor in doctors)
+            {
+                <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
+            }
+        </select>
+    </div>
+
+    <button class="btn btn-primary" @onclick="UpdateAvailability">Update Availability</button>
+}
+else
+{
+    <p>Availability not found</p>
+}
+
+
+
