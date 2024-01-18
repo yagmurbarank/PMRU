@@ -88,9 +88,9 @@ namespace PMRU.BlazorUI.Pages
             NavigationManager.NavigateTo("/create-availability");
         }
 
-        private void NavigateToEditAvailability()
+        private void NavigateToEditAvailability(int availabilityId)
         {
-            NavigationManager.NavigateTo("/edit-availability");
+            NavigationManager.NavigateTo($"/edit-availability/{availabilityId}");
         }
     }
 }

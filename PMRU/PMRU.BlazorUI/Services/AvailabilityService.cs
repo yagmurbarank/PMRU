@@ -31,6 +31,21 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
+        public async Task<AvailabilityVM> GetAvailabilityById(int id)
+        {
+            try
+            {
+                var availability = await _client.GetAvailabilityByIdAsync(id);
+                var mappedAvailability = _mapper.Map<AvailabilityVM>(availability);
+                return mappedAvailability;
+            }
+            catch (ApiException ex)
+            {
+                // Gerekirse hata işleme kodları buraya eklenebilir.
+                throw;
+            }
+        }
+
         public async Task<Response<Guid>> CreateAvailability(CreateAvailabilityVM vm) // calisiyor
         {
             try
