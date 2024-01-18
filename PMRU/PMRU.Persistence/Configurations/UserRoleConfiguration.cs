@@ -49,10 +49,15 @@ namespace PMRU.Persistence.Configurations
                     RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),//localadmin
                     UserId = new Guid("faad6812-0f8e-4342-aabb-6dcd5e8ecc09")//regno:114
                 },
+                new IdentityUserRole<Guid> 
+                {
+                    RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),//localadmin
+                    UserId = new Guid("a2b4f813-72c9-4a6e-9d7b-1f8c3d2e5a0f")//regno:115
+                },
                 new IdentityUserRole<Guid>
                 {
                     RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),//localadmin
-                    UserId = new Guid("3a7f9b68-21d5-4f8c-b2a7-9c0e1f5d2a91")//regno:115
+                    UserId = new Guid("3a7f9b68-21d5-4f8c-b2a7-9c0e1f5d2a91")//regno:117
                 }
             );
         }
