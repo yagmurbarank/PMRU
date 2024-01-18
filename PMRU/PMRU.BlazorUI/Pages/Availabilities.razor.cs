@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.JSInterop;
 using PMRU.BlazorUI.Contracts;
+using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services;
+using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Pages
@@ -11,27 +14,51 @@ namespace PMRU.BlazorUI.Pages
     public partial class Availabilities
     {
         [Inject]
+        public IEmployeeService EmployeeService { get; set; }
+        [Inject]
         public IAvailabilityService availabilityService { get; set; }
         [Inject]
         public IDoctorService doctorService { get; set; }
         [Inject]
         NavigationManager navigationManager { get; set; }
+        [Inject]
+        AuthenticationStateProvider authenticationStateProvider { get; set; }
 
-        private List<AvailabilityVM> availabilities;
-        private List<PMRU.BlazorUI.Models.Doctor.DoctorVM> doctors;
+
+        public List<DoctorVM> doctors { get; set; }
+        public List<AvailabilityVM> availabilities { get; set; }
+        public EmployeeVM Employee { get; private set; } = new EmployeeVM();
+
+        private AuthenticationState authenticationState;
+
         private int doctorId;
         private int selectedDoctorId;
+        public string registrationNumber { get; set; } = "";
+        private List<DoctorVM> doctorsInCurrentUserLocation;
 
 
         protected override async Task OnInitializedAsync()
         {
-            await LoadDoctors();
-            availabilities = await availabilityService.GetAvailabilities();
-        }
+            authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
 
-        private async Task LoadDoctors()
-        {
-            doctors = await doctorService.GetDoctors();
+            if (authenticationState.User?.Claims != null)
+            {
+                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c=>c.Type=="RegistrationNumber");
+                if (registrationNumberClaim != null)
+                {
+                    var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+
+                    if (employee != null)
+                    {
+                        var location = employee.Location;
+                        doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
+                    }
+                    else
+                    {
+                        doctorsInCurrentUserLocation=new List<DoctorVM>();
+                    }
+                }
+            }
         }
 
         private async Task GetAvailabilitiesByDoctorId()
@@ -54,6 +81,8 @@ namespace PMRU.BlazorUI.Pages
         {
             return selectedDoctorId;
         }
+
+
         private void NavigateToCreateAvailability()
         {
             NavigationManager.NavigateTo("/create-availability");
