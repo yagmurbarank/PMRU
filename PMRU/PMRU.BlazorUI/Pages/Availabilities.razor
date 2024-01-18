@@ -1,5 +1,6 @@
 ﻿@page "/availabilities"
 @inject NavigationManager NavigationManager
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 
 
@@ -8,7 +9,7 @@
 <label for="doctorId">Doktorlarımız</label>
 <select class="form-control" @bind="selectedDoctorId">
     <option value="">Seçiniz</option>
-    @foreach (var doctor in doctors)
+    @foreach (var doctor in doctorsInCurrentUserLocation)
     {
         <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
     }
@@ -47,5 +48,9 @@
     </table>
 }
 
+@if (authenticationState.User?.Claims != null)
+{
+    var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+}
 
 
