@@ -1,22 +1,26 @@
 ﻿@page "/availabilities"
-@inject NavigationManager NavigationManager
-@inject AuthenticationStateProvider AuthenticationStateProvider
-
 
 
 <h3>Availabilities</h3>
 
-<label for="doctorId">Doktorlarımız</label>
-<select class="form-control" @bind="selectedDoctorId">
-    <option value="">Seçiniz</option>
-    @foreach (var doctor in doctorsInCurrentUserLocation)
-    {
-        <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
-    }
-</select>
+@if (doctorsInCurrentUserLocation != null && doctorsInCurrentUserLocation.Any())
+{
+    <label for="doctorId">Doktorlarımız</label>
+    <select class="form-control" @bind="selectedDoctorId">
+        <option value="">Seçiniz</option>
 
-<button class="btn btn-primary btn-sm" @onclick="GetAvailabilitiesByDoctorId">Get Availabilities</button>
-<button class="btn btn-success btn-sm" @onclick="NavigateToCreateAvailability">Create Availability</button>
+        @foreach (var doctor in doctorsInCurrentUserLocation)
+        {
+            <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
+        }
+
+    </select>
+
+
+    <button class="btn btn-primary btn-sm" @onclick="GetAvailabilitiesByDoctorId">Get Availabilities</button>
+    <button class="btn btn-success btn-sm" @onclick="NavigateToCreateAvailability">Create Availability</button>
+}
+
 
 @if (availabilities != null && availabilities.Any())
 {
@@ -48,9 +52,11 @@
     </table>
 }
 
-@if (authenticationState.User?.Claims != null)
+@if (authenticationState!= null)
 {
-    var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+    @if (authenticationState.User?.Claims != null)
+    {
+        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+    }
 }
-
 
