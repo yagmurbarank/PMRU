@@ -28,6 +28,8 @@ namespace PMRU.BlazorUI.Pages
         
         protected override async Task OnInitializedAsync()
         {
+            availabilityToCreate.Date = new DateOnly(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+            
             authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
             if (authenticationState.User?.Claims != null)
