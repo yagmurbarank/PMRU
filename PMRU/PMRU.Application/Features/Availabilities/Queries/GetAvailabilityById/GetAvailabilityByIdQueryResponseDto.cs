@@ -9,6 +9,7 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 {
     public class GetAvailabilityByIdQueryResponseDto
     {
+        public int Id { get; set; }
         public int DoctorID { get; set; }
         public DoctorDto Doctor { get; set; }
         public DateOnly Date { get; set; }
