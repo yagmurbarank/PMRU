@@ -67,6 +67,9 @@ namespace PMRU.BlazorUI.Pages
 
             for (DateOnly currentDate = createAvailabilitiesInRangeModel.StartDate; currentDate <= createAvailabilitiesInRangeModel.EndDate; currentDate = currentDate.AddDays(1))
             {
+                if (currentDate.DayOfWeek == DayOfWeek.Saturday || currentDate.DayOfWeek == DayOfWeek.Sunday) 
+                    continue;
+                
                 for (TimeOnly currentStartTime = createAvailabilitiesInRangeModel.StartTime; currentStartTime < createAvailabilitiesInRangeModel.EndTime; currentStartTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration))
                 {
                     var currentEndTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration);
