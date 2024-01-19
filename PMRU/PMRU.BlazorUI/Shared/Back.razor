@@ -1,0 +1,14 @@
+﻿@inject NavigationManager NavigationManager
+
+<button class="btn btn-outline-dark btn-block" @onclick="Navigate">
+    <span class="oi oi-arrow-left"></span>Back
+</button>
+
+@code {
+    [Parameter] public string Target { get; set; }
+
+    void Navigate()
+    {
+        NavigationManager.NavigateTo($"{NavigationManager.BaseUri}{Target}");
+    }
+}

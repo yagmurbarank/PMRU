@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models.Availability;
+using PMRU.BlazorUI.Models.Doctor;
+using PMRU.BlazorUI.Services;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -8,31 +11,49 @@ namespace PMRU.BlazorUI.Pages
     {
        
         [Inject]
-        public IAvailabilityService availabilityService { get; set; }
+        public IAvailabilityService AvailabilityService { get; set; }
         [Inject]
-        public IDoctorService doctorService { get; set; }
+        public IDoctorService DoctorService { get; set; }
+        [Inject]
+        public IEmployeeService EmployeeService { get; set; }
         [Inject]
         NavigationManager navigationManager { get; set; }
-        private AvailabilityVM newAvailability = new AvailabilityVM();
+        [Inject]
+        AuthenticationStateProvider authenticationStateProvider { get; set; }
 
-        private List<AvailabilityVM> availabilities;
-        private int doctorId;
+        AuthenticationState authenticationState;
 
-
+        CreateAvailabilityVM availabilityToCreate = new CreateAvailabilityVM();
+        List<DoctorVM> doctors { get; set; }
+        
         protected override async Task OnInitializedAsync()
         {
-            availabilities = await availabilityService.GetAvailabilities();
+            authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
+
+            if (authenticationState.User?.Claims != null)
+            {
+                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+                if (registrationNumberClaim != null)
+                {
+                    var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+
+                    if (employee != null)
+                    {
+                        var location = employee.Location;
+                        doctors = await DoctorService.GetDoctorsByLocation(location.Id);
+                    }
+                    else
+                    {
+                        doctors = new List<DoctorVM>();
+                    }
+                }
+            }
         }
 
-        private async Task GetAvailabilitiesByDoctorId()
+        protected async Task CreateAvailability()
         {
-            availabilities = await availabilityService.GetAvailabilitiesByDoctorId(doctorId);
-        }
-
-        private void CreateAvailability(AvailabilityVM availability)
-        {
-            // Edit iþlemleri için burada gerekli kodlarý ekleyin
-            // Örneðin, bir modal göstererek düzenleme yapabilirsiniz.
+            var result = await AvailabilityService.CreateAvailability(this.availabilityToCreate);
+            navigationManager.NavigateTo("availabilities");
         }
 
     }
