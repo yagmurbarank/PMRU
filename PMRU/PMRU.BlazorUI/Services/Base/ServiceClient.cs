@@ -3493,6 +3493,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class GetAvailabilityByIdQueryResponseDto
     {
 
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("doctorID")]
         public int DoctorID { get; set; }
 

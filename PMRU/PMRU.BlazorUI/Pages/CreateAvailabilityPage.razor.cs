@@ -24,12 +24,15 @@ namespace PMRU.BlazorUI.Pages
         AuthenticationState authenticationState;
 
         CreateAvailabilityVM availabilityToCreate = new CreateAvailabilityVM();
+        CreateAvailabilitiesInRange createAvailabilitiesInRangeModel = new CreateAvailabilitiesInRange();
         List<DoctorVM> doctors { get; set; }
         
         protected override async Task OnInitializedAsync()
         {
             availabilityToCreate.Date = new DateOnly(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
-            
+            createAvailabilitiesInRangeModel.StartDate = new DateOnly(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+            createAvailabilitiesInRangeModel.EndDate = new DateOnly(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
+
             authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
             if (authenticationState.User?.Claims != null)
@@ -55,6 +58,27 @@ namespace PMRU.BlazorUI.Pages
         protected async Task CreateAvailability()
         {
             var result = await AvailabilityService.CreateAvailability(this.availabilityToCreate);
+            navigationManager.NavigateTo("availabilities");
+        }
+
+        protected async Task CreateAvailabilitiesInRange()
+        {
+            List<CreateAvailabilityVM> availabilitiesToCreate = new List<CreateAvailabilityVM>();
+
+            for (DateOnly currentDate = createAvailabilitiesInRangeModel.StartDate; currentDate <= createAvailabilitiesInRangeModel.EndDate; currentDate = currentDate.AddDays(1))
+            {
+                for (TimeOnly currentStartTime = createAvailabilitiesInRangeModel.StartTime; currentStartTime < createAvailabilitiesInRangeModel.EndTime; currentStartTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration))
+                {
+                    var currentEndTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration);
+                    if (currentEndTime > createAvailabilitiesInRangeModel.EndTime)
+                    {
+                        continue;
+                    }
+                    availabilitiesToCreate.Add(new CreateAvailabilityVM { DoctorID = createAvailabilitiesInRangeModel.DoctorID, Date = currentDate, StartTime = currentStartTime, EndTime = currentEndTime });
+                }
+            }
+
+            var result = await AvailabilityService.CreateAvailabilities(availabilitiesToCreate);
             navigationManager.NavigateTo("availabilities");
         }
 
