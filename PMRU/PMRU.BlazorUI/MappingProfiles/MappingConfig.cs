@@ -53,6 +53,7 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<UpdateDoctorCommandRequest, UpdateDoctorVM>().ReverseMap();
             CreateMap<DeleteDoctorCommandRequest, DeleteDoctorVM>().ReverseMap();
             CreateMap<GetDoctorsByLocationQueryResponseDto, DoctorVM>().ReverseMap();
+            CreateMap<GetDoctorByRegistrationNumberQueryResponseDto, DoctorVM>().ReverseMap();
 
             CreateMap<GetAvailabilitiesByDoctorIdQueryResponseDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))

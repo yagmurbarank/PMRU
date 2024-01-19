@@ -41,6 +41,16 @@ namespace PMRU.Persistence.Configurations
                 },
                 new IdentityUserRole<Guid>
                 {
+                    RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746"),//doctor
+                    UserId = new Guid("2b9d163d-cdd1-4b2c-b62e-ec59a6b300fb")//regno:121
+                },
+                new IdentityUserRole<Guid>
+                {
+                    RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746"),//doctor
+                    UserId = new Guid("b4f91e33-68d1-4aee-b254-d8a53631b23a")//regno:122
+                },
+                new IdentityUserRole<Guid>
+                {
                     RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),//localadmin
                     UserId = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb")//regno:113
                 },

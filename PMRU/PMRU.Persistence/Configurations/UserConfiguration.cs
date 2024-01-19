@@ -78,6 +78,30 @@ namespace PMRU.Persistence.Configurations
                  },
                  new User
                  {
+                     Id = new Guid("2b9d163d-cdd1-4b2c-b62e-ec59a6b300fb"),
+                     Email = "meryem.kuzey@email.com",
+                     NormalizedEmail = "MERYEM.KUZEY@EMAIL.COM",//DOCTOR
+                     FullName = "Meryem Kuzey",
+                     RegistrationNumber = "121",
+                     UserName = "meryem.kuzey@email.com",
+                     NormalizedUserName = "MERYEM.KUZEY@EMAIL.COM",
+                     PasswordHash = hasher.HashPassword(null, "123456"),
+                     SecurityStamp = Guid.NewGuid().ToString(),
+                 },
+                 new User
+                 {
+                     Id = new Guid("b4f91e33-68d1-4aee-b254-d8a53631b23a"),
+                     Email = "ali.atabey@email.com",
+                     NormalizedEmail = "ALI.ATABEY@EMAIL.COM",//DOCTOR
+                     FullName = "Ali Atabey",
+                     RegistrationNumber = "122",
+                     UserName = "ali.atabey@email.comm",
+                     NormalizedUserName = "ALI.ATABEY@EMAIL.COM",
+                     PasswordHash = hasher.HashPassword(null, "123456"),
+                     SecurityStamp = Guid.NewGuid().ToString(),
+                 },
+                 new User
+                 {
                      Id = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb"),
                      Email = "cem.yildirim@email.com",
                      NormalizedEmail = "CEM.YILDIRIM@EMAIL.COM",//LOCALADMIN
