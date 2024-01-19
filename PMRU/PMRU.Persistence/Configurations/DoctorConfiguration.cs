@@ -84,6 +84,30 @@ namespace PMRU.Persistence.Configurations
                     RegistrationNumber = "116",
                     LocationID = 34,
                     Password = "Password"
+                },
+                new Doctor
+                {
+                    Id = 5,
+                    Name = "Meryem",
+                    Surname = "Kuzey",
+                    Email = "meryem.kuzey@email.com",
+                    Phone = "5556345358",
+                    IdentityNumber = "3972226751",
+                    RegistrationNumber = "121",
+                    LocationID = 35,
+                    Password = "Password"
+                },
+                new Doctor
+                {
+                    Id = 6,
+                    Name = "Ali",
+                    Surname = "Atabey",
+                    Email = "ali.atabey@email.com",
+                    Phone = "5551862565",
+                    IdentityNumber = "1971927981",
+                    RegistrationNumber = "122",
+                    LocationID = 34,
+                    Password = "Password"
                 }
             );
         }

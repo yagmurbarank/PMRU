@@ -399,6 +399,40 @@ namespace PMRU.Persistence.Configurations
                     IsDeleted = false,
                     CreatedDate = DateTime.Now,
                     DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 22,
+                    IdentityNumber = "3972226751",
+                    Name = "Meryem",
+                    Surname = "Kuzey",
+                    Phone = "(555) 634-5358",
+                    Email = "meryem.kuzey@email.com",
+                    LocationID = 35,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "121",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
+                },
+                new Employee
+                {
+                    Id = 23,
+                    IdentityNumber = "1971927981",
+                    Name = "Ali",
+                    Surname = "Atabey",
+                    Phone = "(555) 186-2565",
+                    Email = "ali.atabey@email.com",
+                    LocationID = 34,
+                    PositionID = 12,
+                    DepartmentID = 7,
+                    RegistrationNumber = "122",
+                    IsActive = true,
+                    IsDeleted = false,
+                    CreatedDate = DateTime.Now,
+                    DeletedDate = null
                 }
 
             );

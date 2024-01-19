@@ -3,38 +3,32 @@
 
 <h3>EditAvailability</h3>
 
-<p>Availability ID: @availabilityId</p>
+<EditForm Model="@availability" OnValidSubmit="@UpdateAvailability">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
-@if (availability != null)
-{
-    <div>
-        <label>Date:</label>
-        <input type="date" @bind="availability.Date" />
-    </div>
-    <div>
-        <label>Start Time:</label>
-        <input type="time" @bind="availability.StartTime" />
-    </div>
-    <div>
-        <label>End Time:</label>
-        <input type="time" @bind="availability.EndTime" />
-    </div>
-    <div>
-        <label>Doctor:</label>
-        <select class="form-control" @bind="availability.DoctorID">
-            @foreach (var doctor in doctors)
-            {
-                <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
-            }
-        </select>
+    <div class="form-group">
+        <label for="date">Tarih</label>
+        <InputDate class="form-control" id="date" @bind-Value="availability.Date" />
+        <ValidationMessage For="@(() => availability.Date)" />
     </div>
 
-    <button class="btn btn-primary" @onclick="UpdateAvailability">Update Availability</button>
-}
-else
-{
-    <p>Availability not found</p>
-}
+    <div class="form-group">
+        <label for="startTime">Başlangıç Saati</label>
+        <InputDate Type="InputDateType.Time" class="form-control" id="startTime" @bind-Value="availability.StartTime" />
+        <ValidationMessage For="@(() => availability.StartTime)" />
+    </div>
+
+    <div class="form-group">
+        <label for="endTime">Bitiş Saati</label>
+        <InputDate Type="InputDateType.Time" class="form-control" id="endTime" @bind-Value="availability.EndTime" />
+        <ValidationMessage For="@(() => availability.EndTime)" />
+    </div>
+
+    <button type="submit" class="btn btn-success btn-block">Oluştur</button>
+
+    <Back Target="availabilities" />
+</EditForm>
 
 
 
