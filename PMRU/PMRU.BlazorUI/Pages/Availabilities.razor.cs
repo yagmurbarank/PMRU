@@ -8,6 +8,7 @@ using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
+using System.Security.Claims;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -67,6 +68,23 @@ namespace PMRU.BlazorUI.Pages
             availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
         }
 
+        private int GetSelectedDoctorId()
+        {
+            return selectedDoctorId;
+        }
+
+        private string GetUserRole()
+        {
+            if (authenticationState.User?.Identity?.IsAuthenticated == true)
+            {
+                var roleClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+                if (roleClaim != null)
+                { return roleClaim.Value; }
+            }
+
+            return null;
+        }
+
         private async void DeleteAvailability(AvailabilityVM availability)
         {
 
@@ -78,11 +96,6 @@ namespace PMRU.BlazorUI.Pages
                 availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
             
         }
-        private int GetSelectedDoctorId()
-        {
-            return selectedDoctorId;
-        }
-
 
         private void NavigateToCreateAvailability()
         {
