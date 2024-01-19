@@ -40,24 +40,48 @@ namespace PMRU.BlazorUI.Pages
 
         protected override async Task OnInitializedAsync()
         {
-
             authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
             if (authenticationState.User?.Claims != null)
             {
-                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c=>c.Type=="RegistrationNumber");
-                if (registrationNumberClaim != null)
-                {
-                    var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                var role = GetUserRole();
 
-                    if (employee != null)
+                if (role != null)
+                {
+                    if (role == "Doctor")
                     {
-                        var location = employee.Location;
-                        doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
+                        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+                        // Doktor ise sadece kendi bilgilerini getir
+                        var doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
+
+                        if (doctor != null)
+                        {
+                            doctorsInCurrentUserLocation = new List<DoctorVM> { doctor };
+                        }
+                        else
+                        {
+                            doctorsInCurrentUserLocation = new List<DoctorVM>();
+                        }
                     }
                     else
                     {
-                        doctorsInCurrentUserLocation=new List<DoctorVM>();
+                        // Diðer roller için lokasyondaki tüm doktorlarý getir
+                        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+
+                        if (registrationNumberClaim != null)
+                        {
+                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+
+                            if (employee != null)
+                            {
+                                var location = employee.Location;
+                                doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
+                            }
+                            else
+                            {
+                                doctorsInCurrentUserLocation = new List<DoctorVM>();
+                            }
+                        }
                     }
                 }
             }

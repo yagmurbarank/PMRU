@@ -60,6 +60,13 @@ namespace PMRU.BlazorUI.Services
             return map;
         }
 
+        public async Task<DoctorVM> GetDoctorByRegistrationNumber(string registrationNumber)
+        {
+            var doctor = await _client.GetDoctorByRegistrationNumberAsync(registrationNumber);
+            var mappedDoctor = _mapper.Map<DoctorVM>(doctor);
+            return mappedDoctor;
+        }
+
         public async Task<List<DoctorVM>> GetDoctors() // calisiyor
         {
             var doctors = await _client.GetDoctorsAsync();
@@ -73,6 +80,8 @@ namespace PMRU.BlazorUI.Services
             var mappedDoctors = _mapper.Map<List<DoctorVM>>(doctorsByLocation);
             return mappedDoctors;
         }
+
+
 
   
 
