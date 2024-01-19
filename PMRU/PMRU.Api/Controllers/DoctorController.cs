@@ -13,6 +13,8 @@ using PMRU.Application.Features.Doctors.Queries.GetDoctorById;
 using AutoMapper.Features;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Domain.Entities;
+using PMRU.Application.Features.Employees.Queries.GetEmployeesById;
+using PMRU.Application.Features.Doctors.Queries.GetDoctorByRegistrationNumber;
 
 
 namespace PMRU.Api.Controllers
@@ -54,7 +56,13 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
-
+        [HttpGet("{registrationNumber}")]
+        public async Task<ActionResult<GetDoctorByRegistrationNumberQueryResponseDto>> GetDoctorByRegistrationNumber(string registrationNumber)
+        {
+            var request = new GetDoctorByRegistrationNumberQueryRequest(registrationNumber);
+            var response = await mediator.Send(request);
+            return Ok(response);
+        }
         [HttpPost]
         public async Task<ActionResult> CreateDoctor(CreateDoctorCommandRequest request)
         {
