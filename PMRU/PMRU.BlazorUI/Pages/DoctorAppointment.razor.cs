@@ -21,7 +21,6 @@ namespace PMRU.BlazorUI.Pages
            
             appointments = await appointmentService.GetAppointmentsByDoctorId(doctorId);
         }
-      
 
         private async Task GetAppointmentsByDoctorId()
         {

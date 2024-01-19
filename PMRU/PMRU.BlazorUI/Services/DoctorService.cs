@@ -74,7 +74,7 @@ namespace PMRU.BlazorUI.Services
             return mappedDoctors;
         }
 
-        
+  
 
         public async Task<Response<Guid>> UpdateDoctor(UpdateDoctorVM doctorVM) // calisiyor
         {
