@@ -39,7 +39,7 @@ namespace PMRU.BlazorUI.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            authenticationState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+            authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
             if (authenticationState.User?.Claims != null)
             {
@@ -85,12 +85,12 @@ namespace PMRU.BlazorUI.Pages
 
         private void NavigateToCreateAvailability()
         {
-            NavigationManager.NavigateTo("/create-availability");
+            navigationManager.NavigateTo("/create-availability");
         }
 
         private void NavigateToEditAvailability(int availabilityId)
         {
-            NavigationManager.NavigateTo($"/edit-availability/{availabilityId}");
+            navigationManager.NavigateTo($"/edit-availability/{availabilityId}");
         }
     }
 }
