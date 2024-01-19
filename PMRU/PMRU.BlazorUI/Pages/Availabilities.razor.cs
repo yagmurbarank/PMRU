@@ -39,6 +39,7 @@ namespace PMRU.BlazorUI.Pages
 
         protected override async Task OnInitializedAsync()
         {
+
             authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
 
             if (authenticationState.User?.Claims != null)

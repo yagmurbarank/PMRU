@@ -57,6 +57,9 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<GetAvailabilitiesByDoctorIdQueryResponseDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
+            CreateMap<GetAvailabilityByIdQueryResponseDto, AvailabilityVM>()
+                .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
+                .ReverseMap();
             CreateMap<GetAvailabilitiesQueryResponseDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
@@ -71,6 +74,7 @@ namespace PMRU.BlazorUI.MappingProfiles
                .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
                .ReverseMap();
             CreateMap<DeleteAvailabilityVM, DeleteAvailabilityCommandRequest>().ReverseMap();
+            
 
             CreateMap<DateOnly, DateTime>().ConvertUsing(source => new DateTime(source.Year, source.Month, source.Day));
             CreateMap<DateTime, DateOnly>().ConvertUsing(dt => new DateOnly(dt.Year, dt.Month, dt.Day));
