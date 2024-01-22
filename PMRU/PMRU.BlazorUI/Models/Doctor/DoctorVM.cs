@@ -11,7 +11,7 @@ namespace PMRU.BlazorUI.Models.Doctor
         public string Name { get; set; }
         public string Surname { get; set; }
         public LocationVM Location { get; set; }
-        public ICollection<AvailabilityVM> Availabilities { get; set; }
-        public ICollection<AppointmentVM> Appointments { get; set; }
+        public IList<AvailabilityVM> Availabilities { get; set; }
+        public IList<AppointmentVM> Appointments { get; set; }
     }
 }

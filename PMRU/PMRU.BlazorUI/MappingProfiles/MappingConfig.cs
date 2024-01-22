@@ -22,6 +22,9 @@ namespace PMRU.BlazorUI.MappingProfiles
             CreateMap<AvailabilityDto, AvailabilityVM>()
                 .ForMember(dest => dest.Date, opt => opt.MapFrom(src => src.Date.Date))
                 .ReverseMap();
+            CreateMap<AppointmentDto, AppointmentVM>()
+                .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => src.AppointmentDate.Date))
+                .ReverseMap();
 
             CreateMap<GetAppointmentsQueryResponseDto, AppointmentVM>()
                 .ForMember(dest => dest.AppointmentDate, opt => opt.MapFrom(src => src.AppointmentDate.Date))
