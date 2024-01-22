@@ -41,36 +41,22 @@ namespace PMRU.BlazorUI.Pages
                     {
                         var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
                         var doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
-
+                      
                         if (doctor != null)
                         {
-                                 //Doktorun Id'sini almıyor
-                                doctor.Id = doctorID;
-                          
+                                
 
-       
-                            List<AppointmentVM> appointments = await appointmentService.GetAppointmentsByDoctorId(doctorID);
-                        
-                            
+                          appointments = await appointmentService.GetAppointmentsByDoctorId(doctor.Id);
+                            StateHasChanged();
+
                         }
                         
                     }
                 }
             }
         }
-
-        private async Task GetAppointmentsByDoctorId(int doctorId)
-        {
-            appointments = await appointmentService.GetAppointmentsByDoctorId(doctorId);
-        }
-
-        private async Task GetDoctorByRegistrationNumber()
-        {
-            
-            doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumber);
-
+       
         
-        }
 
         private string GetUserRole()
         {
