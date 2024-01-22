@@ -1,9 +1,9 @@
 ﻿@page "/doctorappointments"
 <h3>Randevularım</h3>
-@if (CurrentUserDoctor != null)
+@if (doctor != null)
 {
     <div>
-        <h4>Hoş Geldiniz, Dr @CurrentUserDoctor.Name!</h4>
+        <h4>Hoş Geldiniz, Dr @doctor.Name!</h4>
         <p>Randevularınız:</p>
       
     </div>

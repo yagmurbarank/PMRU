@@ -1,4 +1,5 @@
-﻿using PMRU.BlazorUI.Models.Availability;
+﻿using PMRU.BlazorUI.Models.Appointment;
+using PMRU.BlazorUI.Models.Availability;
 using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Models.Doctor
@@ -11,5 +12,6 @@ namespace PMRU.BlazorUI.Models.Doctor
         public string Surname { get; set; }
         public LocationVM Location { get; set; }
         public ICollection<AvailabilityVM> Availabilities { get; set; }
+        public ICollection<AppointmentVM> Appointments { get; set; }
     }
 }
