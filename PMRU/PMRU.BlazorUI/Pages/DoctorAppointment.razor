@@ -1,9 +1,9 @@
 ﻿@page "/doctorappointments"
-<h3>Randevularım</h3>
+
 @if (doctor != null)
 {
     <div>
-        <h4>Hoş Geldiniz, Dr @doctor.Name!</h4>
+        <h3> Hoş Geldiniz, Dr @doctor.Name!</h3>
         <p>Randevularınız:</p>
       
     </div>
@@ -43,57 +43,3 @@ else
 {
     <p>Doktor bulunamadı.</p>
 }
-
-@*@page "/doctorappointments"
-<h3>Randevularım</h3>
-@if (CurrentUserDoctor != null)
-{
-    <div>
-        <h4>Hoş Geldiniz,Dr @Doctor.Name!</h4>
-        <p>Randevularınız:</p>
-      
-    </div>
-
-@if (appointments != null && appointments.Any())
-
-{
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Employee Name</th>
-                <th>Employee Surname</th>
-                <th>Date</th>
-                <th>Start Time</th>
-                <th>End Time</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            @foreach (var appointment in appointments)
-            {
-                <ul>
-
-                    <li>@appointment.AppointmentDate - @appointment.AppointmentDate</li>
-
-                </ul>
-                <tr>
-                    <td>@appointment.Employee.Name</td>
-                    <td>@appointment.Employee.Surname</td>
-                    <td>@appointment.AppointmentDate.ToShortDateString()</td>
-                    <td>@appointment.AppointmentStartHour.ToString()</td>
-                    <td>@appointment.AppointmentEndHour.ToString()</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-else
-{
-    <p>Randevunuz bulunmamaktadır.</p>
-}
-
-}
-else
-{
-    <p>doktor bulunamadi</p>
-}*@
