@@ -77,8 +77,10 @@ namespace PMRU.BlazorUI.MappingProfiles
                .ForMember(dest => dest.StartTime, opt => opt.MapFrom(src => src.StartTime.ToTimeSpan()))
                .ForMember(dest => dest.EndTime, opt => opt.MapFrom(src => src.EndTime.ToTimeSpan()))
                .ReverseMap();
-            CreateMap<DeleteAvailabilityVM, DeleteAvailabilityCommandRequest>().ReverseMap();
-            
+            CreateMap<DeleteAvailabilityVM, DeleteAvailabilityCommandRequest>()
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+                .ReverseMap();
+
 
             CreateMap<DateOnly, DateTime>().ConvertUsing(source => new DateTime(source.Year, source.Month, source.Day));
             CreateMap<DateTime, DateOnly>().ConvertUsing(dt => new DateOnly(dt.Year, dt.Month, dt.Day));

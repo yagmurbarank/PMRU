@@ -19,14 +19,19 @@
 
     <button class="btn btn-primary btn-sm" @onclick="GetAvailabilitiesByDoctorId">Get Availabilities</button>
     <button class="btn btn-success btn-sm" @onclick="NavigateToCreateAvailability">Create Availability</button>
+    <button class="btn btn-danger btn-sm" @onclick="DeleteAvailabilities">Delete Selected</button>
+}
+@if (isLoading)
+{
+    <p>Loading...</p>
 }
 
-
-@if (availabilities != null && availabilities.Any())
+else if (availabilities != null && availabilities.Any())
 {
     <table class="table mt-4">
         <thead>
             <tr>
+                <th><input type="checkbox" @bind="selectAll" @onclick="ToggleSelectAll" /></th>
                 <th>Doktor</th>
                 <th>Tarih</th>
                 <th>Başlangıç Saati</th>
@@ -37,7 +42,13 @@
         <tbody>
             @foreach (var availability in availabilities)
             {
+                if (!availabilityCheckboxes.ContainsKey(availability.Id))
+                {
+                    availabilityCheckboxes[availability.Id] = false;
+                }
+
                 <tr>
+                    <td><input type="checkbox" @bind="availabilityCheckboxes[availability.Id]" /></td>
                     <td>@($"{availability.Doctor.Name} {availability.Doctor.Surname}")</td>
                     <td>@availability.Date.ToShortDateString()</td>
                     <td>@availability.StartTime.ToString()</td>
@@ -50,6 +61,10 @@
             }
         </tbody>
     </table>
+}
+else if (availabilities != null && !availabilities.Any())
+{
+    <p>No Availability Found.</p>
 }
 
 @if (authenticationState!= null)
