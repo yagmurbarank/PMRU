@@ -3539,6 +3539,9 @@ namespace PMRU.BlazorUI.Services.Base
     public partial class GetDoctorByRegistrationNumberQueryResponseDto
     {
 
+        [System.Text.Json.Serialization.JsonPropertyName("id")]
+        public int Id { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("identityNumber")]
         public string IdentityNumber { get; set; }
 
