@@ -24,18 +24,25 @@ namespace PMRU.BlazorUI.Pages
         NavigationManager navigationManager { get; set; }
         [Inject]
         AuthenticationStateProvider authenticationStateProvider { get; set; }
+        [Inject]
+        IJSRuntime jsInterop { get; set; }
 
 
         public List<DoctorVM> doctors { get; set; }
         public List<AvailabilityVM> availabilities { get; set; }
+        private List<DoctorVM> doctorsInCurrentUserLocation;
         public EmployeeVM Employee { get; private set; } = new EmployeeVM();
+
+        private Dictionary<int, bool> availabilityCheckboxes = new Dictionary<int, bool>();
 
         private AuthenticationState authenticationState;
 
         private int doctorId;
         private int selectedDoctorId;
+        bool selectAll = false;
+        private bool isLoading = false;
         public string registrationNumber { get; set; } = "";
-        private List<DoctorVM> doctorsInCurrentUserLocation;
+
 
 
         protected override async Task OnInitializedAsync()
@@ -89,7 +96,9 @@ namespace PMRU.BlazorUI.Pages
 
         private async Task GetAvailabilitiesByDoctorId()
         {
+            isLoading = true;
             availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
+            isLoading = false;
         }
 
         private int GetSelectedDoctorId()
@@ -115,11 +124,49 @@ namespace PMRU.BlazorUI.Pages
                 var deleteAvailabilityVM = new DeleteAvailabilityVM { Id = availability.Id };
                 await availabilityService.DeleteAvailability(deleteAvailabilityVM);
 
-                selectedDoctorId = GetSelectedDoctorId();
+                await RefreshAvailabilities();
 
-                availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
-            
         }
+        private async Task DeleteAvailabilities()
+        {
+            var selectedIds = availabilityCheckboxes.Where(kvp => kvp.Value).Select(kvp => kvp.Key).ToList();
+
+            if (selectedIds.Any())
+            {
+                await availabilityService.DeleteAvailabilities(selectedIds);
+
+                await RefreshAvailabilities();
+
+                availabilityCheckboxes.Clear();
+            }
+            else
+            {
+                await jsInterop.InvokeVoidAsync("alert", "Lütfen en az bir öðe seçin.");
+            }
+        }
+
+        private async Task ToggleSelectAll()
+        {
+            selectAll = !selectAll;
+            SelectAll();
+        }
+
+        private void SelectAll()
+        {
+            foreach (var availability in availabilities)
+            {
+                availabilityCheckboxes[availability.Id] = selectAll;
+            }
+            StateHasChanged();
+        }
+
+        private async Task RefreshAvailabilities()
+        {
+            selectedDoctorId = GetSelectedDoctorId();
+            availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
+        }
+
+
 
         private void NavigateToCreateAvailability()
         {
