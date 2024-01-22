@@ -15,5 +15,6 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctorByRegistrationNumbe
                 .Matches("^[0-9]+$")
                 .WithName("Sicil Numarası")
                 .WithMessage("Sicil numarası sadece sayılardan oluşmalıdır.");
-    } }
+        
+        } }
 }

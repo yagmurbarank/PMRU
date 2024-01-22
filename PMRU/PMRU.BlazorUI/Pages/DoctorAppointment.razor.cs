@@ -24,10 +24,9 @@ namespace PMRU.BlazorUI.Pages
         AuthenticationStateProvider authenticationStateProvider { get; set; }
         private List<AppointmentVM> appointments { get; set; }
         private AuthenticationState authenticationState;
-        private int doctorId;
+        private int doctorID;
         private string registrationNumber;
-        private DoctorVM CurrentUserDoctor { get; set; }
-        public DoctorVM doctor { get; set; }
+        private DoctorVM doctor { get; set; }
         protected override async Task OnInitializedAsync()
         {
             authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
@@ -41,24 +40,20 @@ namespace PMRU.BlazorUI.Pages
                     if (role == "Doctor")
                     {
                         var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
-         
-                       var CurrentUserDoctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
+                        var doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
 
-                        if (CurrentUserDoctor != null)
+                        if (doctor != null)
                         {
+                                 //Doktorun Id'sini almıyor
+                                doctor.Id = doctorID;
+                          
 
-                            doctorId = CurrentUserDoctor.Id;
-                            appointments = await appointmentService.GetAppointmentsByDoctorId(doctorId);
-
-
-
+       
+                            List<AppointmentVM> appointments = await appointmentService.GetAppointmentsByDoctorId(doctorID);
+                        
+                            
                         }
-                        else 
-                        {
-                            CurrentUserDoctor = null;
-                            Console.WriteLine($"GetDoctorByRegistrationNumber metodu hata");
-
-                        }
+                        
                     }
                 }
             }
@@ -72,30 +67,11 @@ namespace PMRU.BlazorUI.Pages
         private async Task GetDoctorByRegistrationNumber()
         {
             
-            CurrentUserDoctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumber);
+            doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumber);
 
-            if (CurrentUserDoctor != null)
-            {
-               
-                CurrentUserDoctor.Id = doctorId;
-              await GetAppointmentsByDoctorId(CurrentUserDoctor.Id);
-            }
         
         }
 
-        public string GetUserRegistrationNumber()
-        {
-            if (authenticationState.User?.Identity?.IsAuthenticated == true)
-            {
-                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
-                if (registrationNumberClaim != null)
-                {
-                    return registrationNumberClaim.Value;
-                }
-            }
-
-            return null;
-        }
         private string GetUserRole()
         {
             if (authenticationState.User?.Identity?.IsAuthenticated == true)
