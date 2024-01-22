@@ -10,6 +10,7 @@ namespace PMRU.BlazorUI.Pages.Doctors
     {
         [Inject]
         public IDoctorService DoctorService { get; set; }
+
         public List<DoctorVM> doctors;
         [Inject]
         public NavigationManager NavigationManager { get; set; }

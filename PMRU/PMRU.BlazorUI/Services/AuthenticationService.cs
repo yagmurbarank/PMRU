@@ -45,11 +45,11 @@ namespace PMRU.BlazorUI.Services
             await((ApiAuthenticationStateProvider)_authenticationStateProvider).LoggedOut();
         }
 
-        public async Task<bool> RegisterAsync(string fullName, string email, string password, string confirmPassword)
+        public async Task<bool> RegisterAsync(string fullName, string email, string password, string confirmPassword, string registrationNumber, string role)
         {
             try
             {
-                RegisterCommandRequest registrationRequest = new RegisterCommandRequest() { FullName = fullName, Email = email, Password = password, ConfirmPassword = confirmPassword };
+                RegisterCommandRequest registrationRequest = new RegisterCommandRequest() { FullName = fullName, Email = email, Password = password, ConfirmPassword = confirmPassword, RegistrationNumber= registrationNumber, Role=role };
                 await _client.RegisterAsync(registrationRequest);
                 return true;
             }
