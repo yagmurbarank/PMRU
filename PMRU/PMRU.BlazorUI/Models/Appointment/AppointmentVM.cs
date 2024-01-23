@@ -5,6 +5,7 @@ namespace PMRU.BlazorUI.Models.Appointment
 {
     public class AppointmentVM
     {
+        public int Id { get; set; }
         public int EmployeeID { get; set; }
         public EmployeeVM Employee { get; set; }
         public int DoctorID { get; set; }

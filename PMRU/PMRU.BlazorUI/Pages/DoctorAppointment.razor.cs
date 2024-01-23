@@ -26,7 +26,8 @@ namespace PMRU.BlazorUI.Pages
         private DoctorVM doctor { get; set; }
 
         private bool doctorLoaded = false;
-       
+        private bool appointmentsEmpty = false;
+
 
 
 
@@ -53,6 +54,7 @@ namespace PMRU.BlazorUI.Pages
                         appointments = await appointmentService.GetAppointmentsByDoctorId(doctor.Id);
                         StateHasChanged();
                         doctorLoaded = true;
+                        appointmentsEmpty = appointments == null || !appointments.Any();
                     }
                 }
             }
@@ -72,6 +74,25 @@ namespace PMRU.BlazorUI.Pages
 
             return null;
         }
+
+        private async Task DeleteAppointment(int appointmentId)
+        {
+            var deleteAppointmentVM = new DeleteAppointmentVM
+            {
+                Id = appointmentId
+            };
+
+            var response = await appointmentService.DeleteAppointment(deleteAppointmentVM);
+
+            if (response.Success)
+            {
+                
+                Console.WriteLine("Appointment deleted successfully.");
+                await LoadData();
+            }
+
+        }
+
     }
 }
 
