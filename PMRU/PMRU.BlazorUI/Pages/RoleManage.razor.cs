@@ -1,12 +1,17 @@
 ﻿using Microsoft.AspNetCore.Components;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Doctor;
+using PMRU.BlazorUI.Services;
 
 namespace PMRU.BlazorUI.Pages
 {
+    
     public partial class RoleManage
     {
         [Inject] IEmployeeService EmployeeService { get; set; }
+        [Inject] IDoctorService DoctorService { get; set; }
+        CreateDoctorVM doctor { get; set; } = new CreateDoctorVM();
 
         [Inject] IAuthenticationService AuthenticationService { get; set; }
         public EmployeeVM Employee { get; private set; } = new EmployeeVM();
@@ -29,6 +34,31 @@ namespace PMRU.BlazorUI.Pages
             var confirmPassword = this.password;
             var role = this.role;
             var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
+            if (role=="doctor") 
+            {
+                doctor.IdentityNumber = Employee.IdentityNumber;
+                doctor.Name = Employee.Name;
+                doctor.Surname = Employee.Surname;
+                doctor.Phone = Employee.Phone;
+                doctor.Email = Employee.Email;
+                doctor.LocationID = Employee.Location.Id;
+                doctor.RegistrationNumber = Employee.RegistrationNumber;
+                doctor.Password = this.password;
+                var response = await DoctorService.CreateDoctor(doctor);
+            };
         }
+        /*
+        protected async Task Createdoctor()
+        {
+            doctor.Email = Employee.Email;
+            doctor.IdentityNumber = Employee.IdentityNumber;
+            doctor.RegistrationNumber = Employee.RegistrationNumber;
+            doctor.Surname = Employee.Surname;
+            doctor.Name = Employee.Name;
+            doctor.Phone = Employee.Phone;
+            doctor.LocationID = Employee.Location.Id;
+            doctor.Password = password;
+            var response = await DoctorService.CreateDoctor(doctor);
+        }*/
     }
 }
