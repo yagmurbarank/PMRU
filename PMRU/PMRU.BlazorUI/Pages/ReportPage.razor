@@ -1,0 +1,55 @@
+﻿@page "/reportpage"
+
+<h3>Report Page</h3>
+
+<div>
+    <label for="reportDate">Select Date:</label>
+    <input type="date" id="reportDate" @bind="selectedDate" />
+
+    <label for="doctorFilter">Filter by Doctor:</label>
+    <input type="text" id="doctorFilter" @bind="doctorFilter" />
+
+    <button @onclick="ReceiveReport">Receive Report</button>
+</div>
+
+@if (reportResult != null)
+{
+    if (reportResult.Any())
+    {
+        <h4>Rapor Sonuçları:</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Doktor</th>
+                    <th>Çalışan</th>
+                    <th>Tarih</th>
+                    <th>Başlangıç Saati</th>
+                    <th>Bitiş Saati</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in reportResult)
+                {
+                    <tr>
+                        <td>@result.Doctor.Name @result.Doctor.Surname</td>
+                        <td>@result.Employee.Name @result.Employee.Surname</td>
+                        <td>@result.AppointmentDate.ToString("yyyy-MM-dd")</td>
+                        <td>@result.AppointmentStartHour</td>
+                        <td>@result.AppointmentEndHour</td>
+                        <td>@result.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Rapor bulunmamaktadır.</p>
+    }
+}
+
+
+
+
+

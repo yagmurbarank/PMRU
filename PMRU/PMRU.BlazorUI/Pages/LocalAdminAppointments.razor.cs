@@ -16,6 +16,8 @@ namespace PMRU.BlazorUI.Pages
         [Inject]
         public IEmployeeService EmployeeService { get; set; }
         [Inject]
+        NavigationManager navigationManager { get; set; }
+        [Inject]
         AuthenticationStateProvider authenticationStateProvider { get; set; }
 
         private List<DoctorVM> doctorsInCurrentUserLocation;
@@ -79,6 +81,11 @@ namespace PMRU.BlazorUI.Pages
                 StateHasChanged();
                 appointmentsLoaded = true;
             }
+        }
+
+        private void GoToReportPage()
+        {
+            navigationManager.NavigateTo("/reportpage");
         }
     }
 }

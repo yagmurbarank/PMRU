@@ -15,6 +15,8 @@
     </select>
 
     <button class="btn btn-primary mt-2" @onclick="GetAppointments">Get Appointments</button>
+    <button @onclick="GoToReportPage">Report Page</button>
+
 
     @if (appointments != null && appointments.Any())
     {
