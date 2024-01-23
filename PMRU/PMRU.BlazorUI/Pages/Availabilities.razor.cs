@@ -37,7 +37,7 @@ namespace PMRU.BlazorUI.Pages
 
         private AuthenticationState authenticationState;
 
-        private int doctorId;
+
         private int selectedDoctorId;
         bool selectAll = false;
         private bool isLoading = false;

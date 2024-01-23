@@ -1,0 +1,59 @@
+﻿@page "/localadminappointments"
+
+<h3>Appointments for Local Admin</h3>
+
+@if (doctorsInCurrentUserLocation != null && doctorsInCurrentUserLocation.Any())
+{
+    <label for="doctorId">Doktorlarımız</label>
+    <select class="form-control" @bind="selectedDoctorId">
+        <option value="">Seçiniz</option>
+
+        @foreach (var doctor in doctorsInCurrentUserLocation)
+        {
+            <option value="@doctor.Id">@($"{doctor.Name} {doctor.Surname}")</option>
+        }
+    </select>
+
+    <button class="btn btn-primary mt-2" @onclick="GetAppointments">Get Appointments</button>
+
+    @if (appointments != null && appointments.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Surname</th>
+                    <th>Date</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var appointment in appointments)
+                {
+                    <tr>
+                        <td>@appointment.Employee.Name</td>
+                        <td>@appointment.Employee.Surname</td>
+                        <td>@appointment.AppointmentDate.ToShortDateString()</td>
+                        <td>@appointment.AppointmentStartHour.ToString()</td>
+                        <td>@appointment.AppointmentEndHour.ToString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else if (appointmentsLoaded)
+    {
+        <p>Randevunuz bulunmamaktadır.</p>
+    }
+}
+else
+{
+    <p>Doktorlar yükleniyor...</p>
+}
+
+
+
+
+
+
