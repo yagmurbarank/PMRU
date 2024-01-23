@@ -93,6 +93,11 @@ namespace PMRU.BlazorUI.Pages
 
         }
 
+        private void GoToReportPage()
+        {
+            navigationManager.NavigateTo("/reportpage");
+        }
+
     }
 }
 
