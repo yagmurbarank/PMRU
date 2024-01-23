@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Services;
+using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -25,6 +26,9 @@ namespace PMRU.BlazorUI.Pages
         {
             reportResult = await appointmentService.GetAppointmentsByDate(selectedDate);
 
+            filteredReportResult = null;
+
+
             if (!string.IsNullOrWhiteSpace(doctorFilter))
             {
                 filteredReportResult = reportResult
@@ -33,7 +37,7 @@ namespace PMRU.BlazorUI.Pages
             }
             else
             {
-                filteredReportResult = reportResult;
+                filteredReportResult = reportResult.ToList();
             }
         }
     }
