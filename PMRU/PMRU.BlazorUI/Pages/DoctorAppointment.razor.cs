@@ -23,53 +23,55 @@ namespace PMRU.BlazorUI.Pages
         [Inject]
         AuthenticationStateProvider authenticationStateProvider { get; set; }
         private List<AppointmentVM> appointments { get; set; }
-        private AuthenticationState authenticationState;
-        private int doctorID;
-        private string registrationNumber;
         private DoctorVM doctor { get; set; }
+
+        private bool doctorLoaded = false;
+       
+
+
+
         protected override async Task OnInitializedAsync()
         {
-            authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
+            await LoadData();
+        }
 
-            if (authenticationState.User?.Claims != null)
+        private async Task LoadData()
+        {
+            var authenticationState = await authenticationStateProvider.GetAuthenticationStateAsync();
+            var role = GetUserRole(authenticationState);
+
+            if (role == "Doctor")
             {
-                var role = GetUserRole(); ;
+                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
 
-                if (role != null)
+                if (registrationNumberClaim != null)
                 {
-                    if (role == "Doctor")
+                    doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
+
+                    if (doctor != null)
                     {
-                        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
-                        var doctor = await doctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
-                      
-                        if (doctor != null)
-                        {
-                                
-
-                          appointments = await appointmentService.GetAppointmentsByDoctorId(doctor.Id);
-                            StateHasChanged();
-
-                        }
-                        
+                        appointments = await appointmentService.GetAppointmentsByDoctorId(doctor.Id);
+                        StateHasChanged();
+                        doctorLoaded = true;
                     }
                 }
             }
         }
-       
-        
 
-        private string GetUserRole()
+        private string GetUserRole(AuthenticationState authenticationState)
         {
             if (authenticationState.User?.Identity?.IsAuthenticated == true)
             {
                 var roleClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+
                 if (roleClaim != null)
-                { return roleClaim.Value; }
+                {
+                    return roleClaim.Value;
+                }
             }
 
             return null;
         }
-      
     }
 }
 

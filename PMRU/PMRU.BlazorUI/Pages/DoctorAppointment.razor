@@ -1,4 +1,6 @@
-﻿@page "/doctorappointments"
+﻿
+
+@page "/doctorappointments"
 
 @if (doctor != null)
 {
@@ -8,7 +10,7 @@
       
     </div>
 
-    @if (appointments != null && appointments.Any())
+    @if (appointments != null)
     {
         <table class="table">
             <thead>
@@ -41,5 +43,12 @@
 }
 else
 {
-    <p>Doktor bulunamadı.</p>
+    @if (doctor == null && doctorLoaded)
+    {
+        <p>  Doktor Bulunamadı.</p>
+    }
+    else
+    {
+        <p>Doktor Bilgileri Yükleniyor...</p>
+    }
 }
