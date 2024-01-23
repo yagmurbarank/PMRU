@@ -8,8 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Pages\Doctors\Create.razor" />
-    <None Include="Pages\Doctors\Index.razor" />
+    <Compile Remove="Pages\Doctors\**" />
+    <Content Remove="Pages\Doctors\**" />
+    <EmbeddedResource Remove="Pages\Doctors\**" />
+    <None Remove="Pages\Doctors\**" />
   </ItemGroup>
 
 	<ItemGroup>
