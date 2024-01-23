@@ -33,32 +33,25 @@ namespace PMRU.BlazorUI.Pages
             var password = this.password;
             var confirmPassword = this.password;
             var role = this.role;
-            var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
             if (role=="doctor") 
             {
-                doctor.IdentityNumber = Employee.IdentityNumber;
-                doctor.Name = Employee.Name;
-                doctor.Surname = Employee.Surname;
-                doctor.Phone = Employee.Phone;
-                doctor.Email = Employee.Email;
-                doctor.LocationID = Employee.Location.Id;
-                doctor.RegistrationNumber = Employee.RegistrationNumber;
-                doctor.Password = this.password;
-                var response = await DoctorService.CreateDoctor(doctor);
+                Createdoctor();
             };
+            var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
         }
-        /*
-        protected async Task Createdoctor()
+        async Task Createdoctor()
         {
-            doctor.Email = Employee.Email;
             doctor.IdentityNumber = Employee.IdentityNumber;
-            doctor.RegistrationNumber = Employee.RegistrationNumber;
-            doctor.Surname = Employee.Surname;
             doctor.Name = Employee.Name;
-            doctor.Phone = Employee.Phone;
+            doctor.Surname = Employee.Surname;
+            doctor.Phone = Employee.Phone.Substring(1,3)+Employee.Phone.Substring(6,3)+Employee.Phone.Substring(10,4);
+            doctor.Email = Employee.Email;
             doctor.LocationID = Employee.Location.Id;
-            doctor.Password = password;
+            doctor.RegistrationNumber = Employee.RegistrationNumber;
+            doctor.Password = this.password;
             var response = await DoctorService.CreateDoctor(doctor);
-        }*/
+
+        }
+       
     }
 }
