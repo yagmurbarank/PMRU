@@ -63,5 +63,13 @@
         </EditForm>
 
     }
-
+    @if (messageTitle != null && messageBody != null)
+    {
+        <div class="card text-white bg-info" style="width: 20rem;">
+            <div class="card-body">
+                <h5 class="card-title">@messageTitle</h5>
+                <p class="card-text">@messageBody</p>
+            </div>
+        </div>
+    }
 </div>
