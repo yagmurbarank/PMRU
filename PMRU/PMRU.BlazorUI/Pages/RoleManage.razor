@@ -20,18 +20,22 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Sicil No</th>
+                    <th>TC No</th>
                     <th>İsim</th>
                     <th>Soyisim</th>
+                    <th>Telefon</th>
                     <th>Email</th>
+                    <th>Sicil No</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>@Employee.RegistrationNumber</td>
+                    <td>@Employee.IdentityNumber</td>
                     <td>@Employee.Name</td>
                     <td>@Employee.Surname</td>
+                    <td>@Employee.Phone</td>
                     <td>@Employee.Email</td>
+                    <td>@Employee.RegistrationNumber</td>
                 </tr>
             </tbody>
         </table>
@@ -57,7 +61,18 @@
             </div>
             <button class="btn btn-success" type="submit">Rol ver</button>
         </EditForm>
+
     }
-    
+    @*
+
+    @if(role == "doctor")
+    { 
+        <EditForm Model="doctor" OnValidSubmit="Createdoctor">
+            <DataAnnotationsValidator />
+            <ValidationSummary/>
+            <button class="btn btn-warning" type="submit">Doktor Tablosuna ekle</button>
+        </EditForm>
+    }
+    *@
 
 </div>

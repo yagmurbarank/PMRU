@@ -15,5 +15,6 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDate
         public DateOnly AppointmentDate { get; set; }
         public TimeOnly AppointmentStartHour { get; set; }
         public TimeOnly AppointmentEndHour { get; set; }
+        public string Description { get; set; }
     }
 }
