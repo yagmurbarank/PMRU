@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Components;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models;
+using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services;
+using PMRU.BlazorUI.Services.Base;
+using PMRU.Domain.Entities;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -19,7 +22,10 @@ namespace PMRU.BlazorUI.Pages
         public string role { get; set; } = "";
         public string password { get; set; } = "";
         public bool Disabled { get; set; } = false;
+        public string messageTitle { get; set; }
+        public string messageBody { get; set; }
         protected async Task FindEmployee()
+
         {
             Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
             Disabled = true;
@@ -35,22 +41,22 @@ namespace PMRU.BlazorUI.Pages
             var role = this.role;
             if (role=="doctor") 
             {
-                Createdoctor();
+                doctor.IdentityNumber = Employee.IdentityNumber;
+                doctor.Name = Employee.Name;
+                doctor.Surname = Employee.Surname;
+                doctor.Phone = Employee.Phone.Substring(1, 3) + Employee.Phone.Substring(6, 3) + Employee.Phone.Substring(10, 4);
+                doctor.Email = Employee.Email;
+                doctor.LocationID = Employee.Location.Id;
+                doctor.RegistrationNumber = Employee.RegistrationNumber;
+                doctor.Password = this.password;
+                var response = await DoctorService.CreateDoctor(doctor);
             };
             var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
-        }
-        async Task Createdoctor()
-        {
-            doctor.IdentityNumber = Employee.IdentityNumber;
-            doctor.Name = Employee.Name;
-            doctor.Surname = Employee.Surname;
-            doctor.Phone = Employee.Phone.Substring(1,3)+Employee.Phone.Substring(6,3)+Employee.Phone.Substring(10,4);
-            doctor.Email = Employee.Email;
-            doctor.LocationID = Employee.Location.Id;
-            doctor.RegistrationNumber = Employee.RegistrationNumber;
-            doctor.Password = this.password;
-            var response = await DoctorService.CreateDoctor(doctor);
-
+            if (register != null)
+            {
+                messageTitle = "Rol verme işlemi tamamlandı!";
+                messageBody = $"{Employee.Name} {Employee.Surname} çalışanına {role.ToUpper()} rolü tanımlandı. Giriş bilgileri: EMail: {Employee.Email} Şifre:{password}";
+            }
         }
        
     }
