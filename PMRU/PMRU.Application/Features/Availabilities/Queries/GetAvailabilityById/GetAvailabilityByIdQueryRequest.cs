@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilities;
+using PMRU.Application.Interfaces.RedisCache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 {
-    public class GetAvailabilityByIdQueryRequest: IRequest<GetAvailabilityByIdQueryResponseDto>
+    public class GetAvailabilityByIdQueryRequest: IRequest<GetAvailabilityByIdQueryResponseDto>, ICacheableQuery
     {
         public GetAvailabilityByIdQueryRequest(int id) 
         {
@@ -16,5 +17,9 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
         }
 
         public int Id { get; set; }
+
+        public string CacheKey => $"GetAvailabilityById_{Id}";
+
+        public double CacheTime => 1;
     }
 }

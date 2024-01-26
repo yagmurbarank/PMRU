@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployees
 {
-    public class GetEmployeesQueryRequest : IRequest<IList<GetEmployeesQueryResponseDto>> /*, ICacheableQuery*/
+    public class GetEmployeesQueryRequest : IRequest<IList<GetEmployeesQueryResponseDto>> , ICacheableQuery
     {
-        //public string CacheKey => "GetAllEmployees";
+        public string CacheKey => "GetAllEmployees";
 
-        //public double CacheTİme => 5;
+        public double CacheTime => 1;
     }
 }

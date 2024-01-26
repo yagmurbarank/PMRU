@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using PMRU.Application.Interfaces.RedisCache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctorId
 {
-    public class GetAppointmentsByDoctorIdQueryRequest : IRequest<IList<GetAppointmentsByDoctorIdQueryResponseDto>>
+    public class GetAppointmentsByDoctorIdQueryRequest : IRequest<IList<GetAppointmentsByDoctorIdQueryResponseDto>>, ICacheableQuery
     {
         public GetAppointmentsByDoctorIdQueryRequest(int doctorId)
         {
@@ -15,5 +16,9 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctor
         }
 
         public int DoctorId { get; set; }
+
+        public string CacheKey => $"GetAppointmentsByDoctorId_{DoctorId}";
+
+        public double CacheTime => 1;
     }
 }

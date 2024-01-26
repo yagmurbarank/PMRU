@@ -3324,6 +3324,7 @@ namespace PMRU.BlazorUI.Services.Base
 
         [System.Text.Json.Serialization.JsonPropertyName("appointmentEndHour")]
         public System.TimeSpan AppointmentEndHour { get; set; }
+
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string Description { get; set; }
 

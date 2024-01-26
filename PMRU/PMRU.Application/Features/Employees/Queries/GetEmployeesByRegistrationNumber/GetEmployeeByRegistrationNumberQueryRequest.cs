@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 {
-    public class GetEmployeeByRegistrationNumberQueryRequest : IRequest<GetEmployeeByRegistrationNumberQueryResponseDto>/*, ICacheableQuery*/
+    public class GetEmployeeByRegistrationNumberQueryRequest : IRequest<GetEmployeeByRegistrationNumberQueryResponseDto>, ICacheableQuery
     {
         public GetEmployeeByRegistrationNumberQueryRequest(string registrationNumber) 
         {
@@ -17,8 +17,8 @@ namespace PMRU.Application.Features.Employees.Queries.GetEmployeesById
 
         public string RegistrationNumber { get; set; }
 
-        //public string CacheKey => "GetAllEmployees";
+        public string CacheKey => $"GetEmployeeByRegNo_{RegistrationNumber}";
 
-        //public double CacheTİme => 5;
+        public double CacheTime => 1;
     }
 }

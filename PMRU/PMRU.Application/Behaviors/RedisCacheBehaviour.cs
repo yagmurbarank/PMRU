@@ -22,7 +22,7 @@ namespace PMRU.Application.Behaviors
             if(request is ICacheableQuery query)
             {
                 var cacheKey = query.CacheKey;
-                var cacheTime = query.CacheTİme;
+                var cacheTime = query.CacheTime;
 
                 var cachedData = await redisCacheService.GetAsync<TResponse>(cacheKey);
                 if (cachedData is not null)
