@@ -78,6 +78,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("all");
 
 app.ConfigureExceptionHandlingMiddleware();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

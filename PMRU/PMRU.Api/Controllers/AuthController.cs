@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Auth.Command.Login;
@@ -23,6 +24,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<List<GetRolesQueryResponseDto>>> GetRoles()
         {
             var response = await mediator.Send(new GetRolesQueryRequest());

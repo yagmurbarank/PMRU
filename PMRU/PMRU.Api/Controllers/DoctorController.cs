@@ -15,6 +15,7 @@ using PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation;
 using PMRU.Domain.Entities;
 using PMRU.Application.Features.Employees.Queries.GetEmployeesById;
 using PMRU.Application.Features.Doctors.Queries.GetDoctorByRegistrationNumber;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace PMRU.Api.Controllers
@@ -31,6 +32,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IList<GetDoctorsQueryResponseDto>>> GetDoctors()
         {
             var response = await mediator.Send(new GetDoctorsQueryRequest());
@@ -49,6 +51,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{Id}")]
+        [Authorize]
         public async Task<ActionResult<GetDoctorByIdQueryResponseDto>> GetDoctorById(int Id)
         {
             var request = new GetDoctorByIdQueryRequest(Id);
@@ -56,14 +59,18 @@ namespace PMRU.Api.Controllers
 
             return Ok(response);
         }
+
         [HttpGet("{registrationNumber}")]
+        [Authorize]
         public async Task<ActionResult<GetDoctorByRegistrationNumberQueryResponseDto>> GetDoctorByRegistrationNumber(string registrationNumber)
         {
             var request = new GetDoctorByRegistrationNumberQueryRequest(registrationNumber);
             var response = await mediator.Send(request);
             return Ok(response);
         }
+
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> CreateDoctor(CreateDoctorCommandRequest request)
         {
             await mediator.Send(request);
@@ -71,6 +78,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> UpdateDoctor(UpdateDoctorCommandRequest request)
         {
             var response = await mediator.Send(request);
@@ -79,6 +87,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpDelete]
+        [Authorize]
         public async Task<ActionResult> DeleteDoctor(DeleteDoctorCommandRequest request)
         {
             var response = await mediator.Send(request);
