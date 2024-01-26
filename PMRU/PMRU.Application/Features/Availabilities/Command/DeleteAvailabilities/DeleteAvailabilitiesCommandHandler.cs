@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using PMRU.Application.Bases;
 using PMRU.Application.Interfaces.AutoMapper;
+using PMRU.Application.Interfaces.RedisCache;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -14,9 +15,10 @@ namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities
 {
     public class DeleteAvailabilitiesCommandHandler : BaseHandler, IRequestHandler<DeleteAvailabilitiesCommandRequest, Unit>
     {
-
-        public DeleteAvailabilitiesCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor) 
+        private readonly IRedisCacheService redisCacheService;
+        public DeleteAvailabilitiesCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IRedisCacheService redisCacheService) : base(mapper, unitOfWork, httpContextAccessor) 
         {
+            this.redisCacheService = redisCacheService;
         }
 
         public async Task<Unit> Handle(DeleteAvailabilitiesCommandRequest request, CancellationToken cancellationToken)
@@ -29,6 +31,7 @@ namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities
                 availability.IsDeleted = true;
                 availability.DeletedDate = DateTime.Now;
                 await unitOfWork.GetWriteRepository<Availability>().UpdateAsync(availability);
+                await redisCacheService.RemoveAsync($"GetAvailabilityByDoctorId_{availability.DoctorID}");
             }
 
             await unitOfWork.SaveAsync();

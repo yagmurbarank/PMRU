@@ -35,6 +35,11 @@ namespace PMRU.Infrastructure.RedisCache
             return default;
         }
 
+        public async Task RemoveAsync(string key)
+        {
+            await database.KeyDeleteAsync(key);
+        }
+
         public async Task SetAsync<T>(string key, T value, DateTime? expirationTime = null)
         {
             TimeSpan timeUnitExpiration = expirationTime.Value - DateTime.Now;
