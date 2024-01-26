@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using PMRU.Application.Bases;
 using PMRU.Application.Features.Doctors.Rules;
 using PMRU.Application.Interfaces.AutoMapper;
+using PMRU.Application.Interfaces.RedisCache;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -16,10 +17,12 @@ namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
     public class CreateDoctorCommandHandler : BaseHandler, IRequestHandler<CreateDoctorCommandRequest, Unit>
     {
         private readonly DoctorRules doctorRules;
+        private readonly IRedisCacheService redisCacheService;
 
-        public CreateDoctorCommandHandler(DoctorRules doctorRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public CreateDoctorCommandHandler(DoctorRules doctorRules, IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IRedisCacheService redisCacheService) : base(mapper, unitOfWork, httpContextAccessor)
         {
             this.doctorRules = doctorRules;
+            this.redisCacheService = redisCacheService;
 
         }
 
@@ -29,17 +32,17 @@ namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
             IList<Doctor> doctors = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync();
             await doctorRules.DoctorIdentityNumberMustNotBeSame(doctors, request.IdentityNumber, request.RegistrationNumber);
 
-
-            //IList<Doctor> doctorLocation = await unitOfWork.GetReadRepository<Doctor>().GetAllAsync();
-            //await doctorRules.OneDoctorMustNotBeAtDifferentLocation(doctors, request.LocationID, request.RegistrationNumber);
-
             Doctor doctor = new(request.IdentityNumber, request.RegistrationNumber, request.Name, request.Surname, request.Phone, request.Email, request.Password, request.LocationID);
 
             await unitOfWork.GetWriteRepository<Doctor>().CreateAsync(doctor);
-
             await unitOfWork.SaveAsync();
 
-
+            await Task.WhenAll(
+                redisCacheService.RemoveAsync($"GetDoctorById_{doctor.Id}"),
+                redisCacheService.RemoveAsync($"GetDoctorByRegNo_{doctor.RegistrationNumber}"),
+                redisCacheService.RemoveAsync($"GetDoctors_{DateTime.Now:yyyyMMddHHmm}"),
+                redisCacheService.RemoveAsync($"GetDoctorByLocation_{doctor.LocationID}")
+            );
 
             return Unit.Value;
         }

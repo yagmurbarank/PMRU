@@ -12,6 +12,6 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilities
     {
         public string CacheKey => $"GetAvailabilities_{DateTime.Now:yyyyMMddHHmm}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

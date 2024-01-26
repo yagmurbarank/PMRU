@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctorByRegistrationNumbe
 
         public string CacheKey => $"GetDoctorByRegNo_{RegistrationNumber}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

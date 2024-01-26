@@ -24,6 +24,6 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctors
 
         public string CacheKey => "GetDoctors_{DateTime.Now:yyyyMMddHHmm}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

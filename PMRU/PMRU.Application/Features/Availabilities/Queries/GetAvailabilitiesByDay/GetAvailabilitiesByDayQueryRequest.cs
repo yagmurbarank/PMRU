@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDa
 
         public string CacheKey => $"GetAvailabilitiesByDay_{Date.ToString("yyyyMMdd")}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

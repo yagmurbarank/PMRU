@@ -18,6 +18,6 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDate
 
         public string CacheKey => $"GetAppointmentsByDate_{Date.ToString("yyyyMMdd")}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }
