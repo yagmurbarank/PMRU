@@ -9,7 +9,7 @@ namespace PMRU.Application.Interfaces.RedisCache
     public interface ICacheableQuery
     {
         string CacheKey { get; }
-        double CacheTİme { get; }
+        double CacheTime { get; }
 
     }
 }
