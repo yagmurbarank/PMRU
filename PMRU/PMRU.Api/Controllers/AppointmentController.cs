@@ -9,6 +9,7 @@ using PMRU.Application.Features.Appointments.Command.UpdateAppointment;
 using PMRU.Application.Features.Appointments.Command.DeleteAppointment;
 using PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDay;
 using PMRU.Application.Features.Appointments.Queries.GetAppointmentByEmployeeId;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PMRU.Api.Controllers
 {
@@ -24,6 +25,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IList<GetAppointmentsQueryResponseDto>>> GetAppointments()
         {
             var response = await mediator.Send(new GetAppointmentsQueryRequest());
@@ -32,6 +34,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{doctorId}")]
+        [Authorize]
         public async Task<ActionResult<IList<GetAppointmentsByDoctorIdQueryResponseDto>>> GetAppointmentsByDoctorId(int doctorId)
         {
             var request = new GetAppointmentsByDoctorIdQueryRequest(doctorId);
@@ -50,6 +53,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<GetAppointmentByIdQueryResponseDto>> GetAppointmentById(int id)
         {
             var request = new GetAppointmentByIdQueryRequest(id);
@@ -59,6 +63,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{date}")]
+        [Authorize]
         public async Task<ActionResult<IList<GetAppointmentsByDateQueryResponseDto>>> GetAppointmentsByDate(DateOnly date)
         {
             var request = new GetAppointmentsByDateQueryRequest(date);
@@ -76,6 +81,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> UpdateAppointment(UpdateAppointmentCommandRequest request)
         {
             await mediator.Send(request);
@@ -84,6 +90,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> DeleteAppointment(DeleteAppointmentCommandRequest request)
         {
             await mediator.Send(request);

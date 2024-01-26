@@ -4,6 +4,7 @@ using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services;
+using System.Security.Claims;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -37,19 +38,42 @@ namespace PMRU.BlazorUI.Pages
 
             if (authenticationState.User?.Claims != null)
             {
-                var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
-                if (registrationNumberClaim != null)
-                {
-                    var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                var role = GetUserRole();
 
-                    if (employee != null)
+                if (role != null)
+                {
+                    if (role == "Doctor")
                     {
-                        var location = employee.Location;
-                        doctors = await DoctorService.GetDoctorsByLocation(location.Id);
+                        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+                        // Doktor ise sadece kendi bilgilerini getir
+                        var doctor = await DoctorService.GetDoctorByRegistrationNumber(registrationNumberClaim.Value);
+
+                        if (doctor != null)
+                        {
+                            doctors = new List<DoctorVM> { doctor };
+                        }
+                        else
+                        {
+                            doctors = new List<DoctorVM>();
+                        }
                     }
                     else
                     {
-                        doctors = new List<DoctorVM>();
+                        var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
+                        if (registrationNumberClaim != null)
+                        {
+                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+
+                            if (employee != null)
+                            {
+                                var location = employee.Location;
+                                doctors = await DoctorService.GetDoctorsByLocation(location.Id);
+                            }
+                            else
+                            {
+                                doctors = new List<DoctorVM>();
+                            }
+                        }
                     }
                 }
             }
@@ -83,6 +107,18 @@ namespace PMRU.BlazorUI.Pages
 
             var result = await AvailabilityService.CreateAvailabilities(availabilitiesToCreate);
             navigationManager.NavigateTo("availabilities");
+        }
+
+        private string GetUserRole()
+        {
+            if (authenticationState.User?.Identity?.IsAuthenticated == true)
+            {
+                var roleClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+                if (roleClaim != null)
+                { return roleClaim.Value; }
+            }
+
+            return null;
         }
 
     }

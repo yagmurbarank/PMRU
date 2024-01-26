@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PMRU.Application.Features.Appointments.Queires.GetAppointments;
@@ -27,6 +28,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IList<GetAvailabilitiesQueryResponseDto>>> GetAvailabilities()
         {
             var response = await mediator.Send(new GetAvailabilitiesQueryRequest());
@@ -35,6 +37,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<GetAvailabilityByIdQueryResponseDto>> GetAvailabilityById(int id)
         {
             var request = new GetAvailabilityByIdQueryRequest(id);
@@ -53,6 +56,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{date}")]
+        [Authorize]
         public async Task<ActionResult<IList<GetAvailabilitiesByDayQueryResponseDto>>> GetAvailabilitiesByDay(DateOnly date)
         {
             var request = new GetAvailabilitiesByDayQueryRequest(date);
@@ -62,6 +66,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet("{startTime}")]
+        [Authorize]
         public async Task<ActionResult<IList<GetAvailabilitiesByStartTimeQueryResponseDto>>> GetAvailabilitiesByStartTime(TimeOnly startTime)
         {
             var request = new GetAvailabilitiesByStartTimeQueryRequest(startTime);
@@ -71,6 +76,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> CreateAvailability(CreateAvailabilityCommandRequest request)
         {
             var response = await mediator.Send(request);
@@ -79,6 +85,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> CreateAvailabilities(CreateAvailabilitiesCommandRequest request)
         {
             var response = await mediator.Send(request);
@@ -87,6 +94,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> UpdateAvailability(UpdateAvailabilityCommandRequest request)
         {
             var response = await mediator.Send(request);
@@ -103,6 +111,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<ActionResult> DeleteAvailabilities(DeleteAvailabilitiesCommandRequest request)
         {
             var response = await mediator.Send(request);

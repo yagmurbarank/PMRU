@@ -23,6 +23,7 @@ namespace PMRU.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<IList<GetEmployeesQueryResponseDto>>> GetEmployees()
         {
             var response = await mediator.Send(new GetEmployeesQueryRequest());
