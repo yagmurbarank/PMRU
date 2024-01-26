@@ -13,6 +13,6 @@ namespace PMRU.Application.Features.Auth.Queries.GetRoles
     {
         public string CacheKey => $"GetRoles_{DateTime.Now:yyyyMMddHHmm}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }
