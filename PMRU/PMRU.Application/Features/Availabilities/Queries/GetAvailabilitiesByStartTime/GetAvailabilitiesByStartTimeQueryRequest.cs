@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesBySt
 
         public string CacheKey => $"GetAvailabilityByStartTime_{StartTime.ToString("hhmmss")}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

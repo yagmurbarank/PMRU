@@ -19,7 +19,7 @@ namespace PMRU.Application.Features.Doctors.Queries.GetDoctorsByLocation
 
         public string CacheKey => $"GetDoctorsByLocation_{LocationID}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 
 }

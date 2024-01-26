@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentsByDoctor
 
         public string CacheKey => $"GetAppointmentsByDoctorId_{DoctorId}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

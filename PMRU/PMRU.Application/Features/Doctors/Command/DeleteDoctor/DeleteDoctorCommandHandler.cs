@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using PMRU.Application.Bases;
 using PMRU.Application.Interfaces.AutoMapper;
+using PMRU.Application.Interfaces.RedisCache;
 using PMRU.Application.Interfaces.UnitOfWorks;
 using PMRU.Domain.Entities;
 using System;
@@ -14,9 +15,11 @@ namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
 {
     public class DeleteDoctorCommandHandler :BaseHandler, IRequestHandler<DeleteDoctorCommandRequest>
     {
+        private readonly IRedisCacheService redisCacheService;
 
-        public DeleteDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor)
+        public DeleteDoctorCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IRedisCacheService redisCacheService) : base(mapper, unitOfWork, httpContextAccessor)
         {
+            this.redisCacheService = redisCacheService;
         }
         public async Task<Unit> Handle(DeleteDoctorCommandRequest request, CancellationToken cancellationToken)
         {
@@ -26,6 +29,13 @@ namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
 
             await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(doctor);
             await unitOfWork.SaveAsync();
+
+            await Task.WhenAll(
+                redisCacheService.RemoveAsync($"GetDoctorById_{doctor.Id}"),
+                redisCacheService.RemoveAsync($"GetDoctorByRegNo_{doctor.RegistrationNumber}"),
+                redisCacheService.RemoveAsync($"GetDoctors_{DateTime.Now:yyyyMMddHHmm}"),
+                redisCacheService.RemoveAsync($"GetDoctorByLocation_{doctor.LocationID}")
+            );
 
             return Unit.Value;
         }

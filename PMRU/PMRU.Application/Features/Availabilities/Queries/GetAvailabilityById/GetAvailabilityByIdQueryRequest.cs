@@ -20,6 +20,6 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilityById
 
         public string CacheKey => $"GetAvailabilityById_{Id}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

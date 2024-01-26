@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Appointments.Queries.GetAppointmentByEmploye
 
         public string CacheKey => $"GetAppointmentsByEmployeeId_{EmployeeId}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }

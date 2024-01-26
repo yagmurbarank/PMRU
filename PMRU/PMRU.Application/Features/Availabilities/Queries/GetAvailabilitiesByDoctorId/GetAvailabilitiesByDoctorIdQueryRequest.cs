@@ -19,6 +19,6 @@ namespace PMRU.Application.Features.Availabilities.Queries.GetAvailabilitiesByDo
 
         public string CacheKey => $"GetAvailabilityByDoctorId_{DoctorId}";
 
-        public double CacheTime => 1;
+        public double CacheTime => 5;
     }
 }
