@@ -27,6 +27,7 @@ namespace PMRU.BlazorUI.Pages.Availability
         CreateAvailabilityVM availabilityToCreate = new CreateAvailabilityVM();
         CreateAvailabilitiesInRange createAvailabilitiesInRangeModel = new CreateAvailabilitiesInRange();
         List<DoctorVM> doctors { get; set; }
+        public string errorMessage { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -86,7 +87,14 @@ namespace PMRU.BlazorUI.Pages.Availability
         protected async Task CreateAvailability()
         {
             var result = await AvailabilityService.CreateAvailability(availabilityToCreate);
-            navigationManager.NavigateTo("availabilities");
+            if (result.Success)
+            {
+                navigationManager.NavigateTo("availabilities");
+            }
+            else
+            {
+                errorMessage = result.Message;
+            }
         }
 
         protected async Task CreateAvailabilitiesInRange()
@@ -110,7 +118,14 @@ namespace PMRU.BlazorUI.Pages.Availability
             }
 
             var result = await AvailabilityService.CreateAvailabilities(availabilitiesToCreate);
-            navigationManager.NavigateTo("availabilities");
+            if (result.Success)
+            {
+                navigationManager.NavigateTo("availabilities");
+            }
+            else
+            {
+                errorMessage = result.Message;
+            }
         }
 
         private string GetUserRole()
