@@ -2,9 +2,11 @@ using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.Options;
 using PMRU.BlazorUI;
 using PMRU.BlazorUI.Contracts;
 using PMRU.BlazorUI.Handlers;
+using PMRU.BlazorUI.Localization;
 using PMRU.BlazorUI.Providers;
 using PMRU.BlazorUI.Services;
 using PMRU.BlazorUI.Services.Base;
@@ -30,7 +32,15 @@ builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
+builder.Services.AddLocalization(options=>
+{
+    options.ResourcesPath = "Resources";
+});
+
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-await builder.Build().RunAsync();
+var host = builder.Build();
+await host.SetDefaultCulture();
+await host.RunAsync();
+

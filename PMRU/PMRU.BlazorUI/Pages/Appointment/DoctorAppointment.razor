@@ -1,26 +1,28 @@
-﻿@page "/doctorappointments"
+﻿@inject IStringLocalizer<App> Loc
+
+@page "/doctorappointments"
 @attribute [Authorize(Roles = "Doctor")]
 
 @if (doctor != null)
 {
     <div>
-        <h3> Hoş Geldiniz, Dr @doctor.Name!</h3>
-        <p>Randevularınız:</p>
+        <h3> @Loc[nameof(ResourceStrings.DoctorAppointmentPageWelcome)] @doctor.Name!</h3>
+        <p>@Loc[nameof(ResourceStrings.DoctorAppointmentPageYourAppointmentsText)]</p>
       
     </div>
 
-    <button @onclick="GoToReportPage">Report Page</button>
+    <button @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.DoctorAppointmentPageReportPageButton)]</button>
 
     @if (appointments != null && appointments.Any())
     {
         <table class="table">
             <thead>
                 <tr>
-                    <th>Employee Name</th>
-                    <th>Employee Surname</th>
-                    <th>Date</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
+                    <th>@Loc[nameof(ResourceStrings.DoctorAppointmentPageTableName)]</th>
+                    <th>@Loc[nameof(ResourceStrings.DoctorAppointmentPageTableSurname)]</th>
+                    <th>@Loc[nameof(ResourceStrings.DoctorAppointmentPageTableDate)]</th>
+                    <th>@Loc[nameof(ResourceStrings.DoctorAppointmentPageTableStartTime)]</th>
+                    <th>@Loc[nameof(ResourceStrings.DoctorAppointmentPageTableEndTime)]</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,7 +35,7 @@
                         <td>@appointment.AppointmentStartHour.ToString()</td>
                         <td>@appointment.AppointmentEndHour.ToString()</td>
                         <td>
-                            <button class="btn btn-danger" @onclick="() => DeleteAppointment(appointment.Id)">Delete</button>
+                            <button class="btn btn-danger" @onclick="() => DeleteAppointment(appointment.Id)">@Loc[nameof(ResourceStrings.DoctorAppointmentPageDeleteButton)]</button>
                         </td>
                     </tr>
                 }
@@ -42,17 +44,17 @@
     }
     else
     {
-        <p>Randevunuz bulunmamaktadır.</p>
+        <p>@Loc[nameof(ResourceStrings.DoctorAppointmentPageNoAppointmentText)]</p>
     }
 }
 else
 {
     @if (doctor == null && doctorLoaded)
     {
-        <p>  Doktor Bulunamadı.</p>
+        <p>@Loc[nameof(ResourceStrings.DoctorAppointmentPageNotFoundDoctorText)]</p>
     }
     else
     {
-        <p>Doktor Bilgileri Yükleniyor...</p>
+        <p>@Loc[nameof(ResourceStrings.DoctorAppointmentPageDoctorsLoadingText)]</p>
     }
 }

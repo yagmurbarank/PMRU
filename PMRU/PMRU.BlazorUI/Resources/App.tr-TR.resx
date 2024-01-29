@@ -1,0 +1,635 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AppointmentPageDateText" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageDepartmentText" xml:space="preserve">
+    <value>Departman</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageDoctorText" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageEmailText" xml:space="preserve">
+    <value>Eposta</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageEndHourText" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageFindButton" xml:space="preserve">
+    <value>Bul</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageLocationText" xml:space="preserve">
+    <value>Lokasyon</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageNameText" xml:space="preserve">
+    <value>Ad</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPagePositionText" xml:space="preserve">
+    <value>Pozisyon</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageRegNoLabel" xml:space="preserve">
+    <value>Sicil No</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageRegNoText" xml:space="preserve">
+    <value>Sicil No</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageStartHourText" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageSurnameText" xml:space="preserve">
+    <value>Soyad</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageTakeAppointmentButton" xml:space="preserve">
+    <value>Randevu Al</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentPageText" xml:space="preserve">
+    <value>Lütfen Sicil Numaranızı Giriniz</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppPageNotAuthorizedText" xml:space="preserve">
+    <value>Üzgünüz, bu sayfayı görüntüleyemezsiniz.</value>
+    <comment>App.razor</comment>
+  </data>
+  <data name="AppPageNotAuthorizedTitle" xml:space="preserve">
+    <value>Yetkilendirilmemiştir</value>
+    <comment>App.razor</comment>
+  </data>
+  <data name="AppPageNotFoundText" xml:space="preserve">
+    <value>Üzgünüm, bu adreste hiçbir şey yok.</value>
+    <comment>App.razor</comment>
+  </data>
+  <data name="AppPageNotFoundTitle" xml:space="preserve">
+    <value>Bulunamadı</value>
+    <comment>App.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageChoosePlacer" xml:space="preserve">
+    <value>Seçiniz</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageCreateAvailabilityButton" xml:space="preserve">
+    <value>Uygunluk Oluştur</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageDeleteOnlyButton" xml:space="preserve">
+    <value>Sil</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageDeleteSelectedButton" xml:space="preserve">
+    <value>Seçili Olanları Sil</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageDoctorText" xml:space="preserve">
+    <value>Doktorlarımız</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageEditButton" xml:space="preserve">
+    <value>Düzenle</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageGetAvailabilityButton" xml:space="preserve">
+    <value>Uygunlukları Göster</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageLoadingText" xml:space="preserve">
+    <value>Yükleniyor...</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageNoAvailabilityText" xml:space="preserve">
+    <value>Uygunluk Bulunamadı.</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTableDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTableDoctor" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTableEndHour" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTableOperations" xml:space="preserve">
+    <value>İşlemler</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTableStartHour" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="BackPage" xml:space="preserve">
+    <value>Geri</value>
+    <comment>Back.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreate" xml:space="preserve">
+    <value>Belirli Aralıklarla Randevu Oluşturma</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateButton" xml:space="preserve">
+    <value>Oluştur</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateChoosePlacer" xml:space="preserve">
+    <value>Doktor Seçiniz</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateDoctorText" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateDuration" xml:space="preserve">
+    <value>Muayene Süresi</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateEndDate" xml:space="preserve">
+    <value>Bitiş Tarihi</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateStartDate" xml:space="preserve">
+    <value>Başlangıç Tarihi</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageMultipleCreateStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreate" xml:space="preserve">
+    <value>Tek Randevu Oluşturma</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateButton" xml:space="preserve">
+    <value>Oluştur</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateChoosePlacer" xml:space="preserve">
+    <value>Doktor Seçiniz</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateDoctorText" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageSingleCreateStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="CreateAvailabilityPageTitle" xml:space="preserve">
+    <value>Randevu Oluşturma</value>
+    <comment>CreateAvailability.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageDeleteButton" xml:space="preserve">
+    <value>Sil</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageDoctorsLoadingText" xml:space="preserve">
+    <value>Doktor Bilgileri Yükleniyor...</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageNoAppointmentText" xml:space="preserve">
+    <value>Randevunuz bulunmamaktadır.</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageNotFoundDoctorText" xml:space="preserve">
+    <value>Doktor Bulunamadı.</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageReportPageButton" xml:space="preserve">
+    <value>Rapor Sayfası</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageTableDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageTableEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageTableName" xml:space="preserve">
+    <value>Çalışan Adı</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageTableStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageTableSurname" xml:space="preserve">
+    <value>Çalışan Soyadı</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageWelcome" xml:space="preserve">
+    <value>Hoş Geldiniz, Dr</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="DoctorAppointmentPageYourAppointmentsText" xml:space="preserve">
+    <value>Randevularınız :</value>
+    <comment>DoctorAppointments.razor</comment>
+  </data>
+  <data name="EditAvailabilityButton" xml:space="preserve">
+    <value>Düzenle</value>
+    <comment>EditAvailability.razor</comment>
+  </data>
+  <data name="EditAvailabilityEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>EditAvailability.razor</comment>
+  </data>
+  <data name="EditAvailabilityPageDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>EditAvailability.razor</comment>
+  </data>
+  <data name="EditAvailabilityPageTitle" xml:space="preserve">
+    <value>Uygunluk Düzenle</value>
+    <comment>EditAvailability.razor</comment>
+  </data>
+  <data name="EditAvailabilityStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>EditAvailability.razor</comment>
+  </data>
+  <data name="IndexPageLoginButton" xml:space="preserve">
+    <value>Giriş Yap</value>
+    <comment>Index.razor</comment>
+  </data>
+  <data name="IndexPageLogoutButton" xml:space="preserve">
+    <value>Çıkış Yap</value>
+    <comment>Index.razor</comment>
+  </data>
+  <data name="IndexPageName" xml:space="preserve">
+    <value>Ana Sayfa</value>
+    <comment>Index.razor</comment>
+  </data>
+  <data name="IndexPageWelcome" xml:space="preserve">
+    <value>Periyodik Muayene Randevu Uygulamasına Hoş Geldiniz</value>
+    <comment>Index.razor</comment>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Dil</value>
+  </data>
+  <data name="LocalAdminAppPageChooseDoctorPlacer" xml:space="preserve">
+    <value>Seçiniz</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageDocLoadingText" xml:space="preserve">
+    <value>Doktorlar yükleniyor...</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageDoctorText" xml:space="preserve">
+    <value>Doktorlarımız</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageGetAppButton" xml:space="preserve">
+    <value>Randevuları Göster</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageNoAppText" xml:space="preserve">
+    <value>Randevunuz bulunmamaktadır.</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageReportPageButton" xml:space="preserve">
+    <value>Rapor Sayfası</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTableDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTableEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTableName" xml:space="preserve">
+    <value>Çalışan Adı</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTableStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTableSurname" xml:space="preserve">
+    <value>Çalışan Soyadı</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LocalAdminAppPageTitle" xml:space="preserve">
+    <value>Yerel Yönetici Ziyaretçi Ekranı</value>
+    <comment>LocalAdminAppointments.razor</comment>
+  </data>
+  <data name="LoginPageButton" xml:space="preserve">
+    <value>Giriş Yap</value>
+    <comment>Login.razor</comment>
+  </data>
+  <data name="LoginPageEmail" xml:space="preserve">
+    <value>Eposta</value>
+    <comment>Login.razor</comment>
+  </data>
+  <data name="LoginPagePassword" xml:space="preserve">
+    <value>Parola</value>
+    <comment>Login.razor</comment>
+  </data>
+  <data name="LoginPageTitle" xml:space="preserve">
+    <value>Giriş Yap</value>
+    <comment>Login.razor</comment>
+  </data>
+  <data name="LogoutPageTitle" xml:space="preserve">
+    <value>Çıkış Yap</value>
+    <comment>Logout.razor</comment>
+  </data>
+  <data name="MainLayoutAbout" xml:space="preserve">
+    <value>Hakkında</value>
+    <comment>MainLayout.razor</comment>
+  </data>
+  <data name="NavMenuAppointments" xml:space="preserve">
+    <value>Randevular</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuAvailabilities" xml:space="preserve">
+    <value>Uygunluklar</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuDoctorsAppointments" xml:space="preserve">
+    <value>Doktor Randevuları</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuHome" xml:space="preserve">
+    <value>Ana Sayfa</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuLogin" xml:space="preserve">
+    <value>Giriş Yap</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuLogout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuMyAppointments" xml:space="preserve">
+    <value>Ziyaretçilerim</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuRegNoText" xml:space="preserve">
+    <value>Sicil No:</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuRoleManage" xml:space="preserve">
+    <value>Rol Yönetimi</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="NavMenuTitle" xml:space="preserve">
+    <value>PMRU</value>
+    <comment>NavMenu.razor</comment>
+  </data>
+  <data name="ReportPageChooseDateText" xml:space="preserve">
+    <value>Tarih Seçiniz</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageFilterDoctorText" xml:space="preserve">
+    <value>Doktora Göre Filtrele :</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageNoReportText" xml:space="preserve">
+    <value>Rapor bulunmamaktadır.</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReceiveReportText" xml:space="preserve">
+    <value>Rapor Alın</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageResultText" xml:space="preserve">
+    <value>Sonuçlar</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableDate" xml:space="preserve">
+    <value>Tarih</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableDescription" xml:space="preserve">
+    <value>Açıklama</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableDoctor" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableEmployee" xml:space="preserve">
+    <value>Çalışan</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableEndTime" xml:space="preserve">
+    <value>Bitiş Saati</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTableStartTime" xml:space="preserve">
+    <value>Başlangıç Saati</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageTitle" xml:space="preserve">
+    <value>Rapor Sayfası</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="RoleManagePageDoctorText" xml:space="preserve">
+    <value>Doktor</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageFindButton" xml:space="preserve">
+    <value>Bul</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageGiveRoleButton" xml:space="preserve">
+    <value>Yetki Ver</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageIDText" xml:space="preserve">
+    <value>T.C. Kimlik Numarası</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageLocalAdminText" xml:space="preserve">
+    <value>Yerel Yönetici</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePagePasswordText" xml:space="preserve">
+    <value>Parola</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageRegNoRequest" xml:space="preserve">
+    <value>Lütfen Sicil Numaranızı Giriniz</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageRegNoText" xml:space="preserve">
+    <value>Sicil Numarası</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageRoleChoosePlacer" xml:space="preserve">
+    <value>Yetki Seçiniz</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageRoleText" xml:space="preserve">
+    <value>Yetki</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageSystemAdminText" xml:space="preserve">
+    <value>Sistem Yöneticisi</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageTableEmail" xml:space="preserve">
+    <value>Eposta</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageTableNameText" xml:space="preserve">
+    <value>İsim</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageTablePhoneText" xml:space="preserve">
+    <value>Telefon</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageTableRegNoText" xml:space="preserve">
+    <value>Sicil No</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManagePageTableSurnameText" xml:space="preserve">
+    <value>Soyisim</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+</root>

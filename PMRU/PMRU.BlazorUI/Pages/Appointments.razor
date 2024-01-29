@@ -1,4 +1,6 @@
-﻿@page "/appointments/"
+﻿@inject IStringLocalizer<App> Loc
+
+@page "/appointments/"
 
 @if (string.IsNullOrEmpty(errorMessage) == false)
 {
@@ -10,19 +12,19 @@
 <div>
     <div class="row">
         <div class="col-md-6">
-            <p>Lütfen Sicil Numaranızı Giriniz</p>
+            <p>@Loc[nameof(ResourceStrings.AppointmentPageText)]</p>
             
             <EditForm Model="@registrationNumber" OnValidSubmit="FindEmployee">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
                 <div class="form-group">
-                    <label for="startDate">Sicil No</label>
+                    <label for="startDate">@Loc[nameof(ResourceStrings.AppointmentPageRegNoLabel)]</label>
                     <InputText class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
                     <ValidationMessage For="@(() => registrationNumber)" />
                 </div>
 
-                <button class="btn btn-success" type="submit">Bul</button>
+                <button class="btn btn-success" type="submit">@Loc[nameof(ResourceStrings.AppointmentPageFindButton)]</button>
             </EditForm>
         
         </div>
@@ -33,7 +35,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            Sicil No
+                            @Loc[nameof(ResourceStrings.AppointmentPageRegNoText)]
                         </td>
                         <td>
                             @Employee.RegistrationNumber
@@ -41,7 +43,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Ad
+                            @Loc[nameof(ResourceStrings.AppointmentPageNameText)]
                         </td>
                         <td>
                             @Employee.Name
@@ -49,7 +51,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Soyad
+                            @Loc[nameof(ResourceStrings.AppointmentPageSurnameText)]
                         </td>
                         <td>
                             @Employee.Surname
@@ -57,7 +59,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Email
+                            @Loc[nameof(ResourceStrings.AppointmentPageEmailText)]
                         </td>
                         <td>
                             @Employee.Email
@@ -65,7 +67,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Lokasyon
+                            @Loc[nameof(ResourceStrings.AppointmentPageLocationText)]
                         </td>
                         <td>
                             @if (Employee.Location != null)
@@ -76,7 +78,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Departman
+                            @Loc[nameof(ResourceStrings.AppointmentPageDepartmentText)]
                         </td>
                         <td>
                             @if (Employee.Department != null)
@@ -87,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>
-                            Pozisyon
+                            @Loc[nameof(ResourceStrings.AppointmentPagePositionText)]
                         </td>
                         <td>
                             @if (Employee.Position != null)
@@ -137,16 +139,16 @@
                 <thead>
                     <tr>
                         <th>
-                            Doktor
+                            @Loc[nameof(ResourceStrings.AppointmentPageDoctorText)]
                         </th>
                         <th>
-                            Tarih
+                            @Loc[nameof(ResourceStrings.AppointmentPageDateText)]
                         </th>
                         <th>
-                            Başlangıç Saati
+                            @Loc[nameof(ResourceStrings.AppointmentPageStartHourText)]
                         </th>
                         <th>
-                            Bitiş Saati
+                            @Loc[nameof(ResourceStrings.AppointmentPageEndHourText)]
                         </th>
                         <th></th>
                     </tr>
@@ -169,7 +171,7 @@
                             </td>
                             <td>
                                 <button class="btn btn-outline-primary" @onclick="() => CreateAppointment(availability)">
-                                    <i class="fa fa-file"></i>Randevu Al
+                                    <i class="fa fa-file"></i> @Loc[nameof(ResourceStrings.AppointmentPageTakeAppointmentButton)]
                                 </button>
                             </td>
                         </tr>

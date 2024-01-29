@@ -1,4 +1,6 @@
-﻿@page "/create-availability"
+﻿@inject IStringLocalizer<App> Loc
+
+@page "/create-availability"
 @attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
 @if (string.IsNullOrEmpty(errorMessage) == false)
@@ -8,7 +10,7 @@
     </div>
 }
 
-<h3>Randevu Oluşturma</h3>
+<h3>@Loc[nameof(ResourceStrings.CreateAvailabilityPageTitle)]</h3>
 
 <Back Target="availabilities" />
 <br />
@@ -16,15 +18,15 @@
 
 <div class="row">
     <div class="col-md-6">
-        <h5>Tek Randevu Oluşturma</h5>
+        <h5>@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreate)]</h5>
         <EditForm Model="@availabilityToCreate" OnValidSubmit="@CreateAvailability">
             <DataAnnotationsValidator />
             <ValidationSummary />
 
             <div class="form-group">
-                <label for="doctor">Doktor</label>
+                <label for="doctor">@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateDoctorText)]</label>
                 <InputSelect class="form-control" id="doctor" @bind-Value="availabilityToCreate.DoctorID">
-                    <option>Doktor Seçiniz</option>
+                    <option>@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateChoosePlacer)]</option>
                     @if (doctors != null && doctors.Any())
                     {
                         @foreach (var doctor in doctors)
@@ -37,38 +39,38 @@
             </div>
 
             <div class="form-group">
-                <label for="date">Tarih</label>
+                <label for="date">@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateDate)]</label>
                 <InputDate class="form-control" id="date" @bind-Value="availabilityToCreate.Date" />
                 <ValidationMessage For="@(() => availabilityToCreate.Date)" />
             </div>
 
             <div class="form-group">
-                <label for="startTime">Başlangıç Saati</label>
+                <label for="startTime">@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateStartTime)]</label>
                 <InputDate Type="InputDateType.Time" class="form-control" id="startTime" @bind-Value="availabilityToCreate.StartTime" />
                 <ValidationMessage For="@(() => availabilityToCreate.StartTime)" />
             </div>
 
             <div class="form-group">
-                <label for="endTime">Bitiş Saati</label>
+                <label for="endTime">@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateEndTime)]</label>
                 <InputDate Type="InputDateType.Time" class="form-control" id="endTime" @bind-Value="availabilityToCreate.EndTime" />
                 <ValidationMessage For="@(() => availabilityToCreate.EndTime)" />
             </div>
 
             <br />
-            <button type="submit" class="btn btn-success btn-block">Oluştur</button>
+            <button type="submit" class="btn btn-success btn-block">@Loc[nameof(ResourceStrings.CreateAvailabilityPageSingleCreateButton)]</button>
         </EditForm>
     </div>
 
     <div class="col-md-6">
-        <h5>Belirli Aralıklarla Randevu Oluşturma</h5>
+        <h5>@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreate)]</h5>
         <EditForm Model="@createAvailabilitiesInRangeModel" OnValidSubmit="@CreateAvailabilitiesInRange">
             <DataAnnotationsValidator />
             <ValidationSummary />
 
             <div class="form-group">
-                <label for="doctor">Doktor</label>
+                <label for="doctor">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateDoctorText)]</label>
                 <InputSelect class="form-control" id="doctor" @bind-Value="createAvailabilitiesInRangeModel.DoctorID">
-                    <option>Doktor Seçiniz</option>
+                    <option>@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateChoosePlacer)]</option>
                     @if (doctors != null && doctors.Any())
                     {
                         @foreach (var doctor in doctors)
@@ -81,37 +83,37 @@
             </div>
 
             <div class="form-group">
-                <label for="startDate">Başlangıç Tarihi</label>
+                <label for="startDate">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateStartDate)]</label>
                 <InputDate class="form-control" id="startDate" @bind-Value="createAvailabilitiesInRangeModel.StartDate" />
                 <ValidationMessage For="@(() => createAvailabilitiesInRangeModel.StartDate)" />
             </div>
 
             <div class="form-group">
-                <label for="endDate">Bitiş Tarihi</label>
+                <label for="endDate">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateEndDate)]</label>
                 <InputDate class="form-control" id="endDate" @bind-Value="createAvailabilitiesInRangeModel.EndDate" />
                 <ValidationMessage For="@(() => createAvailabilitiesInRangeModel.EndDate)" />
             </div>
 
             <div class="form-group">
-                <label for="duration">Muayene Süresi</label>
+                <label for="duration">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateDuration)]</label>
                 <InputNumber class="form-control" id="duration" @bind-Value="createAvailabilitiesInRangeModel.Duration" />
                 <ValidationMessage For="@(() => createAvailabilitiesInRangeModel.Duration)" />
             </div>
 
             <div class="form-group">
-                <label for="startTime">Başlangıç Saati</label>
+                <label for="startTime">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateStartTime)]</label>
                 <InputDate Type="InputDateType.Time" class="form-control" id="startTime" @bind-Value="createAvailabilitiesInRangeModel.StartTime" />
                 <ValidationMessage For="@(() => createAvailabilitiesInRangeModel.StartTime)" />
             </div>
 
             <div class="form-group">
-                <label for="endTime">Bitiş Saati</label>
+                <label for="endTime">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateEndTime)]</label>
                 <InputDate Type="InputDateType.Time" class="form-control" id="endTime" @bind-Value="createAvailabilitiesInRangeModel.EndTime" />
                 <ValidationMessage For="@(() => createAvailabilitiesInRangeModel.EndTime)" />
             </div>
 
             <br />
-            <button type="submit" class="btn btn-success btn-block">Oluştur</button>
+            <button type="submit" class="btn btn-success btn-block">@Loc[nameof(ResourceStrings.CreateAvailabilityPageMultipleCreateButton)]</button>
         </EditForm>
     </div>
 </div>

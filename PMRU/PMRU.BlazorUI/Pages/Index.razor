@@ -1,17 +1,18 @@
-﻿@page "/"
+﻿@inject IStringLocalizer<App> Loc
+@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>@Loc[nameof(ResourceStrings.IndexPageName)]</PageTitle>
 
-<h1 class="text-center">Periyodik Muayene Randevu Uygulamasına Hoş Geldiniz</h1>
+    <h1 class="text-center">@Loc[nameof(ResourceStrings.IndexPageWelcome)]</h1>
 <br />
 <br />
 
 <AuthorizeView>
     <Authorized>
-        <button class="btn btn-danger" @onclick="Logout">Logout</button>
+        <button class="btn btn-danger" @onclick="Logout">@Loc[nameof(ResourceStrings.IndexPageLogoutButton)]</button>
     </Authorized>
     <NotAuthorized>
-        <button class="btn btn-success" @onclick="GoToLogin">Login</button>
+        <button class="btn btn-success" @onclick="GoToLogin">@Loc[nameof(ResourceStrings.IndexPageLoginButton)]</button>
     </NotAuthorized>
 </AuthorizeView>
 

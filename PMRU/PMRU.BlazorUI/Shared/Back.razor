@@ -1,7 +1,8 @@
 ﻿@inject NavigationManager NavigationManager
+@inject IStringLocalizer<App> Loc
 
 <button class="btn btn-outline-dark btn-block" @onclick="Navigate">
-    <span class="oi oi-arrow-left"></span>Back
+    <span class="oi oi-arrow-left"></span>@Loc[nameof(ResourceStrings.BackPage)]
 </button>
 
 @code {
