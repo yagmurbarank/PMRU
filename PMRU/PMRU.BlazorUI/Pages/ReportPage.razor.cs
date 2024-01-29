@@ -14,7 +14,6 @@ namespace PMRU.BlazorUI.Pages
         private DateOnly selectedDate;
         private List<AppointmentVM> reportResult;
         private string doctorFilter = "";
-        private List<AppointmentVM> filteredReportResult;
 
 
         protected override void OnInitialized()
@@ -26,18 +25,11 @@ namespace PMRU.BlazorUI.Pages
         {
             reportResult = await appointmentService.GetAppointmentsByDate(selectedDate);
 
-            filteredReportResult = null;
-
-
             if (!string.IsNullOrWhiteSpace(doctorFilter))
             {
-                filteredReportResult = reportResult
+                reportResult = reportResult
                     .Where(r => r.Doctor.Name.ToLower().Contains(doctorFilter.ToLower()) || r.Doctor.Surname.ToLower().Contains(doctorFilter.ToLower()))
                     .ToList();
-            }
-            else
-            {
-                filteredReportResult = reportResult.ToList();
             }
         }
     }
