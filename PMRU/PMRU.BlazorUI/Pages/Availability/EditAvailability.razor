@@ -1,32 +1,33 @@
-﻿@page "/edit-availability/{availabilityId:int}"
+﻿@inject IStringLocalizer<App> Loc
+@page "/edit-availability/{availabilityId:int}"
 @inject NavigationManager NavigationManager
 @attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
-<h3>EditAvailability</h3>
+<h3>@Loc[nameof(ResourceStrings.EditAvailabilityPageTitle)]</h3>
 
 <EditForm Model="@availability" OnValidSubmit="@UpdateAvailability">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="form-group">
-        <label for="date">Tarih</label>
+        <label for="date">@Loc[nameof(ResourceStrings.EditAvailabilityPageDate)]</label>
         <InputDate class="form-control" id="date" @bind-Value="availability.Date" />
         <ValidationMessage For="@(() => availability.Date)" />
     </div>
 
     <div class="form-group">
-        <label for="startTime">Başlangıç Saati</label>
+        <label for="startTime">@Loc[nameof(ResourceStrings.EditAvailabilityStartTime)]</label>
         <InputDate Type="InputDateType.Time" class="form-control" id="startTime" @bind-Value="availability.StartTime" />
         <ValidationMessage For="@(() => availability.StartTime)" />
     </div>
 
     <div class="form-group">
-        <label for="endTime">Bitiş Saati</label>
+        <label for="endTime">@Loc[nameof(ResourceStrings.EditAvailabilityEndTime)]</label>
         <InputDate Type="InputDateType.Time" class="form-control" id="endTime" @bind-Value="availability.EndTime" />
         <ValidationMessage For="@(() => availability.EndTime)" />
     </div>
 
-    <button type="submit" class="btn btn-success btn-block">Oluştur</button>
+    <button type="submit" class="btn btn-success btn-block">@Loc[nameof(ResourceStrings.EditAvailabilityButton)]</button>
 
     <Back Target="availabilities" />
 </EditForm>

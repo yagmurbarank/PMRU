@@ -1,9 +1,11 @@
-﻿<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+﻿@inject IStringLocalizer<App> Loc
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/open-iconic@1.1.0/font/css/open-iconic-bootstrap.css">
 
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">PMRU</a>
+        <a class="navbar-brand" href="">@Loc[nameof(ResourceStrings.NavMenuTitle)]</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -14,14 +16,14 @@
     <nav class="flex-column">
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuHome)]
             </NavLink>
         </div>
         <AuthorizeView>
             <NotAuthorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="admin/login/">
-                        <span class="bi bi-person-fill" aria-hidden="true"></span> Login
+                        <span class="bi bi-person-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogin)]
                     </NavLink>
                 </div>
             </NotAuthorized>
@@ -39,7 +41,7 @@
                             if (registrationNumberClaim != null)
                             {
                                 <span class="oi oi-person" aria-hidden="true"></span>
-                                <span>Sicil No: @registrationNumberClaim.Value</span>
+                                <span>@Loc[nameof(ResourceStrings.NavMenuRegNoText)] @registrationNumberClaim.Value</span>
                             }
                         }
                     </NavLink>
@@ -49,13 +51,13 @@
         </AuthorizeView>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="appointments/">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Appointments
+                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuAppointments)]
             </NavLink>
         </div>
         <AuthorizeView Roles="LocalAdmin,Doctor">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="availabilities/">
-                    <span class="bi bi-alarm-fill" aria-hidden="true"></span> Availabilities
+                    <span class="bi bi-alarm-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuAvailabilities)]
                 </NavLink>
             </div>
         </AuthorizeView>
@@ -63,14 +65,14 @@
         <AuthorizeView Roles="DoctorAdmin,Doctor">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="doctorappointments/">
-                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> My Appointments
+                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuMyAppointments)]
                 </NavLink>
             </div>
         </AuthorizeView>
         <AuthorizeView Roles="LocalAdmin">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="localadminappointments/">
-                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> Doctors Appointments
+                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuDoctorsAppointments)]
                 </NavLink>
             </div>
         </AuthorizeView>
@@ -78,7 +80,7 @@
            <Authorized>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="logout/">
-                        <span class="bi bi-arrow-circle-right" aria-hidden="true"></span> Log Out
+                        <span class="bi bi-arrow-circle-right" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogout)]
             </NavLink>
         </div>
            </Authorized>
@@ -86,7 +88,7 @@
         <AuthorizeView Roles="SystemAdmin">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="rolemanage/">
-                    <span class="bi bi-person-bounding-box" aria-hidden="true"></span> Role Manage
+                    <span class="bi bi-person-bounding-box" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuRoleManage)]
                 </NavLink>
             </div>
         </AuthorizeView>

@@ -1,6 +1,7 @@
-﻿@page "/admin/login/"
+﻿@inject IStringLocalizer<App> Loc
+@page "/admin/login/"
 
-<h3>Login</h3>
+<h3>@Loc[nameof(ResourceStrings.LoginPageTitle)]</h3>
 
 @if (string.IsNullOrEmpty(Message) == false)
 {
@@ -16,17 +17,17 @@
             <ValidationSummary />
 
             <div class="form-group">
-                <label class="control-label">Email</label>
+                <label class="control-label">@Loc[nameof(ResourceStrings.LoginPageEmail)]</label>
                 <InputText id="userName" class="form-control" @bind-Value="@Model.Email"></InputText>
                 <ValidationMessage For="@(() => Model.Email)" />
             </div>
             <div class="form-group">
-                <label class="control-label">Password</label>
+                <label class="control-label">@Loc[nameof(ResourceStrings.LoginPagePassword)]</label>
                 <InputText type="password" id="password" class="form-control" @bind-Value="@Model.Password"></InputText>
                 <ValidationMessage For="@(() => Model.Password)" />
             </div>
             <div class="form-group">
-                <input type="submit" value="Login" class="btn btn-primary" />
+                <input type="submit" value=@Loc[nameof(ResourceStrings.LoginPageButton)] class="btn btn-primary" />
             </div>
         </EditForm>
     </div>
