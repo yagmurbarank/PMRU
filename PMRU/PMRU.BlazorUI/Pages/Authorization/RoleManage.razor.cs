@@ -7,9 +7,9 @@ using PMRU.BlazorUI.Services;
 using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Authorization
 {
-    
+
     public partial class RoleManage
     {
         [Inject] IEmployeeService EmployeeService { get; set; }
@@ -31,7 +31,7 @@ namespace PMRU.BlazorUI.Pages
             Disabled = true;
         }
 
-         async Task GiveRole()
+        async Task GiveRole()
         {
             var fullName = Employee.Name + " " + Employee.Surname;
             var email = Employee.Email;
@@ -39,7 +39,7 @@ namespace PMRU.BlazorUI.Pages
             var password = this.password;
             var confirmPassword = this.password;
             var role = this.role;
-            if (role=="doctor") 
+            if (role == "doctor")
             {
                 doctor.IdentityNumber = Employee.IdentityNumber;
                 doctor.Name = Employee.Name;
@@ -58,6 +58,6 @@ namespace PMRU.BlazorUI.Pages
                 messageBody = $"{Employee.Name} {Employee.Surname} çalışanına {role.ToUpper()} rolü tanımlandı. Giriş bilgileri: EMail: {Employee.Email} Şifre:{password}";
             }
         }
-       
+
     }
 }

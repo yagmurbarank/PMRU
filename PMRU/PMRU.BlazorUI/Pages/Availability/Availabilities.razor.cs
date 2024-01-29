@@ -10,7 +10,7 @@ using PMRU.BlazorUI.Services.Base;
 using PMRU.Domain.Entities;
 using System.Security.Claims;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Availability
 {
     public partial class Availabilities
     {
@@ -121,10 +121,10 @@ namespace PMRU.BlazorUI.Pages
         private async void DeleteAvailability(AvailabilityVM availability)
         {
 
-                var deleteAvailabilityVM = new DeleteAvailabilityVM { Id = availability.Id };
-                await availabilityService.DeleteAvailability(deleteAvailabilityVM);
+            var deleteAvailabilityVM = new DeleteAvailabilityVM { Id = availability.Id };
+            await availabilityService.DeleteAvailability(deleteAvailabilityVM);
 
-                await RefreshAvailabilities();
+            await RefreshAvailabilities();
 
         }
         private async Task DeleteAvailabilities()

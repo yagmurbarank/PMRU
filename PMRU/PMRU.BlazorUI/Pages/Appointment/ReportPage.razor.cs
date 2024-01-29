@@ -4,7 +4,7 @@ using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Services;
 using PMRU.Domain.Entities;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Appointment
 {
     public partial class ReportPage
     {

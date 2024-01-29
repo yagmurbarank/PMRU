@@ -5,7 +5,7 @@ using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Models.Doctor;
 using System.Security.Claims;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Appointment
 {
     public partial class LocalAdminAppointments
     {

@@ -1,5 +1,5 @@
 ﻿@page "/rolemanage/"
-
+@attribute [Authorize(Roles = "SystemAdmin")]
 
 <div class="row">
         <div class="col-md-6">
@@ -52,7 +52,7 @@
                     <option>Rol Seçiniz</option>
                     <option value="doctor">Doctor</option>
                     <option value="systemadmin">System Admin</option>
-                    <option value="localadmin">local Admin</option>
+                    <option value="localadmin">Local Admin</option>
                 </InputSelect>
             </div>
             <div class="form-group">

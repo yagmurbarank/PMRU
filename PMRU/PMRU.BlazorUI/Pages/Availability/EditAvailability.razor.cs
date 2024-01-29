@@ -5,7 +5,7 @@ using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
 using PMRU.Domain.Entities;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Availability
 {
     public partial class EditAvailability
     {
@@ -57,7 +57,7 @@ namespace PMRU.BlazorUI.Pages
 
             var response = await availabilityService.UpdateAvailability(updateRequest);
 
-            
+
             if (response.Success)
             {
                 navigationManager.NavigateTo("/availabilities");

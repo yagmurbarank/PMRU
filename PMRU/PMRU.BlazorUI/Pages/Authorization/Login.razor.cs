@@ -11,12 +11,11 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
-using PMRU.BlazorUI;
 using PMRU.BlazorUI.Shared;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Contracts;
 
-namespace PMRU.BlazorUI.Pages.Admin
+namespace PMRU.BlazorUI.Pages.Authorization
 {
     public partial class Login
     {
