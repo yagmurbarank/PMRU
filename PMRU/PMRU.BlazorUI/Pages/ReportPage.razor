@@ -12,44 +12,7 @@
     <button @onclick="ReceiveReport">Receive Report</button>
 </div>
 
-@if (filteredReportResult != null)
-{
-    if (filteredReportResult.Any())
-    {
-        <h4>Rapor Sonuçları:</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Doktor</th>
-                    <th>Çalışan</th>
-                    <th>Tarih</th>
-                    <th>Başlangıç Saati</th>
-                    <th>Bitiş Saati</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var result in filteredReportResult)
-                {
-                    <tr>
-                        <td>@result.Doctor.Name @result.Doctor.Surname</td>
-                        <td>@result.Employee.Name @result.Employee.Surname</td>
-                        <td>@result.AppointmentDate.ToString("yyyy-MM-dd")</td>
-                        <td>@result.AppointmentStartHour</td>
-                        <td>@result.AppointmentEndHour</td>
-                        <td>@result.Description</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <p>Rapor bulunmamaktadır.</p>
-    }
-}
-
-else if (reportResult != null)
+@if (reportResult != null)
 {
     if (reportResult.Any())
     {
