@@ -1,7 +1,7 @@
 ﻿@inject IStringLocalizer<App> Loc
 
 @page "/reportpage"
-@attribute [Authorize(Roles = "Doctor")]
+@attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
 <h3>@Loc[nameof(ResourceStrings.ReportPageTitle)]</h3>
 

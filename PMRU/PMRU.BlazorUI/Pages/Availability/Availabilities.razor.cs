@@ -106,11 +106,6 @@ namespace PMRU.BlazorUI.Pages.Availability
             isLoading = false;
         }
 
-        private int GetSelectedDoctorId()
-        {
-            return selectedDoctorId;
-        }
-
         private string GetUserRole()
         {
             if (authenticationState.User?.Identity?.IsAuthenticated == true)
@@ -167,7 +162,6 @@ namespace PMRU.BlazorUI.Pages.Availability
 
         private async Task RefreshAvailabilities()
         {
-            selectedDoctorId = GetSelectedDoctorId();
             availabilities = await availabilityService.GetAvailabilitiesByDoctorId(selectedDoctorId);
         }
 
