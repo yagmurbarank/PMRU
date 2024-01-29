@@ -62,16 +62,20 @@ namespace PMRU.BlazorUI.Pages.Availability
                         var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
                         if (registrationNumberClaim != null)
                         {
-                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            if (response.Success)
+                            {
+                                var employee = response.Data;
 
-                            if (employee != null)
-                            {
-                                var location = employee.Location;
-                                doctors = await DoctorService.GetDoctorsByLocation(location.Id);
-                            }
-                            else
-                            {
-                                doctors = new List<DoctorVM>();
+                                if (employee != null)
+                                {
+                                    var location = employee.Location;
+                                    doctors = await DoctorService.GetDoctorsByLocation(location.Id);
+                                }
+                                else
+                                {
+                                    doctors = new List<DoctorVM>();
+                                }
                             }
                         }
                     }

@@ -40,22 +40,32 @@ namespace PMRU.BlazorUI.Pages
         public string registrationNumber { get; set; } = "";
         public string messageTitle { get; set; }
         public string messageBody { get; set; }
+        public string errorMessage { get; set; }
 
         protected async Task FindEmployee()
         {
             Reset();
 
-            Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
-            var result = await AppointmentService.GetAppointmentByEmployeeId(Employee.Id);
-            
-            if (result == null)
+            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
+            if (response.Success)
             {
-                doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
+                Employee = response.Data;
+
+                var result = await AppointmentService.GetAppointmentByEmployeeId(Employee.Id);
+
+                if (result == null)
+                {
+                    doctors = await DoctorService.GetDoctorsByLocation(Employee.Location.Id);
+                }
+                else
+                {
+                    messageTitle = "Randevunuz var!";
+                    messageBody = $"Dr. {result.Doctor.Name} {result.Doctor.Surname} ile {result.AppointmentDate} {result.AppointmentStartHour} ve {result.AppointmentEndHour} saatleri arasında randevunuz bulunuyor.";
+                }
             }
             else
             {
-                messageTitle = "Randevunuz var!";
-                messageBody = $"Dr. {result.Doctor.Name} {result.Doctor.Surname} ile {result.AppointmentDate} {result.AppointmentStartHour} ve {result.AppointmentEndHour} saatleri arasında randevunuz bulunuyor.";
+                errorMessage = response.Message;
             }
         }
 
@@ -84,6 +94,7 @@ namespace PMRU.BlazorUI.Pages
             Employee = new EmployeeVM();
             messageTitle = null;
             messageBody = null;
+            errorMessage = null;
             doctors = null;
             availabilities = null;
         }
