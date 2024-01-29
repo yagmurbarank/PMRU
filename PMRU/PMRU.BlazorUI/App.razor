@@ -1,4 +1,6 @@
-﻿<CascadingAuthenticationState>
+﻿@inject IStringLocalizer<App> Loc
+
+<CascadingAuthenticationState>
     <Router AppAssembly="@typeof(App).Assembly">
     <Found Context="routeData">
         <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
@@ -9,17 +11,17 @@
                 }
                 else
                 {
-                    <PageTitle>Not Authorized</PageTitle>
-                        <p role="alert">Sorry, you cannot view this page</p>
+                    <PageTitle>@Loc[nameof(ResourceStrings.AppPageNotAuthorizedTitle)]</PageTitle>
+                        <p role="alert">@Loc[nameof(ResourceStrings.AppPageNotAuthorizedText)]</p>
                 }
             </NotAuthorized>
         </AuthorizeRouteView>
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
     <NotFound>
-        <PageTitle>Not found</PageTitle>
+            <PageTitle>@Loc[nameof(ResourceStrings.AppPageNotFoundTitle)]</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+                    <p role="alert">@Loc[nameof(ResourceStrings.AppPageNotFoundText)]</p>
         </LayoutView>
     </NotFound>
 </Router>

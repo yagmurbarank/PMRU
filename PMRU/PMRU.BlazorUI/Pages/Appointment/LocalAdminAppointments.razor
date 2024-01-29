@@ -1,13 +1,14 @@
-﻿@page "/localadminappointments"
+﻿@inject IStringLocalizer<App> Loc
+@page "/localadminappointments"
 @attribute [Authorize(Roles = "LocalAdmin")]
 
-<h3>Appointments for Local Admin</h3>
+<h3>@Loc[nameof(ResourceStrings.LocalAdminAppPageTitle)]</h3>
 
 @if (doctorsInCurrentUserLocation != null && doctorsInCurrentUserLocation.Any())
 {
-    <label for="doctorId">Doktorlarımız</label>
+    <label for="doctorId">@Loc[nameof(ResourceStrings.LocalAdminAppPageDoctorText)]</label>
     <select class="form-control" @bind="selectedDoctorId">
-        <option value="">Seçiniz</option>
+        <option value="">@Loc[nameof(ResourceStrings.LocalAdminAppPageChooseDoctorPlacer)]</option>
 
         @foreach (var doctor in doctorsInCurrentUserLocation)
         {
@@ -15,8 +16,8 @@
         }
     </select>
 
-    <button class="btn btn-primary mt-2" @onclick="GetAppointments">Get Appointments</button>
-    <button @onclick="GoToReportPage">Report Page</button>
+    <button class="btn btn-primary mt-2" @onclick="GetAppointments">@Loc[nameof(ResourceStrings.LocalAdminAppPageGetAppButton)]</button>
+    <button class="btn btn-primary mt-2" @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.LocalAdminAppPageReportPageButton)]</button>
 
 
     @if (appointments != null && appointments.Any())
@@ -24,11 +25,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Employee Name</th>
-                    <th>Employee Surname</th>
-                    <th>Date</th>
-                    <th>Start Time</th>
-                    <th>End Time</th>
+                    <th>@Loc[nameof(ResourceStrings.LocalAdminAppPageTableName)]</th>
+                    <th>@Loc[nameof(ResourceStrings.LocalAdminAppPageTableSurname)]</th>
+                    <th>@Loc[nameof(ResourceStrings.LocalAdminAppPageTableDate)]</th>
+                    <th>@Loc[nameof(ResourceStrings.LocalAdminAppPageTableStartTime)]</th>
+                    <th>@Loc[nameof(ResourceStrings.LocalAdminAppPageTableEndTime)]</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,12 +48,12 @@
     }
     else if (appointmentsLoaded)
     {
-        <p>Randevunuz bulunmamaktadır.</p>
+        <p>@Loc[nameof(ResourceStrings.LocalAdminAppPageNoAppText)]</p>
     }
 }
 else
 {
-    <p>Doktorlar yükleniyor...</p>
+    <p>@Loc[nameof(ResourceStrings.LocalAdminAppPageDocLoadingText)]</p>
 }
 
 

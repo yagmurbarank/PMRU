@@ -1,4 +1,6 @@
 ﻿@inherits LayoutComponentBase
+@inject IStringLocalizer<App> Loc
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -6,7 +8,8 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+            <CultureSelector/>
+            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">@Loc[nameof(ResourceStrings.MainLayoutAbout)]</a>
         </div>
 
         <article class="content px-4">
