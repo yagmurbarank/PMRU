@@ -1,5 +1,6 @@
 ﻿@page "/edit-availability/{availabilityId:int}"
 @inject NavigationManager NavigationManager
+@attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
 <h3>EditAvailability</h3>
 

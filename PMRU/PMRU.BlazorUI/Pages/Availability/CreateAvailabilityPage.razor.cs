@@ -6,11 +6,11 @@ using PMRU.BlazorUI.Models.Doctor;
 using PMRU.BlazorUI.Services;
 using System.Security.Claims;
 
-namespace PMRU.BlazorUI.Pages
+namespace PMRU.BlazorUI.Pages.Availability
 {
     public partial class CreateAvailabilityPage
     {
-       
+
         [Inject]
         public IAvailabilityService AvailabilityService { get; set; }
         [Inject]
@@ -27,7 +27,7 @@ namespace PMRU.BlazorUI.Pages
         CreateAvailabilityVM availabilityToCreate = new CreateAvailabilityVM();
         CreateAvailabilitiesInRange createAvailabilitiesInRangeModel = new CreateAvailabilitiesInRange();
         List<DoctorVM> doctors { get; set; }
-        
+
         protected override async Task OnInitializedAsync()
         {
             availabilityToCreate.Date = new DateOnly(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day);
@@ -81,7 +81,7 @@ namespace PMRU.BlazorUI.Pages
 
         protected async Task CreateAvailability()
         {
-            var result = await AvailabilityService.CreateAvailability(this.availabilityToCreate);
+            var result = await AvailabilityService.CreateAvailability(availabilityToCreate);
             navigationManager.NavigateTo("availabilities");
         }
 
@@ -91,9 +91,9 @@ namespace PMRU.BlazorUI.Pages
 
             for (DateOnly currentDate = createAvailabilitiesInRangeModel.StartDate; currentDate <= createAvailabilitiesInRangeModel.EndDate; currentDate = currentDate.AddDays(1))
             {
-                if (currentDate.DayOfWeek == DayOfWeek.Saturday || currentDate.DayOfWeek == DayOfWeek.Sunday) 
+                if (currentDate.DayOfWeek == DayOfWeek.Saturday || currentDate.DayOfWeek == DayOfWeek.Sunday)
                     continue;
-                
+
                 for (TimeOnly currentStartTime = createAvailabilitiesInRangeModel.StartTime; currentStartTime < createAvailabilitiesInRangeModel.EndTime; currentStartTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration))
                 {
                     var currentEndTime = currentStartTime.AddMinutes(createAvailabilitiesInRangeModel.Duration);

@@ -9,9 +9,9 @@ using System.Numerics;
 using System.Security.Claims;
 
 
-namespace PMRU.BlazorUI.Pages
-{ 
-    
+namespace PMRU.BlazorUI.Pages.Appointment
+{
+
     public partial class DoctorAppointment
     {
         [Inject]
@@ -86,7 +86,7 @@ namespace PMRU.BlazorUI.Pages
 
             if (response.Success)
             {
-                
+
                 Console.WriteLine("Appointment deleted successfully.");
                 await LoadData();
             }
