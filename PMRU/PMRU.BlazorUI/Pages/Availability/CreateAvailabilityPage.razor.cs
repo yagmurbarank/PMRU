@@ -27,6 +27,7 @@ namespace PMRU.BlazorUI.Pages.Availability
         CreateAvailabilityVM availabilityToCreate = new CreateAvailabilityVM();
         CreateAvailabilitiesInRange createAvailabilitiesInRangeModel = new CreateAvailabilitiesInRange();
         List<DoctorVM> doctors { get; set; }
+        public string errorMessage { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
@@ -62,16 +63,20 @@ namespace PMRU.BlazorUI.Pages.Availability
                         var registrationNumberClaim = authenticationState.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
                         if (registrationNumberClaim != null)
                         {
-                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            if (response.Success)
+                            {
+                                var employee = response.Data;
 
-                            if (employee != null)
-                            {
-                                var location = employee.Location;
-                                doctors = await DoctorService.GetDoctorsByLocation(location.Id);
-                            }
-                            else
-                            {
-                                doctors = new List<DoctorVM>();
+                                if (employee != null)
+                                {
+                                    var location = employee.Location;
+                                    doctors = await DoctorService.GetDoctorsByLocation(location.Id);
+                                }
+                                else
+                                {
+                                    doctors = new List<DoctorVM>();
+                                }
                             }
                         }
                     }
@@ -82,7 +87,14 @@ namespace PMRU.BlazorUI.Pages.Availability
         protected async Task CreateAvailability()
         {
             var result = await AvailabilityService.CreateAvailability(availabilityToCreate);
-            navigationManager.NavigateTo("availabilities");
+            if (result.Success)
+            {
+                navigationManager.NavigateTo("availabilities");
+            }
+            else
+            {
+                errorMessage = result.Message;
+            }
         }
 
         protected async Task CreateAvailabilitiesInRange()
@@ -106,7 +118,14 @@ namespace PMRU.BlazorUI.Pages.Availability
             }
 
             var result = await AvailabilityService.CreateAvailabilities(availabilitiesToCreate);
-            navigationManager.NavigateTo("availabilities");
+            if (result.Success)
+            {
+                navigationManager.NavigateTo("availabilities");
+            }
+            else
+            {
+                errorMessage = result.Message;
+            }
         }
 
         private string GetUserRole()

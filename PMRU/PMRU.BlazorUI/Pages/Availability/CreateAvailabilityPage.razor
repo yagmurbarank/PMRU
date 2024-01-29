@@ -3,6 +3,13 @@
 @page "/create-availability"
 @attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
+@if (string.IsNullOrEmpty(errorMessage) == false)
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+
 <h3>@Loc[nameof(ResourceStrings.CreateAvailabilityPageTitle)]</h3>
 
 <Back Target="availabilities" />

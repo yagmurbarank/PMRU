@@ -27,8 +27,12 @@ namespace PMRU.BlazorUI.Pages.Authorization
         protected async Task FindEmployee()
 
         {
-            Employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
-            Disabled = true;
+            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumber);
+            if (response.Success)
+            {
+                Employee = response.Data;
+                Disabled = true;
+            }
         }
 
         async Task GiveRole()

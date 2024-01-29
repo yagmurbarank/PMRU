@@ -44,16 +44,20 @@ namespace PMRU.BlazorUI.Pages.Appointment
 
                         if (registrationNumberClaim != null)
                         {
-                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            if (response.Success)
+                            {
+                                var employee = response.Data;
 
-                            if (employee != null)
-                            {
-                                var location = employee.Location;
-                                doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
-                            }
-                            else
-                            {
-                                doctorsInCurrentUserLocation = new List<DoctorVM>();
+                                if (employee != null)
+                                {
+                                    var location = employee.Location;
+                                    doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
+                                }
+                                else
+                                {
+                                    doctorsInCurrentUserLocation = new List<DoctorVM>();
+                                }
                             }
                         }
                     }

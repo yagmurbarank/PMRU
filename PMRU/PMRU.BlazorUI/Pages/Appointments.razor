@@ -2,6 +2,13 @@
 
 @page "/appointments/"
 
+@if (string.IsNullOrEmpty(errorMessage) == false)
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+
 <div>
     <div class="row">
         <div class="col-md-6">

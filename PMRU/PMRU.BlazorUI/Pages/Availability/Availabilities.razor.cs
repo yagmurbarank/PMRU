@@ -77,16 +77,21 @@ namespace PMRU.BlazorUI.Pages.Availability
 
                         if (registrationNumberClaim != null)
                         {
-                            var employee = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
+                            var response = await EmployeeService.GetEmployeeByRegistrationNumber(registrationNumberClaim.Value);
 
-                            if (employee != null)
+                            if (response.Success)
                             {
-                                var location = employee.Location;
-                                doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
-                            }
-                            else
-                            {
-                                doctorsInCurrentUserLocation = new List<DoctorVM>();
+                                var employee = response.Data;
+
+                                if (employee != null)
+                                {
+                                    var location = employee.Location;
+                                    doctorsInCurrentUserLocation = await doctorService.GetDoctorsByLocation(location.Id);
+                                }
+                                else
+                                {
+                                    doctorsInCurrentUserLocation = new List<DoctorVM>();
+                                }
                             }
                         }
                     }
