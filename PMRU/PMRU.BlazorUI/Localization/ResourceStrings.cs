@@ -131,5 +131,6 @@
         ReportPageTableEndTime,
         ReportPageTableDescription,
         ReportPageNoReportText,
+        ReportPageDownloadPDF,
     }
 }
