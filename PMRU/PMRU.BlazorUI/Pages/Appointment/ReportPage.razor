@@ -52,8 +52,8 @@
         <p>@Loc[nameof(ResourceStrings.ReportPageNoReportText)]</p>
     }
 
-    <button class="btn btn-primary" @onclick="@(e=>SaveToFile("PMRU.pdf"))">save to file</button>
-    <button class="btn btn-primary" @onclick="@(e=>OpenNewWindow("PMRU.pdf"))">Open new window</button>
+    <button class="btn btn-primary" @onclick="@(e=>SaveToFile("PMRU.pdf"))">@Loc[nameof(ResourceStrings.ReportPageDownloadPDFButton)]</button>
+    <button class="btn btn-primary" @onclick="@(e=>OpenNewWindow("PMRU.pdf"))">@Loc[nameof(ResourceStrings.ReportPageOpenNewWindowButton)]</button>
 }
 @code {
     private void SaveToFile(string fileName)
