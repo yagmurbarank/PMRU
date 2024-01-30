@@ -524,12 +524,20 @@
     <value>Select Date :</value>
     <comment>ReportPage.Razor</comment>
   </data>
+  <data name="ReportPageDownloadPDFButton" xml:space="preserve">
+    <value>Save to File</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
   <data name="ReportPageFilterDoctorText" xml:space="preserve">
     <value>Filter by Doctor :</value>
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageNoReportText" xml:space="preserve">
     <value>There is no report available.</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageOpenNewWindowButton" xml:space="preserve">
+    <value>Open in new window</value>
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageReceiveReportText" xml:space="preserve">

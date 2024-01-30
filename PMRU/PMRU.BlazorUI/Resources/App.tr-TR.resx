@@ -524,12 +524,20 @@
     <value>Tarih Seçiniz</value>
     <comment>ReportPage.Razor</comment>
   </data>
+  <data name="ReportPageDownloadPDFButton" xml:space="preserve">
+    <value>PDF İndir</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
   <data name="ReportPageFilterDoctorText" xml:space="preserve">
     <value>Doktora Göre Filtrele :</value>
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageNoReportText" xml:space="preserve">
     <value>Rapor bulunmamaktadır.</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageOpenNewWindowButton" xml:space="preserve">
+    <value>Yeni Sekmede Aç</value>
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageReceiveReportText" xml:space="preserve">

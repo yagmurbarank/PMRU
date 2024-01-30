@@ -131,6 +131,7 @@
         ReportPageTableEndTime,
         ReportPageTableDescription,
         ReportPageNoReportText,
-        ReportPageDownloadPDF,
+        ReportPageDownloadPDFButton,
+        ReportPageOpenNewWindowButton
     }
 }
