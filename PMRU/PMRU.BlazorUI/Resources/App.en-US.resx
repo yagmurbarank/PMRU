@@ -460,6 +460,10 @@
     <value>Login</value>
     <comment>Login.razor</comment>
   </data>
+  <data name="LoginPageDescription" xml:space="preserve">
+    <value>Please enter your email and password!</value>
+    <comment>Login.razor</comment>
+  </data>
   <data name="LoginPageEmail" xml:space="preserve">
     <value>Email</value>
     <comment>Login.razor</comment>
@@ -537,7 +541,7 @@
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageOpenNewWindowButton" xml:space="preserve">
-    <value>Open in new window</value>
+    <value>Print</value>
     <comment>ReportPage.Razor</comment>
   </data>
   <data name="ReportPageReceiveReportText" xml:space="preserve">
@@ -601,7 +605,7 @@
     <comment>RoleManage.razor</comment>
   </data>
   <data name="RoleManagePageRegNoRequest" xml:space="preserve">
-    <value>Please enter your registration number</value>
+    <value>Find employee</value>
     <comment>RoleManage.razor</comment>
   </data>
   <data name="RoleManagePageRegNoText" xml:space="preserve">
@@ -638,6 +642,10 @@
   </data>
   <data name="RoleManagePageTableSurnameText" xml:space="preserve">
     <value>Surname</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManageSetPassword" xml:space="preserve">
+    <value>Set password</value>
     <comment>RoleManage.razor</comment>
   </data>
 </root>

@@ -23,14 +23,14 @@
             <NotAuthorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link" href="admin/login/">
-                        <span class="bi bi-person-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogin)]
+                        <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogin)]
                     </NavLink>
                 </div>
             </NotAuthorized>
             <Authorized>
                 <div class="nav-item px-3">
                     <NavLink class="nav-link">
-                        <span class="bi bi-person-fill" aria-hidden="true"></span>@context.User?.Identity?.Name
+                        <span class="bi bi-person-fill-nav-menu" aria-hidden="true"></span>@context.User?.Identity?.Name
                     </NavLink>
                 </div>
                 <div class="nav-item px-3">
@@ -40,7 +40,7 @@
                             var registrationNumberClaim = context.User.Claims.FirstOrDefault(c => c.Type == "RegistrationNumber");
                             if (registrationNumberClaim != null)
                             {
-                                <span class="oi oi-person" aria-hidden="true"></span>
+                                <span class="bi bi-person-badge-nav-menu" aria-hidden="true"></span>
                                 <span>@Loc[nameof(ResourceStrings.NavMenuRegNoText)] @registrationNumberClaim.Value</span>
                             }
                         }
@@ -57,7 +57,7 @@
         <AuthorizeView Roles="LocalAdmin,Doctor">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="availabilities/">
-                    <span class="bi bi-alarm-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuAvailabilities)]
+                    <span class="bi bi-alarm-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuAvailabilities)]
                 </NavLink>
             </div>
         </AuthorizeView>
@@ -65,14 +65,14 @@
         <AuthorizeView Roles="DoctorAdmin,Doctor">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="doctorappointments/">
-                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuMyAppointments)]
+                    <span class="bi bi-calendar-check-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuMyAppointments)]
                 </NavLink>
             </div>
         </AuthorizeView>
         <AuthorizeView Roles="LocalAdmin">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="localadminappointments/">
-                    <span class="bi bi-calendar-check-fill" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuDoctorsAppointments)]
+                    <span class="bi bi-calendar-check-fill-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuDoctorsAppointments)]
                 </NavLink>
             </div>
         </AuthorizeView>
@@ -80,7 +80,7 @@
            <Authorized>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="logout/">
-                        <span class="bi bi-arrow-circle-right" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogout)]
+                        <span class="bi bi-arrow-circle-right-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuLogout)]
             </NavLink>
         </div>
            </Authorized>
@@ -88,12 +88,13 @@
         <AuthorizeView Roles="SystemAdmin">
             <div class="nav-item px-3">
                 <NavLink class="nav-link" href="rolemanage/">
-                    <span class="bi bi-person-bounding-box" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuRoleManage)]
+                    <span class="bi bi-person-bounding-box-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuRoleManage)]
                 </NavLink>
             </div>
         </AuthorizeView>
-     
+        
     </nav>
+    
 </div>
 
 @code {
