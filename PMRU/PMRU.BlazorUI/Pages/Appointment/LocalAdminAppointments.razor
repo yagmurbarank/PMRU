@@ -8,7 +8,7 @@
 {
     <label for="doctorId">@Loc[nameof(ResourceStrings.LocalAdminAppPageDoctorText)]</label>
     <select class="form-control" @bind="selectedDoctorId">
-        <option value="">@Loc[nameof(ResourceStrings.LocalAdminAppPageChooseDoctorPlacer)]</option>
+        <option disabled value="">@Loc[nameof(ResourceStrings.LocalAdminAppPageChooseDoctorPlacer)]</option>
 
         @foreach (var doctor in doctorsInCurrentUserLocation)
         {
@@ -17,7 +17,7 @@
     </select>
 
     <button class="btn btn-primary mt-2" @onclick="GetAppointments">@Loc[nameof(ResourceStrings.LocalAdminAppPageGetAppButton)]</button>
-    <button class="btn btn-primary mt-2" @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.LocalAdminAppPageReportPageButton)]</button>
+    <button class="btn btn-info text-white mt-2" @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.LocalAdminAppPageReportPageButton)]</button>
 
 
     @if (appointments != null && appointments.Any())

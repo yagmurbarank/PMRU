@@ -2,17 +2,17 @@
 @page "/"
 
 <PageTitle>@Loc[nameof(ResourceStrings.IndexPageName)]</PageTitle>
-
+        <img class="rounded mx-auto d-block" src="pmrulogo.png"/>
     <h1 class="text-center">@Loc[nameof(ResourceStrings.IndexPageWelcome)]</h1>
 <br />
 <br />
 
 <AuthorizeView>
     <Authorized>
-        <button class="btn btn-danger" @onclick="Logout">@Loc[nameof(ResourceStrings.IndexPageLogoutButton)]</button>
+        <button class="btn btn-danger rounded mx-auto d-block" @onclick="Logout">@Loc[nameof(ResourceStrings.IndexPageLogoutButton)]</button>
     </Authorized>
     <NotAuthorized>
-        <button class="btn btn-success" @onclick="GoToLogin">@Loc[nameof(ResourceStrings.IndexPageLoginButton)]</button>
+        <button class="btn btn-success rounded mx-auto d-block" @onclick="GoToLogin">@Loc[nameof(ResourceStrings.IndexPageLoginButton)]</button>
     </NotAuthorized>
 </AuthorizeView>
 

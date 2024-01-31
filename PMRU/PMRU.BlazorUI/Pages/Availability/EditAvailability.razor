@@ -23,11 +23,11 @@
 
     <div class="form-group">
         <label for="endTime">@Loc[nameof(ResourceStrings.EditAvailabilityEndTime)]</label>
-        <InputDate Type="InputDateType.Time" class="form-control" id="endTime" @bind-Value="availability.EndTime" />
+        <InputDate Type="InputDateType.Time" class="form-control mb-2" id="endTime" @bind-Value="availability.EndTime" />
         <ValidationMessage For="@(() => availability.EndTime)" />
     </div>
 
-    <button type="submit" class="btn btn-success btn-block">@Loc[nameof(ResourceStrings.EditAvailabilityButton)]</button>
+    <button type="submit" class="btn btn-success btn-block ">@Loc[nameof(ResourceStrings.EditAvailabilityButton)]</button>
 
     <Back Target="availabilities" />
 </EditForm>

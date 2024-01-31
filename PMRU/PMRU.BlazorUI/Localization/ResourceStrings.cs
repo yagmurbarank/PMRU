@@ -132,6 +132,8 @@
         ReportPageTableDescription,
         ReportPageNoReportText,
         ReportPageDownloadPDFButton,
-        ReportPageOpenNewWindowButton
+        ReportPageOpenNewWindowButton,
+        RoleManageSetPassword,
+        LoginPageDescription,
     }
 }

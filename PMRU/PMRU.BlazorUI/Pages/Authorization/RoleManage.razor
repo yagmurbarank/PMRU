@@ -2,21 +2,20 @@
 @page "/rolemanage/"
 @attribute [Authorize(Roles = "SystemAdmin")]
 
-<div class="row">
+<div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-md-6">
-            <p>@Loc[nameof(ResourceStrings.RoleManagePageRegNoRequest)]</p>
+            <p class="text-center">@Loc[nameof(ResourceStrings.RoleManagePageRegNoRequest)]</p>
             
             <EditForm Model="@registrationNumber" OnValidSubmit="FindEmployee">
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
-                <div class="form-group">
-                <label for="startDate">@Loc[nameof(ResourceStrings.RoleManagePageRegNoText)]</label>
-                    <InputText class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
+                <div class="input-group">
+                <InputText placeholder="@Loc[nameof(ResourceStrings.RoleManagePageRegNoText)]" class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
                     <ValidationMessage For="@(() => registrationNumber)" />
+            <button class="input-group-button btn btn-success" type="submit">@Loc[nameof(ResourceStrings.RoleManagePageRegNoRequest)]</button>
                 </div>
 
-            <button class="btn btn-success" type="submit">@Loc[nameof(ResourceStrings.RoleManagePageRegNoRequest)]</button>
             </EditForm>
         <table class="table">
             <thead>
@@ -40,8 +39,6 @@
                 </tr>
             </tbody>
         </table>
-        
-        </div>
     @if (Disabled)
     {
         <EditForm Model="@role" OnValidSubmit="GiveRole">
@@ -50,27 +47,30 @@
             <div class="form-group">
                 <label for="role">@Loc[nameof(ResourceStrings.RoleManagePageRoleText)]</label>
                 <InputSelect class="form-control" id="role" @bind-Value="role">
-                    <option>@Loc[nameof(ResourceStrings.RoleManagePageRoleChoosePlacer)]</option>
+                    <option disabled>@Loc[nameof(ResourceStrings.RoleManagePageRoleChoosePlacer)]</option>
                     <option value="doctor">@Loc[nameof(ResourceStrings.RoleManagePageDoctorText)]</option>
                     <option value="systemadmin">@Loc[nameof(ResourceStrings.RoleManagePageSystemAdminText)]</option>
                     <option value="localadmin">@Loc[nameof(ResourceStrings.RoleManagePageLocalAdminText)]</option>
                 </InputSelect>
             </div>
-            <div class="form-group">
                 <label for="password">@Loc[nameof(ResourceStrings.RoleManagePagePasswordText)]</label>
-                <InputText class="form-control" id="password" @bind-Value="password" />
+            <div class="input-group">
+                <InputText placeholder="@Loc[nameof(ResourceStrings.RoleManageSetPassword)]" class="form-control" id="password" @bind-Value="password" />
+            <button class="input-group-button btn btn-primary" type="submit">@Loc[nameof(ResourceStrings.RoleManagePageGiveRoleButton)]</button>
             </div>
-            <button class="btn btn-success" type="submit">@Loc[nameof(ResourceStrings.RoleManagePageGiveRoleButton)]</button>
         </EditForm>
 
     }
     @if (messageTitle != null && messageBody != null)
     {
-        <div class="card text-white bg-info" style="width: 20rem;">
+        <div class="card text-white bg-info " style="width: 20rem;">
             <div class="card-body">
                 <h5 class="card-title">@messageTitle</h5>
                 <p class="card-text">@messageBody</p>
             </div>
         </div>
     }
+
+
+    </div>
 </div>

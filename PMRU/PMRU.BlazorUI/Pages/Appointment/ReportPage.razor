@@ -13,7 +13,7 @@
     <label for="doctorFilter">@Loc[nameof(ResourceStrings.ReportPageFilterDoctorText)]</label>
     <input type="text" id="doctorFilter" @bind="doctorFilter" />
 
-    <button @onclick="ReceiveReport">@Loc[nameof(ResourceStrings.ReportPageReceiveReportText)]</button>
+    <button class="btn btn-primary" @onclick="ReceiveReport">@Loc[nameof(ResourceStrings.ReportPageReceiveReportText)]</button>
 </div>
 
 @if (reportResult != null)

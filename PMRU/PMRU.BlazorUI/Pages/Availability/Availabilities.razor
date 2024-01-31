@@ -7,8 +7,8 @@
 @if (doctorsInCurrentUserLocation != null && doctorsInCurrentUserLocation.Any())
 {
     <label for="doctorId">@Loc[nameof(ResourceStrings.AvailabilitiesPageDoctorText)]</label>
-    <select class="form-control" @bind="selectedDoctorId">
-        <option value="">@Loc[nameof(ResourceStrings.AvailabilitiesPageChoosePlacer)]</option>
+    <select class="form-control mb-2" @bind="selectedDoctorId">
+        <option selected disabled value="">@Loc[nameof(ResourceStrings.AvailabilitiesPageChoosePlacer)]</option>
 
         @foreach (var doctor in doctorsInCurrentUserLocation)
         {

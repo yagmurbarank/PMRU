@@ -18,13 +18,15 @@
                 <DataAnnotationsValidator />
                 <ValidationSummary />
 
-                <div class="form-group">
-                    <label for="startDate">@Loc[nameof(ResourceStrings.AppointmentPageRegNoLabel)]</label>
-                    <InputText class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
+                <div class="input-group">
+                    <InputText placeholder="@Loc[nameof(ResourceStrings.AppointmentPageRegNoLabel)]" class="form-control" id="registrationNumber" @bind-Value="registrationNumber" />
                     <ValidationMessage For="@(() => registrationNumber)" />
+                        <span class="input-group-button">
+
+                <button class="form-inline btn btn-success" type="submit">@Loc[nameof(ResourceStrings.AppointmentPageFindButton)]</button>
+                        </span>
                 </div>
 
-                <button class="btn btn-success" type="submit">@Loc[nameof(ResourceStrings.AppointmentPageFindButton)]</button>
             </EditForm>
         
         </div>
