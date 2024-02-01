@@ -176,9 +176,9 @@ See the [open issues](https://github.com/batuhanpayal/PMRU/issues) for a full li
 <!-- PROJECT-TEAM-->
 ## 👩‍💻 Project Team
 
-* Batuhan PAYAL - [GitHub](https://github.com/batuhanpayal) | [LinkedIn](https://www.linkedin.com/in)
-* Doğa DEMİRTÜRK -  [GitHub](https://github.com/dogademirturk) | [LinkedIn](https://www.linkedin.com/in)
-* Musa OCAK -[GitHub](https://github.com/musaocak1) | [LinkedIn](https://www.linkedin.com/in)
+* Batuhan PAYAL - [GitHub](https://github.com/batuhanpayal) | [LinkedIn](https://www.linkedin.com/in/emirbatuhanpayal/)
+* Doğa DEMİRTÜRK -  [GitHub](https://github.com/dogademirturk) | [LinkedIn](https://www.linkedin.com/in/dogademirturk/)
+* Musa OCAK -[GitHub](https://github.com/musaocak1) | [LinkedIn](https://www.linkedin.com/in/musaocak/)
 * Yağmur Baran KARAKUŞ - [GitHub](https://github.com/yagmurbarank) |  [LinkedIn](https://www.linkedin.com/in/yagmurbarankarakus/) 
 
  <br />
