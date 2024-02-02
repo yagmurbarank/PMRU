@@ -37,13 +37,10 @@ namespace PMRU.Application.Features.Appointments.Command.CreateAppointment
             await unitOfWork.GetWriteRepository<Appointment>().CreateAsync(appointment);
             await unitOfWork.SaveAsync();
 
-            await Task.WhenAll(
-                redisCacheService.RemoveAsync($"GetAppointmentsByEmployeeId_{appointment.EmployeeID}"),
-                redisCacheService.RemoveAsync($"GetAppointmentById_{appointment.Id}"),
-                redisCacheService.RemoveAsync($"GetAppointments_{DateTime.Now:yyyyMMddHHmm}"),
-                redisCacheService.RemoveAsync($"GetAppointmentsByDate_{request.AppointmentDate.ToString("yyyyMMdd")}"),
-                redisCacheService.RemoveAsync($"GetAppointmentsByDoctorId_{appointment.DoctorID}")
-                );
+            await redisCacheService.RemoveAsync($"GetAppointmentsByEmployeeId_{appointment.EmployeeID}");
+            await redisCacheService.RemoveAsync($"GetAppointments_{DateTime.Now:yyyyMMddHHmm}");
+            await redisCacheService.RemoveAsync($"GetAppointmentsByDate_{request.AppointmentDate.ToString("yyyyMMdd")}");
+            await redisCacheService.RemoveAsync($"GetAppointmentsByDoctorId_{appointment.DoctorID}");
 
             return Unit.Value;
             

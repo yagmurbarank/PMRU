@@ -87,6 +87,24 @@ namespace PMRU.BlazorUI.Pages.Appointment
             }
         }
 
+        private async Task DeleteAppointment(int appointmentId)
+        {
+            var deleteAppointmentVM = new DeleteAppointmentVM
+            {
+                Id = appointmentId
+            };
+
+            var response = await appointmentService.DeleteAppointment(deleteAppointmentVM);
+
+            if (response.Success)
+            {
+
+                Console.WriteLine("Appointment deleted successfully.");
+                await GetAppointments();
+            }
+
+        }
+
         private void GoToReportPage()
         {
             navigationManager.NavigateTo("/reportpage");

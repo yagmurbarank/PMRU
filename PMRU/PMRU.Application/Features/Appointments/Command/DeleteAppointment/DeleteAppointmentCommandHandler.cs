@@ -27,15 +27,14 @@ namespace PMRU.Application.Features.Appointments.Command.DeleteAppointment
             appointment.DeletedDate = DateTime.Now;
 
             await unitOfWork.GetWriteRepository<Appointment>().UpdateAsync(appointment);
+            await unitOfWork.GetWriteRepository<Appointment>().DeleteAsync(appointment);
             await unitOfWork.SaveAsync();
 
-            await Task.WhenAll(
-                redisCacheService.RemoveAsync($"GetAppointmentsByEmployeeId_{appointment.EmployeeID}"),
-                redisCacheService.RemoveAsync($"GetAppointmentById_{appointment.Id}"),
-                redisCacheService.RemoveAsync($"GetAppointments_{DateTime.Now:yyyyMMddHHmm}"),
-                redisCacheService.RemoveAsync($"GetAppointmentsByDate_{appointment.AppointmentDate.ToString("yyyyMMdd")}"),
-                redisCacheService.RemoveAsync($"GetAppointmentsByDoctorId_{appointment.DoctorID}")
-                );
+            await redisCacheService.RemoveAsync($"GetAppointmentsByDoctorId_{appointment.DoctorID}");
+            await redisCacheService.RemoveAsync($"GetAppointmentsByEmployeeId_{appointment.EmployeeID}");
+            await redisCacheService.RemoveAsync($"GetAppointmentsByDate_{appointment.AppointmentDate.ToString("yyyyMMdd")}");
+            await redisCacheService.RemoveAsync($"GetAppointmentById_{appointment.Id}");
+            await redisCacheService.RemoveAsync($"GetAppointments_{DateTime.Now:yyyyMMddHHmm}");
 
             return Unit.Value;
             

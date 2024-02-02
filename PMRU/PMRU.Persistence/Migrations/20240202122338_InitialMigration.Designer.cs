@@ -12,7 +12,7 @@ using PMRU.Persistence.Context;
 namespace PMRU.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240117153334_InitialMigration")]
+    [Migration("20240202122338_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -116,13 +116,53 @@ namespace PMRU.Persistence.Migrations
                         },
                         new
                         {
+                            UserId = new Guid("a76eb5c4-eebf-47ec-a274-ca7971bfa4e8"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
+                            UserId = new Guid("a3b9e2f7-5c1d-4a88-9f3b-7e6c4d2a1b11"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
+                            UserId = new Guid("e2f8d174-4b7a-4c91-b9f2-8dc3a1c45b68"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
+                            UserId = new Guid("0e7b95a1-9b14-4c87-af3d-1d2f6b8aefc3"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
+                            UserId = new Guid("2b9d163d-cdd1-4b2c-b62e-ec59a6b300fb"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
+                            UserId = new Guid("b4f91e33-68d1-4aee-b254-d8a53631b23a"),
+                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                        },
+                        new
+                        {
                             UserId = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb"),
                             RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1")
                         },
                         new
                         {
-                            UserId = new Guid("a76eb5c4-eebf-47ec-a274-ca7971bfa4e8"),
-                            RoleId = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746")
+                            UserId = new Guid("faad6812-0f8e-4342-aabb-6dcd5e8ecc09"),
+                            RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1")
+                        },
+                        new
+                        {
+                            UserId = new Guid("a2b4f813-72c9-4a6e-9d7b-1f8c3d2e5a0f"),
+                            RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1")
+                        },
+                        new
+                        {
+                            UserId = new Guid("3a7f9b68-21d5-4f8c-b2a7-9c0e1f5d2a91"),
+                            RoleId = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1")
                         });
                 });
 
@@ -205,7 +245,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2024, 1, 1),
                             AppointmentEndHour = new TimeOnly(8, 20, 0),
                             AppointmentStartHour = new TimeOnly(8, 0, 0),
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(6904),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 596, DateTimeKind.Local).AddTicks(9452),
                             Description = "Regular Checkup",
                             DoctorID = 1,
                             EmployeeID = 1,
@@ -218,7 +258,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2024, 1, 1),
                             AppointmentEndHour = new TimeOnly(8, 20, 0),
                             AppointmentStartHour = new TimeOnly(8, 0, 0),
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(6932),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 596, DateTimeKind.Local).AddTicks(9484),
                             Description = "Regular Checkup",
                             DoctorID = 2,
                             EmployeeID = 2,
@@ -274,7 +314,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8744),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3637),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(8, 20, 0),
@@ -285,7 +325,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8748),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3648),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(8, 40, 0),
@@ -296,7 +336,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8750),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3650),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(9, 0, 0),
@@ -307,7 +347,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8751),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3652),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(8, 20, 0),
@@ -318,7 +358,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8753),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3655),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(8, 40, 0),
@@ -329,7 +369,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 232, DateTimeKind.Local).AddTicks(8754),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 597, DateTimeKind.Local).AddTicks(3657),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(9, 0, 0),
@@ -489,7 +529,7 @@ namespace PMRU.Persistence.Migrations
                             Name = "Aylin",
                             Password = "Password",
                             Phone = "5556123456",
-                            RegistrationNumber = "102",
+                            RegistrationNumber = "110",
                             Surname = "Güneş"
                         },
                         new
@@ -503,8 +543,64 @@ namespace PMRU.Persistence.Migrations
                             Name = "Eren",
                             Password = "Password",
                             Phone = "5556234567",
-                            RegistrationNumber = "103",
+                            RegistrationNumber = "111",
                             Surname = "Akçay"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "gulay.kaya@email.com",
+                            IdentityNumber = "12343458923",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 72,
+                            Name = "Gülay",
+                            Password = "Password",
+                            Phone = "5556345678",
+                            RegistrationNumber = "112",
+                            Surname = "Kaya"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Email = "gulsum.aydin@email.com",
+                            IdentityNumber = "12343458205",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Gülsüm",
+                            Password = "Password",
+                            Phone = "5556678901",
+                            RegistrationNumber = "116",
+                            Surname = "Aydın"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Email = "meryem.kuzey@email.com",
+                            IdentityNumber = "3972226751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Meryem",
+                            Password = "Password",
+                            Phone = "5556345358",
+                            RegistrationNumber = "121",
+                            Surname = "Kuzey"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Email = "ali.atabey@email.com",
+                            IdentityNumber = "1971927981",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Ali",
+                            Password = "Password",
+                            Phone = "5551862565",
+                            RegistrationNumber = "122",
+                            Surname = "Atabey"
                         });
                 });
 
@@ -585,7 +681,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(2985),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5044),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -602,7 +698,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(2987),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5055),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -619,7 +715,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 3,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(2991),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5057),
                             DepartmentID = 3,
                             Email = "mehmet.celik@email.com",
                             IdentityNumber = "5278149630",
@@ -636,7 +732,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 4,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3016),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5060),
                             DepartmentID = 4,
                             Email = "fatma.arslan@email.com",
                             IdentityNumber = "5555456789",
@@ -653,7 +749,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 5,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3018),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5427),
                             DepartmentID = 2,
                             Email = "ali.demir@email.com",
                             IdentityNumber = "5555567890",
@@ -670,7 +766,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 6,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3021),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5431),
                             DepartmentID = 5,
                             Email = "zeynep.yildiz@email.com",
                             IdentityNumber = "5555678901",
@@ -687,7 +783,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 7,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3023),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5435),
                             DepartmentID = 2,
                             Email = "can.aksoy@email.com",
                             IdentityNumber = "5555789012",
@@ -704,7 +800,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 8,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3025),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5438),
                             DepartmentID = 6,
                             Email = "elif.ersoy@email.com",
                             IdentityNumber = "5555890123",
@@ -721,7 +817,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 9,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3028),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5441),
                             DepartmentID = 4,
                             Email = "burak.taskin@email.com",
                             IdentityNumber = "5555901234",
@@ -738,7 +834,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 10,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 1, 17, 18, 33, 34, 233, DateTimeKind.Local).AddTicks(3030),
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5458),
                             DepartmentID = 1,
                             Email = "deniz.akin@email.com",
                             IdentityNumber = "5556012345",
@@ -750,6 +846,227 @@ namespace PMRU.Persistence.Migrations
                             PositionID = 2,
                             RegistrationNumber = "109",
                             Surname = "Akın"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5464),
+                            DepartmentID = 7,
+                            Email = "aylin.gunes@email.com",
+                            IdentityNumber = "5642597451",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Aylin",
+                            Phone = "(555) 612-3456",
+                            PositionID = 12,
+                            RegistrationNumber = "110",
+                            Surname = "Güneş"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5476),
+                            DepartmentID = 7,
+                            Email = "eren.akcay@email.com",
+                            IdentityNumber = "5642517451",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 41,
+                            Name = "Eren",
+                            Phone = "(555) 623-4567",
+                            PositionID = 12,
+                            RegistrationNumber = "111",
+                            Surname = "Akçay"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5478),
+                            DepartmentID = 7,
+                            Email = "gulay.kaya@email.com",
+                            IdentityNumber = "3462517451",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 72,
+                            Name = "Gülay",
+                            Phone = "(555) 634-5678",
+                            PositionID = 12,
+                            RegistrationNumber = "112",
+                            Surname = "Kaya"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5481),
+                            DepartmentID = 7,
+                            Email = "cem.yildirim@email.com",
+                            IdentityNumber = "3434517451",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Cem",
+                            Phone = "(555) 645-6789",
+                            PositionID = 13,
+                            RegistrationNumber = "113",
+                            Surname = "Yıldırım"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5484),
+                            DepartmentID = 7,
+                            Email = "dilara.cetin@email.com",
+                            IdentityNumber = "3434546751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 72,
+                            Name = "Dilara",
+                            Phone = "(555) 656-7890",
+                            PositionID = 13,
+                            RegistrationNumber = "114",
+                            Surname = "Çetin"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5487),
+                            DepartmentID = 7,
+                            Email = "mert.saglam@email.com",
+                            IdentityNumber = "3432209751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 41,
+                            Name = "Mert",
+                            Phone = "(535) 896-4526",
+                            PositionID = 13,
+                            RegistrationNumber = "115",
+                            Surname = "Sağlam"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5489),
+                            DepartmentID = 7,
+                            Email = "gulsum.aydin@email.com",
+                            IdentityNumber = "3432906751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Gülsüm",
+                            Phone = "(555) 667-8901",
+                            PositionID = 12,
+                            RegistrationNumber = "116",
+                            Surname = "Aydın"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5493),
+                            DepartmentID = 7,
+                            Email = "emre.yaman@email.com",
+                            IdentityNumber = "3850906751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Emre",
+                            Phone = "(555) 678-9012",
+                            PositionID = 13,
+                            RegistrationNumber = "117",
+                            Surname = "Yaman"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5496),
+                            DepartmentID = 5,
+                            Email = "selin.erdogan@email.com",
+                            IdentityNumber = "3850915851",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 41,
+                            Name = "Selin",
+                            Phone = "(555) 689-0123",
+                            PositionID = 11,
+                            RegistrationNumber = "118",
+                            Surname = "Erdoğan"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5498),
+                            DepartmentID = 3,
+                            Email = "onur.akbas@email.com",
+                            IdentityNumber = "3850926751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Onur",
+                            Phone = "(555) 690-1234",
+                            PositionID = 10,
+                            RegistrationNumber = "119",
+                            Surname = "Akbaş"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5501),
+                            DepartmentID = 6,
+                            Email = "melis.yilmaz@email.com",
+                            IdentityNumber = "3880226751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Melis",
+                            Phone = "(555) 701-2345",
+                            PositionID = 9,
+                            RegistrationNumber = "120",
+                            Surname = "Yılmaz"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5504),
+                            DepartmentID = 7,
+                            Email = "meryem.kuzey@email.com",
+                            IdentityNumber = "3972226751",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 35,
+                            Name = "Meryem",
+                            Phone = "(555) 634-5358",
+                            PositionID = 12,
+                            RegistrationNumber = "121",
+                            Surname = "Kuzey"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 15, 23, 37, 598, DateTimeKind.Local).AddTicks(5507),
+                            DepartmentID = 7,
+                            Email = "ali.atabey@email.com",
+                            IdentityNumber = "1971927981",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Ali",
+                            Phone = "(555) 186-2565",
+                            PositionID = 12,
+                            RegistrationNumber = "122",
+                            Surname = "Atabey"
                         });
                 });
 
@@ -983,21 +1300,21 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = new Guid("01b33042-952a-4636-8d15-682447de311a"),
-                            ConcurrencyStamp = "c09f765e-b18e-4160-8a50-92f1cfed0e44",
+                            ConcurrencyStamp = "a9882d37-64b1-42ea-b2a0-4a3a145c0b31",
                             Name = "SystemAdmin",
                             NormalizedName = "SYSTEMADMIN"
                         },
                         new
                         {
                             Id = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),
-                            ConcurrencyStamp = "9e6aaef6-32b6-46e0-9411-8fc576b5b7fe",
+                            ConcurrencyStamp = "5e228b2d-03a9-4e6b-ad5f-62872e75cd31",
                             Name = "LocalAdmin",
                             NormalizedName = "LOCALADMIN"
                         },
                         new
                         {
                             Id = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746"),
-                            ConcurrencyStamp = "7b9cfe33-7050-4a98-b769-bcdaa7a9cf4b",
+                            ConcurrencyStamp = "6738590f-15fa-4c78-b631-623273836056",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         });
@@ -1087,55 +1404,199 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("faad6812-0f8e-4342-8738-6dcd5e8ecc09"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6d0a00bd-3341-4938-af73-0dd37d2f12bd",
-                            Email = "systemadmin@localhost.com",
+                            ConcurrencyStamp = "793dbbc5-4100-4a7a-901b-c052bd9f2499",
+                            Email = "elif.ersoy@email.com",
                             EmailConfirmed = false,
-                            FullName = "System Admin",
+                            FullName = "Elif Ersoy",
                             LockoutEnabled = false,
-                            NormalizedEmail = "SYSTEMADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "SYSTEMADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDaPct6UwUiMoxhed/OeFJklgIWn70aZQiLwXJsyqj5BxBwE7Y36SsMaL6QYRDJhgQ==",
+                            NormalizedEmail = "ELIF.ERSOY@EMAIL.COM",
+                            NormalizedUserName = "ELIF.ERSOY@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAZVdEtYudeagrKoPg4CmvKUI3nzgbWqr/j5Y0YMEDlQFkyqQV4/fXPWh9Aa5uHMkg==",
                             PhoneNumberConfirmed = false,
-                            RegistrationNumber = "100",
-                            SecurityStamp = "949f74ff-1266-4f89-a4e0-05d66450ce21",
+                            RegistrationNumber = "107",
+                            SecurityStamp = "eb931d41-12fa-4e35-a524-278eac9edfef",
                             TwoFactorEnabled = false,
-                            UserName = "systemadmin@localhost.com"
-                        },
-                        new
-                        {
-                            Id = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb"),
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "790814b3-4306-4e98-a36d-69ff8d06d00c",
-                            Email = "localadmin@localhost.com",
-                            EmailConfirmed = false,
-                            FullName = "Local Admin",
-                            LockoutEnabled = false,
-                            NormalizedEmail = "LOCALADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "LOCALADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHi+eJLVwC3lomaVD68lWUEgVNR6axYkMSJigJDvVjElJS3JKUvorzLdk2C+0VQYaA==",
-                            PhoneNumberConfirmed = false,
-                            RegistrationNumber = "101",
-                            SecurityStamp = "4e9d7f52-c907-4958-917a-ae66a978da1c",
-                            TwoFactorEnabled = false,
-                            UserName = "localadmin@localhost.com"
+                            UserName = "elif.ersoy@email.com"
                         },
                         new
                         {
                             Id = new Guid("a76eb5c4-eebf-47ec-a274-ca7971bfa4e8"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8001291b-eb25-4b58-8880-04f8d4de3248",
-                            Email = "doctor@localhost.com",
+                            ConcurrencyStamp = "028ce5cf-9853-4bcf-afcd-53fe310931a7",
+                            Email = "aylin.gunes@email.com",
                             EmailConfirmed = false,
-                            FullName = "Doctor",
+                            FullName = "Aylin Güneş",
                             LockoutEnabled = false,
-                            NormalizedEmail = "DOCTOR@LOCALHOST.COM",
-                            NormalizedUserName = "DOCTOR@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKgqDEJ+0ZdxNyvtUQBD++d/K4XIScvW/z7buDfHiiRGftIssNH4Fnw8S7GxNHlYyw==",
+                            NormalizedEmail = "AYLIN.GUNES@EMAIL.COM",
+                            NormalizedUserName = "AYLIN.GUNES@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJ5hqu1q/TOuat7QuR+FpqMyKGUOEutRw1o4x9R8n5O1f5gJuIEI4MQmgGT0pxFlDg==",
                             PhoneNumberConfirmed = false,
-                            RegistrationNumber = "102",
-                            SecurityStamp = "5d425bed-717a-4e52-a1b5-2fc1d05de1ff",
+                            RegistrationNumber = "110",
+                            SecurityStamp = "c20f829c-d00c-4afd-a08f-970ba27fd6d0",
                             TwoFactorEnabled = false,
-                            UserName = "doctor@localhost.com"
+                            UserName = "aylin.gunes@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("a3b9e2f7-5c1d-4a88-9f3b-7e6c4d2a1b11"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ed821b9f-dade-4638-8229-1ac1b5715a8f",
+                            Email = "eren.akcay@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Eren Akçay",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EREN.AKCAY@EMAIL.COM",
+                            NormalizedUserName = "EREN.AKCAY@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKPSMbN5sWfAfyk37LUFlgA8RvOVPXc8+z9ZZmpEu4gm8Q44PklVclng/CBbsH6Qkg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "111",
+                            SecurityStamp = "c4dd69be-e1c9-467b-9168-481a14c1242c",
+                            TwoFactorEnabled = false,
+                            UserName = "eren.akcay@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("e2f8d174-4b7a-4c91-b9f2-8dc3a1c45b68"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "4c6009ed-c6ba-440c-b027-9b5687b99c82",
+                            Email = "gulay.kaya@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Gülay Kaya",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "GULAY.KAYA@EMAIL.COM",
+                            NormalizedUserName = "GULAY.KAYA@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHf2Jk04oHjimSjVejvEfEln9wYOcY2FKTAB9/t9ZTm09GSbDLlKS7hPumIg1D/SlA==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "112",
+                            SecurityStamp = "cf07fde1-e8e9-45cb-accd-19918430b47d",
+                            TwoFactorEnabled = false,
+                            UserName = "gulay.kaya@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("0e7b95a1-9b14-4c87-af3d-1d2f6b8aefc3"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "9d4e5fd8-1c3e-4247-bbd9-33b3a0c1663a",
+                            Email = "gulsum.aydin@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Gülsüm Aydın",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "GULSUM.AYDIN@EMAIL.COM",
+                            NormalizedUserName = "GULSUM.AYDIN@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEI02sqOnMLvVF2HTmKVKgNBXGVMMxw6Sb5eceULJaMIuNoU47xlEntx5ZEwzm6Jucg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "116",
+                            SecurityStamp = "0ebccc17-95ba-4581-8882-e0388c8324cf",
+                            TwoFactorEnabled = false,
+                            UserName = "gulsum.aydin@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("2b9d163d-cdd1-4b2c-b62e-ec59a6b300fb"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "3667f8b3-6b59-4b5a-8d01-60194bba34bc",
+                            Email = "meryem.kuzey@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Meryem Kuzey",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MERYEM.KUZEY@EMAIL.COM",
+                            NormalizedUserName = "MERYEM.KUZEY@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMh7IMuMIWWcuMYvQSCwXw16j+x2KK3MoSgK70C/EnXq1zg5TpUC2eyNNcHWmlPUEw==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "121",
+                            SecurityStamp = "5321620b-b1cc-48af-8e73-3ea399ca18b3",
+                            TwoFactorEnabled = false,
+                            UserName = "meryem.kuzey@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("b4f91e33-68d1-4aee-b254-d8a53631b23a"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c0d13827-88fe-4a9b-b19b-57f7fe234f65",
+                            Email = "ali.atabey@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Ali Atabey",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ALI.ATABEY@EMAIL.COM",
+                            NormalizedUserName = "ALI.ATABEY@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEA/sOgvGtlsEpitjxKLKS3cE9S+sS11iKxEm4jXMce5ppLmg7Hv9iYvd2twuWmxFBQ==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "122",
+                            SecurityStamp = "018650c3-7255-4ade-bd3d-dde24efe7a27",
+                            TwoFactorEnabled = false,
+                            UserName = "ali.atabey@email.comm"
+                        },
+                        new
+                        {
+                            Id = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e9ddadba-953d-45a1-bfb4-9229775e0b42",
+                            Email = "cem.yildirim@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Cem Yıldırım",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CEM.YILDIRIM@EMAIL.COM",
+                            NormalizedUserName = "CEM.YILDIRIM@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEOwIQDb97bhuyoLtgPzcX59eXzmTHyg4pHoNA+1tEmGHtTScqiDSrhJ+9HF9CywHuA==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "113",
+                            SecurityStamp = "2854e473-479f-4d7d-b4a2-ba227a9c63fd",
+                            TwoFactorEnabled = false,
+                            UserName = "cem.yildirim@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("faad6812-0f8e-4342-aabb-6dcd5e8ecc09"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "d2e94158-fea2-4794-b865-49c2932983ff",
+                            Email = "dilara.cetin@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Dilara Çetin",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "DILARA.CETIN@EMAIL.COM",
+                            NormalizedUserName = "DILARA.CETIN@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDZu4IbfVAWGIDBewZzrbvSEN47pN3yrrYOOr/H0QwjuBtKcMQmnm7V2PQfrwraevg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "114",
+                            SecurityStamp = "a0d3879a-d0a5-4cf9-b58c-8e2a110f51da",
+                            TwoFactorEnabled = false,
+                            UserName = "dilara.cetin@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("a2b4f813-72c9-4a6e-9d7b-1f8c3d2e5a0f"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "3e785974-81da-4703-adaf-322ee2eedb7d",
+                            Email = "mert.saglam@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Mert Sağlam",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "MERT.SAGLAM@EMAIL.COM",
+                            NormalizedUserName = "MERT.SAGLAM@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAENDgYpiIfeu5MlO8L9tU1AHT6NrkMXSlopW3leEkEeFIZUiwL+dMWbeujowvz1b20A==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "115",
+                            SecurityStamp = "d6ca6a77-a905-4cf1-8e3c-0a695f81b2cd",
+                            TwoFactorEnabled = false,
+                            UserName = "mert.saglam@email.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("3a7f9b68-21d5-4f8c-b2a7-9c0e1f5d2a91"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "c082e466-0e6d-4132-8d8e-1a3dcebd2724",
+                            Email = "emre.yaman@email.com",
+                            EmailConfirmed = false,
+                            FullName = "Emre Yaman",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "EMRE.YAMAN@EMAIL.COM",
+                            NormalizedUserName = "EMRE.YAMAN@EMAIL.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEw3RtgwowdcQxFj0RSZw1nRloOzKwkduTZIKRqHqbJC4jCWUBtZBZGKFW0bQ7NOmg==",
+                            PhoneNumberConfirmed = false,
+                            RegistrationNumber = "117",
+                            SecurityStamp = "18e06429-8702-4080-bddf-55d1b3576ca0",
+                            TwoFactorEnabled = false,
+                            UserName = "emre.yaman@email.com"
                         });
                 });
 

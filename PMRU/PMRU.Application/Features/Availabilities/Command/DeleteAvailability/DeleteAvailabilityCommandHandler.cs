@@ -16,7 +16,7 @@ namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailability
     public class DeleteAvailabilityCommandHandler :BaseHandler, IRequestHandler<DeleteAvailabilityCommandRequest, Unit>
     {
         private readonly IRedisCacheService redisCacheService;
-        public DeleteAvailabilityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor) : base(mapper, unitOfWork, httpContextAccessor) 
+        public DeleteAvailabilityCommandHandler(IMapper mapper, IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor, IRedisCacheService redisCacheService) : base(mapper, unitOfWork, httpContextAccessor) 
         {
             this.redisCacheService = redisCacheService;
         }

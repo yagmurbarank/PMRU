@@ -41,6 +41,9 @@
                         <td>@appointment.AppointmentDate.ToShortDateString()</td>
                         <td>@appointment.AppointmentStartHour.ToString()</td>
                         <td>@appointment.AppointmentEndHour.ToString()</td>
+                        <td>
+                            <button class="btn btn-danger" @onclick="() => DeleteAppointment(appointment.Id)">@Loc[nameof(ResourceStrings.DoctorAppointmentPageDeleteButton)]</button>
+                        </td>
                     </tr>
                 }
             </tbody>
