@@ -459,7 +459,7 @@ namespace PMRU.Persistence.Configurations
                     Surname = "Fırıncı",
                     Phone = "(555) 136-4785",
                     Email = "zehra.firinci@email.com",
-                    LocationID = 34,
+                    LocationID = 71,
                     PositionID = 13,
                     DepartmentID = 7,
                     RegistrationNumber = "124",

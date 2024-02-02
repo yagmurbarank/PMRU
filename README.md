@@ -66,12 +66,12 @@ The PMRU project is a comprehensive web application designed to streamline and e
 <br/>
 <br/>
 <div align="center">
-    <img src="pmrulogo.png" alt="cover" width="600" height="300">
+    <img src="HomePage.png" alt="cover" width="600" height="300">
   </a>
 </div>
  </br>
 
-Click for [Documentation]()
+Click for [Documentation](https://drive.google.com/drive/folders/1ho8JIxZV7jBWXF6vcJu0nqIpbAS5Qv4v)
 
 ### Benefits:
 
@@ -141,7 +141,7 @@ You can see the project photos below.
 <br/>
 <br/>
 <div align="center">
-    <img src="project.jpg" alt="cover" width="200" height="200">
+    <img src="LoginPage.png" alt="cover" width="200" height="200">
   </a>
 </div>
  </br>
