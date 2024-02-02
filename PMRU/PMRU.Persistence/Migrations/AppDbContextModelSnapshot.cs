@@ -242,7 +242,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2024, 1, 1),
                             AppointmentEndHour = new TimeOnly(8, 20, 0),
                             AppointmentStartHour = new TimeOnly(8, 0, 0),
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(133),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 531, DateTimeKind.Local).AddTicks(4598),
                             Description = "Regular Checkup",
                             DoctorID = 1,
                             EmployeeID = 1,
@@ -255,7 +255,7 @@ namespace PMRU.Persistence.Migrations
                             AppointmentDate = new DateOnly(2024, 1, 1),
                             AppointmentEndHour = new TimeOnly(8, 20, 0),
                             AppointmentStartHour = new TimeOnly(8, 0, 0),
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(163),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 531, DateTimeKind.Local).AddTicks(4621),
                             Description = "Regular Checkup",
                             DoctorID = 2,
                             EmployeeID = 2,
@@ -311,7 +311,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2743),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(93),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(8, 20, 0),
@@ -322,7 +322,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2751),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(103),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(8, 40, 0),
@@ -333,7 +333,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2753),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(105),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 1,
                             EndTime = new TimeOnly(9, 0, 0),
@@ -344,7 +344,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2754),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(108),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(8, 20, 0),
@@ -355,7 +355,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2756),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(109),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(8, 40, 0),
@@ -366,7 +366,7 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(2757),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 532, DateTimeKind.Local).AddTicks(110),
                             Date = new DateOnly(2024, 1, 2),
                             DoctorID = 2,
                             EndTime = new TimeOnly(9, 0, 0),
@@ -667,7 +667,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 1,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8869),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5923),
                             DepartmentID = 4,
                             Email = "ahmet.yilmaz@email.com",
                             IdentityNumber = "5555123456",
@@ -684,7 +684,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 2,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8912),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5927),
                             DepartmentID = 4,
                             Email = "ayse.kaya@email.com",
                             IdentityNumber = "5555234567",
@@ -701,7 +701,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 3,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8916),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5930),
                             DepartmentID = 3,
                             Email = "mehmet.celik@email.com",
                             IdentityNumber = "5278149630",
@@ -718,7 +718,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 4,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8919),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5933),
                             DepartmentID = 4,
                             Email = "fatma.arslan@email.com",
                             IdentityNumber = "5555456789",
@@ -735,7 +735,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 5,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8922),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5935),
                             DepartmentID = 2,
                             Email = "ali.demir@email.com",
                             IdentityNumber = "5555567890",
@@ -752,7 +752,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 6,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8924),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5938),
                             DepartmentID = 5,
                             Email = "zeynep.yildiz@email.com",
                             IdentityNumber = "5555678901",
@@ -769,7 +769,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 7,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8927),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5940),
                             DepartmentID = 2,
                             Email = "can.aksoy@email.com",
                             IdentityNumber = "5555789012",
@@ -786,7 +786,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 8,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8931),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5942),
                             DepartmentID = 6,
                             Email = "elif.ersoy@email.com",
                             IdentityNumber = "5555890123",
@@ -803,7 +803,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 9,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8933),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5945),
                             DepartmentID = 4,
                             Email = "burak.taskin@email.com",
                             IdentityNumber = "5555901234",
@@ -820,7 +820,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 10,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8943),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5953),
                             DepartmentID = 1,
                             Email = "deniz.akin@email.com",
                             IdentityNumber = "5556012345",
@@ -837,7 +837,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 11,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8949),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5958),
                             DepartmentID = 7,
                             Email = "aylin.gunes@email.com",
                             IdentityNumber = "5642597451",
@@ -854,7 +854,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 12,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8959),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5972),
                             DepartmentID = 7,
                             Email = "eren.akcay@email.com",
                             IdentityNumber = "5642517451",
@@ -871,7 +871,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 13,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8962),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5975),
                             DepartmentID = 7,
                             Email = "gulay.kaya@email.com",
                             IdentityNumber = "3462517451",
@@ -888,7 +888,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 14,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8965),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5977),
                             DepartmentID = 7,
                             Email = "cem.yildirim@email.com",
                             IdentityNumber = "3434517451",
@@ -905,7 +905,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 15,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8968),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5979),
                             DepartmentID = 7,
                             Email = "dilara.cetin@email.com",
                             IdentityNumber = "3434546751",
@@ -922,7 +922,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 16,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8971),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5982),
                             DepartmentID = 7,
                             Email = "mert.saglam@email.com",
                             IdentityNumber = "3432209751",
@@ -939,7 +939,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 17,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8973),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5984),
                             DepartmentID = 7,
                             Email = "gulsum.aydin@email.com",
                             IdentityNumber = "3432906751",
@@ -956,7 +956,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 18,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8976),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5986),
                             DepartmentID = 7,
                             Email = "emre.yaman@email.com",
                             IdentityNumber = "3850906751",
@@ -973,7 +973,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 19,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8978),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5988),
                             DepartmentID = 5,
                             Email = "selin.erdogan@email.com",
                             IdentityNumber = "3850915851",
@@ -990,7 +990,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 20,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8982),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5991),
                             DepartmentID = 3,
                             Email = "onur.akbas@email.com",
                             IdentityNumber = "3850926751",
@@ -1007,7 +1007,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 21,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8984),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5993),
                             DepartmentID = 6,
                             Email = "melis.yilmaz@email.com",
                             IdentityNumber = "3880226751",
@@ -1024,7 +1024,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 22,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8987),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5995),
                             DepartmentID = 7,
                             Email = "meryem.kuzey@email.com",
                             IdentityNumber = "3972226751",
@@ -1041,7 +1041,7 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = 23,
                             AppointmentId = 0,
-                            CreatedDate = new DateTime(2024, 2, 2, 16, 22, 43, 792, DateTimeKind.Local).AddTicks(8990),
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(5997),
                             DepartmentID = 7,
                             Email = "ali.atabey@email.com",
                             IdentityNumber = "1971927981",
@@ -1053,6 +1053,40 @@ namespace PMRU.Persistence.Migrations
                             PositionID = 12,
                             RegistrationNumber = "122",
                             Surname = "Atabey"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(6000),
+                            DepartmentID = 7,
+                            Email = "melih.dogru@email.com",
+                            IdentityNumber = "4571927923",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 71,
+                            Name = "Melih",
+                            Phone = "(555) 158-6945",
+                            PositionID = 12,
+                            RegistrationNumber = "123",
+                            Surname = "Doğru"
+                        },
+                        new
+                        {
+                            Id = 25,
+                            AppointmentId = 0,
+                            CreatedDate = new DateTime(2024, 2, 2, 16, 57, 45, 533, DateTimeKind.Local).AddTicks(6002),
+                            DepartmentID = 7,
+                            Email = "zehra.firinci@email.com",
+                            IdentityNumber = "8271927909",
+                            IsActive = true,
+                            IsDeleted = false,
+                            LocationID = 34,
+                            Name = "Zehra",
+                            Phone = "(555) 136-4785",
+                            PositionID = 13,
+                            RegistrationNumber = "124",
+                            Surname = "Fırıncı"
                         });
                 });
 
@@ -1286,21 +1320,21 @@ namespace PMRU.Persistence.Migrations
                         new
                         {
                             Id = new Guid("01b33042-952a-4636-8d15-682447de311a"),
-                            ConcurrencyStamp = "b8189424-ccba-4f5d-87b7-bd74f1a0363d",
+                            ConcurrencyStamp = "be15927c-5030-45cd-aee8-6e883baa50f3",
                             Name = "SystemAdmin",
                             NormalizedName = "SYSTEMADMIN"
                         },
                         new
                         {
                             Id = new Guid("b56d0892-1daa-4b5d-a6e0-381a250daea1"),
-                            ConcurrencyStamp = "b379c5a0-6e68-429a-bcfd-7075c396f1c2",
+                            ConcurrencyStamp = "894a79dc-56f8-489e-afeb-ed638c772369",
                             Name = "LocalAdmin",
                             NormalizedName = "LOCALADMIN"
                         },
                         new
                         {
                             Id = new Guid("e3a11d19-3f92-463a-a80d-38228fa18746"),
-                            ConcurrencyStamp = "c816d0b3-de61-4cfb-8436-0619fdea4ca9",
+                            ConcurrencyStamp = "f760b9c1-94f5-4938-b023-51b79ed004a7",
                             Name = "Doctor",
                             NormalizedName = "DOCTOR"
                         });
@@ -1390,17 +1424,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("faad6812-0f8e-4342-8738-6dcd5e8ecc09"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d9bde632-1304-4106-b04b-25bb6cd49ef8",
+                            ConcurrencyStamp = "5920b06d-14c7-4e4a-8257-eb6107be4708",
                             Email = "elif.ersoy@email.com",
                             EmailConfirmed = false,
                             FullName = "Elif Ersoy",
                             LockoutEnabled = false,
                             NormalizedEmail = "ELIF.ERSOY@EMAIL.COM",
                             NormalizedUserName = "ELIF.ERSOY@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEK4Ow1ARskueDExECZzaeDf9wZJjoTS38Itol2pRCpGSN9fDHemMC3IuKcD+mHiqGQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJOABVb6dBIAslvniPbx5MDQP2ihHfEELE2oUl7UEqORcFWSnEHqnD5Q+xpWEfKs7A==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "107",
-                            SecurityStamp = "df898718-7c1e-47dd-9a83-84589b599f72",
+                            SecurityStamp = "3a0f6c40-5a5d-4fc0-8ffe-0f7a9d0ad8a2",
                             TwoFactorEnabled = false,
                             UserName = "elif.ersoy@email.com"
                         },
@@ -1408,17 +1442,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("a76eb5c4-eebf-47ec-a274-ca7971bfa4e8"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b72160e9-8cca-4963-afad-f19a8a26abc1",
+                            ConcurrencyStamp = "78efb475-9a17-4649-b057-5647c50bfe0c",
                             Email = "aylin.gunes@email.com",
                             EmailConfirmed = false,
                             FullName = "Aylin Güneş",
                             LockoutEnabled = false,
                             NormalizedEmail = "AYLIN.GUNES@EMAIL.COM",
                             NormalizedUserName = "AYLIN.GUNES@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOSd8BrUHhLoO47+J58MjAG2dpfmjy0ioTu3yyAjcrwH1SA484eHMxEorHuXy0XY6A==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKuT95ieHnh2pm0QH2e4NySu4M0CjIDYkPT6lD5+4yGiQ4++jMD0Cm0gj2T6W7F02A==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "110",
-                            SecurityStamp = "065ac1dc-452a-4385-8f9d-9d7c37e44d40",
+                            SecurityStamp = "f13dd4d8-2d91-4ae5-a5ee-3ce1fba32441",
                             TwoFactorEnabled = false,
                             UserName = "aylin.gunes@email.com"
                         },
@@ -1426,17 +1460,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("a3b9e2f7-5c1d-4a88-9f3b-7e6c4d2a1b11"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "20819e51-2a41-4430-8b87-4b7d1b7799e7",
+                            ConcurrencyStamp = "d674b976-7249-4a38-b6e5-48f3c0294b66",
                             Email = "eren.akcay@email.com",
                             EmailConfirmed = false,
                             FullName = "Eren Akçay",
                             LockoutEnabled = false,
                             NormalizedEmail = "EREN.AKCAY@EMAIL.COM",
                             NormalizedUserName = "EREN.AKCAY@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFFek6xznHyrM76KvGxgonkAMWK7AM8kcvSUMiGrtZ7eOF+eBXarZWxqvpIQb5pa4w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHUNTevXnZ2nr8m4gXHJP26kQv0SJp9WIeRpKih6sQf5BtxtqkrPvIi4welI6Ofw7g==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "111",
-                            SecurityStamp = "62f17551-0a8f-4aa1-a7c0-729655f2e929",
+                            SecurityStamp = "a96065e0-bda9-4abd-83c5-7658545ac1d8",
                             TwoFactorEnabled = false,
                             UserName = "eren.akcay@email.com"
                         },
@@ -1444,17 +1478,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("e2f8d174-4b7a-4c91-b9f2-8dc3a1c45b68"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b354d9f7-2916-4e08-8ead-bbb6b4456eeb",
+                            ConcurrencyStamp = "fa559dfe-d73f-4d88-93c6-d2f9db101944",
                             Email = "gulay.kaya@email.com",
                             EmailConfirmed = false,
                             FullName = "Gülay Kaya",
                             LockoutEnabled = false,
                             NormalizedEmail = "GULAY.KAYA@EMAIL.COM",
                             NormalizedUserName = "GULAY.KAYA@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECX0mEuRzlc8tCvRi8ttWvHob0cYUGTT8+q+M3BlilNGL6/NSTOc/aviv3ypnmDxgw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEIT+ROQK3druxIRiNjoyzre9c9XQzVpn8uPG7WTGZ9E5x+EeJLpZOJcI9xzsu16l7g==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "112",
-                            SecurityStamp = "5105a4b1-5ea1-489a-9b68-0fc51d727007",
+                            SecurityStamp = "df97874a-4b77-43fb-9d21-22440c343e88",
                             TwoFactorEnabled = false,
                             UserName = "gulay.kaya@email.com"
                         },
@@ -1462,17 +1496,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("0e7b95a1-9b14-4c87-af3d-1d2f6b8aefc3"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bd9466e4-fe1e-4cb5-9775-468ad7600a1e",
+                            ConcurrencyStamp = "cfae36f0-2107-48f5-af12-070914e6965b",
                             Email = "gulsum.aydin@email.com",
                             EmailConfirmed = false,
                             FullName = "Gülsüm Aydın",
                             LockoutEnabled = false,
                             NormalizedEmail = "GULSUM.AYDIN@EMAIL.COM",
                             NormalizedUserName = "GULSUM.AYDIN@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH2bvc9wkymhwuhi3LjrcvJNQv9cTWMs7ZnnHKsHneGjzTFjET3rAj2ROzyRPJLerQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPFq4XWQni0jbskmjtyhKiJIA0tJVfLYNRD1JMdxbsP2MAXBVpu4lmj8PS80f3xpEg==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "116",
-                            SecurityStamp = "b8d2b46e-3d3d-4f8c-b1b3-f98372e900aa",
+                            SecurityStamp = "d923b5e6-a4fc-418d-bea4-1fb86175b98c",
                             TwoFactorEnabled = false,
                             UserName = "gulsum.aydin@email.com"
                         },
@@ -1480,17 +1514,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("2b9d163d-cdd1-4b2c-b62e-ec59a6b300fb"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7d8e7efe-53e8-465b-a75f-10902affe58d",
+                            ConcurrencyStamp = "57989825-7db7-4aec-9c97-72605ab91816",
                             Email = "meryem.kuzey@email.com",
                             EmailConfirmed = false,
                             FullName = "Meryem Kuzey",
                             LockoutEnabled = false,
                             NormalizedEmail = "MERYEM.KUZEY@EMAIL.COM",
                             NormalizedUserName = "MERYEM.KUZEY@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDrQGTcEOvrUEAwIi4rYxkFHQ4rHRlOqmCj12aBiZFcsybHHy1j0kDQY/ZWv3udh/w==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJSodZy9qiJEy9ho93DFC9N31JBanUiLTTq5Gu3Cdtcllclq2sJ14CBmV0Uxz3aHwQ==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "121",
-                            SecurityStamp = "8567420e-b85f-4b02-a7e6-146e61561284",
+                            SecurityStamp = "e1e3ca98-195d-4935-b913-7af40f611373",
                             TwoFactorEnabled = false,
                             UserName = "meryem.kuzey@email.com"
                         },
@@ -1498,17 +1532,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("b4f91e33-68d1-4aee-b254-d8a53631b23a"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "07d6fc73-49a7-49f8-afbb-1483504ae4da",
+                            ConcurrencyStamp = "defc4dc1-022b-4cb0-8942-c4b38bae5dac",
                             Email = "ali.atabey@email.com",
                             EmailConfirmed = false,
                             FullName = "Ali Atabey",
                             LockoutEnabled = false,
                             NormalizedEmail = "ALI.ATABEY@EMAIL.COM",
                             NormalizedUserName = "ALI.ATABEY@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEOSM4VwLucf3muOpdYouJiETTggJPLbjDiMJBfCMB53YZuhQosCDzZoK2PPPS2+PRQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENJGp2EDmDyLZByoH7CsfA/oLnLiflCvFOy1cM83W/VSRFJc1otrw5WuUi/kBtOLNA==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "122",
-                            SecurityStamp = "181910b8-003e-40e7-bd3e-0087f68871d9",
+                            SecurityStamp = "cc7abfc6-f7ad-436c-8932-c90dd759588c",
                             TwoFactorEnabled = false,
                             UserName = "ali.atabey@email.comm"
                         },
@@ -1516,17 +1550,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("79a21042-ac37-43dc-b246-e1a2c9645afb"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "64a2fc47-1d4a-49e3-b561-7e7fbc3146ce",
+                            ConcurrencyStamp = "2564b0c5-1a6d-40fa-85f3-53ca8e1288e9",
                             Email = "cem.yildirim@email.com",
                             EmailConfirmed = false,
                             FullName = "Cem Yıldırım",
                             LockoutEnabled = false,
                             NormalizedEmail = "CEM.YILDIRIM@EMAIL.COM",
                             NormalizedUserName = "CEM.YILDIRIM@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEA0Kl1fizS0jbxPW0AmOY5p1HbiIOHCRVdSyl5PfAjcWX7l5mqyyxJjSsvfyQThvpA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGccGr7PXpPUa6P8S+WORINcUSzt76sNLeDltN9texnncpaiTe5+7sSCXf18/CPTQQ==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "113",
-                            SecurityStamp = "919c4c88-d165-4de2-81d4-30e6100864d2",
+                            SecurityStamp = "97e4da42-ca66-41b6-b53c-79c5f3d52168",
                             TwoFactorEnabled = false,
                             UserName = "cem.yildirim@email.com"
                         },
@@ -1534,17 +1568,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("faad6812-0f8e-4342-aabb-6dcd5e8ecc09"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ee424114-fdbb-4b2b-a074-d529a579070c",
+                            ConcurrencyStamp = "e7b3b248-ddeb-4de3-b55b-87f7e8d6af88",
                             Email = "dilara.cetin@email.com",
                             EmailConfirmed = false,
                             FullName = "Dilara Çetin",
                             LockoutEnabled = false,
                             NormalizedEmail = "DILARA.CETIN@EMAIL.COM",
                             NormalizedUserName = "DILARA.CETIN@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEP3EHU2jOUDwW9lPjswd6BDMpymod62xc95lFX8dMH/y4LzfohRtDxLRVp5YaCzug==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHEA0nsAB3Jdv0HSIeaHL6OzaEJKj9CbCxqXMxEZk5Px5kU11ONg86nR+q3UlXHoTg==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "114",
-                            SecurityStamp = "608c9233-b751-44b3-87bf-5ab594eb65b2",
+                            SecurityStamp = "fd9c11b9-8065-45ff-bd59-ff5e6ca66877",
                             TwoFactorEnabled = false,
                             UserName = "dilara.cetin@email.com"
                         },
@@ -1552,17 +1586,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("a2b4f813-72c9-4a6e-9d7b-1f8c3d2e5a0f"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8a7e987d-960b-464b-95a9-1c136e343acf",
+                            ConcurrencyStamp = "2bebfbda-026a-48a7-ac45-c3f21b690076",
                             Email = "mert.saglam@email.com",
                             EmailConfirmed = false,
                             FullName = "Mert Sağlam",
                             LockoutEnabled = false,
                             NormalizedEmail = "MERT.SAGLAM@EMAIL.COM",
                             NormalizedUserName = "MERT.SAGLAM@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEB82EVBKuA4OzlyozPsBBb78jYUkpLQeaFi9DKYp54AjTRqTyXOLrxe1uHx/tTEohg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHOydnHigNR/N4yzM/nL5UMkIjl03bx+3mFoLUzAZglI8iN3vwvLqyQp2wQVCf+ksw==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "115",
-                            SecurityStamp = "d3e1c1af-eb34-4180-839e-0488718b8a4f",
+                            SecurityStamp = "b4743dc1-7d28-48d0-8a5e-898000250bfa",
                             TwoFactorEnabled = false,
                             UserName = "mert.saglam@email.com"
                         },
@@ -1570,17 +1604,17 @@ namespace PMRU.Persistence.Migrations
                         {
                             Id = new Guid("3a7f9b68-21d5-4f8c-b2a7-9c0e1f5d2a91"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "b4a2314a-32ab-4aed-a693-8f881158867f",
+                            ConcurrencyStamp = "95b2c764-70f6-4018-af09-6d9fa97fcc25",
                             Email = "emre.yaman@email.com",
                             EmailConfirmed = false,
                             FullName = "Emre Yaman",
                             LockoutEnabled = false,
                             NormalizedEmail = "EMRE.YAMAN@EMAIL.COM",
                             NormalizedUserName = "EMRE.YAMAN@EMAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPorNHo64/KNkMATdl0ZMoo+VMIUF6utzf+iufHF+UUHI4bmV4avqBbQpgJre0bhhg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBaJPjPiAF5/kvApAoL8s+mQYNIidmB5diLCBUmq65ufeCJe/Pk2dwFn7gJpuF+R9g==",
                             PhoneNumberConfirmed = false,
                             RegistrationNumber = "117",
-                            SecurityStamp = "3927a500-7479-4cf9-8eb9-bc29de189e51",
+                            SecurityStamp = "8178191f-0064-46d4-a067-87fdb21344a2",
                             TwoFactorEnabled = false,
                             UserName = "emre.yaman@email.com"
                         });
