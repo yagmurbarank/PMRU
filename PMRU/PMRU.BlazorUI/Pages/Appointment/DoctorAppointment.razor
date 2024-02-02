@@ -11,8 +11,6 @@
       
     </div>
 
-    <button @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.DoctorAppointmentPageReportPageButton)]</button>
-
     @if (appointments != null && appointments.Any())
     {
         <table class="table">
@@ -58,3 +56,5 @@ else
         <p>@Loc[nameof(ResourceStrings.DoctorAppointmentPageDoctorsLoadingText)]</p>
     }
 }
+
+<button @onclick="GoToReportPage">@Loc[nameof(ResourceStrings.DoctorAppointmentPageReportPageButton)]</button>
