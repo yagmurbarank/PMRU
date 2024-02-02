@@ -30,12 +30,10 @@ namespace PMRU.Application.Features.Doctors.Command.DeleteDoctor
             await unitOfWork.GetWriteRepository<Doctor>().UpdateAsync(doctor);
             await unitOfWork.SaveAsync();
 
-            await Task.WhenAll(
-                redisCacheService.RemoveAsync($"GetDoctorById_{doctor.Id}"),
-                redisCacheService.RemoveAsync($"GetDoctorByRegNo_{doctor.RegistrationNumber}"),
-                redisCacheService.RemoveAsync($"GetDoctors_{DateTime.Now:yyyyMMddHHmm}"),
-                redisCacheService.RemoveAsync($"GetDoctorByLocation_{doctor.LocationID}")
-            );
+            await redisCacheService.RemoveAsync($"GetDoctorById_{doctor.Id}");
+            await redisCacheService.RemoveAsync($"GetDoctorByRegNo_{doctor.RegistrationNumber}");
+            await redisCacheService.RemoveAsync($"GetDoctors_{DateTime.Now:yyyyMMddHHmm}");
+            await redisCacheService.RemoveAsync($"GetDoctorByLocation_{doctor.LocationID}");
 
             return Unit.Value;
         }

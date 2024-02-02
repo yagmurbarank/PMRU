@@ -9,6 +9,5 @@
         public string Email { get; set; }
         public int LocationID { get; set; }
         public string RegistrationNumber { get; set; }
-        public string Password { get; set; }
     }
 }

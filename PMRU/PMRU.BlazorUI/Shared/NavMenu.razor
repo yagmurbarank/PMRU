@@ -76,6 +76,13 @@
                 </NavLink>
             </div>
         </AuthorizeView>
+        <AuthorizeView Roles="SystemAdmin">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="rolemanage/">
+                    <span class="bi bi-person-bounding-box-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuRoleManage)]
+                </NavLink>
+            </div>
+        </AuthorizeView>
         <AuthorizeView >
            <Authorized>
         <div class="nav-item px-3">
@@ -85,14 +92,6 @@
         </div>
            </Authorized>
         </AuthorizeView>
-        <AuthorizeView Roles="SystemAdmin">
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="rolemanage/">
-                    <span class="bi bi-person-bounding-box-nav-menu" aria-hidden="true"></span> @Loc[nameof(ResourceStrings.NavMenuRoleManage)]
-                </NavLink>
-            </div>
-        </AuthorizeView>
-        
     </nav>
     
 </div>

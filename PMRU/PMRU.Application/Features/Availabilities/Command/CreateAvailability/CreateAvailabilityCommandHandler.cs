@@ -35,13 +35,11 @@ namespace PMRU.Application.Features.Availabilities.Command.CreateAvailability
 
             await unitOfWork.GetWriteRepository<Availability>().CreateAsync(availability);
 
-            await Task.WhenAll(
-            redisCacheService.RemoveAsync($"GetAvailabilities_{DateTime.Now:yyyyMMddHHmm}"),
-            redisCacheService.RemoveAsync($"GetAvailabilitiesByDay_{availability.Date.ToString("yyyyMMdd")}"),
-            redisCacheService.RemoveAsync($"GetAvailabilityByDoctorId_{availability.DoctorID}"),
-            redisCacheService.RemoveAsync($"GetAvailabilityByStartTime_{availability.StartTime.ToString("hhmmss")}"),
-            redisCacheService.RemoveAsync($"GetAvailabilityById_{availability.Id}")
-        );
+            await redisCacheService.RemoveAsync($"GetAvailabilities_{DateTime.Now:yyyyMMddHHmm}");
+            await redisCacheService.RemoveAsync($"GetAvailabilitiesByDay_{availability.Date.ToString("yyyyMMdd")}");
+            await redisCacheService.RemoveAsync($"GetAvailabilityByDoctorId_{availability.DoctorID}");
+            await redisCacheService.RemoveAsync($"GetAvailabilityByStartTime_{availability.StartTime.ToString("hhmmss")}");
+            await redisCacheService.RemoveAsync($"GetAvailabilityById_{availability.Id}");
 
             await unitOfWork.SaveAsync();
 

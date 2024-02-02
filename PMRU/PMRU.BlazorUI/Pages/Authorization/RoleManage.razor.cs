@@ -52,7 +52,6 @@ namespace PMRU.BlazorUI.Pages.Authorization
                 doctor.Email = Employee.Email;
                 doctor.LocationID = Employee.Location.Id;
                 doctor.RegistrationNumber = Employee.RegistrationNumber;
-                doctor.Password = this.password;
                 var response = await DoctorService.CreateDoctor(doctor);
             };
             var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
