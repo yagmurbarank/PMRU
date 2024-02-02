@@ -146,7 +146,7 @@ You can see the project photos below.
 </div>
  </br>
 
-_For more, please click to the [link](https://github.com/batuhanpayal/PMRU)_
+_For more, please click to the [link](https://drive.google.com/drive/folders/1XaXyho2jbT7B9kXwQQ5avv9lXpuqeRS4?usp=drive_link)_
 
 
 
