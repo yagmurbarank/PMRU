@@ -32,7 +32,6 @@ namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailability
                 await unitOfWork.GetWriteRepository<Availability>().UpdateAsync(availability);
                 await unitOfWork.SaveAsync();
 
-
                 await redisCacheService.RemoveAsync($"GetAvailabilityByDoctorId_{availability.DoctorID}");
             }
             return Unit.Value;

@@ -31,6 +31,7 @@ namespace PMRU.Application.Features.Availabilities.Command.DeleteAvailabilities
                 availability.IsDeleted = true;
                 availability.DeletedDate = DateTime.Now;
                 await unitOfWork.GetWriteRepository<Availability>().UpdateAsync(availability);
+
                 await redisCacheService.RemoveAsync($"GetAvailabilityByDoctorId_{availability.DoctorID}");
             }
 

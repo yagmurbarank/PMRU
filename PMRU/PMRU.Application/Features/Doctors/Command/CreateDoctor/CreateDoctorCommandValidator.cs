@@ -40,10 +40,6 @@ namespace PMRU.Application.Features.Doctors.Command.CreateDoctor
             RuleFor(x => x.RegistrationNumber)
              .NotEmpty()
              .WithName("Sicil No");
-
-            RuleFor(x => x.Password)
-             .NotEmpty()
-             .WithName("Parola");
         }
 
     }

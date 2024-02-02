@@ -9,14 +9,12 @@ namespace PMRU.Domain.Entities
 {
     public class Doctor : EntityBase
     {
-        private readonly string location;
-
         public Doctor()
         {
 
         }
 
-        public Doctor(string identityNumber, string registrationNumber, string name, string surname, string phone, string email, string password, int locationID)
+        public Doctor(string identityNumber, string registrationNumber, string name, string surname, string phone, string email, int locationID)
         {
             IdentityNumber = identityNumber;
             RegistrationNumber = registrationNumber;
@@ -24,7 +22,6 @@ namespace PMRU.Domain.Entities
             Surname = surname;
             Phone = phone;
             Email = email;
-            Password = password;
             LocationID = locationID;
         }
 
@@ -37,7 +34,6 @@ namespace PMRU.Domain.Entities
         public int LocationID { get; set; }
         public Location Location { get; set; }
         public string RegistrationNumber { get; set; }
-        public string Password { get; set; }
 
         // The doctor may have more than one appointment.
         public ICollection<Appointment> Appointments { get; set; }

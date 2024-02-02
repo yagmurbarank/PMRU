@@ -18,8 +18,7 @@ namespace PMRU.Persistence.Configurations
             builder.Property(x => x.Surname).HasMaxLength(100).IsRequired();
             builder.Property(x => x.Email).HasMaxLength(256).IsRequired();
             builder.Property(x => x.Phone).HasMaxLength(10); 
-            builder.Property(x => x.IdentityNumber).HasMaxLength(11).IsRequired(); 
-            builder.Property(x => x.Password).HasMaxLength(50).IsRequired(); 
+            builder.Property(x => x.IdentityNumber).HasMaxLength(11).IsRequired();
 
             builder.HasMany(d => d.Appointments)
                 .WithOne(a => a.Doctor)
@@ -47,7 +46,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12345678901",
                     RegistrationNumber = "110",
                     LocationID = 35,
-                    Password = "Password"
                 },
                 new Doctor
                 {
@@ -59,7 +57,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12345678923",
                     RegistrationNumber = "111",
                     LocationID = 41,
-                    Password = "Password"
                 },
                 new Doctor
                 {
@@ -71,7 +68,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12343458923",
                     RegistrationNumber = "112",
                     LocationID = 72,
-                    Password = "Password"
                 },
                 new Doctor
                 {
@@ -83,7 +79,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "12343458205",
                     RegistrationNumber = "116",
                     LocationID = 34,
-                    Password = "Password"
                 },
                 new Doctor
                 {
@@ -95,7 +90,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "3972226751",
                     RegistrationNumber = "121",
                     LocationID = 35,
-                    Password = "Password"
                 },
                 new Doctor
                 {
@@ -107,7 +101,6 @@ namespace PMRU.Persistence.Configurations
                     IdentityNumber = "1971927981",
                     RegistrationNumber = "122",
                     LocationID = 34,
-                    Password = "Password"
                 }
             );
         }
