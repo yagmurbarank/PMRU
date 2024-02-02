@@ -1,5 +1,8 @@
 ﻿@inject IStringLocalizer<App> Loc
 @inject IJSRuntime js
+@inherits LayoutComponentBase
+
+<CascadingParameter Name="Loc" Value="Localizer" />
 
 @page "/reportpage"
 @attribute [Authorize(Roles = "Doctor, LocalAdmin")]
@@ -58,12 +61,12 @@
 @code {
     private void SaveToFile(string fileName)
     {
-        byte[] data = MyPdf(reportResult);
+        byte[] data = MyPdf(reportResult, Loc);
         js.InvokeVoidAsync("SaveFile", fileName, Convert.ToBase64String(data));
     }
     private void OpenNewWindow(string filename)
     {
-        byte[] data = MyPdf(reportResult);
+        byte[] data = MyPdf(reportResult, Loc);
         js.InvokeVoidAsync("OpenNew", Convert.ToBase64String(data));
     }
 }

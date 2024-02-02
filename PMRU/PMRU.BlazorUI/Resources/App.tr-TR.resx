@@ -177,6 +177,22 @@
     <value>Lütfen Sicil Numaranızı Giriniz</value>
     <comment>Appointments.razor</comment>
   </data>
+  <data name="AppointmentsPageMessageBody1" xml:space="preserve">
+    <value>Dr. {0} {1} ile {2} {3} ve {4} saatleri arasında randevunuz bulunuyor.</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageBody2" xml:space="preserve">
+    <value>Dr. {0} {1} ile {2} {3} ve {4} saatleri arasında randevunuz oluşturuldu.</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageTitle1" xml:space="preserve">
+    <value>Randevunuz var!</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageTitle2" xml:space="preserve">
+    <value>Randevunuz oluşturuldu!</value>
+    <comment>Appointments.razor</comment>
+  </data>
   <data name="AppPageNotAuthorizedText" xml:space="preserve">
     <value>Üzgünüz, bu sayfayı görüntüleyemezsiniz.</value>
     <comment>App.razor</comment>
@@ -247,6 +263,10 @@
   </data>
   <data name="AvailabilitiesPageTableStartHour" xml:space="preserve">
     <value>Başlangıç Saati</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTitle" xml:space="preserve">
+    <value>Uygunluklar</value>
     <comment>Availabilities.razor</comment>
   </data>
   <data name="BackPage" xml:space="preserve">
@@ -548,6 +568,30 @@
     <value>Rapor Alın</value>
     <comment>ReportPage.Razor</comment>
   </data>
+  <data name="ReportPageReportAppDate" xml:space="preserve">
+    <value>Randevu Tarihi</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportDescription" xml:space="preserve">
+    <value>Açıklama</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportDoctor" xml:space="preserve">
+    <value>Doktor İsmi</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportEmployee" xml:space="preserve">
+    <value>Çalışan İsmi</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportEndHour" xml:space="preserve">
+    <value>Muayene Bitiş Saati</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportStartHour" xml:space="preserve">
+    <value>Muayene Başlangıç Saati</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
   <data name="ReportPageResultText" xml:space="preserve">
     <value>Sonuçlar</value>
     <comment>ReportPage.Razor</comment>
@@ -579,6 +623,14 @@
   <data name="ReportPageTitle" xml:space="preserve">
     <value>Rapor Sayfası</value>
     <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="RoleManageMessageRoleAssigned" xml:space="preserve">
+    <value>{0} {1} çalışanına {2} rolü tanımlandı. Giriş bilgileri: EMail: {3} Şifre:{4}</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManageMessageRoleCompleted" xml:space="preserve">
+    <value>Rol verme işlemi tamamlandı!</value>
+    <comment>RoleManage.razor</comment>
   </data>
   <data name="RoleManagePageDoctorText" xml:space="preserve">
     <value>Doktor</value>

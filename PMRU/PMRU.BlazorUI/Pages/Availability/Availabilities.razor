@@ -2,7 +2,7 @@
 @page "/availabilities"
 @attribute [Authorize(Roles = "Doctor, LocalAdmin")]
 
-<h3>Availabilities</h3>
+<h3>@Loc[nameof(ResourceStrings.AvailabilitiesPageTitle)]</h3>
 
 @if (doctorsInCurrentUserLocation != null && doctorsInCurrentUserLocation.Any())
 {

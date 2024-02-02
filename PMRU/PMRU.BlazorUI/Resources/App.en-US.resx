@@ -177,6 +177,22 @@
     <value>Please enter your registration number</value>
     <comment>Appointments.razor</comment>
   </data>
+  <data name="AppointmentsPageMessageBody1" xml:space="preserve">
+    <value>You have an appointment with Dr. {0} {1} on {2} between {3} and {4}.</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageBody2" xml:space="preserve">
+    <value>You have created an appointment with Dr. {0} {1} on {2} between {3} and {4}.</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageTitle1" xml:space="preserve">
+    <value>You have an appointment!</value>
+    <comment>Appointments.razor</comment>
+  </data>
+  <data name="AppointmentsPageMessageTitle2" xml:space="preserve">
+    <value>Your appointment is created!</value>
+    <comment>Appointments.razor</comment>
+  </data>
   <data name="AppPageNotAuthorizedText" xml:space="preserve">
     <value>Sorry, you cannot view this page.</value>
     <comment>App.razor</comment>
@@ -247,6 +263,10 @@
   </data>
   <data name="AvailabilitiesPageTableStartHour" xml:space="preserve">
     <value>Start Hour</value>
+    <comment>Availabilities.razor</comment>
+  </data>
+  <data name="AvailabilitiesPageTitle" xml:space="preserve">
+    <value>Availabilities</value>
     <comment>Availabilities.razor</comment>
   </data>
   <data name="BackPage" xml:space="preserve">
@@ -548,6 +568,30 @@
     <value>Receive Report</value>
     <comment>ReportPage.Razor</comment>
   </data>
+  <data name="ReportPageReportAppDate" xml:space="preserve">
+    <value>Appointment Date</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportDoctor" xml:space="preserve">
+    <value>Doctor</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportEmployee" xml:space="preserve">
+    <value>Employee</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportEndHour" xml:space="preserve">
+    <value>Appointment End Hour</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="ReportPageReportStartHour" xml:space="preserve">
+    <value>Appointment Start Hour</value>
+    <comment>ReportPage.Razor</comment>
+  </data>
   <data name="ReportPageResultText" xml:space="preserve">
     <value>Results</value>
     <comment>ReportPage.Razor</comment>
@@ -579,6 +623,14 @@
   <data name="ReportPageTitle" xml:space="preserve">
     <value>Report Page</value>
     <comment>ReportPage.Razor</comment>
+  </data>
+  <data name="RoleManageMessageRoleAssigned" xml:space="preserve">
+    <value>Role {2} assigned to employee {0} {1}. Login information: Email: {3} Password: {4}</value>
+    <comment>RoleManage.razor</comment>
+  </data>
+  <data name="RoleManageMessageRoleCompleted" xml:space="preserve">
+    <value>Role assignment completed!</value>
+    <comment>RoleManage.razor</comment>
   </data>
   <data name="RoleManagePageDoctorText" xml:space="preserve">
     <value>Doctor</value>
