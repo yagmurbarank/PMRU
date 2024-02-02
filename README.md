@@ -66,7 +66,7 @@ The PMRU project is a comprehensive web application designed to streamline and e
 <br/>
 <br/>
 <div align="center">
-    <img src="image.png" alt="cover" width="600" height="300">
+    <img src="pmrulogo.png" alt="cover" width="600" height="300">
   </a>
 </div>
  </br>
