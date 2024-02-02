@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 using PMRU.BlazorUI.Contracts;
+using PMRU.BlazorUI.Localization;
 using PMRU.BlazorUI.Models;
 using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
@@ -57,8 +59,15 @@ namespace PMRU.BlazorUI.Pages.Authorization
             var register = await AuthenticationService.RegisterAsync(fullName, email, password, confirmPassword, registrationNumber, role);
             if (register != null)
             {
-                messageTitle = "Rol verme işlemi tamamlandı!";
-                messageBody = $"{Employee.Name} {Employee.Surname} çalışanına {role.ToUpper()} rolü tanımlandı. Giriş bilgileri: EMail: {Employee.Email} Şifre:{password}";
+                messageTitle = Loc[nameof(ResourceStrings.RoleManageMessageRoleCompleted)];
+                messageBody = string.Format(
+                    Loc[nameof(ResourceStrings.RoleManageMessageRoleAssigned)],
+                    Employee.Name,
+                    Employee.Surname,
+                    role.ToUpper(),
+                    Employee.Email,
+                    password
+                );
             }
         }
 

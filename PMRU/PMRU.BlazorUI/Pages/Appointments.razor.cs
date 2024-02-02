@@ -19,6 +19,7 @@ using PMRU.Domain.Entities;
 using PMRU.BlazorUI.Models.Appointment;
 using PMRU.BlazorUI.Models.Availability;
 using PMRU.BlazorUI.Models.Doctor;
+using PMRU.BlazorUI.Localization;
 
 namespace PMRU.BlazorUI.Pages
 {
@@ -59,8 +60,15 @@ namespace PMRU.BlazorUI.Pages
                 }
                 else
                 {
-                    messageTitle = "Randevunuz var!";
-                    messageBody = $"Dr. {result.Doctor.Name} {result.Doctor.Surname} ile {result.AppointmentDate} {result.AppointmentStartHour} ve {result.AppointmentEndHour} saatleri arasında randevunuz bulunuyor.";
+                    messageTitle = Loc[nameof(ResourceStrings.AppointmentsPageMessageTitle1)];
+                    messageBody = string.Format(
+                        Loc[nameof(ResourceStrings.AppointmentsPageMessageBody1)],
+                        result.Doctor.Name,
+                        result.Doctor.Surname,
+                        result.AppointmentDate,
+                        result.AppointmentStartHour,
+                        result.AppointmentEndHour
+                    );
                 }
             }
             else
@@ -83,8 +91,15 @@ namespace PMRU.BlazorUI.Pages
                 await AvailabilityService.DeleteAvailability(new DeleteAvailabilityVM { Id = availability.Id });
                 doctors = null;
                 availabilities = null;
-                messageTitle = "Randevunuz oluşturuldu!";
-                messageBody = $"Dr. {availability.Doctor.Name} {availability.Doctor.Surname} ile {availability.Date} {availability.StartTime} ve {availability.EndTime} saatleri arasında randevunuz oluşturuldu.";
+                messageTitle = Loc[nameof(ResourceStrings.AppointmentsPageMessageTitle2)];
+                messageBody = string.Format(
+                    Loc[nameof(ResourceStrings.AppointmentsPageMessageBody2)],
+                    availability.Doctor.Name,
+                    availability.Doctor.Surname,
+                    availability.Date,
+                    availability.StartTime,
+                    availability.EndTime
+                );
 
             }
         }
