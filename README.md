@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/batuhanpayal/PMRU">
-    <img src="logo.png" alt="Logo" width="350" height="350">
+    <img src="pmrulogo.png" alt="Logo" width="350" height="350">
   </a>
   </div>
 <div>
