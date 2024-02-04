@@ -61,6 +61,7 @@ The PMRU project is a comprehensive web application designed to streamline and e
 <br/>
 <div align="center">
     <img src="img/HomePage.png" alt="cover" width="550" height="300">
+
   </a>
 </div>
  </br>
@@ -114,6 +115,7 @@ You can see the project screenshoots below.
 <br/>
 <br/>
 <div align="center">
+
     <img src="img/LoginPage.png" alt="cover" width="550" height="300">
     <img src="img/mainScreen.png" alt="cover" width="200" height="100">
     <img src="img/ss1.png" alt="cover" width="200" height="100">
@@ -122,11 +124,14 @@ You can see the project screenshoots below.
     <img src="img/ss4.png" alt="cover" width="200" height="100">
     <img src="img/ss5.png" alt="cover" width="200" height="100">
      <img src="img/ss6.png" alt="cover" width="200" height="100">
+
   </a>
 </div>
  </br>
 
+
 _For Demo, please click to the [link](https://www.youtube.com/watch?v=vdEs70DmBwI)_
+
 
 
 

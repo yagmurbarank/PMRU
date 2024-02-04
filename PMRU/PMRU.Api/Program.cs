@@ -4,7 +4,6 @@ using PMRU.Infrastructure;
 using PMRU.Mapper;
 using PMRU.Application.Exceptions;
 using Microsoft.OpenApi.Models;
-using PMRU.Infrastructure.Email.EmailServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,7 +36,6 @@ builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
-builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "PMRU", Version = "v1", Description = "Periyodik Muayene Randevu Uygulaması swagger client." });
