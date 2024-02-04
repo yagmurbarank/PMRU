@@ -8,7 +8,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/batuhanpayal/PMRU">
-    <img src="pmrulogo.png" alt="Logo" width="350" height="350">
+    <img src="img/logo.png" alt="Logo" width="350" height="350">
   </a>
   </div>
 <div>
@@ -18,7 +18,7 @@
     Empowering Health and Efficiency: PMRU, Where Appointments Meet Simplicity! 
     <br />
     <br />
-    <a href="https://youtu.be/sCYUbZK9p8Y?si=DKddAuYD5ISV4N3W">Demo</a>
+    <a href="https://www.youtube.com/watch?v=vdEs70DmBwI">Demo</a>
     ·
     <a href="https://github.com/batuhanpayal/PMRU/issues">Report Bug</a>
     ·
@@ -41,13 +41,7 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#screens">Project Images</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#project-team">Project Team</a></li>
     <li><a href="#license">License</a></li>
@@ -66,12 +60,12 @@ The PMRU project is a comprehensive web application designed to streamline and e
 <br/>
 <br/>
 <div align="center">
-    <img src="HomePage.png" alt="cover" width="600" height="300">
+    <img src="img/HomePage.png" alt="cover" width="400" height="100">
   </a>
 </div>
  </br>
 
-Click for [Documentation](https://drive.google.com/drive/folders/1ho8JIxZV7jBWXF6vcJu0nqIpbAS5Qv4v)
+Click for [Documentation]()
 
 ### Benefits:
 
@@ -97,56 +91,36 @@ Provides administrators with valuable insights through data analytics and report
 
 
 [![DotNetCore][DotNetCore]][DotNetCore-url]  [![C#][c#]][Csharp-url]  
-The project leverages modern web technologies, potentially employing a web framework like ASP.NET Core.
-A relational database system, such as SQL Server, is likely used to store and manage data securely. 
+The project was developed using .NET Core and C#. During the development process, a strong foundation was established by focusing on the SOLID principles in software design and Clean Architecture principles. These principles aimed to make the code clear, understandable, and easy to maintain, while also striving to provide a sustainable and flexible code architecture. Using ASP.NET Core for RESTful API design, an interactive and reliable API was developed over the HTTP protocol.
+
+For data access and management, Entity Framework was preferred, and NuGet packages such as AutoMapper and MediatR enhanced the modularity of the application by following patterns such as Command Query Responsibility Segregation (CQRS) and Mediator Pattern. AutoMapper automated object mapping processes, while MediatR provided a mediator structure to handle events and requests. Blazor was employed for the UI layer, developing the web application's UI layer and enabling the use of C# code on the browser side, ensuring a consistent language on both the server and client sides.
+
+The integration of RedisCache was added to the project, resulting in faster operations and an enhanced user experience. Additionally, with Localization support, users can utilize the application in their preferred language. These enhancements elevated the project's performance, providing a user-friendly experience and raising the overall quality of the project.
+
+The development took place in the Visual Studio environment and was managed through GitHub. Trello was used for project management, facilitating the tracking of the development process, enhancing collaboration within the team, and providing an effective tool for planning, monitoring, and completing tasks. This technological infrastructure was brought together to expedite the project development process and elevate the quality of the application.
 
 <p align="right"><a href="#readme-top">Back to the Top ↑ </a></p>
 
 
 
-<!-- GETTING STARTED -->
-## 🏁 Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-
-### 📥 Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Click
-2. Clone the repo
-   ```sh
-   git clone https://github.com/batuhanpayal/PMRU
-   ```
-3. Connect A local Server
-   
-4. Update Database
-   ``` 
-   update-database
-   ```
-
-5. Set API as Startup Project
-
-<p align="right"><a href="#readme-top">Back to the Top ↑ </a></p>
 
 
 
-<!-- USAGE EXAMPLES -->
+<!-- SCREENS EXAMPLES -->
 ##
-### 📱 Usage
+### 📱 Project Imagess
 
-You can see the project photos below.
+You can see the project screenshoots below.
 <br/>
 <br/>
 <div align="center">
-    <img src="LoginPage.png" alt="cover" width="200" height="200">
+    <img src="img/LoginPage.png" alt="cover" width="200" height="100">
+     <img src="img/mainScreen.png" alt="cover" width="200" height="100">
   </a>
 </div>
  </br>
 
-_For more, please click to the [link](https://drive.google.com/drive/folders/1XaXyho2jbT7B9kXwQQ5avv9lXpuqeRS4?usp=drive_link)_
+_For more, please click to the [link](https://github.com/batuhanpayal/PMRU)_
 
 
 
@@ -181,12 +155,6 @@ See the [open issues](https://github.com/batuhanpayal/PMRU/issues) for a full li
 * Musa OCAK -[GitHub](https://github.com/musaocak1) | [LinkedIn](https://www.linkedin.com/in/musaocak/)
 * Yağmur Baran KARAKUŞ - [GitHub](https://github.com/yagmurbarank) |  [LinkedIn](https://www.linkedin.com/in/yagmurbarankarakus/) 
 
- <br />
-<div align="center">
-    <img src="meet-the-team.png" alt="Logo" width="750" height="526">
-  </a>
-</div>
-
 <br/>
 
 <p align="right"><a href="#readme-top">Back to the Top ↑ </a></p>
@@ -202,7 +170,6 @@ Distributed under the MIT License. See `license` for more information.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [product-screenshot]: images/screenshot.png
 [DotNetCore]: https://img.shields.io/badge/8-%2320232a.svg?style=flat&logo=dotnet&logoColor=#512BD4
