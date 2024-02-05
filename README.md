@@ -111,17 +111,24 @@ The development took place in the Visual Studio environment and was managed thro
 ##
 ### 📱 Project Imagess
 
-You can see the project screenshoots below.
+You can see the project screenshots below.
 <br/>
 <br/>
 <div align="center">
 <a>
-    <img src="img/LoginPage.png" alt="cover" width="550" height="300">
-    <img src="img/AppointmentPage.png" alt="cover" width="200" height="100">
-    <img src="img/AvailabilityPage.png" alt="cover" width="200" height="100">
-    <img src="img/HomePage.png" alt="cover" width="200" height="100">
-    <img src="img/LocalAdminCreateAvailability_TR.png" alt="cover" width="200" height="100">
-    <img src="img/LocalAdminReportPage_TR.png" alt="cover" width="200" height="100">
+<div class="image-container">
+  <img src="img/LoginPage.png" alt="cover" width="450" height="280">
+  <img src="img/AppointmentPage.png" alt="cover" width="450" height="280">
+</div>
+  <div class="image-container">
+  <img src="img/AvailabilityPage.png" alt="cover" width="450" height="280">
+    <img src="img/HomePage.png" alt="cover" width="450" height="280">
+</div>
+      <div class="image-container">
+   <img src="img/LocalAdminCreateAvailability_TR.png" alt="cover" width="450" height="280">
+    <img src="img/LocalAdminReportPage_TR.png" alt="cover" width="450" height="280">
+</div>
+ 
   
 
   </a>
