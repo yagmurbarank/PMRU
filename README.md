@@ -115,15 +115,14 @@ You can see the project screenshoots below.
 <br/>
 <br/>
 <div align="center">
-
+<a>
     <img src="img/LoginPage.png" alt="cover" width="550" height="300">
-    <img src="img/mainScreen.png" alt="cover" width="200" height="100">
-    <img src="img/ss1.png" alt="cover" width="200" height="100">
-    <img src="img/ss2.png" alt="cover" width="200" height="100">
-    <img src="img/ss3.png" alt="cover" width="200" height="100">
-    <img src="img/ss4.png" alt="cover" width="200" height="100">
-    <img src="img/ss5.png" alt="cover" width="200" height="100">
-     <img src="img/ss6.png" alt="cover" width="200" height="100">
+    <img src="img/AppointmentPage.png" alt="cover" width="200" height="100">
+    <img src="img/AvailabilityPage.png" alt="cover" width="200" height="100">
+    <img src="img/HomePage.png" alt="cover" width="200" height="100">
+    <img src="img/LocalAdminCreateAvailability_TR.png" alt="cover" width="200" height="100">
+    <img src="img/LocalAdminReportPage_TR.png" alt="cover" width="200" height="100">
+  
 
   </a>
 </div>
