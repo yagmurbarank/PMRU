@@ -18,7 +18,7 @@
     Empowering Health and Efficiency: PMRU, Where Appointments Meet Simplicity! 
     <br />
     <br />
-    <a href="https://www.youtube.com/watch?v=vdEs70DmBwI">Demo</a>
+    <a href="https://youtu.be/FXDNPGXxPic?si=m5Hyt9AL99hAdN7t">Demo</a>
     ·
     <a href="https://github.com/batuhanpayal/PMRU/issues">Report Bug</a>
     ·
